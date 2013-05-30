@@ -1,3 +1,23 @@
+/*
+* This file is part of Libkovan Java.
+*
+* Java Framework for the KIPR Link
+* Copyright (C) 2013 Markus Klein
+*
+* This program is free software: you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation, either version 3 of the License, or
+* any later version.
+*
+* This program is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+* GNU General Public License for more details.
+*
+* You should have received a copy of the GNU General Public License
+* along with this program. If not, see <http://www.gnu.org/licenses/>.
+*/
+
 package libkovan;
 
 import libkovan.jni.Libkovan;
@@ -47,14 +67,27 @@ public class Controller {
 		return System.currentTimeMillis() * 1000;
 	}
 	
+	/**
+	 * Causes a beep sound. Returns when the sound is finished.
+	 */
 	public static void beep(){
 		Libkovan.beep();
 	}
 	
+	/**
+	 * Clears the console.
+	 */
 	public void clearDisplay(){
 		Libkovan.display_clear();
 	}
 	
+	/**
+	 * The digital ports of the KIPR Link can be set to input or output.
+	 * This method is used to toggle the mode.
+	 * 
+	 * @param port 
+	 * @param inout
+	 */
 	public void setDigitalOutput(int port, int inout){
 		Libkovan.set_digital_output(port, inout);
 	}

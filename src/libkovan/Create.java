@@ -1,7 +1,33 @@
+/*
+* This file is part of Libkovan Java.
+*
+* Java Framework for the KIPR Link
+* Copyright (C) 2013 Markus Klein
+*
+* This program is free software: you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation, either version 3 of the License, or
+* any later version.
+*
+* This program is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+* GNU General Public License for more details.
+*
+* You should have received a copy of the GNU General Public License
+* along with this program. If not, see <http://www.gnu.org/licenses/>.
+*/
+
 package libkovan;
 
 import libkovan.jni.Libkovan;
 
+/**
+ * An instance of this class is used to control thie iRobot create with the KIPR Link.
+ * 
+ * @author Markus Klein
+ * @version 1.0.0
+ */
 
 public class Create {
 	public static final int MODE = 0;
@@ -43,15 +69,27 @@ public class Create {
 	public static final int REQUESTED_RADIUS = 36;
 	public static final int REQUESTED_RIGHT_VELOCITY = 37;
 	public static final int REQUESTED_LEFT_VELOCITY = 38;
-
+	
+	/**
+	 * Creates a new create instance and opens the connection to the create.
+	 */
 	public Create(){
 		Libkovan.create_connect();
 	}
 	
+	/**
+	 * Sets the create to the active mode.
+	 */
 	public void start(){
 		Libkovan.create_start();
 	}
 	
+	/**
+	 * This function is used to get different data from the create.
+	 * 
+	 * @param val
+	 * @return value of the specified data
+	 */
 	public int get(int val){
 		switch(val){
 		case MODE:
@@ -137,94 +175,195 @@ public class Create {
 		}	
 	}
 	
+	/**
+	 * Sets the distance which is returned by {@code createInstance.get(DISTANCE)}.
+	 * 
+	 * @param dist distance
+	 */
 	public void setDistance(int dist){
 		Libkovan.set_create_distance(dist);
 	}
 	
+	/**
+	 * Sets the angle which is returned by {@code createInstance.get(NORMALIZED_ANGLE)}.
+	 * 
+	 * @param angle angle
+	 */
 	public void setNormalizedAngle(int angle){
 		Libkovan.set_create_normalized_angle(angle);
 	}
 	
+	/**
+	 * Sets the angle which is returned by {@code createInstance.get(TOTAL_ANGLE)}.
+	 * 
+	 * @param angle angle
+	 */
 	public void setTotalAngle(int angle){
 		Libkovan.set_create_total_angle(angle);
 	}
 	
+	/**
+	 * Disconnects the create.
+	 */
 	public void disconnect(){
 		Libkovan.create_disconnect();
 	}
 	
+	/**
+	 * Connects the KIPR Link to the create.
+	 * 
+	 * @return 0 on success and a negative number on failure
+	 */
 	public int connect(){
 		return Libkovan.create_connect();
 	}
 	
+	/**
+	 * Sets the create into the passive mode(no motors).
+	 */
 	public void passive(){
 		Libkovan.create_passive();
 	}
 	
+	/**
+	 * Create will execute all command until the drop or cliff fire. Then it will stop.
+	 */
 	public void safe(){
 		Libkovan.create_safe();
 	}
 	
+	/**
+	 * Create will to everything and never stop even if cliff or drop fire.
+	 */
 	public void full(){
 		Libkovan.create_full();
 	}
 	
+	/**
+	 * Simulates a Roomba doing a spot clean.
+	 */
 	public void spot(){
 		Libkovan.create_spot();
 	}
 	
+	/**
+	 * Simulates a Roomba covering a room.
+	 */
 	public void cover(){
 		Libkovan.create_cover();
 	}
 	
+	/**
+	 * Runs the demo.
+	 * @param d
+	 */
 	public void demo(int d){
 		Libkovan.create_demo(d);
 	}
 	
+	/**
+	 * Create roams around until it sees an IR dock and then attmpts to dock
+	 */
 	public void coverDock(){
 		Libkovan.create_cover_dock();
 	}
 	
+	/**
+	 * Stop the motors.
+	 */
 	public void stop(){
 		Libkovan.create_stop();
 	}
 	
+	/**
+	 * Drives an arc.
+	 * 
+	 * @param speed speed from 20 to 500 mm/sec
+	 * @param radius radius
+	 */
 	public void drive(int speed, int radius){
 		Libkovan.create_drive(speed, radius);
 	}
 	
+	/**
+	 * Drive straight at specified speed.
+	 * 
+	 * @param speed speed from -500 to 500
+	 */
 	public void driveStraight(int speed){
 		Libkovan.create_drive_straight(speed);
 	}
 	
+	/**
+	 * Spins clockwise at the specified speed.
+	 * 
+	 * @param speed speed
+	 */
 	public void spinCW(int speed){
 		Libkovan.create_spin_CW(speed);
 	}
 	
+	/**
+	 * Spins counterclockwise at the specified speed.
+	 * 
+	 * @param speed speed
+	 */
 	public void spinCCW(int speed){
 		Libkovan.create_spin_CCW(speed);
 	}
 	
+	/**
+	 * Sets the speed of every motor in mm per sec.
+	 * 
+	 * @param lSpeed left motors speed
+	 * @param rSpeed right motors speed
+	 */
 	public void driveDirect(int lSpeed, int rSpeed){
 		Libkovan.create_drive_direct(rSpeed, lSpeed);
 	}
 	
+	/**
+	 * Turns the advanced led on or off.
+	 * 
+	 * @param on 1 for on or 0 for off
+	 */
 	public void advanceLed(int on){
 		Libkovan.create_advance_led(on);
 	}
 	
+	/**
+	 * Turns the play led on or off.
+	 * 
+	 * @param on 1 for on or 0 for off
+	 */
 	public void playLed(int on){
 		Libkovan.create_play_led(on);
 	}
 	
+	/**
+	 * Sets the power led«s brightness and color
+	 * 
+	 * @param color 0 for pure red to 255 for pure green
+	 * @param brightness 0 off and 255 for full
+	 */
 	public void powerLed(int color, int brightness){
 		Libkovan.create_power_led(color, brightness);
 	}
 	
+	/**
+	 * Loads a song from the gc_song_array[16][33]. Each row is one song.
+	 * 
+	 * @param num number of song
+	 */
 	public void loadSong(int num){
 		Libkovan.create_load_song(num);
 	}
 	
+	/**
+	 * Plays any songs that have been loaded.
+	 * 
+	 * @param num number so song
+	 */
 	public void playSong(int num){
 		Libkovan.create_play_song(num);
 	}
