@@ -1,5 +1,5 @@
 /*
-* This file is part of Libkovan Java.
+* This file is part of LinkJVM Java.
 *
 * Java Framework for the KIPR Link
 * Copyright (C) 2013 Markus Klein
@@ -20,7 +20,8 @@
 
 package libkovan;
 
-import libkovan.jni.Libkovan;
+import libkovan.jni.LinkJVM;
+
 
 /**
  * In instance of this class is used to control a servo on a specified servo port.
@@ -68,14 +69,14 @@ public class Servo {
 	 * Disables the servo.
 	 */
 	public void disable(){
-		Libkovan.disable_servo(servoPort);
+		LinkJVM.disable_servo(servoPort);
 	}
 	
 	/**
 	 * Enables the servo.
 	 */
 	public void enable(){
-		Libkovan.enable_servo(servoPort);
+		LinkJVM.enable_servo(servoPort);
 	}
 	
 	/**
@@ -84,7 +85,7 @@ public class Servo {
 	 * @param pos position (range from 0 to 2047)
 	 */
 	public void setPosition(int pos){
-		Libkovan.set_servo_position(servoPort, pos);
+		LinkJVM.set_servo_position(servoPort, pos);
 	}
 	
 	/**
@@ -93,20 +94,20 @@ public class Servo {
 	 * @return servo position (range from 0 to 2047)
 	 */
 	public int getPosition(){
-		return Libkovan.get_servo_position(servoPort);
+		return LinkJVM.get_servo_position(servoPort);
 	}
 	
 	/**
 	 * Enables all servos.
 	 */
 	public static void enableServos(){
-		Libkovan.enable_servos();
+		LinkJVM.enable_servos();
 	}
 	
 	/**
 	 * Disables all servos.
 	 */
 	public static void disableServos(){
-		Libkovan.disable_servos();
+		LinkJVM.disable_servos();
 	}
 }

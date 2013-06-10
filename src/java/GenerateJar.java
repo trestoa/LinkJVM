@@ -40,7 +40,7 @@ public class GenerateJar {
 			target.close();
 		}
 		catch(IOException e){
-			System.out.println("Cannot create jar archive, an IO Exception occured.")
+			System.out.println("Cannot create jar archive, an IO Exception occured.");
 		}
 	}
 
@@ -62,8 +62,9 @@ public class GenerateJar {
 					target.putNextEntry(entry);
 					target.closeEntry();
 				}
-				for (File nestedFile: source.listFiles()){
-					add(nestedFile, target);
+				File[] nestedFile = source.listFiles();
+				for (int i = 0; i < nestedFile.length; i++){
+					add(nestedFile[i], target);
 				}
 				return;
 			}
@@ -91,3 +92,4 @@ public class GenerateJar {
 		}
 	}
 }
+

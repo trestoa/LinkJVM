@@ -1,5 +1,5 @@
 /*
-* This file is part of Libkovan Java.
+* This file is part of LinkJVM Java.
 *
 * Java Framework for the KIPR Link
 * Copyright (C) 2013 Markus Klein
@@ -20,7 +20,7 @@
 
 package libkovan;
 
-import libkovan.jni.Libkovan;
+import libkovan.jni.LinkJVM;
 
 /**
  * An instance of this class is used to control one digital sensor on the specified sensor port.
@@ -48,9 +48,8 @@ public class DigitalSensor extends Sensor{
 	 * 
 	 * @return sensor value
 	 */
-	@Override
 	public int getValue() {
-		return Libkovan.digital(sensorPort);
+		return LinkJVM.digital(sensorPort);
 	}
 	
 

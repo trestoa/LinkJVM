@@ -1,5 +1,5 @@
 /*
-* This file is part of Libkovan Java.
+* This file is part of LinkJVM Java.
 *
 * Java Framework for the KIPR Link
 * Copyright (C) 2013 Markus Klein
@@ -20,7 +20,7 @@
 
 package libkovan;
 
-import libkovan.jni.Libkovan;
+import libkovan.jni.LinkJVM;
 
 /**
  * This class is used to control the camera.
@@ -41,7 +41,7 @@ public class Camera {
 	 * @param res
 	 */
 	public Camera(int res){
-		Libkovan.camera_open(res);
+		LinkJVM.camera_open(res);
 	}
 	
 	/**
@@ -51,7 +51,7 @@ public class Camera {
 	 * @return 1 on success and 0 on failure
 	 */
 	public int loadConfig(String name){
-		return Libkovan.camera_load_config(name);
+		return LinkJVM.camera_load_config(name);
 	}
 	
 	/**
@@ -60,7 +60,7 @@ public class Camera {
 	 * @return 1 on success and 0 on failure
 	 */
 	public int update(){
-		return Libkovan.camera_update();
+		return LinkJVM.camera_update();
 	}
 	
 	/**
@@ -69,7 +69,7 @@ public class Camera {
 	 * @return number of channels
 	 */
 	public int getChannelCount(){
-		return Libkovan.get_channel_count();
+		return LinkJVM.get_channel_count();
 	}
 	
 	/**
@@ -80,7 +80,7 @@ public class Camera {
 	 * @return data associated with the channel and the object, 1 failure
 	 */
 	public int getCodeNum(int channel, int obj){
-		return Libkovan.get_code_num(channel, obj);
+		return LinkJVM.get_code_num(channel, obj);
 	}
 	
 	/**
@@ -91,7 +91,7 @@ public class Camera {
 	 * @return bounding box area or -1 if the channel of the object does not exist
 	 */
 	public int getObjectArea(int channel, int obj){
-		return Libkovan.get_object_area(channel, obj);
+		return LinkJVM.get_object_area(channel, obj);
 	}
 	
 	/**
@@ -101,7 +101,7 @@ public class Camera {
 	 * @return number of channels
 	 */
 	public int getObjectCount(int channel){
-		return Libkovan.get_object_count(channel);
+		return LinkJVM.get_object_count(channel);
 	}
 	
 	/**
@@ -112,7 +112,7 @@ public class Camera {
 	 * @return data
 	 */
 	public String getOjectData(int channel, int obj){
-		return Libkovan.get_object_data(channel, obj);
+		return LinkJVM.get_object_data(channel, obj);
 	}
 	
 	/**
@@ -123,6 +123,6 @@ public class Camera {
 	 * @return length of the data string
 	 */
 	public int getObjectDataLenght(int channel, int obj){
-		return Libkovan.get_object_data_length(channel, obj);
+		return LinkJVM.get_object_data_length(channel, obj);
 	}
 }

@@ -1,1 +1,1 @@
-libkovan/*.class libkovan/jni/*.class
+libkovan/*.java libkovan/jni/*.java

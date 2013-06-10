@@ -1,5 +1,5 @@
 /*
-* This file is part of Libkovan Java.
+* This file is part of LinkJVM Java.
 *
 * Java Framework for the KIPR Link
 * Copyright (C) 2013 Markus Klein
@@ -20,7 +20,7 @@
 
 package libkovan;
 
-import libkovan.jni.Libkovan;
+import libkovan.jni.LinkJVM;
 
 /**
  * The Sensor class is a static class. It provides all basic functions for a sensor instance.
@@ -58,11 +58,11 @@ public abstract class Sensor {
 	public static int getButtonPressed(int btn){
 		switch(btn){
 		case 0:
-			return Libkovan.a_button();
+			return LinkJVM.a_button();
 		case 1:
-			return Libkovan.b_button();
+			return LinkJVM.b_button();
 		case 2:
-			return Libkovan.side_button();
+			return LinkJVM.side_button();
 		default:
 			return 0;
 		}

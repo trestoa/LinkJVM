@@ -1,5 +1,5 @@
 /*
-* This file is part of Libkovan Java.
+* This file is part of LinkJVM Java.
 *
 * Java Framework for the KIPR Link
 * Copyright (C) 2013 Markus Klein
@@ -20,7 +20,7 @@
 
 package libkovan;
 
-import libkovan.jni.Libkovan;
+import libkovan.jni.LinkJVM;
 
 /**
  * An instance of this class is used to control thie iRobot create with the KIPR Link.
@@ -74,14 +74,14 @@ public class Create {
 	 * Creates a new create instance and opens the connection to the create.
 	 */
 	public Create(){
-		Libkovan.create_connect();
+		LinkJVM.create_connect();
 	}
 	
 	/**
 	 * Sets the create to the active mode.
 	 */
 	public void start(){
-		Libkovan.create_start();
+		LinkJVM.create_start();
 	}
 	
 	/**
@@ -93,83 +93,83 @@ public class Create {
 	public int get(int val){
 		switch(val){
 		case MODE:
-			return Libkovan.get_create_mode();
+			return LinkJVM.get_create_mode();
 		case LBUMP:
-			return Libkovan.get_create_lbump();
+			return LinkJVM.get_create_lbump();
 		case RBUMP:
-			return Libkovan.get_create_rbump();
+			return LinkJVM.get_create_rbump();
 		case LWDROP:
-			return Libkovan.get_create_lwdrop();
+			return LinkJVM.get_create_lwdrop();
 		case CWDROP:
-			return Libkovan.get_create_cwdrop();
+			return LinkJVM.get_create_cwdrop();
 		case RWDROP:
-			return Libkovan.get_create_rwdrop();
+			return LinkJVM.get_create_rwdrop();
 		case WALL:
-			return Libkovan.get_create_wall();
+			return LinkJVM.get_create_wall();
 		case LCLIFF:
-			return Libkovan.get_create_lcliff();
+			return LinkJVM.get_create_lcliff();
 		case LFCLIFF:
-			return Libkovan.get_create_lfcliff();
+			return LinkJVM.get_create_lfcliff();
 		case RFCLIFF:
-			return Libkovan.get_create_rfcliff();
+			return LinkJVM.get_create_rfcliff();
 		case RCLIFF:
-			return Libkovan.get_create_rcliff();
+			return LinkJVM.get_create_rcliff();
 		case VWALL:
-			return Libkovan.get_create_vwall();
+			return LinkJVM.get_create_vwall();
 		case OVERCURRENTS:
-			return Libkovan.get_create_overcurrents();
+			return LinkJVM.get_create_overcurrents();
 		case INFRARED:
-			return Libkovan.get_create_infrared();
+			return LinkJVM.get_create_infrared();
 		case ADVANCE_BUTTON:
-			return Libkovan.get_create_advance_button();
+			return LinkJVM.get_create_advance_button();
 		case PLAY_BUTTON:
-			return Libkovan.get_create_play_button();
+			return LinkJVM.get_create_play_button();
 		case NORMALIZED_ANGLE:
-			return Libkovan.get_create_normalized_angle();
+			return LinkJVM.get_create_normalized_angle();
 		case TOTAL_ANGLE:
-			return Libkovan.get_create_total_angle();
+			return LinkJVM.get_create_total_angle();
 		case DISTANCE:
-			return Libkovan.get_create_distance();
+			return LinkJVM.get_create_distance();
 		case BATTERY_CHARGING_STATE:
-			return Libkovan.get_create_battery_charging_state();
+			return LinkJVM.get_create_battery_charging_state();
 		case BATTERY_VOLTAGE:
-			return Libkovan.get_create_battery_voltage();
+			return LinkJVM.get_create_battery_voltage();
 		case BATTERY_CURRENT:
-			return Libkovan.get_create_battery_current();
+			return LinkJVM.get_create_battery_current();
 		case BATTERY_TEMP:
-			return Libkovan.get_create_battery_temp();
+			return LinkJVM.get_create_battery_temp();
 		case BATTERY_CHARGE:
-			return Libkovan.get_create_battery_charge();
+			return LinkJVM.get_create_battery_charge();
 		case BATTERY_CAPACITY:
-			return Libkovan.get_create_battery_capacity();
+			return LinkJVM.get_create_battery_capacity();
 		case WALL_AMT:
-			return Libkovan.get_create_wall_amt();
+			return LinkJVM.get_create_wall_amt();
 		case LCLIFF_AMT:
-			return Libkovan.get_create_lcliff_amt();
+			return LinkJVM.get_create_lcliff_amt();
 		case LFCLIFF_AMT:
-			return Libkovan.get_create_lfcliff_amt();
+			return LinkJVM.get_create_lfcliff_amt();
 		case RFCLIFF_AMT:
-			return Libkovan.get_create_rfcliff_amt();
+			return LinkJVM.get_create_rfcliff_amt();
 		case RCLIFF_AMT:
-			return Libkovan.get_create_rcliff_amt();
+			return LinkJVM.get_create_rcliff_amt();
 		case BAY_DI:
-			return Libkovan.get_create_bay_DI();
+			return LinkJVM.get_create_bay_DI();
 		case BAY_AI:
-			return Libkovan.get_create_bay_AI();
+			return LinkJVM.get_create_bay_AI();
 		case SONG_NUMBER:
-			return Libkovan.get_create_song_number();
+			return LinkJVM.get_create_song_number();
 		case SONG_PLAYING:
-			return Libkovan.get_create_song_playing();
+			return LinkJVM.get_create_song_playing();
 		case NUMBER_OF_STREAM_PACKETS:
-			return Libkovan.get_create_number_of_stream_packets();
+			return LinkJVM.get_create_number_of_stream_packets();
 		case REQUESTED_VELOCITY:
-			return Libkovan.get_create_requested_velocity();
+			return LinkJVM.get_create_requested_velocity();
 		case REQUESTED_RADIUS:
-			return Libkovan.get_create_requested_radius();
+			return LinkJVM.get_create_requested_radius();
 		case REQUESTED_RIGHT_VELOCITY:
-			return Libkovan.get_create_requested__right_velocity();
+			return LinkJVM.get_create_requested__right_velocity();
 		case REQUESTED_LEFT_VELOCITY:
-			return Libkovan.get_create_requested_left_velocity();
+			return LinkJVM.get_create_requested_left_velocity();
 		default:
 			return 0;
 		}	
@@ -181,7 +181,7 @@ public class Create {
 	 * @param dist distance
 	 */
 	public void setDistance(int dist){
-		Libkovan.set_create_distance(dist);
+		LinkJVM.set_create_distance(dist);
 	}
 	
 	/**
@@ -190,7 +190,7 @@ public class Create {
 	 * @param angle angle
 	 */
 	public void setNormalizedAngle(int angle){
-		Libkovan.set_create_normalized_angle(angle);
+		LinkJVM.set_create_normalized_angle(angle);
 	}
 	
 	/**
@@ -199,14 +199,14 @@ public class Create {
 	 * @param angle angle
 	 */
 	public void setTotalAngle(int angle){
-		Libkovan.set_create_total_angle(angle);
+		LinkJVM.set_create_total_angle(angle);
 	}
 	
 	/**
 	 * Disconnects the create.
 	 */
 	public void disconnect(){
-		Libkovan.create_disconnect();
+		LinkJVM.create_disconnect();
 	}
 	
 	/**
@@ -215,42 +215,42 @@ public class Create {
 	 * @return 0 on success and a negative number on failure
 	 */
 	public int connect(){
-		return Libkovan.create_connect();
+		return LinkJVM.create_connect();
 	}
 	
 	/**
 	 * Sets the create into the passive mode(no motors).
 	 */
 	public void passive(){
-		Libkovan.create_passive();
+		LinkJVM.create_passive();
 	}
 	
 	/**
 	 * Create will execute all command until the drop or cliff fire. Then it will stop.
 	 */
 	public void safe(){
-		Libkovan.create_safe();
+		LinkJVM.create_safe();
 	}
 	
 	/**
 	 * Create will to everything and never stop even if cliff or drop fire.
 	 */
 	public void full(){
-		Libkovan.create_full();
+		LinkJVM.create_full();
 	}
 	
 	/**
 	 * Simulates a Roomba doing a spot clean.
 	 */
 	public void spot(){
-		Libkovan.create_spot();
+		LinkJVM.create_spot();
 	}
 	
 	/**
 	 * Simulates a Roomba covering a room.
 	 */
 	public void cover(){
-		Libkovan.create_cover();
+		LinkJVM.create_cover();
 	}
 	
 	/**
@@ -258,21 +258,21 @@ public class Create {
 	 * @param d
 	 */
 	public void demo(int d){
-		Libkovan.create_demo(d);
+		LinkJVM.create_demo(d);
 	}
 	
 	/**
 	 * Create roams around until it sees an IR dock and then attmpts to dock
 	 */
 	public void coverDock(){
-		Libkovan.create_cover_dock();
+		LinkJVM.create_cover_dock();
 	}
 	
 	/**
 	 * Stop the motors.
 	 */
 	public void stop(){
-		Libkovan.create_stop();
+		LinkJVM.create_stop();
 	}
 	
 	/**
@@ -282,7 +282,7 @@ public class Create {
 	 * @param radius radius
 	 */
 	public void drive(int speed, int radius){
-		Libkovan.create_drive(speed, radius);
+		LinkJVM.create_drive(speed, radius);
 	}
 	
 	/**
@@ -291,7 +291,7 @@ public class Create {
 	 * @param speed speed from -500 to 500
 	 */
 	public void driveStraight(int speed){
-		Libkovan.create_drive_straight(speed);
+		LinkJVM.create_drive_straight(speed);
 	}
 	
 	/**
@@ -300,7 +300,7 @@ public class Create {
 	 * @param speed speed
 	 */
 	public void spinCW(int speed){
-		Libkovan.create_spin_CW(speed);
+		LinkJVM.create_spin_CW(speed);
 	}
 	
 	/**
@@ -309,7 +309,7 @@ public class Create {
 	 * @param speed speed
 	 */
 	public void spinCCW(int speed){
-		Libkovan.create_spin_CCW(speed);
+		LinkJVM.create_spin_CCW(speed);
 	}
 	
 	/**
@@ -319,7 +319,7 @@ public class Create {
 	 * @param rSpeed right motors speed
 	 */
 	public void driveDirect(int lSpeed, int rSpeed){
-		Libkovan.create_drive_direct(rSpeed, lSpeed);
+		LinkJVM.create_drive_direct(rSpeed, lSpeed);
 	}
 	
 	/**
@@ -328,7 +328,7 @@ public class Create {
 	 * @param on 1 for on or 0 for off
 	 */
 	public void advanceLed(int on){
-		Libkovan.create_advance_led(on);
+		LinkJVM.create_advance_led(on);
 	}
 	
 	/**
@@ -337,7 +337,7 @@ public class Create {
 	 * @param on 1 for on or 0 for off
 	 */
 	public void playLed(int on){
-		Libkovan.create_play_led(on);
+		LinkJVM.create_play_led(on);
 	}
 	
 	/**
@@ -347,7 +347,7 @@ public class Create {
 	 * @param brightness 0 off and 255 for full
 	 */
 	public void powerLed(int color, int brightness){
-		Libkovan.create_power_led(color, brightness);
+		LinkJVM.create_power_led(color, brightness);
 	}
 	
 	/**
@@ -356,7 +356,7 @@ public class Create {
 	 * @param num number of song
 	 */
 	public void loadSong(int num){
-		Libkovan.create_load_song(num);
+		LinkJVM.create_load_song(num);
 	}
 	
 	/**
@@ -365,6 +365,6 @@ public class Create {
 	 * @param num number so song
 	 */
 	public void playSong(int num){
-		Libkovan.create_play_song(num);
+		LinkJVM.create_play_song(num);
 	}
 }

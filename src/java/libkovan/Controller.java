@@ -1,5 +1,5 @@
 /*
-* This file is part of Libkovan Java.
+* This file is part of LinkJVM Java.
 *
 * Java Framework for the KIPR Link
 * Copyright (C) 2013 Markus Klein
@@ -20,7 +20,7 @@
 
 package libkovan;
 
-import libkovan.jni.Libkovan;
+import libkovan.jni.LinkJVM;
 
 /**
  * The Controller class provides all functions from the libkovan,
@@ -37,7 +37,7 @@ public class Controller {
 	 * @param lightPort Analog port of the light sensor.
 	 */
 	public static void waitForLight(int lightPort){
-		Libkovan.wait_for_light(lightPort);
+		LinkJVM.wait_for_light(lightPort);
 	}
 	
 	/**
@@ -46,7 +46,7 @@ public class Controller {
 	 * @return The power level of the KIPR Link
 	 */
 	public static double powerLevel(){
-		return Libkovan.power_level();
+		return LinkJVM.power_level();
 	}
 	
 	/**
@@ -55,7 +55,7 @@ public class Controller {
 	 * @param msecs time to wait int milliseconds
 	 */
 	public static void msleep(int msecs){
-		Libkovan.msleep(msecs);
+		LinkJVM.msleep(msecs);
 	}
 	
 	/**
@@ -71,14 +71,14 @@ public class Controller {
 	 * Causes a beep sound. Returns when the sound is finished.
 	 */
 	public static void beep(){
-		Libkovan.beep();
+		LinkJVM.beep();
 	}
 	
 	/**
 	 * Clears the console.
 	 */
 	public void clearDisplay(){
-		Libkovan.display_clear();
+		LinkJVM.display_clear();
 	}
 	
 	/**
@@ -89,10 +89,10 @@ public class Controller {
 	 * @param inout
 	 */
 	public void setDigitalOutput(int port, int inout){
-		Libkovan.set_digital_output(port, inout);
+		LinkJVM.set_digital_output(port, inout);
 	}
 	
 	public void setDigitalValue(int port, int val){
-		Libkovan.set_digital_value(port, val);
+		LinkJVM.set_digital_value(port, val);
 	}
 }

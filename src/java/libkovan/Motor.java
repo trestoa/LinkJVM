@@ -1,5 +1,5 @@
 /*
-* This file is part of Libkovan Java.
+* This file is part of LinkJVM.
 *
 * Java Framework for the KIPR Link
 * Copyright (C) 2013 Markus Klein
@@ -20,7 +20,7 @@
 
 package libkovan;
 
-import libkovan.jni.Libkovan;
+import libkovan.jni.LinkJVM;
 
 /**
  * This class is provides a motor instance with all functions to control the motor.
@@ -46,42 +46,42 @@ public class Motor {
 	 * Turns the motor off.
 	 */
 	public void off(){
-		Libkovan.off(motorPort);
+		LinkJVM.off(motorPort);
 	}
 	
 	/**
 	 * This methods waits until the motor completes any executes or position control moves.
 	 */
 	public void blockMotorDone(){
-		Libkovan.bmd(motorPort);
+		LinkJVM.bmd(motorPort);
 	}
 	
 	/**
 	 * Turns the motor speed to full backward.
 	 */
 	public void bk(){
-		Libkovan.bk(motorPort);
+		LinkJVM.bk(motorPort);
 	}
 	
 	/**
 	 * Resets the motor position counter to 0.
 	 */
 	public void clearPosistionCounter(){
-		Libkovan.clear_motor_position_counter(motorPort);
+		LinkJVM.clear_motor_position_counter(motorPort);
 	}
 	
 	/**
 	 * Turns the motor speed to full forward.
 	 */
 	public void fd(){
-		Libkovan.fd(motorPort);
+		LinkJVM.fd(motorPort);
 	}
 	
 	/**
 	 * Prevents the current motor movement.
 	 */
 	public void freeze(){
-		Libkovan.freeze(motorPort);
+		LinkJVM.freeze(motorPort);
 	}
 	
 	/**
@@ -89,7 +89,7 @@ public class Motor {
 	 * @return 
 	 */
 	public int getDone(){
-		return Libkovan.get_motor_done(motorPort);
+		return LinkJVM.get_motor_done(motorPort);
 	}
 	
 	/**
@@ -98,7 +98,7 @@ public class Motor {
 	 * @return the current motor position counter
 	 */
 	public int getCounterPosition(){
-		return Libkovan.get_motor_position_counter(motorPort);
+		return LinkJVM.get_motor_position_counter(motorPort);
 	}
 	
 	/**
@@ -107,7 +107,7 @@ public class Motor {
 	 * @param vel velocity in ticks per second (range from -1000 to 1000)
 	 */
 	public void moveAtVelecity(int vel){
-		Libkovan.mav(motorPort, vel);
+		LinkJVM.mav(motorPort, vel);
 	}
 	
 	/**
@@ -117,7 +117,7 @@ public class Motor {
 	 * @param pos difference of the current and the final position
 	 */
 	public void moveRelativePosition(int speed, int pos){
-		Libkovan.move_relative_position(motorPort, speed, pos);
+		LinkJVM.move_relative_position(motorPort, speed, pos);
 	}
 	
 	/**
@@ -128,7 +128,7 @@ public class Motor {
 	 * @param pos motor position until the motor stops
 	 */
 	public void moveToPosition(int speed, int pos){
-		Libkovan.move_to_position(motorPort, speed, pos);
+		LinkJVM.move_to_position(motorPort, speed, pos);
 	}
 	
 	/**
@@ -142,8 +142,8 @@ public class Motor {
 	 * @param id i respective denominator
 	 * @param dd d respective denominator
 	 */
-	public void setPidGains(int p, int i, int d, int pd, int id, int dd){
-		Libkovan.set_pid_gains(motorPort, p, i, d, pd, id, dd);
+	public void setPidGains(short p, short i, short d, short pd, short id, short dd){
+		LinkJVM.set_pid_gains(motorPort, p, i, d, pd, id, dd);
 	}
 	
 	/**
@@ -153,7 +153,7 @@ public class Motor {
 	 * @return
 	 */
 	public int setPwm(int dc){
-		return Libkovan.setpwm(motorPort, dc);
+		return LinkJVM.setpwm(motorPort, dc);
 	}
 	
 	/**
@@ -181,13 +181,13 @@ public class Motor {
 	 * @param vel velocity from 100(full forward) to -100(full backward)
 	 */
 	public void drive(int vel){
-		Libkovan.motor(vel, motorPort);
+		LinkJVM.motor(vel, motorPort);
 	}
 	
 	/**
 	 * Turns all motors off.
 	 */
 	public static void allOff(){
-		Libkovan.ao();
+		LinkJVM.ao();
 	}
 }

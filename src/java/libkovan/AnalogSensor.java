@@ -1,5 +1,5 @@
 /*
-* This file is part of Libkovan Java.
+* This file is part of LinkJVM.
 *
 * Java Framework for the KIPR Link
 * Copyright (C) 2013 Markus Klein
@@ -20,7 +20,7 @@
 
 package libkovan;
 
-import libkovan.jni.Libkovan;
+import libkovan.jni.LinkJVM;
 
 /**
  * An instance of this class is used to control one analog sensor on the specified sensor port.
@@ -48,9 +48,8 @@ public class AnalogSensor extends Sensor {
 	 * 
 	 * @return the current sensor value
 	 */
-	@Override
 	public int getValue() {
-		return Libkovan.analog10(sensorPort);
+		return LinkJVM.analog10(sensorPort);
 	}
 	
 	/**
@@ -59,7 +58,7 @@ public class AnalogSensor extends Sensor {
 	 * @return the current sensor value
 	 */
 	public int getValue8(){
-		return Libkovan.analog(sensorPort);
+		return LinkJVM.analog(sensorPort);
 	}
 	
 	/**
@@ -71,6 +70,6 @@ public class AnalogSensor extends Sensor {
 	 * @param pullup pullup
 	 */
 	public void setPullup(int pullup){
-		Libkovan.set_analog_pullup(sensorPort, pullup);
+		LinkJVM.set_analog_pullup(sensorPort, pullup);
 	}
 }

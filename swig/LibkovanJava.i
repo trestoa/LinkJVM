@@ -1,6 +1,6 @@
-%module Libkovan
+%module LinkJVM
 %{
-#include "libkovan/include/kovan/kovan.h"
+#include "include/kovan/kovan.h"
 %}
 void wait_for_light(int light_port_);
 void shut_down_in(double delay);
@@ -106,7 +106,7 @@ void set_analog_pullup(int port, int pullupTF);
 void disable_servos();
 void enable_servos();
 int get_servo_position(int srv);
-int set_servo_position(int srv, int pos);
+void set_servo_position(int srv, int pos);
 void disable_servo(int port);
 void enable_servo(int port);
 int get_servo_enabled(int port);
@@ -116,7 +116,6 @@ double seconds();
 void camera_close();
 int camera_load_config(char name[]);
 int camera_open(int res_numb);
-int camera_open_device(int number, int res_numb);
 int camera_update();
 int get_channel_count();
 int get_code_num(int channel, int object);
