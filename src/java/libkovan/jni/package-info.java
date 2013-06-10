@@ -18,36 +18,14 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 */
 
-/*
- * IMPORTANT!!!
- * Do not make changes to this file unless you know what you are doing--modify
- * the SWIG interface file instead.
+/**
+ * Package provides the low-level wrapper of the libkovan.
+ * The class <code>LinkJVMJNI</code> is the lowest wrapper with
+ * all native method definitions. <code>LinkJVM</code> wraps these
+ * methods one more time and is used by all higher wrappers and classes.
+ * In additional it includes an type definition generated using swig.
+ * 
+ * <strong>The classes containing this package should not be used!!</strong>
  */
 
 package libkovan.jni;
-
-/**
- * Provides a type definition of type short.
- * Should not be used.
- * 
- * @author Markus Klein
- * @version 1.0.0
- *
- */
-
-public class SWIGTYPE_p_short {
-  private long swigCPtr;
-
-  protected SWIGTYPE_p_short(long cPtr, boolean futureUse) {
-    swigCPtr = cPtr;
-  }
-
-  protected SWIGTYPE_p_short() {
-    swigCPtr = 0;
-  }
-
-  protected static long getCPtr(SWIGTYPE_p_short obj) {
-    return (obj == null) ? 0 : obj.swigCPtr;
-  }
-}
-

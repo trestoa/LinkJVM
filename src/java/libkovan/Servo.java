@@ -1,8 +1,8 @@
 /*
-* This file is part of LinkJVM Java.
+* This file is part of LinkJVM.
 *
 * Java Framework for the KIPR Link
-* Copyright (C) 2013 Markus Klein
+* Copyright (C) 2013 Markus Klein<m@mklein.co.at>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
