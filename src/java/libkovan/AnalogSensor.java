@@ -44,7 +44,7 @@ public class AnalogSensor extends Sensor {
 	}
 	
 	/**
-	 * Returns the sensor value as 10 bit number(from 0 to 1024).
+	 * Returns the sensor value as 10 bit number(from 0 to 1023).
 	 * 
 	 * @return the current sensor value
 	 */
@@ -53,11 +53,11 @@ public class AnalogSensor extends Sensor {
 	}
 	
 	/**
-	 * Returns the sensor value as 8 bit number(from 0 to 256).
+	 * Returns the sensor value as 8 bit number(from 0 to 255).
 	 * 
 	 * @return the current sensor value
 	 */
-	public int getValue8(){
+	public short getValue8(){
 		return LinkJVM.analog(sensorPort);
 	}
 	

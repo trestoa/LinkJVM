@@ -23,7 +23,7 @@ package libkovan;
 import libkovan.jni.LinkJVM;
 
 /**
- * The Sensor class is a static class. It provides all basic functions for a sensor instance.
+ * The Sensor class is an abstract class. It provides all basic functions for a sensor instance.
  * In addition it offers a static function for reading the button values.
  * 
  * @author Markus Klein

@@ -24,8 +24,8 @@ import libkovan.jni.LinkJVM;
 
 
 /**
- * In instance of this class is used to control a servo on a specified servo port.
- * In addition it provides to static methods to disable and enable servo.
+ * An instance of this class is used to control a servo on a specified servo port.
+ * In addition it provides static methods to disable and enable all servos.
  * 
  * @author Markus Klein
  * @version 1.0.0

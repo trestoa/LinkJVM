@@ -404,8 +404,8 @@ public class LinkJVM {
     return LinkJVMJNI.a_button();
   }
 
-  public static int analog(int p) {
-    return LinkJVMJNI.analog(p);
+  public static short analog(int p) {
+    return (short) LinkJVMJNI.analog(p);
   }
 
   public static int analog10(int p) {
