@@ -42,8 +42,18 @@ public class NavDataParser {
 		
 		buffer.order(ByteOrder.LITTLE_ENDIAN);
 		int magic=buffer.getInt();
-		//System.out.printf("%02x\n", magic);
-		requireEquals("Magic must be correct", 0x55667788, magic);
+		try{
+			requireEquals("Magic must be correct", 0x55667789, magic);
+		}
+		catch(NavDataException e){
+			try{
+				requireEquals("Magic must be correct", 0x55667788, magic);
+			}
+			catch(NavDataException ex){
+				throw ex;
+			}
+		}
+		
 		
 		int state=buffer.getInt();
 		long sequence=buffer.getInt() & 0xFFFFFFFFL;
