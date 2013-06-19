@@ -21,6 +21,7 @@
 package libkovan;
 
 import libkovan.jni.LinkJVM;
+import libkovan.jni.Resolution;
 
 /**
  * This class is used to control the camera.
@@ -41,7 +42,20 @@ public class Camera {
 	 * @param res
 	 */
 	public Camera(int res){
-		LinkJVM.camera_open(res);
+		Resolution cameraRes;
+		if(res == LOW_RES){
+			cameraRes = Resolution.LOW_RES;
+		}
+		else if(res == MED_RES){
+			cameraRes = Resolution.MED_RES;
+		}
+		else if(res == HIGH_RES){
+			cameraRes = Resolution.HIGH_RES;
+		}
+		else{
+			cameraRes = null;
+		}
+		LinkJVM.camera_open(cameraRes);
 	}
 	
 	/**
@@ -84,7 +98,7 @@ public class Camera {
 	}
 	
 	/**
-	 * Returns the object«s bounding box area.
+	 * Returns the objectï¿½s bounding box area.
 	 * 
 	 * @param channel channel
 	 * @param obj object

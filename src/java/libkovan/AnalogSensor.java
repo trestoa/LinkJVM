@@ -58,12 +58,12 @@ public class AnalogSensor extends Sensor {
 	 * @return the current sensor value
 	 */
 	public short getValue8(){
-		return LinkJVM.analog(sensorPort);
+		return (short) LinkJVM.analog(sensorPort);
 	}
 	
 	/**
 	 * The analog sensor ports on the KIPR Link provides a pullup sensor 
-	 * for sensor that don«t have an integrated pullup resistor.
+	 * for sensor that donï¿½t have an integrated pullup resistor.
 	 * For example, {@code sensorInstance.setPullup(1)} enables the pullup and 
 	 * {@code sensorInstance.setPullup(0)} diables the pullup.
 	 * 
