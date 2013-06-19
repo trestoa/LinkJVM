@@ -3,7 +3,9 @@
  * Very simple line following program.
  */
 
-import libkovan.*;
+import linkjvm.libkovan.AnalogSensor;
+import linkjvm.libkovan.Motor;
+import linkjvm.libkovan.Sensor;
 
 public class LineFollow {
 

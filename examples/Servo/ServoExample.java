@@ -1,4 +1,6 @@
-import libkovan.*;
+import linkjvm.libkovan.AnalogSensor;
+import linkjvm.libkovan.Controller;
+import linkjvm.libkovan.Servo;
 
 /*
  * Example for servos.
