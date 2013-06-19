@@ -1,10 +1,64 @@
+/*
+* This file is part of LinkJVM.
+*
+* Java Framework for the KIPR Link
+* Copyright (C) 2013 Markus Klein <m@mklein.co.at>
+*
+* This program is free software: you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation, either version 3 of the License, or
+* any later version.
+*
+* This program is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+* GNU General Public License for more details.
+*
+* You should have received a copy of the GNU General Public License
+* along with this program. If not, see <http://www.gnu.org/licenses/>.
+*/
+
 %module LinkJVM
 %{
 #include "include/kovan/kovan.h"
 %}
-void wait_for_light(int light_port_);
-void shut_down_in(double delay);
+/* ardrone.h */
+int drone_connect(void);
+void drone_disconnect(void);
+void drone_calibrate(void);
+int get_drone_version(void);
+void drone_takeoff(void);
+void drone_land(void);
+int get_drone_battery(void);
+void drone_clear_position();
+float get_drone_x(void);
+float get_drone_y(void);
+float get_drone_z(void);
+float get_drone_x_velocity(void);
+float get_drone_y_velocity(void);
+float get_drone_z_velocity(void);
+float get_drone_pitch(void);
+float get_drone_roll(void);
+float get_drone_altitude(void);
+float get_drone_yaw(void);
+enum drone_camera
+{
+FRONT_CAMERA,
+BOTTOM_CAMERA
+};
+int drone_camera_open(enum drone_camera camera);
+int set_drone_mac_address(const char *const address);
+int drone_pair(void);
+int set_drone_ssid(const char *const ssid);
+void drone_move(float x_tilt, float y_tilt, float z_vel, float yaw_vel);
+void drone_hover(void);
+void set_drone_emergency_stop_enabled(int enabled);
+int get_drone_emergency_stop_enabled(void);
+
+/* audio.h */
 void beep(void);
+
+/* motors.h */
 int get_motor_position_counter(int motor);
 void clear_motor_position_counter(int motor);
 int move_at_velocity(int motor, int velocity);
@@ -27,6 +81,144 @@ void motor(int motor, int percent);
 void off(int motor);
 void alloff();
 void ao();
+
+/* servo.h */
+void enable_servo(int port);
+void disable_servo(int port);
+void enable_servos();
+void disable_servos();
+void set_servo_enabled(int port, int enabled);
+int get_servo_enabled(int port);
+int get_servo_position(int servo);
+void set_servo_position(int servo, int position);
+
+/* button.h */
+void set_a_button_text(const char *text);
+void set_b_button_text(const char *text);
+void set_c_button_text(const char *text);
+void set_x_button_text(const char *text);
+void set_y_button_text(const char *text);
+void set_z_button_text(const char *text);
+int a_button();
+int b_button();
+int c_button();
+int x_button();
+int y_button();
+int z_button();
+int side_button();
+int black_button();
+int a_button_clicked();
+int b_button_clicked();
+int c_button_clicked();
+int x_button_clicked();
+int y_button_clicked();
+int z_button_clicked();
+int side_button_clicked();
+int any_button();
+void extra_buttons_show();
+void extra_buttons_hide();
+int get_extra_buttons_visible();
+void set_extra_buttons_visible(int visible);
+
+/* digital.h */
+int digital(int port);
+void set_digital_value(int port, int value);
+int get_digital_value(int port);
+void set_digital_output(int port, int out);
+int get_digital_output(int port);
+int get_digital_pullup(int port);
+void set_digital_pullup(int port, int pullup);
+
+/* camera.h */
+typedef struct pixel
+{
+int r;
+int g;
+int b;
+} pixel;
+enum Resolution
+{
+LOW_RES,
+MED_RES,
+HIGH_RES
+};
+int camera_open(enum Resolution res);
+int camera_open_device(int number, enum Resolution res);
+int camera_load_config(const char *name);
+void set_camera_width(int width);
+void set_camera_height(int height);
+int get_camera_width(void);
+int get_camera_height(void);
+int camera_update(void);
+pixel get_camera_pixel(point2 p);
+int get_channel_count(void);
+int get_object_count(int channel);
+const char *get_object_data(int channel, int object);
+int get_code_num(int channel, int object);
+int get_object_data_length(int channel, int object);
+double get_object_confidence(int channel, int object);
+int get_object_area(int channel, int object);
+rectangle get_object_bbox(int channel, int object);
+point2 get_object_centroid(int channel, int object);
+point2 get_object_center(int channel, int object);
+void camera_close();
+
+/* geom.h */
+typedef struct point2
+{
+int x;
+int y;
+} point2;
+typedef struct rectangle
+{
+int ulx;
+int uly;
+int width;
+int height;
+} rectangle;
+point2 create_point2(int x, int y);
+rectangle create_rectangle(int ulx, int uly, int width, int height);
+
+/* accel.h */
+short accel_x();
+short accel_y();
+short accel_z();
+int accel_calibrate();
+
+/* analog.h */
+int analog10(int port);
+int analog(int port);
+void set_analog_pullup(int port, int pullup);
+int get_analog_pullup(int port);
+
+/* battery.h */
+int battery_charging();
+float power_level();
+
+/* botball.h */
+void shut_down_in(double s);
+void wait_for_light(int light_port_);
+
+/* color.h */
+struct Rgb
+{
+unsigned char r;
+unsigned char g;
+unsigned char b;
+};
+
+struct Hsv
+{
+unsigned char h;
+unsigned char s;
+unsigned char v;
+};
+
+
+/* console.h */
+void console_clear();
+
+/* create.h */
 int create_connect();
 void create_disconnect();
 void create_start();
@@ -90,37 +282,43 @@ void create_play_led(int on);
 void create_power_led(int color, int brightness);
 void create_load_song(int num);
 void create_play_song(int num);
-void set_digital_output(int port, int inout);
-void set_digital_value(int port, int value);
-void beep();
+
+/* datalog.h */
+void datalog_remove_category(const char *name);
+void datalog_append_string(const char *text, const char *category);
+void datalog_append_number(double number, const char *category);
+void datalog_remove(int index, const char *category);
+int datalog_write_plain(const char *path);
+int datalog_write_csv(const char *path);
+void datalog_clear();
+
+/* debug.h */
+void debug_print_registers();
+unsigned short register_value(unsigned short addy);
+int debug_dump_data(const unsigned char *const data, const size_t size, const char *const where);
+
+/* display.h */
 void display_clear();
-int a_button();
-int analog(int p);
-int analog10(int p);
-int b_button();
-int side_button();
-int digital(int p);
-double power_level();
-void set_each_analog_state(int a0, int a1, int a2, int a3, int a4, int a5, int a6, int a7);
-void set_analog_pullup(int port, int pullupTF);
-void disable_servos();
-void enable_servos();
-int get_servo_position(int srv);
-void set_servo_position(int srv, int pos);
-void disable_servo(int port);
-void enable_servo(int port);
-int get_servo_enabled(int port);
-void set_servo_enabled(int port, int enabled);
-void msleep(int msec);
+void display_printf(int col, int row, const char *t, ...);
+
+/* draw.h */
+int draw_open();
+void draw_point(int x, int y);
+void draw_line(int sx, int sy, int ex, int ey);
+void draw_clear();
+void draw_close();
+
+/* general.h */
+void set_auto_publish(int on);
+void publish();
+void halt();
+void freeze_halt();
+
+/* ir.h */
+void ir_read();
+void ir_write();
+
+/* util.h */
+void msleep(long msecs);
+unsigned long systime();
 double seconds();
-void camera_close();
-int camera_load_config(char name[]);
-int camera_open(int res_numb);
-int camera_update();
-int get_channel_count();
-int get_code_num(int channel, int object);
-int get_object_area(int channel, int object);
-double get_object_confidence(int channel, int object);
-int get_object_count(int channel);
-char *get_object_data(int channel, int object);
-int get_object_data_length(int channel, int object);

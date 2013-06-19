@@ -19,21 +19,13 @@
 */
 
 /*
- * IMPORTANT!!!
- * Do not make changes to this file unless you know what you are doing--modify
- * the SWIG interface file instead.
- */
+* IMPORTANT!!!
+* Do not make changes to this file unless you know what you are doing--modify
+* the SWIG interface file instead.
+*/
+
 
 package libkovan.jni;
-
-/**
- * Provides a type definition of type short.
- * Should not be used.
- * 
- * @author Markus Klein
- * @version 1.0.0
- *
- */
 
 public class SWIGTYPE_p_short {
   private long swigCPtr;
