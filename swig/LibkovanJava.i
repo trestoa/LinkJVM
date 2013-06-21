@@ -23,12 +23,12 @@
 #include "include/kovan/kovan.h"
 %}
 /* ardrone.h */
-int drone_connect(void);
-void drone_disconnect(void);
-void drone_calibrate(void);
-int get_drone_version(void);
-void drone_takeoff(void);
-void drone_land(void);
+int drone_connect();
+void drone_disconnect();
+void drone_calibrate();
+int get_drone_version();
+void drone_takeoff();
+void drone_land();
 int get_drone_battery(void);
 void drone_clear_position();
 float get_drone_x(void);
@@ -198,22 +198,6 @@ float power_level();
 /* botball.h */
 void shut_down_in(double s);
 void wait_for_light(int light_port_);
-
-/* color.h */
-struct Rgb
-{
-unsigned char r;
-unsigned char g;
-unsigned char b;
-};
-
-struct Hsv
-{
-unsigned char h;
-unsigned char s;
-unsigned char v;
-};
-
 
 /* console.h */
 void console_clear();

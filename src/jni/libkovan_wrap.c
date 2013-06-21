@@ -194,7 +194,7 @@ static void SWIGUNUSED SWIG_JavaThrowException(JNIEnv *jenv, SWIG_JavaExceptionC
 extern "C" {
 #endif
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_drone_1connect(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_drone_1connect(JNIEnv *jenv, jclass jcls) {
   jint jresult = 0 ;
   int result;
   
@@ -206,21 +206,21 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_drone_1connect(JNIEnv *jenv
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_drone_1disconnect(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_drone_1disconnect(JNIEnv *jenv, jclass jcls) {
   (void)jenv;
   (void)jcls;
   drone_disconnect();
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_drone_1calibrate(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_drone_1calibrate(JNIEnv *jenv, jclass jcls) {
   (void)jenv;
   (void)jcls;
   drone_calibrate();
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1drone_1version(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_get_1drone_1version(JNIEnv *jenv, jclass jcls) {
   jint jresult = 0 ;
   int result;
   
@@ -232,21 +232,21 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1drone_1version(JNIEnv 
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_drone_1takeoff(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_drone_1takeoff(JNIEnv *jenv, jclass jcls) {
   (void)jenv;
   (void)jcls;
   drone_takeoff();
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_drone_1land(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_drone_1land(JNIEnv *jenv, jclass jcls) {
   (void)jenv;
   (void)jcls;
   drone_land();
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1drone_1battery(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_get_1drone_1battery(JNIEnv *jenv, jclass jcls) {
   jint jresult = 0 ;
   int result;
   
@@ -258,14 +258,14 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1drone_1battery(JNIEnv 
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_drone_1clear_1position(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_drone_1clear_1position(JNIEnv *jenv, jclass jcls) {
   (void)jenv;
   (void)jcls;
   drone_clear_position();
 }
 
 
-SWIGEXPORT jfloat JNICALL Java_libkovan_jni_LinkJVMJNI_get_1drone_1x(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jfloat JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_get_1drone_1x(JNIEnv *jenv, jclass jcls) {
   jfloat jresult = 0 ;
   float result;
   
@@ -277,7 +277,7 @@ SWIGEXPORT jfloat JNICALL Java_libkovan_jni_LinkJVMJNI_get_1drone_1x(JNIEnv *jen
 }
 
 
-SWIGEXPORT jfloat JNICALL Java_libkovan_jni_LinkJVMJNI_get_1drone_1y(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jfloat JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_get_1drone_1y(JNIEnv *jenv, jclass jcls) {
   jfloat jresult = 0 ;
   float result;
   
@@ -289,7 +289,7 @@ SWIGEXPORT jfloat JNICALL Java_libkovan_jni_LinkJVMJNI_get_1drone_1y(JNIEnv *jen
 }
 
 
-SWIGEXPORT jfloat JNICALL Java_libkovan_jni_LinkJVMJNI_get_1drone_1z(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jfloat JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_get_1drone_1z(JNIEnv *jenv, jclass jcls) {
   jfloat jresult = 0 ;
   float result;
   
@@ -301,7 +301,7 @@ SWIGEXPORT jfloat JNICALL Java_libkovan_jni_LinkJVMJNI_get_1drone_1z(JNIEnv *jen
 }
 
 
-SWIGEXPORT jfloat JNICALL Java_libkovan_jni_LinkJVMJNI_get_1drone_1x_1velocity(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jfloat JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_get_1drone_1x_1velocity(JNIEnv *jenv, jclass jcls) {
   jfloat jresult = 0 ;
   float result;
   
@@ -313,7 +313,7 @@ SWIGEXPORT jfloat JNICALL Java_libkovan_jni_LinkJVMJNI_get_1drone_1x_1velocity(J
 }
 
 
-SWIGEXPORT jfloat JNICALL Java_libkovan_jni_LinkJVMJNI_get_1drone_1y_1velocity(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jfloat JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_get_1drone_1y_1velocity(JNIEnv *jenv, jclass jcls) {
   jfloat jresult = 0 ;
   float result;
   
@@ -325,7 +325,7 @@ SWIGEXPORT jfloat JNICALL Java_libkovan_jni_LinkJVMJNI_get_1drone_1y_1velocity(J
 }
 
 
-SWIGEXPORT jfloat JNICALL Java_libkovan_jni_LinkJVMJNI_get_1drone_1z_1velocity(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jfloat JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_get_1drone_1z_1velocity(JNIEnv *jenv, jclass jcls) {
   jfloat jresult = 0 ;
   float result;
   
@@ -337,7 +337,7 @@ SWIGEXPORT jfloat JNICALL Java_libkovan_jni_LinkJVMJNI_get_1drone_1z_1velocity(J
 }
 
 
-SWIGEXPORT jfloat JNICALL Java_libkovan_jni_LinkJVMJNI_get_1drone_1pitch(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jfloat JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_get_1drone_1pitch(JNIEnv *jenv, jclass jcls) {
   jfloat jresult = 0 ;
   float result;
   
@@ -349,7 +349,7 @@ SWIGEXPORT jfloat JNICALL Java_libkovan_jni_LinkJVMJNI_get_1drone_1pitch(JNIEnv 
 }
 
 
-SWIGEXPORT jfloat JNICALL Java_libkovan_jni_LinkJVMJNI_get_1drone_1roll(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jfloat JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_get_1drone_1roll(JNIEnv *jenv, jclass jcls) {
   jfloat jresult = 0 ;
   float result;
   
@@ -361,7 +361,7 @@ SWIGEXPORT jfloat JNICALL Java_libkovan_jni_LinkJVMJNI_get_1drone_1roll(JNIEnv *
 }
 
 
-SWIGEXPORT jfloat JNICALL Java_libkovan_jni_LinkJVMJNI_get_1drone_1altitude(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jfloat JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_get_1drone_1altitude(JNIEnv *jenv, jclass jcls) {
   jfloat jresult = 0 ;
   float result;
   
@@ -373,7 +373,7 @@ SWIGEXPORT jfloat JNICALL Java_libkovan_jni_LinkJVMJNI_get_1drone_1altitude(JNIE
 }
 
 
-SWIGEXPORT jfloat JNICALL Java_libkovan_jni_LinkJVMJNI_get_1drone_1yaw(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jfloat JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_get_1drone_1yaw(JNIEnv *jenv, jclass jcls) {
   jfloat jresult = 0 ;
   float result;
   
@@ -385,7 +385,7 @@ SWIGEXPORT jfloat JNICALL Java_libkovan_jni_LinkJVMJNI_get_1drone_1yaw(JNIEnv *j
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_drone_1camera_1open(JNIEnv *jenv, jclass jcls, jint jarg1) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_drone_1camera_1open(JNIEnv *jenv, jclass jcls, jint jarg1) {
   jint jresult = 0 ;
   enum drone_camera arg1 ;
   int result;
@@ -399,7 +399,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_drone_1camera_1open(JNIEnv 
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_set_1drone_1mac_1address(JNIEnv *jenv, jclass jcls, jstring jarg1) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_set_1drone_1mac_1address(JNIEnv *jenv, jclass jcls, jstring jarg1) {
   jint jresult = 0 ;
   char *arg1 = (char *) (char *)0 ;
   int result;
@@ -418,7 +418,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_set_1drone_1mac_1address(JN
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_drone_1pair(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_drone_1pair(JNIEnv *jenv, jclass jcls) {
   jint jresult = 0 ;
   int result;
   
@@ -430,7 +430,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_drone_1pair(JNIEnv *jenv, j
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_set_1drone_1ssid(JNIEnv *jenv, jclass jcls, jstring jarg1) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_set_1drone_1ssid(JNIEnv *jenv, jclass jcls, jstring jarg1) {
   jint jresult = 0 ;
   char *arg1 = (char *) (char *)0 ;
   int result;
@@ -449,7 +449,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_set_1drone_1ssid(JNIEnv *je
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_drone_1move(JNIEnv *jenv, jclass jcls, jfloat jarg1, jfloat jarg2, jfloat jarg3, jfloat jarg4) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_drone_1move(JNIEnv *jenv, jclass jcls, jfloat jarg1, jfloat jarg2, jfloat jarg3, jfloat jarg4) {
   float arg1 ;
   float arg2 ;
   float arg3 ;
@@ -465,14 +465,14 @@ SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_drone_1move(JNIEnv *jenv, j
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_drone_1hover(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_drone_1hover(JNIEnv *jenv, jclass jcls) {
   (void)jenv;
   (void)jcls;
   drone_hover();
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_set_1drone_1emergency_1stop_1enabled(JNIEnv *jenv, jclass jcls, jint jarg1) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_set_1drone_1emergency_1stop_1enabled(JNIEnv *jenv, jclass jcls, jint jarg1) {
   int arg1 ;
   
   (void)jenv;
@@ -482,7 +482,7 @@ SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_set_1drone_1emergency_1stop
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1drone_1emergency_1stop_1enabled(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_get_1drone_1emergency_1stop_1enabled(JNIEnv *jenv, jclass jcls) {
   jint jresult = 0 ;
   int result;
   
@@ -494,14 +494,14 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1drone_1emergency_1stop
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_beep(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_beep(JNIEnv *jenv, jclass jcls) {
   (void)jenv;
   (void)jcls;
   beep();
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1motor_1position_1counter(JNIEnv *jenv, jclass jcls, jint jarg1) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_get_1motor_1position_1counter(JNIEnv *jenv, jclass jcls, jint jarg1) {
   jint jresult = 0 ;
   int arg1 ;
   int result;
@@ -515,7 +515,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1motor_1position_1count
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_clear_1motor_1position_1counter(JNIEnv *jenv, jclass jcls, jint jarg1) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_clear_1motor_1position_1counter(JNIEnv *jenv, jclass jcls, jint jarg1) {
   int arg1 ;
   
   (void)jenv;
@@ -525,7 +525,7 @@ SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_clear_1motor_1position_1cou
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_move_1at_1velocity(JNIEnv *jenv, jclass jcls, jint jarg1, jint jarg2) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_move_1at_1velocity(JNIEnv *jenv, jclass jcls, jint jarg1, jint jarg2) {
   jint jresult = 0 ;
   int arg1 ;
   int arg2 ;
@@ -541,7 +541,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_move_1at_1velocity(JNIEnv *
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_mav(JNIEnv *jenv, jclass jcls, jint jarg1, jint jarg2) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_mav(JNIEnv *jenv, jclass jcls, jint jarg1, jint jarg2) {
   jint jresult = 0 ;
   int arg1 ;
   int arg2 ;
@@ -557,7 +557,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_mav(JNIEnv *jenv, jclass jc
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_move_1to_1position(JNIEnv *jenv, jclass jcls, jint jarg1, jint jarg2, jint jarg3) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_move_1to_1position(JNIEnv *jenv, jclass jcls, jint jarg1, jint jarg2, jint jarg3) {
   jint jresult = 0 ;
   int arg1 ;
   int arg2 ;
@@ -575,7 +575,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_move_1to_1position(JNIEnv *
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_mtp(JNIEnv *jenv, jclass jcls, jint jarg1, jint jarg2, jint jarg3) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_mtp(JNIEnv *jenv, jclass jcls, jint jarg1, jint jarg2, jint jarg3) {
   jint jresult = 0 ;
   int arg1 ;
   int arg2 ;
@@ -593,7 +593,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_mtp(JNIEnv *jenv, jclass jc
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_move_1relative_1position(JNIEnv *jenv, jclass jcls, jint jarg1, jint jarg2, jint jarg3) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_move_1relative_1position(JNIEnv *jenv, jclass jcls, jint jarg1, jint jarg2, jint jarg3) {
   jint jresult = 0 ;
   int arg1 ;
   int arg2 ;
@@ -611,7 +611,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_move_1relative_1position(JN
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_mrp(JNIEnv *jenv, jclass jcls, jint jarg1, jint jarg2, jint jarg3) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_mrp(JNIEnv *jenv, jclass jcls, jint jarg1, jint jarg2, jint jarg3) {
   jint jresult = 0 ;
   int arg1 ;
   int arg2 ;
@@ -629,7 +629,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_mrp(JNIEnv *jenv, jclass jc
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_set_1pid_1gains(JNIEnv *jenv, jclass jcls, jint jarg1, jshort jarg2, jshort jarg3, jshort jarg4, jshort jarg5, jshort jarg6, jshort jarg7) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_set_1pid_1gains(JNIEnv *jenv, jclass jcls, jint jarg1, jshort jarg2, jshort jarg3, jshort jarg4, jshort jarg5, jshort jarg6, jshort jarg7) {
   int arg1 ;
   short arg2 ;
   short arg3 ;
@@ -651,7 +651,7 @@ SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_set_1pid_1gains(JNIEnv *jen
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_get_1pid_1gains(JNIEnv *jenv, jclass jcls, jint jarg1, jlong jarg2, jlong jarg3, jlong jarg4, jlong jarg5, jlong jarg6, jlong jarg7) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_get_1pid_1gains(JNIEnv *jenv, jclass jcls, jint jarg1, jlong jarg2, jlong jarg3, jlong jarg4, jlong jarg5, jlong jarg6, jlong jarg7) {
   int arg1 ;
   short *arg2 = (short *) 0 ;
   short *arg3 = (short *) 0 ;
@@ -673,7 +673,7 @@ SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_get_1pid_1gains(JNIEnv *jen
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_freeze(JNIEnv *jenv, jclass jcls, jint jarg1) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_freeze(JNIEnv *jenv, jclass jcls, jint jarg1) {
   jint jresult = 0 ;
   int arg1 ;
   int result;
@@ -687,7 +687,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_freeze(JNIEnv *jenv, jclass
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1motor_1done(JNIEnv *jenv, jclass jcls, jint jarg1) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_get_1motor_1done(JNIEnv *jenv, jclass jcls, jint jarg1) {
   jint jresult = 0 ;
   int arg1 ;
   int result;
@@ -701,7 +701,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1motor_1done(JNIEnv *je
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_block_1motor_1done(JNIEnv *jenv, jclass jcls, jint jarg1) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_block_1motor_1done(JNIEnv *jenv, jclass jcls, jint jarg1) {
   int arg1 ;
   
   (void)jenv;
@@ -711,7 +711,7 @@ SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_block_1motor_1done(JNIEnv *
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_bmd(JNIEnv *jenv, jclass jcls, jint jarg1) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_bmd(JNIEnv *jenv, jclass jcls, jint jarg1) {
   int arg1 ;
   
   (void)jenv;
@@ -721,7 +721,7 @@ SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_bmd(JNIEnv *jenv, jclass jc
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_setpwm(JNIEnv *jenv, jclass jcls, jint jarg1, jint jarg2) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_setpwm(JNIEnv *jenv, jclass jcls, jint jarg1, jint jarg2) {
   jint jresult = 0 ;
   int arg1 ;
   int arg2 ;
@@ -737,7 +737,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_setpwm(JNIEnv *jenv, jclass
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_getpwm(JNIEnv *jenv, jclass jcls, jint jarg1) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_getpwm(JNIEnv *jenv, jclass jcls, jint jarg1) {
   jint jresult = 0 ;
   int arg1 ;
   int result;
@@ -751,7 +751,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_getpwm(JNIEnv *jenv, jclass
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_fd(JNIEnv *jenv, jclass jcls, jint jarg1) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_fd(JNIEnv *jenv, jclass jcls, jint jarg1) {
   int arg1 ;
   
   (void)jenv;
@@ -761,7 +761,7 @@ SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_fd(JNIEnv *jenv, jclass jcl
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_bk(JNIEnv *jenv, jclass jcls, jint jarg1) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_bk(JNIEnv *jenv, jclass jcls, jint jarg1) {
   int arg1 ;
   
   (void)jenv;
@@ -771,7 +771,7 @@ SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_bk(JNIEnv *jenv, jclass jcl
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_motor(JNIEnv *jenv, jclass jcls, jint jarg1, jint jarg2) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_motor(JNIEnv *jenv, jclass jcls, jint jarg1, jint jarg2) {
   int arg1 ;
   int arg2 ;
   
@@ -783,7 +783,7 @@ SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_motor(JNIEnv *jenv, jclass 
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_off(JNIEnv *jenv, jclass jcls, jint jarg1) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_off(JNIEnv *jenv, jclass jcls, jint jarg1) {
   int arg1 ;
   
   (void)jenv;
@@ -793,21 +793,21 @@ SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_off(JNIEnv *jenv, jclass jc
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_alloff(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_alloff(JNIEnv *jenv, jclass jcls) {
   (void)jenv;
   (void)jcls;
   alloff();
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_ao(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_ao(JNIEnv *jenv, jclass jcls) {
   (void)jenv;
   (void)jcls;
   ao();
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_enable_1servo(JNIEnv *jenv, jclass jcls, jint jarg1) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_enable_1servo(JNIEnv *jenv, jclass jcls, jint jarg1) {
   int arg1 ;
   
   (void)jenv;
@@ -817,7 +817,7 @@ SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_enable_1servo(JNIEnv *jenv,
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_disable_1servo(JNIEnv *jenv, jclass jcls, jint jarg1) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_disable_1servo(JNIEnv *jenv, jclass jcls, jint jarg1) {
   int arg1 ;
   
   (void)jenv;
@@ -827,21 +827,21 @@ SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_disable_1servo(JNIEnv *jenv
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_enable_1servos(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_enable_1servos(JNIEnv *jenv, jclass jcls) {
   (void)jenv;
   (void)jcls;
   enable_servos();
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_disable_1servos(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_disable_1servos(JNIEnv *jenv, jclass jcls) {
   (void)jenv;
   (void)jcls;
   disable_servos();
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_set_1servo_1enabled(JNIEnv *jenv, jclass jcls, jint jarg1, jint jarg2) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_set_1servo_1enabled(JNIEnv *jenv, jclass jcls, jint jarg1, jint jarg2) {
   int arg1 ;
   int arg2 ;
   
@@ -853,7 +853,7 @@ SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_set_1servo_1enabled(JNIEnv 
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1servo_1enabled(JNIEnv *jenv, jclass jcls, jint jarg1) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_get_1servo_1enabled(JNIEnv *jenv, jclass jcls, jint jarg1) {
   jint jresult = 0 ;
   int arg1 ;
   int result;
@@ -867,7 +867,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1servo_1enabled(JNIEnv 
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1servo_1position(JNIEnv *jenv, jclass jcls, jint jarg1) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_get_1servo_1position(JNIEnv *jenv, jclass jcls, jint jarg1) {
   jint jresult = 0 ;
   int arg1 ;
   int result;
@@ -881,7 +881,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1servo_1position(JNIEnv
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_set_1servo_1position(JNIEnv *jenv, jclass jcls, jint jarg1, jint jarg2) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_set_1servo_1position(JNIEnv *jenv, jclass jcls, jint jarg1, jint jarg2) {
   int arg1 ;
   int arg2 ;
   
@@ -893,7 +893,7 @@ SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_set_1servo_1position(JNIEnv
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_set_1a_1button_1text(JNIEnv *jenv, jclass jcls, jstring jarg1) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_set_1a_1button_1text(JNIEnv *jenv, jclass jcls, jstring jarg1) {
   char *arg1 = (char *) 0 ;
   
   (void)jenv;
@@ -908,7 +908,7 @@ SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_set_1a_1button_1text(JNIEnv
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_set_1b_1button_1text(JNIEnv *jenv, jclass jcls, jstring jarg1) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_set_1b_1button_1text(JNIEnv *jenv, jclass jcls, jstring jarg1) {
   char *arg1 = (char *) 0 ;
   
   (void)jenv;
@@ -923,7 +923,7 @@ SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_set_1b_1button_1text(JNIEnv
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_set_1c_1button_1text(JNIEnv *jenv, jclass jcls, jstring jarg1) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_set_1c_1button_1text(JNIEnv *jenv, jclass jcls, jstring jarg1) {
   char *arg1 = (char *) 0 ;
   
   (void)jenv;
@@ -938,7 +938,7 @@ SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_set_1c_1button_1text(JNIEnv
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_set_1x_1button_1text(JNIEnv *jenv, jclass jcls, jstring jarg1) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_set_1x_1button_1text(JNIEnv *jenv, jclass jcls, jstring jarg1) {
   char *arg1 = (char *) 0 ;
   
   (void)jenv;
@@ -953,7 +953,7 @@ SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_set_1x_1button_1text(JNIEnv
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_set_1y_1button_1text(JNIEnv *jenv, jclass jcls, jstring jarg1) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_set_1y_1button_1text(JNIEnv *jenv, jclass jcls, jstring jarg1) {
   char *arg1 = (char *) 0 ;
   
   (void)jenv;
@@ -968,7 +968,7 @@ SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_set_1y_1button_1text(JNIEnv
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_set_1z_1button_1text(JNIEnv *jenv, jclass jcls, jstring jarg1) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_set_1z_1button_1text(JNIEnv *jenv, jclass jcls, jstring jarg1) {
   char *arg1 = (char *) 0 ;
   
   (void)jenv;
@@ -983,7 +983,7 @@ SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_set_1z_1button_1text(JNIEnv
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_a_1button(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_a_1button(JNIEnv *jenv, jclass jcls) {
   jint jresult = 0 ;
   int result;
   
@@ -995,7 +995,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_a_1button(JNIEnv *jenv, jcl
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_b_1button(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_b_1button(JNIEnv *jenv, jclass jcls) {
   jint jresult = 0 ;
   int result;
   
@@ -1007,7 +1007,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_b_1button(JNIEnv *jenv, jcl
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_c_1button(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_c_1button(JNIEnv *jenv, jclass jcls) {
   jint jresult = 0 ;
   int result;
   
@@ -1019,7 +1019,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_c_1button(JNIEnv *jenv, jcl
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_x_1button(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_x_1button(JNIEnv *jenv, jclass jcls) {
   jint jresult = 0 ;
   int result;
   
@@ -1031,7 +1031,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_x_1button(JNIEnv *jenv, jcl
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_y_1button(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_y_1button(JNIEnv *jenv, jclass jcls) {
   jint jresult = 0 ;
   int result;
   
@@ -1043,7 +1043,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_y_1button(JNIEnv *jenv, jcl
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_z_1button(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_z_1button(JNIEnv *jenv, jclass jcls) {
   jint jresult = 0 ;
   int result;
   
@@ -1055,7 +1055,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_z_1button(JNIEnv *jenv, jcl
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_side_1button(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_side_1button(JNIEnv *jenv, jclass jcls) {
   jint jresult = 0 ;
   int result;
   
@@ -1067,7 +1067,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_side_1button(JNIEnv *jenv, 
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_black_1button(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_black_1button(JNIEnv *jenv, jclass jcls) {
   jint jresult = 0 ;
   int result;
   
@@ -1079,7 +1079,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_black_1button(JNIEnv *jenv,
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_a_1button_1clicked(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_a_1button_1clicked(JNIEnv *jenv, jclass jcls) {
   jint jresult = 0 ;
   int result;
   
@@ -1091,7 +1091,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_a_1button_1clicked(JNIEnv *
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_b_1button_1clicked(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_b_1button_1clicked(JNIEnv *jenv, jclass jcls) {
   jint jresult = 0 ;
   int result;
   
@@ -1103,7 +1103,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_b_1button_1clicked(JNIEnv *
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_c_1button_1clicked(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_c_1button_1clicked(JNIEnv *jenv, jclass jcls) {
   jint jresult = 0 ;
   int result;
   
@@ -1115,7 +1115,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_c_1button_1clicked(JNIEnv *
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_x_1button_1clicked(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_x_1button_1clicked(JNIEnv *jenv, jclass jcls) {
   jint jresult = 0 ;
   int result;
   
@@ -1127,7 +1127,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_x_1button_1clicked(JNIEnv *
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_y_1button_1clicked(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_y_1button_1clicked(JNIEnv *jenv, jclass jcls) {
   jint jresult = 0 ;
   int result;
   
@@ -1139,7 +1139,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_y_1button_1clicked(JNIEnv *
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_z_1button_1clicked(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_z_1button_1clicked(JNIEnv *jenv, jclass jcls) {
   jint jresult = 0 ;
   int result;
   
@@ -1151,7 +1151,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_z_1button_1clicked(JNIEnv *
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_side_1button_1clicked(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_side_1button_1clicked(JNIEnv *jenv, jclass jcls) {
   jint jresult = 0 ;
   int result;
   
@@ -1163,7 +1163,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_side_1button_1clicked(JNIEn
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_any_1button(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_any_1button(JNIEnv *jenv, jclass jcls) {
   jint jresult = 0 ;
   int result;
   
@@ -1175,21 +1175,21 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_any_1button(JNIEnv *jenv, j
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_extra_1buttons_1show(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_extra_1buttons_1show(JNIEnv *jenv, jclass jcls) {
   (void)jenv;
   (void)jcls;
   extra_buttons_show();
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_extra_1buttons_1hide(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_extra_1buttons_1hide(JNIEnv *jenv, jclass jcls) {
   (void)jenv;
   (void)jcls;
   extra_buttons_hide();
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1extra_1buttons_1visible(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_get_1extra_1buttons_1visible(JNIEnv *jenv, jclass jcls) {
   jint jresult = 0 ;
   int result;
   
@@ -1201,7 +1201,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1extra_1buttons_1visibl
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_set_1extra_1buttons_1visible(JNIEnv *jenv, jclass jcls, jint jarg1) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_set_1extra_1buttons_1visible(JNIEnv *jenv, jclass jcls, jint jarg1) {
   int arg1 ;
   
   (void)jenv;
@@ -1211,7 +1211,7 @@ SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_set_1extra_1buttons_1visibl
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_digital(JNIEnv *jenv, jclass jcls, jint jarg1) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_digital(JNIEnv *jenv, jclass jcls, jint jarg1) {
   jint jresult = 0 ;
   int arg1 ;
   int result;
@@ -1225,7 +1225,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_digital(JNIEnv *jenv, jclas
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_set_1digital_1value(JNIEnv *jenv, jclass jcls, jint jarg1, jint jarg2) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_set_1digital_1value(JNIEnv *jenv, jclass jcls, jint jarg1, jint jarg2) {
   int arg1 ;
   int arg2 ;
   
@@ -1237,7 +1237,7 @@ SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_set_1digital_1value(JNIEnv 
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1digital_1value(JNIEnv *jenv, jclass jcls, jint jarg1) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_get_1digital_1value(JNIEnv *jenv, jclass jcls, jint jarg1) {
   jint jresult = 0 ;
   int arg1 ;
   int result;
@@ -1251,7 +1251,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1digital_1value(JNIEnv 
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_set_1digital_1output(JNIEnv *jenv, jclass jcls, jint jarg1, jint jarg2) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_set_1digital_1output(JNIEnv *jenv, jclass jcls, jint jarg1, jint jarg2) {
   int arg1 ;
   int arg2 ;
   
@@ -1263,7 +1263,7 @@ SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_set_1digital_1output(JNIEnv
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1digital_1output(JNIEnv *jenv, jclass jcls, jint jarg1) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_get_1digital_1output(JNIEnv *jenv, jclass jcls, jint jarg1) {
   jint jresult = 0 ;
   int arg1 ;
   int result;
@@ -1277,7 +1277,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1digital_1output(JNIEnv
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1digital_1pullup(JNIEnv *jenv, jclass jcls, jint jarg1) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_get_1digital_1pullup(JNIEnv *jenv, jclass jcls, jint jarg1) {
   jint jresult = 0 ;
   int arg1 ;
   int result;
@@ -1291,7 +1291,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1digital_1pullup(JNIEnv
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_set_1digital_1pullup(JNIEnv *jenv, jclass jcls, jint jarg1, jint jarg2) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_set_1digital_1pullup(JNIEnv *jenv, jclass jcls, jint jarg1, jint jarg2) {
   int arg1 ;
   int arg2 ;
   
@@ -1303,7 +1303,7 @@ SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_set_1digital_1pullup(JNIEnv
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_pixel_1r_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jint jarg2) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_pixel_1r_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jint jarg2) {
   struct pixel *arg1 = (struct pixel *) 0 ;
   int arg2 ;
   
@@ -1316,7 +1316,7 @@ SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_pixel_1r_1set(JNIEnv *jenv,
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_pixel_1r_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_pixel_1r_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jint jresult = 0 ;
   struct pixel *arg1 = (struct pixel *) 0 ;
   int result;
@@ -1331,7 +1331,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_pixel_1r_1get(JNIEnv *jenv,
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_pixel_1g_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jint jarg2) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_pixel_1g_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jint jarg2) {
   struct pixel *arg1 = (struct pixel *) 0 ;
   int arg2 ;
   
@@ -1344,7 +1344,7 @@ SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_pixel_1g_1set(JNIEnv *jenv,
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_pixel_1g_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_pixel_1g_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jint jresult = 0 ;
   struct pixel *arg1 = (struct pixel *) 0 ;
   int result;
@@ -1359,7 +1359,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_pixel_1g_1get(JNIEnv *jenv,
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_pixel_1b_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jint jarg2) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_pixel_1b_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jint jarg2) {
   struct pixel *arg1 = (struct pixel *) 0 ;
   int arg2 ;
   
@@ -1372,7 +1372,7 @@ SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_pixel_1b_1set(JNIEnv *jenv,
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_pixel_1b_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_pixel_1b_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jint jresult = 0 ;
   struct pixel *arg1 = (struct pixel *) 0 ;
   int result;
@@ -1387,7 +1387,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_pixel_1b_1get(JNIEnv *jenv,
 }
 
 
-SWIGEXPORT jlong JNICALL Java_libkovan_jni_LinkJVMJNI_new_1pixel(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jlong JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_new_1pixel(JNIEnv *jenv, jclass jcls) {
   jlong jresult = 0 ;
   struct pixel *result = 0 ;
   
@@ -1399,7 +1399,7 @@ SWIGEXPORT jlong JNICALL Java_libkovan_jni_LinkJVMJNI_new_1pixel(JNIEnv *jenv, j
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_delete_1pixel(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_delete_1pixel(JNIEnv *jenv, jclass jcls, jlong jarg1) {
   struct pixel *arg1 = (struct pixel *) 0 ;
   
   (void)jenv;
@@ -1409,7 +1409,7 @@ SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_delete_1pixel(JNIEnv *jenv,
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_camera_1open(JNIEnv *jenv, jclass jcls, jint jarg1) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_camera_1open(JNIEnv *jenv, jclass jcls, jint jarg1) {
   jint jresult = 0 ;
   enum Resolution arg1 ;
   int result;
@@ -1423,7 +1423,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_camera_1open(JNIEnv *jenv, 
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_camera_1open_1device(JNIEnv *jenv, jclass jcls, jint jarg1, jint jarg2) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_camera_1open_1device(JNIEnv *jenv, jclass jcls, jint jarg1, jint jarg2) {
   jint jresult = 0 ;
   int arg1 ;
   enum Resolution arg2 ;
@@ -1439,7 +1439,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_camera_1open_1device(JNIEnv
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_camera_1load_1config(JNIEnv *jenv, jclass jcls, jstring jarg1) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_camera_1load_1config(JNIEnv *jenv, jclass jcls, jstring jarg1) {
   jint jresult = 0 ;
   char *arg1 = (char *) 0 ;
   int result;
@@ -1458,7 +1458,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_camera_1load_1config(JNIEnv
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_set_1camera_1width(JNIEnv *jenv, jclass jcls, jint jarg1) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_set_1camera_1width(JNIEnv *jenv, jclass jcls, jint jarg1) {
   int arg1 ;
   
   (void)jenv;
@@ -1468,7 +1468,7 @@ SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_set_1camera_1width(JNIEnv *
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_set_1camera_1height(JNIEnv *jenv, jclass jcls, jint jarg1) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_set_1camera_1height(JNIEnv *jenv, jclass jcls, jint jarg1) {
   int arg1 ;
   
   (void)jenv;
@@ -1478,7 +1478,7 @@ SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_set_1camera_1height(JNIEnv 
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1camera_1width(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_get_1camera_1width(JNIEnv *jenv, jclass jcls) {
   jint jresult = 0 ;
   int result;
   
@@ -1490,7 +1490,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1camera_1width(JNIEnv *
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1camera_1height(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_get_1camera_1height(JNIEnv *jenv, jclass jcls) {
   jint jresult = 0 ;
   int result;
   
@@ -1502,7 +1502,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1camera_1height(JNIEnv 
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_camera_1update(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_camera_1update(JNIEnv *jenv, jclass jcls) {
   jint jresult = 0 ;
   int result;
   
@@ -1514,7 +1514,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_camera_1update(JNIEnv *jenv
 }
 
 
-SWIGEXPORT jlong JNICALL Java_libkovan_jni_LinkJVMJNI_get_1camera_1pixel(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT jlong JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_get_1camera_1pixel(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jlong jresult = 0 ;
   point2 arg1 ;
   point2 *argp1 ;
@@ -1539,7 +1539,7 @@ SWIGEXPORT jlong JNICALL Java_libkovan_jni_LinkJVMJNI_get_1camera_1pixel(JNIEnv 
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1channel_1count(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_get_1channel_1count(JNIEnv *jenv, jclass jcls) {
   jint jresult = 0 ;
   int result;
   
@@ -1551,7 +1551,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1channel_1count(JNIEnv 
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1object_1count(JNIEnv *jenv, jclass jcls, jint jarg1) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_get_1object_1count(JNIEnv *jenv, jclass jcls, jint jarg1) {
   jint jresult = 0 ;
   int arg1 ;
   int result;
@@ -1565,7 +1565,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1object_1count(JNIEnv *
 }
 
 
-SWIGEXPORT jstring JNICALL Java_libkovan_jni_LinkJVMJNI_get_1object_1data(JNIEnv *jenv, jclass jcls, jint jarg1, jint jarg2) {
+SWIGEXPORT jstring JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_get_1object_1data(JNIEnv *jenv, jclass jcls, jint jarg1, jint jarg2) {
   jstring jresult = 0 ;
   int arg1 ;
   int arg2 ;
@@ -1581,7 +1581,7 @@ SWIGEXPORT jstring JNICALL Java_libkovan_jni_LinkJVMJNI_get_1object_1data(JNIEnv
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1code_1num(JNIEnv *jenv, jclass jcls, jint jarg1, jint jarg2) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_get_1code_1num(JNIEnv *jenv, jclass jcls, jint jarg1, jint jarg2) {
   jint jresult = 0 ;
   int arg1 ;
   int arg2 ;
@@ -1597,7 +1597,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1code_1num(JNIEnv *jenv
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1object_1data_1length(JNIEnv *jenv, jclass jcls, jint jarg1, jint jarg2) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_get_1object_1data_1length(JNIEnv *jenv, jclass jcls, jint jarg1, jint jarg2) {
   jint jresult = 0 ;
   int arg1 ;
   int arg2 ;
@@ -1613,7 +1613,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1object_1data_1length(J
 }
 
 
-SWIGEXPORT jdouble JNICALL Java_libkovan_jni_LinkJVMJNI_get_1object_1confidence(JNIEnv *jenv, jclass jcls, jint jarg1, jint jarg2) {
+SWIGEXPORT jdouble JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_get_1object_1confidence(JNIEnv *jenv, jclass jcls, jint jarg1, jint jarg2) {
   jdouble jresult = 0 ;
   int arg1 ;
   int arg2 ;
@@ -1629,7 +1629,7 @@ SWIGEXPORT jdouble JNICALL Java_libkovan_jni_LinkJVMJNI_get_1object_1confidence(
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1object_1area(JNIEnv *jenv, jclass jcls, jint jarg1, jint jarg2) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_get_1object_1area(JNIEnv *jenv, jclass jcls, jint jarg1, jint jarg2) {
   jint jresult = 0 ;
   int arg1 ;
   int arg2 ;
@@ -1645,7 +1645,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1object_1area(JNIEnv *j
 }
 
 
-SWIGEXPORT jlong JNICALL Java_libkovan_jni_LinkJVMJNI_get_1object_1bbox(JNIEnv *jenv, jclass jcls, jint jarg1, jint jarg2) {
+SWIGEXPORT jlong JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_get_1object_1bbox(JNIEnv *jenv, jclass jcls, jint jarg1, jint jarg2) {
   jlong jresult = 0 ;
   int arg1 ;
   int arg2 ;
@@ -1665,7 +1665,7 @@ SWIGEXPORT jlong JNICALL Java_libkovan_jni_LinkJVMJNI_get_1object_1bbox(JNIEnv *
 }
 
 
-SWIGEXPORT jlong JNICALL Java_libkovan_jni_LinkJVMJNI_get_1object_1centroid(JNIEnv *jenv, jclass jcls, jint jarg1, jint jarg2) {
+SWIGEXPORT jlong JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_get_1object_1centroid(JNIEnv *jenv, jclass jcls, jint jarg1, jint jarg2) {
   jlong jresult = 0 ;
   int arg1 ;
   int arg2 ;
@@ -1685,7 +1685,7 @@ SWIGEXPORT jlong JNICALL Java_libkovan_jni_LinkJVMJNI_get_1object_1centroid(JNIE
 }
 
 
-SWIGEXPORT jlong JNICALL Java_libkovan_jni_LinkJVMJNI_get_1object_1center(JNIEnv *jenv, jclass jcls, jint jarg1, jint jarg2) {
+SWIGEXPORT jlong JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_get_1object_1center(JNIEnv *jenv, jclass jcls, jint jarg1, jint jarg2) {
   jlong jresult = 0 ;
   int arg1 ;
   int arg2 ;
@@ -1705,14 +1705,14 @@ SWIGEXPORT jlong JNICALL Java_libkovan_jni_LinkJVMJNI_get_1object_1center(JNIEnv
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_camera_1close(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_camera_1close(JNIEnv *jenv, jclass jcls) {
   (void)jenv;
   (void)jcls;
   camera_close();
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_point2_1x_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jint jarg2) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_point2_1x_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jint jarg2) {
   struct point2 *arg1 = (struct point2 *) 0 ;
   int arg2 ;
   
@@ -1725,7 +1725,7 @@ SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_point2_1x_1set(JNIEnv *jenv
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_point2_1x_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_point2_1x_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jint jresult = 0 ;
   struct point2 *arg1 = (struct point2 *) 0 ;
   int result;
@@ -1740,7 +1740,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_point2_1x_1get(JNIEnv *jenv
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_point2_1y_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jint jarg2) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_point2_1y_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jint jarg2) {
   struct point2 *arg1 = (struct point2 *) 0 ;
   int arg2 ;
   
@@ -1753,7 +1753,7 @@ SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_point2_1y_1set(JNIEnv *jenv
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_point2_1y_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_point2_1y_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jint jresult = 0 ;
   struct point2 *arg1 = (struct point2 *) 0 ;
   int result;
@@ -1768,7 +1768,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_point2_1y_1get(JNIEnv *jenv
 }
 
 
-SWIGEXPORT jlong JNICALL Java_libkovan_jni_LinkJVMJNI_new_1point2(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jlong JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_new_1point2(JNIEnv *jenv, jclass jcls) {
   jlong jresult = 0 ;
   struct point2 *result = 0 ;
   
@@ -1780,7 +1780,7 @@ SWIGEXPORT jlong JNICALL Java_libkovan_jni_LinkJVMJNI_new_1point2(JNIEnv *jenv, 
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_delete_1point2(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_delete_1point2(JNIEnv *jenv, jclass jcls, jlong jarg1) {
   struct point2 *arg1 = (struct point2 *) 0 ;
   
   (void)jenv;
@@ -1790,7 +1790,7 @@ SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_delete_1point2(JNIEnv *jenv
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_rectangle_1ulx_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jint jarg2) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_rectangle_1ulx_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jint jarg2) {
   struct rectangle *arg1 = (struct rectangle *) 0 ;
   int arg2 ;
   
@@ -1803,7 +1803,7 @@ SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_rectangle_1ulx_1set(JNIEnv 
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_rectangle_1ulx_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_rectangle_1ulx_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jint jresult = 0 ;
   struct rectangle *arg1 = (struct rectangle *) 0 ;
   int result;
@@ -1818,7 +1818,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_rectangle_1ulx_1get(JNIEnv 
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_rectangle_1uly_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jint jarg2) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_rectangle_1uly_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jint jarg2) {
   struct rectangle *arg1 = (struct rectangle *) 0 ;
   int arg2 ;
   
@@ -1831,7 +1831,7 @@ SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_rectangle_1uly_1set(JNIEnv 
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_rectangle_1uly_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_rectangle_1uly_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jint jresult = 0 ;
   struct rectangle *arg1 = (struct rectangle *) 0 ;
   int result;
@@ -1846,7 +1846,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_rectangle_1uly_1get(JNIEnv 
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_rectangle_1width_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jint jarg2) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_rectangle_1width_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jint jarg2) {
   struct rectangle *arg1 = (struct rectangle *) 0 ;
   int arg2 ;
   
@@ -1859,7 +1859,7 @@ SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_rectangle_1width_1set(JNIEn
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_rectangle_1width_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_rectangle_1width_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jint jresult = 0 ;
   struct rectangle *arg1 = (struct rectangle *) 0 ;
   int result;
@@ -1874,7 +1874,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_rectangle_1width_1get(JNIEn
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_rectangle_1height_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jint jarg2) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_rectangle_1height_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jint jarg2) {
   struct rectangle *arg1 = (struct rectangle *) 0 ;
   int arg2 ;
   
@@ -1887,7 +1887,7 @@ SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_rectangle_1height_1set(JNIE
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_rectangle_1height_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_rectangle_1height_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jint jresult = 0 ;
   struct rectangle *arg1 = (struct rectangle *) 0 ;
   int result;
@@ -1902,7 +1902,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_rectangle_1height_1get(JNIE
 }
 
 
-SWIGEXPORT jlong JNICALL Java_libkovan_jni_LinkJVMJNI_new_1rectangle(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jlong JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_new_1rectangle(JNIEnv *jenv, jclass jcls) {
   jlong jresult = 0 ;
   struct rectangle *result = 0 ;
   
@@ -1914,7 +1914,7 @@ SWIGEXPORT jlong JNICALL Java_libkovan_jni_LinkJVMJNI_new_1rectangle(JNIEnv *jen
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_delete_1rectangle(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_delete_1rectangle(JNIEnv *jenv, jclass jcls, jlong jarg1) {
   struct rectangle *arg1 = (struct rectangle *) 0 ;
   
   (void)jenv;
@@ -1924,7 +1924,7 @@ SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_delete_1rectangle(JNIEnv *j
 }
 
 
-SWIGEXPORT jlong JNICALL Java_libkovan_jni_LinkJVMJNI_create_1point2(JNIEnv *jenv, jclass jcls, jint jarg1, jint jarg2) {
+SWIGEXPORT jlong JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_create_1point2(JNIEnv *jenv, jclass jcls, jint jarg1, jint jarg2) {
   jlong jresult = 0 ;
   int arg1 ;
   int arg2 ;
@@ -1944,7 +1944,7 @@ SWIGEXPORT jlong JNICALL Java_libkovan_jni_LinkJVMJNI_create_1point2(JNIEnv *jen
 }
 
 
-SWIGEXPORT jlong JNICALL Java_libkovan_jni_LinkJVMJNI_create_1rectangle(JNIEnv *jenv, jclass jcls, jint jarg1, jint jarg2, jint jarg3, jint jarg4) {
+SWIGEXPORT jlong JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_create_1rectangle(JNIEnv *jenv, jclass jcls, jint jarg1, jint jarg2, jint jarg3, jint jarg4) {
   jlong jresult = 0 ;
   int arg1 ;
   int arg2 ;
@@ -1968,7 +1968,7 @@ SWIGEXPORT jlong JNICALL Java_libkovan_jni_LinkJVMJNI_create_1rectangle(JNIEnv *
 }
 
 
-SWIGEXPORT jshort JNICALL Java_libkovan_jni_LinkJVMJNI_accel_1x(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jshort JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_accel_1x(JNIEnv *jenv, jclass jcls) {
   jshort jresult = 0 ;
   short result;
   
@@ -1980,7 +1980,7 @@ SWIGEXPORT jshort JNICALL Java_libkovan_jni_LinkJVMJNI_accel_1x(JNIEnv *jenv, jc
 }
 
 
-SWIGEXPORT jshort JNICALL Java_libkovan_jni_LinkJVMJNI_accel_1y(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jshort JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_accel_1y(JNIEnv *jenv, jclass jcls) {
   jshort jresult = 0 ;
   short result;
   
@@ -1992,7 +1992,7 @@ SWIGEXPORT jshort JNICALL Java_libkovan_jni_LinkJVMJNI_accel_1y(JNIEnv *jenv, jc
 }
 
 
-SWIGEXPORT jshort JNICALL Java_libkovan_jni_LinkJVMJNI_accel_1z(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jshort JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_accel_1z(JNIEnv *jenv, jclass jcls) {
   jshort jresult = 0 ;
   short result;
   
@@ -2004,7 +2004,7 @@ SWIGEXPORT jshort JNICALL Java_libkovan_jni_LinkJVMJNI_accel_1z(JNIEnv *jenv, jc
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_accel_1calibrate(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_accel_1calibrate(JNIEnv *jenv, jclass jcls) {
   jint jresult = 0 ;
   int result;
   
@@ -2016,7 +2016,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_accel_1calibrate(JNIEnv *je
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_analog10(JNIEnv *jenv, jclass jcls, jint jarg1) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_analog10(JNIEnv *jenv, jclass jcls, jint jarg1) {
   jint jresult = 0 ;
   int arg1 ;
   int result;
@@ -2030,7 +2030,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_analog10(JNIEnv *jenv, jcla
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_analog(JNIEnv *jenv, jclass jcls, jint jarg1) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_analog(JNIEnv *jenv, jclass jcls, jint jarg1) {
   jint jresult = 0 ;
   int arg1 ;
   int result;
@@ -2044,7 +2044,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_analog(JNIEnv *jenv, jclass
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_set_1analog_1pullup(JNIEnv *jenv, jclass jcls, jint jarg1, jint jarg2) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_set_1analog_1pullup(JNIEnv *jenv, jclass jcls, jint jarg1, jint jarg2) {
   int arg1 ;
   int arg2 ;
   
@@ -2056,7 +2056,7 @@ SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_set_1analog_1pullup(JNIEnv 
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1analog_1pullup(JNIEnv *jenv, jclass jcls, jint jarg1) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_get_1analog_1pullup(JNIEnv *jenv, jclass jcls, jint jarg1) {
   jint jresult = 0 ;
   int arg1 ;
   int result;
@@ -2070,7 +2070,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1analog_1pullup(JNIEnv 
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_battery_1charging(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_battery_1charging(JNIEnv *jenv, jclass jcls) {
   jint jresult = 0 ;
   int result;
   
@@ -2082,7 +2082,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_battery_1charging(JNIEnv *j
 }
 
 
-SWIGEXPORT jfloat JNICALL Java_libkovan_jni_LinkJVMJNI_power_1level(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jfloat JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_power_1level(JNIEnv *jenv, jclass jcls) {
   jfloat jresult = 0 ;
   float result;
   
@@ -2094,7 +2094,7 @@ SWIGEXPORT jfloat JNICALL Java_libkovan_jni_LinkJVMJNI_power_1level(JNIEnv *jenv
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_shut_1down_1in(JNIEnv *jenv, jclass jcls, jdouble jarg1) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_shut_1down_1in(JNIEnv *jenv, jclass jcls, jdouble jarg1) {
   double arg1 ;
   
   (void)jenv;
@@ -2104,7 +2104,7 @@ SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_shut_1down_1in(JNIEnv *jenv
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_wait_1for_1light(JNIEnv *jenv, jclass jcls, jint jarg1) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_wait_1for_1light(JNIEnv *jenv, jclass jcls, jint jarg1) {
   int arg1 ;
   
   (void)jenv;
@@ -2114,226 +2114,14 @@ SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_wait_1for_1light(JNIEnv *je
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_Rgb_1r_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jshort jarg2) {
-  struct Rgb *arg1 = (struct Rgb *) 0 ;
-  unsigned char arg2 ;
-  
-  (void)jenv;
-  (void)jcls;
-  (void)jarg1_;
-  arg1 = *(struct Rgb **)&jarg1; 
-  arg2 = (unsigned char)jarg2; 
-  if (arg1) (arg1)->r = arg2;
-}
-
-
-SWIGEXPORT jshort JNICALL Java_libkovan_jni_LinkJVMJNI_Rgb_1r_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
-  jshort jresult = 0 ;
-  struct Rgb *arg1 = (struct Rgb *) 0 ;
-  unsigned char result;
-  
-  (void)jenv;
-  (void)jcls;
-  (void)jarg1_;
-  arg1 = *(struct Rgb **)&jarg1; 
-  result = (unsigned char) ((arg1)->r);
-  jresult = (jshort)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_Rgb_1g_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jshort jarg2) {
-  struct Rgb *arg1 = (struct Rgb *) 0 ;
-  unsigned char arg2 ;
-  
-  (void)jenv;
-  (void)jcls;
-  (void)jarg1_;
-  arg1 = *(struct Rgb **)&jarg1; 
-  arg2 = (unsigned char)jarg2; 
-  if (arg1) (arg1)->g = arg2;
-}
-
-
-SWIGEXPORT jshort JNICALL Java_libkovan_jni_LinkJVMJNI_Rgb_1g_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
-  jshort jresult = 0 ;
-  struct Rgb *arg1 = (struct Rgb *) 0 ;
-  unsigned char result;
-  
-  (void)jenv;
-  (void)jcls;
-  (void)jarg1_;
-  arg1 = *(struct Rgb **)&jarg1; 
-  result = (unsigned char) ((arg1)->g);
-  jresult = (jshort)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_Rgb_1b_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jshort jarg2) {
-  struct Rgb *arg1 = (struct Rgb *) 0 ;
-  unsigned char arg2 ;
-  
-  (void)jenv;
-  (void)jcls;
-  (void)jarg1_;
-  arg1 = *(struct Rgb **)&jarg1; 
-  arg2 = (unsigned char)jarg2; 
-  if (arg1) (arg1)->b = arg2;
-}
-
-
-SWIGEXPORT jshort JNICALL Java_libkovan_jni_LinkJVMJNI_Rgb_1b_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
-  jshort jresult = 0 ;
-  struct Rgb *arg1 = (struct Rgb *) 0 ;
-  unsigned char result;
-  
-  (void)jenv;
-  (void)jcls;
-  (void)jarg1_;
-  arg1 = *(struct Rgb **)&jarg1; 
-  result = (unsigned char) ((arg1)->b);
-  jresult = (jshort)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT jlong JNICALL Java_libkovan_jni_LinkJVMJNI_new_1Rgb(JNIEnv *jenv, jclass jcls) {
-  jlong jresult = 0 ;
-  struct Rgb *result = 0 ;
-  
-  (void)jenv;
-  (void)jcls;
-  result = (struct Rgb *)calloc(1, sizeof(struct Rgb));
-  *(struct Rgb **)&jresult = result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_delete_1Rgb(JNIEnv *jenv, jclass jcls, jlong jarg1) {
-  struct Rgb *arg1 = (struct Rgb *) 0 ;
-  
-  (void)jenv;
-  (void)jcls;
-  arg1 = *(struct Rgb **)&jarg1; 
-  free((char *) arg1);
-}
-
-
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_Hsv_1h_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jshort jarg2) {
-  struct Hsv *arg1 = (struct Hsv *) 0 ;
-  unsigned char arg2 ;
-  
-  (void)jenv;
-  (void)jcls;
-  (void)jarg1_;
-  arg1 = *(struct Hsv **)&jarg1; 
-  arg2 = (unsigned char)jarg2; 
-  if (arg1) (arg1)->h = arg2;
-}
-
-
-SWIGEXPORT jshort JNICALL Java_libkovan_jni_LinkJVMJNI_Hsv_1h_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
-  jshort jresult = 0 ;
-  struct Hsv *arg1 = (struct Hsv *) 0 ;
-  unsigned char result;
-  
-  (void)jenv;
-  (void)jcls;
-  (void)jarg1_;
-  arg1 = *(struct Hsv **)&jarg1; 
-  result = (unsigned char) ((arg1)->h);
-  jresult = (jshort)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_Hsv_1s_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jshort jarg2) {
-  struct Hsv *arg1 = (struct Hsv *) 0 ;
-  unsigned char arg2 ;
-  
-  (void)jenv;
-  (void)jcls;
-  (void)jarg1_;
-  arg1 = *(struct Hsv **)&jarg1; 
-  arg2 = (unsigned char)jarg2; 
-  if (arg1) (arg1)->s = arg2;
-}
-
-
-SWIGEXPORT jshort JNICALL Java_libkovan_jni_LinkJVMJNI_Hsv_1s_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
-  jshort jresult = 0 ;
-  struct Hsv *arg1 = (struct Hsv *) 0 ;
-  unsigned char result;
-  
-  (void)jenv;
-  (void)jcls;
-  (void)jarg1_;
-  arg1 = *(struct Hsv **)&jarg1; 
-  result = (unsigned char) ((arg1)->s);
-  jresult = (jshort)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_Hsv_1v_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jshort jarg2) {
-  struct Hsv *arg1 = (struct Hsv *) 0 ;
-  unsigned char arg2 ;
-  
-  (void)jenv;
-  (void)jcls;
-  (void)jarg1_;
-  arg1 = *(struct Hsv **)&jarg1; 
-  arg2 = (unsigned char)jarg2; 
-  if (arg1) (arg1)->v = arg2;
-}
-
-
-SWIGEXPORT jshort JNICALL Java_libkovan_jni_LinkJVMJNI_Hsv_1v_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
-  jshort jresult = 0 ;
-  struct Hsv *arg1 = (struct Hsv *) 0 ;
-  unsigned char result;
-  
-  (void)jenv;
-  (void)jcls;
-  (void)jarg1_;
-  arg1 = *(struct Hsv **)&jarg1; 
-  result = (unsigned char) ((arg1)->v);
-  jresult = (jshort)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT jlong JNICALL Java_libkovan_jni_LinkJVMJNI_new_1Hsv(JNIEnv *jenv, jclass jcls) {
-  jlong jresult = 0 ;
-  struct Hsv *result = 0 ;
-  
-  (void)jenv;
-  (void)jcls;
-  result = (struct Hsv *)calloc(1, sizeof(struct Hsv));
-  *(struct Hsv **)&jresult = result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_delete_1Hsv(JNIEnv *jenv, jclass jcls, jlong jarg1) {
-  struct Hsv *arg1 = (struct Hsv *) 0 ;
-  
-  (void)jenv;
-  (void)jcls;
-  arg1 = *(struct Hsv **)&jarg1; 
-  free((char *) arg1);
-}
-
-
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_console_1clear(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_console_1clear(JNIEnv *jenv, jclass jcls) {
   (void)jenv;
   (void)jcls;
   console_clear();
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_create_1connect(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_create_1connect(JNIEnv *jenv, jclass jcls) {
   jint jresult = 0 ;
   int result;
   
@@ -2345,56 +2133,56 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_create_1connect(JNIEnv *jen
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_create_1disconnect(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_create_1disconnect(JNIEnv *jenv, jclass jcls) {
   (void)jenv;
   (void)jcls;
   create_disconnect();
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_create_1start(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_create_1start(JNIEnv *jenv, jclass jcls) {
   (void)jenv;
   (void)jcls;
   create_start();
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_create_1passive(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_create_1passive(JNIEnv *jenv, jclass jcls) {
   (void)jenv;
   (void)jcls;
   create_passive();
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_create_1safe(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_create_1safe(JNIEnv *jenv, jclass jcls) {
   (void)jenv;
   (void)jcls;
   create_safe();
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_create_1full(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_create_1full(JNIEnv *jenv, jclass jcls) {
   (void)jenv;
   (void)jcls;
   create_full();
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_create_1spot(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_create_1spot(JNIEnv *jenv, jclass jcls) {
   (void)jenv;
   (void)jcls;
   create_spot();
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_create_1cover(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_create_1cover(JNIEnv *jenv, jclass jcls) {
   (void)jenv;
   (void)jcls;
   create_cover();
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_create_1demo(JNIEnv *jenv, jclass jcls, jint jarg1) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_create_1demo(JNIEnv *jenv, jclass jcls, jint jarg1) {
   int arg1 ;
   
   (void)jenv;
@@ -2404,14 +2192,14 @@ SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_create_1demo(JNIEnv *jenv, 
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_create_1cover_1dock(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_create_1cover_1dock(JNIEnv *jenv, jclass jcls) {
   (void)jenv;
   (void)jcls;
   create_cover_dock();
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1create_1mode(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_get_1create_1mode(JNIEnv *jenv, jclass jcls) {
   jint jresult = 0 ;
   int result;
   
@@ -2423,7 +2211,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1create_1mode(JNIEnv *j
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1create_1lbump(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_get_1create_1lbump(JNIEnv *jenv, jclass jcls) {
   jint jresult = 0 ;
   int result;
   
@@ -2435,7 +2223,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1create_1lbump(JNIEnv *
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1create_1rbump(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_get_1create_1rbump(JNIEnv *jenv, jclass jcls) {
   jint jresult = 0 ;
   int result;
   
@@ -2447,7 +2235,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1create_1rbump(JNIEnv *
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1create_1lwdrop(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_get_1create_1lwdrop(JNIEnv *jenv, jclass jcls) {
   jint jresult = 0 ;
   int result;
   
@@ -2459,7 +2247,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1create_1lwdrop(JNIEnv 
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1create_1cwdrop(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_get_1create_1cwdrop(JNIEnv *jenv, jclass jcls) {
   jint jresult = 0 ;
   int result;
   
@@ -2471,7 +2259,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1create_1cwdrop(JNIEnv 
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1create_1rwdrop(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_get_1create_1rwdrop(JNIEnv *jenv, jclass jcls) {
   jint jresult = 0 ;
   int result;
   
@@ -2483,7 +2271,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1create_1rwdrop(JNIEnv 
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1create_1wall(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_get_1create_1wall(JNIEnv *jenv, jclass jcls) {
   jint jresult = 0 ;
   int result;
   
@@ -2495,7 +2283,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1create_1wall(JNIEnv *j
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1create_1lcliff(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_get_1create_1lcliff(JNIEnv *jenv, jclass jcls) {
   jint jresult = 0 ;
   int result;
   
@@ -2507,7 +2295,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1create_1lcliff(JNIEnv 
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1create_1lfcliff(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_get_1create_1lfcliff(JNIEnv *jenv, jclass jcls) {
   jint jresult = 0 ;
   int result;
   
@@ -2519,7 +2307,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1create_1lfcliff(JNIEnv
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1create_1rfcliff(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_get_1create_1rfcliff(JNIEnv *jenv, jclass jcls) {
   jint jresult = 0 ;
   int result;
   
@@ -2531,7 +2319,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1create_1rfcliff(JNIEnv
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1create_1rcliff(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_get_1create_1rcliff(JNIEnv *jenv, jclass jcls) {
   jint jresult = 0 ;
   int result;
   
@@ -2543,7 +2331,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1create_1rcliff(JNIEnv 
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1create_1vwall(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_get_1create_1vwall(JNIEnv *jenv, jclass jcls) {
   jint jresult = 0 ;
   int result;
   
@@ -2555,7 +2343,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1create_1vwall(JNIEnv *
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1create_1overcurrents(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_get_1create_1overcurrents(JNIEnv *jenv, jclass jcls) {
   jint jresult = 0 ;
   int result;
   
@@ -2567,7 +2355,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1create_1overcurrents(J
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1create_1infrared(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_get_1create_1infrared(JNIEnv *jenv, jclass jcls) {
   jint jresult = 0 ;
   int result;
   
@@ -2579,7 +2367,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1create_1infrared(JNIEn
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1create_1advance_1button(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_get_1create_1advance_1button(JNIEnv *jenv, jclass jcls) {
   jint jresult = 0 ;
   int result;
   
@@ -2591,7 +2379,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1create_1advance_1butto
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1create_1play_1button(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_get_1create_1play_1button(JNIEnv *jenv, jclass jcls) {
   jint jresult = 0 ;
   int result;
   
@@ -2603,7 +2391,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1create_1play_1button(J
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1create_1normalized_1angle(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_get_1create_1normalized_1angle(JNIEnv *jenv, jclass jcls) {
   jint jresult = 0 ;
   int result;
   
@@ -2615,7 +2403,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1create_1normalized_1an
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_set_1create_1normalized_1angle(JNIEnv *jenv, jclass jcls, jint jarg1) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_set_1create_1normalized_1angle(JNIEnv *jenv, jclass jcls, jint jarg1) {
   int arg1 ;
   
   (void)jenv;
@@ -2625,7 +2413,7 @@ SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_set_1create_1normalized_1an
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1create_1total_1angle(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_get_1create_1total_1angle(JNIEnv *jenv, jclass jcls) {
   jint jresult = 0 ;
   int result;
   
@@ -2637,7 +2425,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1create_1total_1angle(J
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_set_1create_1total_1angle(JNIEnv *jenv, jclass jcls, jint jarg1) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_set_1create_1total_1angle(JNIEnv *jenv, jclass jcls, jint jarg1) {
   int arg1 ;
   
   (void)jenv;
@@ -2647,7 +2435,7 @@ SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_set_1create_1total_1angle(J
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1create_1distance(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_get_1create_1distance(JNIEnv *jenv, jclass jcls) {
   jint jresult = 0 ;
   int result;
   
@@ -2659,7 +2447,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1create_1distance(JNIEn
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_set_1create_1distance(JNIEnv *jenv, jclass jcls, jint jarg1) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_set_1create_1distance(JNIEnv *jenv, jclass jcls, jint jarg1) {
   int arg1 ;
   
   (void)jenv;
@@ -2669,7 +2457,7 @@ SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_set_1create_1distance(JNIEn
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1create_1battery_1charging_1state(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_get_1create_1battery_1charging_1state(JNIEnv *jenv, jclass jcls) {
   jint jresult = 0 ;
   int result;
   
@@ -2681,7 +2469,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1create_1battery_1charg
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1create_1battery_1voltage(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_get_1create_1battery_1voltage(JNIEnv *jenv, jclass jcls) {
   jint jresult = 0 ;
   int result;
   
@@ -2693,7 +2481,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1create_1battery_1volta
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1create_1battery_1current(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_get_1create_1battery_1current(JNIEnv *jenv, jclass jcls) {
   jint jresult = 0 ;
   int result;
   
@@ -2705,7 +2493,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1create_1battery_1curre
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1create_1battery_1temp(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_get_1create_1battery_1temp(JNIEnv *jenv, jclass jcls) {
   jint jresult = 0 ;
   int result;
   
@@ -2717,7 +2505,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1create_1battery_1temp(
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1create_1battery_1charge(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_get_1create_1battery_1charge(JNIEnv *jenv, jclass jcls) {
   jint jresult = 0 ;
   int result;
   
@@ -2729,7 +2517,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1create_1battery_1charg
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1create_1battery_1capacity(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_get_1create_1battery_1capacity(JNIEnv *jenv, jclass jcls) {
   jint jresult = 0 ;
   int result;
   
@@ -2741,7 +2529,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1create_1battery_1capac
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1create_1wall_1amt(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_get_1create_1wall_1amt(JNIEnv *jenv, jclass jcls) {
   jint jresult = 0 ;
   int result;
   
@@ -2753,7 +2541,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1create_1wall_1amt(JNIE
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1create_1lcliff_1amt(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_get_1create_1lcliff_1amt(JNIEnv *jenv, jclass jcls) {
   jint jresult = 0 ;
   int result;
   
@@ -2765,7 +2553,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1create_1lcliff_1amt(JN
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1create_1lfcliff_1amt(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_get_1create_1lfcliff_1amt(JNIEnv *jenv, jclass jcls) {
   jint jresult = 0 ;
   int result;
   
@@ -2777,7 +2565,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1create_1lfcliff_1amt(J
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1create_1rfcliff_1amt(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_get_1create_1rfcliff_1amt(JNIEnv *jenv, jclass jcls) {
   jint jresult = 0 ;
   int result;
   
@@ -2789,7 +2577,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1create_1rfcliff_1amt(J
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1create_1rcliff_1amt(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_get_1create_1rcliff_1amt(JNIEnv *jenv, jclass jcls) {
   jint jresult = 0 ;
   int result;
   
@@ -2801,7 +2589,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1create_1rcliff_1amt(JN
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1create_1bay_1DI(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_get_1create_1bay_1DI(JNIEnv *jenv, jclass jcls) {
   jint jresult = 0 ;
   int result;
   
@@ -2813,7 +2601,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1create_1bay_1DI(JNIEnv
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1create_1bay_1AI(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_get_1create_1bay_1AI(JNIEnv *jenv, jclass jcls) {
   jint jresult = 0 ;
   int result;
   
@@ -2825,7 +2613,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1create_1bay_1AI(JNIEnv
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1create_1song_1number(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_get_1create_1song_1number(JNIEnv *jenv, jclass jcls) {
   jint jresult = 0 ;
   int result;
   
@@ -2837,7 +2625,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1create_1song_1number(J
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1create_1song_1playing(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_get_1create_1song_1playing(JNIEnv *jenv, jclass jcls) {
   jint jresult = 0 ;
   int result;
   
@@ -2849,7 +2637,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1create_1song_1playing(
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1create_1number_1of_1stream_1packets(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_get_1create_1number_1of_1stream_1packets(JNIEnv *jenv, jclass jcls) {
   jint jresult = 0 ;
   int result;
   
@@ -2861,7 +2649,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1create_1number_1of_1st
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1create_1requested_1velocity(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_get_1create_1requested_1velocity(JNIEnv *jenv, jclass jcls) {
   jint jresult = 0 ;
   int result;
   
@@ -2873,7 +2661,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1create_1requested_1vel
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1create_1requested_1radius(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_get_1create_1requested_1radius(JNIEnv *jenv, jclass jcls) {
   jint jresult = 0 ;
   int result;
   
@@ -2885,7 +2673,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1create_1requested_1rad
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1create_1requested_1_1right_1velocity(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_get_1create_1requested_1_1right_1velocity(JNIEnv *jenv, jclass jcls) {
   jint jresult = 0 ;
   int result;
   
@@ -2897,7 +2685,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1create_1requested_1_1r
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1create_1requested_1left_1velocity(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_get_1create_1requested_1left_1velocity(JNIEnv *jenv, jclass jcls) {
   jint jresult = 0 ;
   int result;
   
@@ -2909,14 +2697,14 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_get_1create_1requested_1lef
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_create_1stop(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_create_1stop(JNIEnv *jenv, jclass jcls) {
   (void)jenv;
   (void)jcls;
   create_stop();
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_create_1drive(JNIEnv *jenv, jclass jcls, jint jarg1, jint jarg2) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_create_1drive(JNIEnv *jenv, jclass jcls, jint jarg1, jint jarg2) {
   int arg1 ;
   int arg2 ;
   
@@ -2928,7 +2716,7 @@ SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_create_1drive(JNIEnv *jenv,
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_create_1drive_1straight(JNIEnv *jenv, jclass jcls, jint jarg1) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_create_1drive_1straight(JNIEnv *jenv, jclass jcls, jint jarg1) {
   int arg1 ;
   
   (void)jenv;
@@ -2938,7 +2726,7 @@ SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_create_1drive_1straight(JNI
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_create_1spin_1CW(JNIEnv *jenv, jclass jcls, jint jarg1) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_create_1spin_1CW(JNIEnv *jenv, jclass jcls, jint jarg1) {
   int arg1 ;
   
   (void)jenv;
@@ -2948,7 +2736,7 @@ SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_create_1spin_1CW(JNIEnv *je
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_create_1spin_1CCW(JNIEnv *jenv, jclass jcls, jint jarg1) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_create_1spin_1CCW(JNIEnv *jenv, jclass jcls, jint jarg1) {
   int arg1 ;
   
   (void)jenv;
@@ -2958,7 +2746,7 @@ SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_create_1spin_1CCW(JNIEnv *j
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_create_1drive_1direct(JNIEnv *jenv, jclass jcls, jint jarg1, jint jarg2) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_create_1drive_1direct(JNIEnv *jenv, jclass jcls, jint jarg1, jint jarg2) {
   int arg1 ;
   int arg2 ;
   
@@ -2970,7 +2758,7 @@ SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_create_1drive_1direct(JNIEn
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_create_1advance_1led(JNIEnv *jenv, jclass jcls, jint jarg1) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_create_1advance_1led(JNIEnv *jenv, jclass jcls, jint jarg1) {
   int arg1 ;
   
   (void)jenv;
@@ -2980,7 +2768,7 @@ SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_create_1advance_1led(JNIEnv
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_create_1play_1led(JNIEnv *jenv, jclass jcls, jint jarg1) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_create_1play_1led(JNIEnv *jenv, jclass jcls, jint jarg1) {
   int arg1 ;
   
   (void)jenv;
@@ -2990,7 +2778,7 @@ SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_create_1play_1led(JNIEnv *j
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_create_1power_1led(JNIEnv *jenv, jclass jcls, jint jarg1, jint jarg2) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_create_1power_1led(JNIEnv *jenv, jclass jcls, jint jarg1, jint jarg2) {
   int arg1 ;
   int arg2 ;
   
@@ -3002,7 +2790,7 @@ SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_create_1power_1led(JNIEnv *
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_create_1load_1song(JNIEnv *jenv, jclass jcls, jint jarg1) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_create_1load_1song(JNIEnv *jenv, jclass jcls, jint jarg1) {
   int arg1 ;
   
   (void)jenv;
@@ -3012,7 +2800,7 @@ SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_create_1load_1song(JNIEnv *
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_create_1play_1song(JNIEnv *jenv, jclass jcls, jint jarg1) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_create_1play_1song(JNIEnv *jenv, jclass jcls, jint jarg1) {
   int arg1 ;
   
   (void)jenv;
@@ -3022,7 +2810,7 @@ SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_create_1play_1song(JNIEnv *
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_datalog_1remove_1category(JNIEnv *jenv, jclass jcls, jstring jarg1) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_datalog_1remove_1category(JNIEnv *jenv, jclass jcls, jstring jarg1) {
   char *arg1 = (char *) 0 ;
   
   (void)jenv;
@@ -3037,7 +2825,7 @@ SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_datalog_1remove_1category(J
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_datalog_1append_1string(JNIEnv *jenv, jclass jcls, jstring jarg1, jstring jarg2) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_datalog_1append_1string(JNIEnv *jenv, jclass jcls, jstring jarg1, jstring jarg2) {
   char *arg1 = (char *) 0 ;
   char *arg2 = (char *) 0 ;
   
@@ -3059,7 +2847,7 @@ SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_datalog_1append_1string(JNI
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_datalog_1append_1number(JNIEnv *jenv, jclass jcls, jdouble jarg1, jstring jarg2) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_datalog_1append_1number(JNIEnv *jenv, jclass jcls, jdouble jarg1, jstring jarg2) {
   double arg1 ;
   char *arg2 = (char *) 0 ;
   
@@ -3076,7 +2864,7 @@ SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_datalog_1append_1number(JNI
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_datalog_1remove(JNIEnv *jenv, jclass jcls, jint jarg1, jstring jarg2) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_datalog_1remove(JNIEnv *jenv, jclass jcls, jint jarg1, jstring jarg2) {
   int arg1 ;
   char *arg2 = (char *) 0 ;
   
@@ -3093,7 +2881,7 @@ SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_datalog_1remove(JNIEnv *jen
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_datalog_1write_1plain(JNIEnv *jenv, jclass jcls, jstring jarg1) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_datalog_1write_1plain(JNIEnv *jenv, jclass jcls, jstring jarg1) {
   jint jresult = 0 ;
   char *arg1 = (char *) 0 ;
   int result;
@@ -3112,7 +2900,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_datalog_1write_1plain(JNIEn
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_datalog_1write_1csv(JNIEnv *jenv, jclass jcls, jstring jarg1) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_datalog_1write_1csv(JNIEnv *jenv, jclass jcls, jstring jarg1) {
   jint jresult = 0 ;
   char *arg1 = (char *) 0 ;
   int result;
@@ -3131,21 +2919,21 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_datalog_1write_1csv(JNIEnv 
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_datalog_1clear(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_datalog_1clear(JNIEnv *jenv, jclass jcls) {
   (void)jenv;
   (void)jcls;
   datalog_clear();
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_debug_1print_1registers(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_debug_1print_1registers(JNIEnv *jenv, jclass jcls) {
   (void)jenv;
   (void)jcls;
   debug_print_registers();
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_register_1value(JNIEnv *jenv, jclass jcls, jint jarg1) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_register_1value(JNIEnv *jenv, jclass jcls, jint jarg1) {
   jint jresult = 0 ;
   unsigned short arg1 ;
   unsigned short result;
@@ -3159,7 +2947,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_register_1value(JNIEnv *jen
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_debug_1dump_1data(JNIEnv *jenv, jclass jcls, jlong jarg1, jlong jarg2, jstring jarg3) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_debug_1dump_1data(JNIEnv *jenv, jclass jcls, jlong jarg1, jlong jarg2, jstring jarg3) {
   jint jresult = 0 ;
   unsigned char *arg1 = (unsigned char *) (unsigned char *)0 ;
   size_t arg2 ;
@@ -3182,14 +2970,14 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_debug_1dump_1data(JNIEnv *j
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_display_1clear(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_display_1clear(JNIEnv *jenv, jclass jcls) {
   (void)jenv;
   (void)jcls;
   display_clear();
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_display_1printf(JNIEnv *jenv, jclass jcls, jint jarg1, jint jarg2, jstring jarg3) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_display_1printf(JNIEnv *jenv, jclass jcls, jint jarg1, jint jarg2, jstring jarg3) {
   int arg1 ;
   int arg2 ;
   char *arg3 = (char *) 0 ;
@@ -3209,7 +2997,7 @@ SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_display_1printf(JNIEnv *jen
 }
 
 
-SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_draw_1open(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jint JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_draw_1open(JNIEnv *jenv, jclass jcls) {
   jint jresult = 0 ;
   int result;
   
@@ -3221,7 +3009,7 @@ SWIGEXPORT jint JNICALL Java_libkovan_jni_LinkJVMJNI_draw_1open(JNIEnv *jenv, jc
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_draw_1point(JNIEnv *jenv, jclass jcls, jint jarg1, jint jarg2) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_draw_1point(JNIEnv *jenv, jclass jcls, jint jarg1, jint jarg2) {
   int arg1 ;
   int arg2 ;
   
@@ -3233,7 +3021,7 @@ SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_draw_1point(JNIEnv *jenv, j
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_draw_1line(JNIEnv *jenv, jclass jcls, jint jarg1, jint jarg2, jint jarg3, jint jarg4) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_draw_1line(JNIEnv *jenv, jclass jcls, jint jarg1, jint jarg2, jint jarg3, jint jarg4) {
   int arg1 ;
   int arg2 ;
   int arg3 ;
@@ -3249,21 +3037,21 @@ SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_draw_1line(JNIEnv *jenv, jc
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_draw_1clear(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_draw_1clear(JNIEnv *jenv, jclass jcls) {
   (void)jenv;
   (void)jcls;
   draw_clear();
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_draw_1close(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_draw_1close(JNIEnv *jenv, jclass jcls) {
   (void)jenv;
   (void)jcls;
   draw_close();
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_set_1auto_1publish(JNIEnv *jenv, jclass jcls, jint jarg1) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_set_1auto_1publish(JNIEnv *jenv, jclass jcls, jint jarg1) {
   int arg1 ;
   
   (void)jenv;
@@ -3273,42 +3061,42 @@ SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_set_1auto_1publish(JNIEnv *
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_publish(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_publish(JNIEnv *jenv, jclass jcls) {
   (void)jenv;
   (void)jcls;
   publish();
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_halt(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_halt(JNIEnv *jenv, jclass jcls) {
   (void)jenv;
   (void)jcls;
   halt();
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_freeze_1halt(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_freeze_1halt(JNIEnv *jenv, jclass jcls) {
   (void)jenv;
   (void)jcls;
   freeze_halt();
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_ir_1read(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_ir_1read(JNIEnv *jenv, jclass jcls) {
   (void)jenv;
   (void)jcls;
   ir_read();
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_ir_1write(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_ir_1write(JNIEnv *jenv, jclass jcls) {
   (void)jenv;
   (void)jcls;
   ir_write();
 }
 
 
-SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_msleep(JNIEnv *jenv, jclass jcls, jint jarg1) {
+SWIGEXPORT void JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_msleep(JNIEnv *jenv, jclass jcls, jint jarg1) {
   long arg1 ;
   
   (void)jenv;
@@ -3318,7 +3106,7 @@ SWIGEXPORT void JNICALL Java_libkovan_jni_LinkJVMJNI_msleep(JNIEnv *jenv, jclass
 }
 
 
-SWIGEXPORT jlong JNICALL Java_libkovan_jni_LinkJVMJNI_systime(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jlong JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_systime(JNIEnv *jenv, jclass jcls) {
   jlong jresult = 0 ;
   unsigned long result;
   
@@ -3330,7 +3118,7 @@ SWIGEXPORT jlong JNICALL Java_libkovan_jni_LinkJVMJNI_systime(JNIEnv *jenv, jcla
 }
 
 
-SWIGEXPORT jdouble JNICALL Java_libkovan_jni_LinkJVMJNI_seconds(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jdouble JNICALL Java_linkjvm_libkovan_jni_LinkJVMJNI_seconds(JNIEnv *jenv, jclass jcls) {
   jdouble jresult = 0 ;
   double result;
   
