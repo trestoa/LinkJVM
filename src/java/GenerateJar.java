@@ -36,7 +36,7 @@ public class GenerateJar {
 		manifest.getMainAttributes().put(Attributes.Name.MANIFEST_VERSION, "1.0");
 		try{
 			JarOutputStream target = new JarOutputStream(new FileOutputStream("LinkJVM.jar"), manifest);
-			add(new File("libkovan"), target);
+			add(new File("linkjvm"), target);
 			target.close();
 		}
 		catch(IOException e){
