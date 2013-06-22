@@ -1,24 +1,24 @@
 /*
  *
-  Copyright (c) <2011>, <Shigeo Yoshida>
-All rights reserved.
-
-Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
-
-Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
-Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
-The names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF 
-MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, 
-SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
- HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
- EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ * Copyright (c) <2011>, <Shigeo Yoshida>
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+ *
+ * Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+ * Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+ * The names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+ * 
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF 
+ * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, 
+ * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+ * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+ * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
 package linkjvm.ardrone;
 
-import java.awt.image.BufferedImage;
+//import java.awt.image.BufferedImage;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.StringTokenizer;
@@ -26,7 +26,7 @@ import java.util.StringTokenizer;
 import linkjvm.ardrone.command.CommandManager;
 import linkjvm.ardrone.listeners.AttitudeListener;
 import linkjvm.ardrone.listeners.BatteryListener;
-import linkjvm.ardrone.listeners.ImageListener;
+//import linkjvm.ardrone.listeners.ImageListener;
 import linkjvm.ardrone.listeners.NavDataListener;
 import linkjvm.ardrone.listeners.StateListener;
 import linkjvm.ardrone.listeners.VelocityListener;
@@ -34,7 +34,7 @@ import linkjvm.ardrone.navdata.DroneState;
 import linkjvm.ardrone.navdata.NavDataManager;
 import linkjvm.ardrone.navdata.javadrone.NavData;
 import linkjvm.ardrone.utils.ARDroneUtils;
-import linkjvm.ardrone.video.VideoManager;
+//import linkjvm.ardrone.video.VideoManager;
 
 
 
@@ -48,11 +48,11 @@ public class ARDrone implements ARDroneInterface{
 
 	//managers
 	private CommandManager manager=null;
-	private VideoManager videoManager=null;
+//	private VideoManager videoManager=null;
 	private NavDataManager navdataManager=null;
 
 	//listeners
-	private ImageListener imageListener=null;
+//	private ImageListener imageListener=null;
 	private AttitudeListener attitudeListener=null;
 	private BatteryListener batteryListener=null;
 	private StateListener stateListener=null;
@@ -84,7 +84,7 @@ public class ARDrone implements ARDroneInterface{
 	/** connect video */
 	@Override
 	public boolean connectVideo() {
-		if(inetaddr==null){
+		/*if(inetaddr==null){
 			inetaddr=getInetAddress(ipaddr);
 		}
 		videoManager=new VideoManager(inetaddr, manager);
@@ -96,7 +96,8 @@ public class ARDrone implements ARDroneInterface{
 				}
 			}
 		});
-		return videoManager.connect(ARDroneUtils.VIDEO_PORT);
+		return videoManager.connect(ARDroneUtils.VIDEO_PORT);*/
+		return false;
 	}
 
 	/** connect navdata */
@@ -156,8 +157,8 @@ public class ARDrone implements ARDroneInterface{
 		stop();
 		landing();
 		manager.close();
-		if(videoManager!=null)
-			videoManager.close();
+//		if(videoManager!=null)
+//			videoManager.close();
 		if(navdataManager!=null)
 			navdataManager.close();
 	}
@@ -166,8 +167,8 @@ public class ARDrone implements ARDroneInterface{
 	public void start() {
 		if(manager!=null)
 			new Thread(manager).start();
-		if(videoManager!=null)
-			new Thread(videoManager).start();
+//		if(videoManager!=null)
+//			new Thread(videoManager).start();
 		if(navdataManager!=null)
 			new Thread(navdataManager).start();
 	}
@@ -358,9 +359,9 @@ public class ARDrone implements ARDroneInterface{
 	}
 
 	//update listeners
-	public void addImageUpdateListener(ImageListener imageListener){
+	/*public void addImageUpdateListener(ImageListener imageListener){
 		this.imageListener=imageListener;
-	}
+	}*/
 	public void addAttitudeUpdateListener(AttitudeListener attitudeListener){
 		this.attitudeListener=attitudeListener;
 	}
@@ -377,9 +378,9 @@ public class ARDrone implements ARDroneInterface{
 		this.navDataListener = navDataListener;
 	}
 	//remove listeners
-	public void removeImageUpdateListener(){
+	/*public void removeImageUpdateListener(){
 		imageListener=null;
-	}
+	}*/
 	public void removeAttitudeUpdateListener(){
 		attitudeListener=null;
 	}

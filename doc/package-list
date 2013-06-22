@@ -1,1 +1,11 @@
-libkovan
+
+linkjvm.ardrone
+linkjvm.ardrone.command
+linkjvm.ardrone.listeners
+linkjvm.ardrone.manager
+linkjvm.ardrone.navdata
+linkjvm.ardrone.navdata.javadrone
+linkjvm.ardrone.utils
+linkjvm.ardrone.video
+linkjvm.libkovan
+linkjvm.libkovan.jni
