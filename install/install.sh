@@ -64,8 +64,6 @@ rm -r src swig jvm install
 echo "[INSTALL] add permanent environment variables..."
 echo "export BOOTCLASSPATH=/usr/local/LinkJVM/share/jamvm/classes.zip:/usr/local/LinkJVM/share/classpath/glibj.zip:/usr/local/LinkJVM/lib/LinkJVM.jar" >> /etc/profile
 echo "export LD_LIBRARY_PATH=/usr/local/LinkJVM/lib/classpath" >> /etc/profile
-echo "[INSTALL] setting classpath for other java compilers..."
-echo "export CLASSPATH=/usr/local/LinkJVM/share/jamvm/classes.zip:/usr/local/LinkJVM/share/classpath/glibj.zip:/usr/local/LinkJVM/lib/LinkJVM.jar" >> /etc/profile
 echo "[INSTALL] setting jamvm symlink..."
 ln -s /usr/local/LinkJVM/bin/jamvm /usr/bin/jamvm
 ln -s /usr/local/LinkJVM/bin/jamvm /usr/bin/java
