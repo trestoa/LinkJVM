@@ -1,22 +1,22 @@
 /*
-* This file is part of LinkJVM.
-*
-* Java Framework for the KIPR Link
-* Copyright (C) 2013 Markus Klein<m@mklein.co.at>
-*
-* This program is free software: you can redistribute it and/or modify
-* it under the terms of the GNU General Public License as published by
-* the Free Software Foundation, either version 3 of the License, or
-* any later version.
-*
-* This program is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-* GNU General Public License for more details.
-*
-* You should have received a copy of the GNU General Public License
-* along with this program. If not, see <http://www.gnu.org/licenses/>.
-*/
+ * This file is part of LinkJVM.
+ *
+ * Java Framework for the KIPR Link
+ * Copyright (C) 2013 Markus Klein<m@mklein.co.at>
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
 
 /*
  *
@@ -41,6 +41,7 @@ package linkjvm.ardrone;
 //import java.awt.image.BufferedImage;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
+import java.util.Iterator;
 import java.util.StringTokenizer;
 
 import linkjvm.ardrone.command.CommandManager;
@@ -55,6 +56,7 @@ import linkjvm.ardrone.navdata.NavDataManager;
 import linkjvm.ardrone.navdata.javadrone.NavData;
 import linkjvm.ardrone.utils.ARDroneUtils;
 //import linkjvm.ardrone.video.VideoManager;
+import linkjvm.ardrone.utils.ListenerList;
 
 
 
@@ -71,13 +73,12 @@ public class ARDrone implements ARDroneInterface{
 //	private VideoManager videoManager=null;
 	private NavDataManager navdataManager=null;
 
-	//listeners
-//	private ImageListener imageListener=null;
-	private AttitudeListener attitudeListener=null;
-	private BatteryListener batteryListener=null;
-	private StateListener stateListener=null;
-	private VelocityListener velocityListener=null;
-	private NavDataListener navDataListener=null;
+	//listeners	
+	private ListenerList<AttitudeListener> attitudeListeners = null;
+	private ListenerList<BatteryListener> batteryListeners = null; 
+	private ListenerList<StateListener> stateListeners = null;
+	private ListenerList<VelocityListener> velocityListeners = null;
+	private ListenerList<NavDataListener> navDataListeners = null;
 
 	/** constructor */
 	public ARDrone(){
@@ -126,28 +127,36 @@ public class ARDrone implements ARDroneInterface{
 		if(inetaddr==null){
 			inetaddr=getInetAddress(ipaddr);
 		}
+		attitudeListeners = new ListenerList<AttitudeListener>();
+		batteryListeners = new ListenerList<BatteryListener>();
+		stateListeners = new ListenerList<StateListener>();
+		velocityListeners = new ListenerList<VelocityListener>();
+		navDataListeners = new ListenerList<NavDataListener>();
 		navdataManager=new NavDataManager(inetaddr, manager);
 		navdataManager.setAttitudeListener(new AttitudeListener() {
 			@Override
 			public void attitudeUpdated(float pitch, float roll, float yaw, int altitude) {
-				if(attitudeListener!=null){
-					attitudeListener.attitudeUpdated(pitch, roll, yaw, altitude);
+				Iterator<AttitudeListener> it = attitudeListeners.iterator();
+				while(it.hasNext()){
+					it.next().attitudeUpdated(pitch, roll, yaw, altitude);
 				}
 			}
 		});
 		navdataManager.setBatteryListener(new BatteryListener() {
 			@Override
 			public void batteryLevelChanged(int percentage) {
-				if(batteryListener!=null){
-					batteryListener.batteryLevelChanged(percentage);
+				Iterator<BatteryListener> it = batteryListeners.iterator();
+				while(it.hasNext()){
+					it.next().batteryLevelChanged(percentage);
 				}
 			}
 		});
 		navdataManager.setStateListener(new StateListener() {
 			@Override
 			public void stateChanged(DroneState state) {
-				if(stateListener!=null){
-					stateListener.stateChanged(state);
+				Iterator<StateListener> it = stateListeners.iterator();
+				while(it.hasNext()){
+					it.next().stateChanged(state);
 				}
 			}
 		});
@@ -155,16 +164,18 @@ public class ARDrone implements ARDroneInterface{
 		navdataManager.setVelocityListener(new VelocityListener() {
 			@Override
 			public void velocityChanged(float vx, float vy, float vz) {
-				if(velocityListener!=null){
-					velocityListener.velocityChanged(vx, vy, vz);
+				Iterator<VelocityListener> it = velocityListeners.iterator();
+				while(it.hasNext()){
+					it.next().velocityChanged(vx, vy, vz);
 				}
 			}
 		});
 		navdataManager.setNavDataListener(new NavDataListener() {
 			@Override
 			public void navDataUpdated(NavData navData) {
-				if(navDataListener!=null){
-					navDataListener.navDataUpdated(navData);
+				Iterator<NavDataListener> it = navDataListeners.iterator();
+				while(it.hasNext()){
+					it.next().navDataUpdated(navData);
 				}
 			}
 		});
@@ -383,38 +394,38 @@ public class ARDrone implements ARDroneInterface{
 		this.imageListener=imageListener;
 	}*/
 	public void addAttitudeUpdateListener(AttitudeListener attitudeListener){
-		this.attitudeListener=attitudeListener;
+		attitudeListeners.add(attitudeListener);
 	}
 	public void addBatteryUpdateListener(BatteryListener batteryListener){
-		this.batteryListener=batteryListener;
+		batteryListeners.add(batteryListener); 
 	}
 	public void addStateUpdateListener(StateListener stateListener){
-		this.stateListener=stateListener;
+		stateListeners.add(stateListener);
 	}
 	public void addVelocityUpdateListener(VelocityListener velocityListener){
-		this.velocityListener=velocityListener;
+		velocityListeners.add(velocityListener);
 	}
 	public void addNavDataListener(NavDataListener navDataListener)	{
-		this.navDataListener = navDataListener;
+		navDataListeners.add(navDataListener);
 	}
 	//remove listeners
 	/*public void removeImageUpdateListener(){
 		imageListener=null;
 	}*/
-	public void removeAttitudeUpdateListener(){
-		attitudeListener=null;
+	public void removeAttitudeUpdateListener(AttitudeListener l){
+		attitudeListeners.remove(l);
 	}
-	public void removeBatteryUpdateListener(){
-		batteryListener=null;
+	public void removeBatteryUpdateListener(BatteryListener l){
+		batteryListeners.remove(l);
 	}
-	public void removeStateUpdateListener(){
-		stateListener=null;
+	public void removeStateUpdateListener(StateListener l){
+		stateListeners.remove(l);
 	}
-	public void removeVelocityUpdateListener(){
-		velocityListener=null;
+	public void removeVelocityUpdateListener(VelocityListener l){
+		velocityListeners.remove(l);
 	}
-	public void removeNavDataListener(){
-		navDataListener=null;
+	public void removeNavDataListener(NavDataListener l){
+		navDataListeners.remove(l);
 	}
 
 	/**

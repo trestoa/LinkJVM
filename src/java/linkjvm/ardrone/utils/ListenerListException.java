@@ -18,18 +18,24 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-/*
- * Copyright 2010 Cliff L. Biffle.  All Rights Reserved.
- * Use of this source code is governed by a BSD-style license that can be found
- * in the LICENSE file.
- */	
-package linkjvm.ardrone.navdata;
+package linkjvm.ardrone.utils;
 
-public class NavDataException extends Exception{
-
-	private static final long serialVersionUID = 1311407045280371188L;
-
-	public NavDataException(String message){
+public class ListenerListException extends RuntimeException {
+	private static final long serialVersionUID = -7837368139803086662L;
+	
+	ListenerListException(){
+		super();
+	}
+	
+	ListenerListException(String message){
 		super(message);
+	}
+	
+	ListenerListException(String message, Throwable t){
+		super(message, t);
+	}
+	
+	ListenerListException(Throwable t){
+		super(t);
 	}
 }

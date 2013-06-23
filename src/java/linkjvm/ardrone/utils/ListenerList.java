@@ -18,18 +18,23 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-/*
- * Copyright 2010 Cliff L. Biffle.  All Rights Reserved.
- * Use of this source code is governed by a BSD-style license that can be found
- * in the LICENSE file.
- */	
-package linkjvm.ardrone.navdata;
+package linkjvm.ardrone.utils;
 
-public class NavDataException extends Exception{
+import java.util.ArrayList;
+import java.util.Iterator;
 
-	private static final long serialVersionUID = 1311407045280371188L;
+public class ListenerList<E> extends ArrayList<E> {
+	
+	private static final long serialVersionUID = 8391904731472086730L;
 
-	public NavDataException(String message){
-		super(message);
+	@Override
+	public boolean add(E e) throws ListenerListException, UnsupportedOperationException, ClassCastException, NullPointerException, IllegalArgumentException, IndexOutOfBoundsException{
+		Iterator<E> it = this.iterator();
+		while(it.hasNext()){
+			if(it.next() == e){
+				throw new ListenerListException("");
+			}
+		}
+		return super.add(e);
 	}
 }
