@@ -41,6 +41,7 @@ package linkjvm.ardrone;
 //import java.awt.image.BufferedImage;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.StringTokenizer;
 
@@ -56,7 +57,6 @@ import linkjvm.ardrone.navdata.NavDataManager;
 import linkjvm.ardrone.navdata.javadrone.NavData;
 import linkjvm.ardrone.utils.ARDroneUtils;
 //import linkjvm.ardrone.video.VideoManager;
-import linkjvm.ardrone.utils.ListenerList;
 
 
 
@@ -74,11 +74,11 @@ public class ARDrone implements ARDroneInterface{
 	private NavDataManager navdataManager=null;
 
 	//listeners	
-	private ListenerList<AttitudeListener> attitudeListeners = null;
-	private ListenerList<BatteryListener> batteryListeners = null; 
-	private ListenerList<StateListener> stateListeners = null;
-	private ListenerList<VelocityListener> velocityListeners = null;
-	private ListenerList<NavDataListener> navDataListeners = null;
+	private ArrayList<AttitudeListener> attitudeListeners = null;
+	private ArrayList<BatteryListener> batteryListeners = null; 
+	private ArrayList<StateListener> stateListeners = null;
+	private ArrayList<VelocityListener> velocityListeners = null;
+	private ArrayList<NavDataListener> navDataListeners = null;
 
 	/** constructor */
 	public ARDrone(){
@@ -127,11 +127,11 @@ public class ARDrone implements ARDroneInterface{
 		if(inetaddr==null){
 			inetaddr=getInetAddress(ipaddr);
 		}
-		attitudeListeners = new ListenerList<AttitudeListener>();
-		batteryListeners = new ListenerList<BatteryListener>();
-		stateListeners = new ListenerList<StateListener>();
-		velocityListeners = new ListenerList<VelocityListener>();
-		navDataListeners = new ListenerList<NavDataListener>();
+		attitudeListeners = new ArrayList<AttitudeListener>();
+		batteryListeners = new ArrayList<BatteryListener>();
+		stateListeners = new ArrayList<StateListener>();
+		velocityListeners = new ArrayList<VelocityListener>();
+		navDataListeners = new ArrayList<NavDataListener>();
 		navdataManager=new NavDataManager(inetaddr, manager);
 		navdataManager.setAttitudeListener(new AttitudeListener() {
 			@Override
