@@ -6,7 +6,15 @@ body{
 	color:#444;
 	font-size:120%;
 }
-
+hr{	
+	border:none;
+	margin:auto;
+	max-width:600px;
+	height:5px;
+	background-color:rgba(112, 112, 112, 0.5);
+	margin-top:30px;
+	margin-bottom:30px;
+}
 /* links */
 a:link {
 	color:#3399FF;
@@ -63,4 +71,8 @@ header h2{
 	max-width:650px;
 	margin:auto;
 }
-
+/* footer */
+footer{
+	font-size:80%;
+	text-align:center;
+}
