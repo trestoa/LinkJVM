@@ -1,1 +1,41 @@
-Hello World!
+<!doctype html>
+<html>
+	<head>
+    	<title>LinkJVM</title>
+	<meta charset="utf-8">
+	<meta name="author" content="Markus Klein">
+	<meta name="description" content="LinkJVM, Java envionment for the KIpr Link.">
+	<link rel="stylesheet" type="text/css" href="./assets/css/style.css">		 
+	</head>
+	<body>
+		<header>
+			<img src="./assets/img/logo.svg" alt="LinkJVM Logo" id="logo">
+			<h1>LinkJVM</h1>
+			<h2>Java on the KIPR Link</h2>
+			<div id="nav">
+				<a href="https://github.com/kleiinnn/LinkJVM/">Repository</a><a href="./download.html">Download</a>
+			</div>
+		</header>
+		<div class="content-wrapper">
+			<h2 id="about">About LinkJVM</h2>
+			<p>LinkJVM is a Java Environment of the <a href="http://www.kipr.org/products/link/">KIPR Link</a> and allows the execution of very Java language and acually very JVM supported language such as Scala and Javascript (over <a href="https://developer.mozilla.org/en/docs/Rhino">Rhino</a>).</p>
+			<h2>Java?</h2>
+			<h4>Why is the oppotunity to program the robot in Java important?</h4>
+			<ul>
+				<li>First, the most students in school get started in programming using Java, so they should be able to use the learned skills in botball.</li>
+				<li>Java provides automatic garbage collection and an excellent set of basic data types like lists, maps and so on.</li>
+				<li>Compared to C Java has a much better maintainability especially in very large libraries because of object orientation.</li>
+			</ul>
+			<h4>Isn´t  Java much slower than C?</h4>
+			<p>No, not much. Of course is Java slower the C, but not that much. In another way: For normal usage it won´t make a difference.</p>
+			<h4>So are there Benchmarks?</h4>
+			<p>No, I have not had the time to generate benchmark for LinkJVM yet, but I plan to make one.</p>
+			<h2>Robot Library</h2>
+			<p>LinkJVM provides a huge Libray for controlling the robot(reading analog and digital sensor values, controlling motors and servos, ...). This library is acually only a wrapper library for the in native c written <a href="https://github.com/kipr/libkovan">libkovan</a>.</p>	
+		<h2>Event Interfaces</h2>
+		<p>The <code>linkjvm.events</code> package is a part of the robot library which provides an fast way and easy way for an event-driven software architecture. It allows to define events and actions triggered by the events.</p>
+		<h2>YA Drone Integration</h2>
+		<p>LinkJVM integrates an open source library for controlling the <a href="http://ardrone2.parrot.com/">Parrot AR Drone</a> named <a href="https://github.com/MahatmaX/YADrone">YA Drone</a>. YA Drone provides a huge library for controlling the drone including listener interfaces.</p>	
+		<div>
+	</body>
+</html>
