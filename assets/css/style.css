@@ -2,26 +2,27 @@
 
 /* global */
 body{
-	font-family:'Roboto';
-	color:#444;
+	font-family:monospace;
+	color:#DDD;
 	font-size:100%;
+	background-color:#000;
 }
 hr{	
 	border:none;
 	margin:auto;
 	max-width:600px;
 	height:5px;
-	background-color:rgba(112, 112, 112, 0.5);
+	background-color:rgba(0, 255, 0, 1);
 	margin-top:30px;
 	margin-bottom:30px;
 }
 /* links */
 a:link {
-	color:#3399FF;
+	color:#0F0;
 }
 
 a:visited {
-	color:#777;
+	color:rgba(0, 255, 0, 0.6);
 }
 
 /* header */
@@ -31,43 +32,46 @@ header{
 }
 header h1{
 	font-size:500%;
-	color:#333;
+	color:#DDD;
+	font-family:'Roboto';
 }
 header h2{
 	margin:0, 0, 0, 0;
 	padding:0, 0, 0, 0;
-	color:#555;
+	color:#AAA;
+	font-family:'Roboto';
 }
 #logo{
 	height:200px;
 	width:200px;
+	background-color:#FFF;
 }
 
 /* nav */
 #nav a{
 	margin:20px;
 	padding:10px;
-	font-family:'Roboto';
 	font-size:130%;
 }
 #nav a:link {
-	color:#555;
+	color:#FFF;
 	text-decoration:none;
 }
 #nav a:visited {
-	color:#555;
+	color:#FFF;
         text-decoration:none;
 }
 #nav a:hover {
-	color:#FFF;
+	color:#0F0;
 	text-decoration:none;
-	background-color:#555;
 }
 
 /* content */
 .content-wrapper{
 	max-width:650px;
 	margin:auto;
+	margin-top:40px;
+	margin-top:40px;
 }
 /* footer */
 footer{
