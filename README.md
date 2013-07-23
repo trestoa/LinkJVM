@@ -16,6 +16,19 @@ LinkJVM is a Java Environment of the [KIPR Link](http://www.kipr.org/products/li
 ####So are there Benchmarks?
 + No, I have not had the time to generate benchmark for LinkJVM yet, but I plan to make one.
 
+##Installing LinkJVM
+Basically there are two different ways to install LinkJVM:
+
+###1. Installing a Release
+The easiest way is to install a pre-built LinkJVM. You just have to download the latest release, extract it, put it on the Link and run the install.sh script.
+In this way you have always the latest stable version on you controller.
+
+####[Releaseserver of LinkJVM](http://files.mklein.co.at/LinkJVM/release/)
+
+###2. Building it with the Repository
+If you always want the lastest developent state you can build LinkJVM directly from the Repository.
+Please refer to install/INSTALL.md for build instructions.
+
 ##Robot Library
 LinkJVM provides a huge Libray for controlling the robot(reading analog and digital sensor values, controlling motors and servos, ...). This library is acually only a wrapper library for the in native c written [libkovan](https://github.com/kipr/libkovan).
 
