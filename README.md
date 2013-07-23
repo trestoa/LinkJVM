@@ -26,7 +26,7 @@ The `linkjvm.events` package is a part of the robot library which provides an fa
 LinkJVM integrates an open source library for controlling the [Parrot AR Drone](http://ardrone2.parrot.com/) named [YA Drone](https://github.com/MahatmaX/YADrone). YA Drone provides a huge library for controlling the drone including listener interfaces.
 
 ##Author and Contact
-Developer: [Markus Klein](https://mklein.co.at)
+[Markus Klein](https://mklein.co.at)
 
 ##License 
 This file is part of LinkJVM.
