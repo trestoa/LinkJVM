@@ -28,7 +28,7 @@ import java.util.ArrayList;
  *
  */
 
-public interface Event {
+public abstract class Event {
 	public ArrayList<Action> actionList = new ArrayList<Action>();
 	
 	/**
@@ -36,9 +36,25 @@ public interface Event {
 	 * 
 	 * @return true if the event should be triggered, false if not
 	 */
-	public boolean proof();
+	public abstract boolean proof();
 	
+	/**
+	 * Adds an action which is is triggered by the event.
+	 * 
+	 * @param a action which should be added to the event
+	 * @return true if adding the action succeed
+	 */
+	public final boolean addAction(Action a){
+		return actionList.add(a);
+	}
 	
-	
-	
+	/**
+	 * Removes the first appearing instance of the specified action. 
+	 * 
+	 * @param a action
+	 * @return true if removing the action succeed
+	 */
+	public final boolean removeAction(Action a){
+		return actionList.remove(a);
+	}	
 }
