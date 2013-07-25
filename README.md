@@ -22,8 +22,25 @@ Basically there are two different ways to install LinkJVM:
 ###1. Installing a Release
 The easiest way is to install a pre-built LinkJVM. You just have to download the latest release, extract it, put it on the Link and run the install.sh script.
 In this way you have always the latest stable version on you controller.
+If you just want to use LinkJVM it is strongly remommended to install release.
 
-####[Releaseserver of LinkJVM](http://files.mklein.co.at/LinkJVM/release/)
+It is very easy to install LinkJVM from a release:
+
+#### 1. Download it and extract it on a flash drive
+[Download] the latest  release from the server and extract it on any external flash drive.
+If you want to use an older relase download it from the [Releaseserver of LinkJVM](http://files.mklein.co.at/LinkJVM/release/).
+
+#### 2. Insert the flash drive into your Link
+
+#### 3. Compile and run the install.c programm.
+Click on "file manager" browse to the location where LinKJVM was saved on the flash drive.
+Go into `install` directory.
+Click on linkjvm-install.c and on compile.
+Run linkjvm-install.
+
+#### 4. Code Java and have Fun!
+linkjvm-install is not needed anymore, you can delete it.
+
 
 ###2. Building it with the Repository
 If you always want the lastest developent state you can build LinkJVM directly from the Repository.
