@@ -1,4 +1,3 @@
-#!/bin/sh
 #
 # This file is part of LinkJVM.
 #
@@ -19,21 +18,47 @@
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 #
 
-
 echo "[INSTALL] Installing LinkJVM..."
 echo "[INSTALL] deleting pre-installed java and previous installations..."
 rm -r /usr/bin/java /usr/bin/jamvm /usr/share/jamvm /usr/local/LinkJVM
 echo "[INSTALL] copying files..."
 mkdir /usr/local
 mkdir /usr/local/LinkJVM
+cd ..
 cp -r * /usr/local/LinkJVM
 cd /usr/local/LinkJVM/
+echo "[INSTALL] making new directories..."
+mkdir include
+mkdir bin
+mkdir lib
+mkdir share
+cd src/jni/
+echo "[INSTALL] compiling native JNI wrapper..."
+echo "[COMPILE] compiling libkovan_wrap.c..."
+gcc -c -I /usr/local/LinkJVM/jvm/classpath/include libkovan_wrap.c
+echo "[COMPILE] linking libkovan_wrap.o with libkovan.so"
+ld -G libkovan_wrap.o /usr/lib/libkovan.so -o LinkJVM.so
+echo "[COMPILE] libkovanjava.so created!"
+echo "[INSTALL] moving LinkJVM.jar to right location..."
+mv /usr/local/src/java/LinkJVM.jar /usr/local/LinkJVM/lib
+echo "[INSTALL] moving LinkJVM.so to right location..."
+mv /usr/local/LinkJVM/src/jni/LinkJVM.so /usr/local/LinkJVM/lib/LinkJVM.so
+echo "[INSTALL] copying jamvm files..."
+cp /usr/local/LinkJVM/jvm/jamvm/bin/jamvm /usr/local/LinkJVM/bin/jamvm
+cp -r /usr/local/LinkJVM/jvm/jamvm/share/* /usr/local/LinkJVM/share/
+cp -r /usr/local/LinkJVM/jvm/jamvm/include/* /usr/local/LinkJVM/include/
+cp -r /usr/local/LinkJVM/jvm/jamvm/lib/* /usr/local/LinkJVM/lib/
+echo "[INSTALL] copying classpath files..."
+cp -r /usr/local/LinkJVM/jvm/classpath/share/* /usr/local/LinkJVM/share/
+cp -r /usr/local/LinkJVM/jvm/classpath/include/* /usr/local/LinkJVM/include/
+cp -r /usr/local/LinkJVM/jvm/classpath/lib/* /usr/local/LinkJVM/lib/
+echo "[INSTALL] deleting sources and unused files..."
+cd /usr/local/LinkJVM
+rm -r src swig jvm install
 echo "[INSTALL] add permanent environment variables..."
 echo "export BOOTCLASSPATH=/usr/local/LinkJVM/share/jamvm/classes.zip:/usr/local/LinkJVM/share/classpath/glibj.zip:/usr/local/LinkJVM/lib/LinkJVM.jar" >> /etc/profile
 echo "export LD_LIBRARY_PATH=/usr/local/LinkJVM/lib/classpath" >> /etc/profile
 echo "[INSTALL] setting jamvm symlink..."
 ln -s /usr/local/LinkJVM/bin/jamvm /usr/bin/jamvm
 ln -s /usr/local/LinkJVM/bin/jamvm /usr/bin/java
-echo "[INSTALL] cleaning up directory: deleting install script..."
-rm /usr/local/LinkJVM/install.sh
-echo "[INSTALL] Installation complete! LinkJVM installed!"
+echo "[INSTALL] installation complete! LinkJVM installed!"
