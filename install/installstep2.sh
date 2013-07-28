@@ -40,7 +40,7 @@ echo "[COMPILE] linking libkovan_wrap.o with libkovan.so"
 ld -G libkovan_wrap.o /usr/lib/libkovan.so -o LinkJVM.so
 echo "[COMPILE] libkovanjava.so created!"
 echo "[INSTALL] moving LinkJVM.jar to right location..."
-mv /usr/local/src/java/LinkJVM.jar /usr/local/LinkJVM/lib
+mv /usr/local/LinkJVM/src/java/LinkJVM.jar /usr/local/LinkJVM/lib
 echo "[INSTALL] moving LinkJVM.so to right location..."
 mv /usr/local/LinkJVM/src/jni/LinkJVM.so /usr/local/LinkJVM/lib/LinkJVM.so
 echo "[INSTALL] copying jamvm files..."

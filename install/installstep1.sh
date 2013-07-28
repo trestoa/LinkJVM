@@ -20,7 +20,7 @@
 #
 
 echo "[COMPILE] Building LinkJVM.jar"
-cd /usr/local/LinkJVM/src/java
+cd ../src/java
 mkdir bin
 echo "reading class_list..."
 classes=`cat class_list`
