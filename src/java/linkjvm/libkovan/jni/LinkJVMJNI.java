@@ -10,7 +10,7 @@ package linkjvm.libkovan.jni;
 
 public class LinkJVMJNI {
 	static{
-		System.load("");
+		System.load("/usr/local/LinkJVM/lib/LinkJVM.so");
 	}
 
 	public final static native int drone_connect();
