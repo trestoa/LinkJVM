@@ -28,10 +28,12 @@ mkdir /usr/local
 mkdir /usr/local/LinkJVM
 cp -r * /usr/local/LinkJVM
 cd /usr/local/LinkJVM/
-echo "[INSTALL] add permanent environment variables..."
-echo "export BOOTCLASSPATH=/usr/local/LinkJVM/share/jamvm/classes.zip:/usr/local/LinkJVM/share/classpath/glibj.zip:/usr/local/LinkJVM/lib/LinkJVM.jar" >> /etc/profile
-echo "export LD_LIBRARY_PATH=/usr/local/LinkJVM/lib/classpath" >> /etc/profile
-echo "export CLASSPATH=/usr/local/LinkJVM/share/jamvm/classes.zip:/usr/local/LinkJVM/share/classpath/glibj.zip:/usr/local/LinkJVM/lib/LinkJVM.jar:." >> /etc/profile
+echo "[INSTALL] set environment variables..."
+echo "[INSTALL] check if environment variables have already been set..."
+last_row = `sed -e '/^[<blank><tab>]*$/d'  | sed -n -e '$p'`
+if last_row = 'sh /usr/local/LinkJVM/etc/environment-vars.sh'
+        then 'sh /usr/local/LinkJVM/etc/environment-vars.sh' >> /etc/profile
+fi
 echo "[INSTALL] setting jamvm symlink..."
 ln -s /usr/local/LinkJVM/bin/jamvm /usr/bin/jamvm
 ln -s /usr/local/LinkJVM/bin/jamvm /usr/bin/java

@@ -32,6 +32,7 @@ mkdir include
 mkdir bin
 mkdir lib
 mkdir share
+mkdir etc
 cd src/jni/
 echo "[INSTALL] compiling native JNI wrapper..."
 echo "[COMPILE] compiling libkovan_wrap.c..."
@@ -43,6 +44,8 @@ echo "[INSTALL] moving LinkJVM.jar to right location..."
 mv /usr/local/LinkJVM/src/java/LinkJVM.jar /usr/local/LinkJVM/lib
 echo "[INSTALL] moving LinkJVM.so to right location..."
 mv /usr/local/LinkJVM/src/jni/LinkJVM.so /usr/local/LinkJVM/lib/LinkJVM.so
+echo "[INSTALL] moving environment-vars.sh to right location..."
+mv /usr/local/LinkJVM/install/environment-vars.sh /usr/local/LinkJVM/etc
 echo "[INSTALL] copying jamvm files..."
 cp /usr/local/LinkJVM/jvm/jamvm/bin/jamvm /usr/local/LinkJVM/bin/jamvm
 cp -r /usr/local/LinkJVM/jvm/jamvm/share/* /usr/local/LinkJVM/share/
@@ -55,10 +58,12 @@ cp -r /usr/local/LinkJVM/jvm/classpath/lib/* /usr/local/LinkJVM/lib/
 echo "[INSTALL] deleting sources and unused files..."
 cd /usr/local/LinkJVM
 rm -r src swig jvm install
-echo "[INSTALL] add permanent environment variables..."
-echo "export BOOTCLASSPATH=/usr/local/LinkJVM/share/jamvm/classes.zip:/usr/local/LinkJVM/share/classpath/glibj.zip:/usr/local/LinkJVM/lib/LinkJVM.jar" >> /etc/profile
-echo "export LD_LIBRARY_PATH=/usr/local/LinkJVM/lib/classpath" >> /etc/profile
-echo "export CLASSPATH=/usr/local/LinkJVM/share/jamvm/classes.zip:/usr/local/LinkJVM/share/classpath/glibj.zip:/usr/local/LinkJVM/lib/LinkJVM.jar:." >> /etc/profile
+echo "[INSTALL] set environment variables..."
+echo "[INSTALL] check if environment variables have already been set..."
+last_row = `sed -e '/^[<blank><tab>]*$/d'  | sed -n -e '$p'`
+if last_row = 'sh /usr/local/LinkJVM/etc/environment-vars.sh'
+	then 'sh /usr/local/LinkJVM/etc/environment-vars.sh' >> /etc/profile
+fi
 echo "[INSTALL] setting jamvm symlink..."
 ln -s /usr/local/LinkJVM/bin/jamvm /usr/bin/jamvm
 ln -s /usr/local/LinkJVM/bin/jamvm /usr/bin/java
