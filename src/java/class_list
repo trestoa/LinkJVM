@@ -1,1 +1,1 @@
-linkjvm/ardrone/*.java linkjvm/ardrone/command/*.java linkjvm/ardrone/listeners/*.java linkjvm/ardrone/manager/*.java linkjvm/ardrone/navdata/*.java linkjvm/ardrone/navdata/javadrone/*.java linkjvm/ardrone/utils/*.java linkjvm/libkovan/*.java  linkjvm/libkovan/jni/*.java
+linkjvm/ardrone/*.java linkjvm/ardrone/command/*.java linkjvm/ardrone/listeners/*.java linkjvm/ardrone/manager/*.java linkjvm/ardrone/navdata/*.java linkjvm/ardrone/navdata/javadrone/*.java linkjvm/ardrone/utils/*.java linkjvm/libkovan/*.java  linkjvm/libkovan/jni/*.java linkjvm/events/*.java
