@@ -56,5 +56,17 @@ public abstract class Event {
 	 */
 	public final boolean removeAction(Action a){
 		return actionList.remove(a);
+	}
+	
+	/**
+	 * 
+	 * Triggers all Actions assigned to the Event.
+	 *
+	 */	
+	public final void trigger(){
+		Iterator<Action> it = actionList.iterator();
+		while(it.hasNext){
+			it.next.perform();
+		}
 	}	
 }
