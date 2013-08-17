@@ -74,14 +74,14 @@ public class Controller {
 	/**
 	 * Causes a beep sound. Returns when the sound is finished.
 	 */
-	public static void beep(){
+	public static static void beep(){
 		LinkJVM.beep();
 	}
 	
 	/**
 	 * Clears the console.
 	 */
-	public void clearDisplay(){
+	public static void clearDisplay(){
 		LinkJVM.display_clear();
 	}
 	
@@ -92,27 +92,27 @@ public class Controller {
 	 * @param port 
 	 * @param inout
 	 */
-	public void setDigitalOutput(int port, int inout){
+	public static void setDigitalOutput(int port, int inout){
 		LinkJVM.set_digital_output(port, inout);
 	}
 	
-	public void setDigitalValue(int port, int val){
+	public static void setDigitalValue(int port, int val){
 		LinkJVM.set_digital_value(port, val);
 	}
 
-	public void startEvents(){
+	public static void startEvents(){
 		eventManager.start();
 	}
 
-	public void stopEvents(){
+	public static void stopEvents(){
 		eventManager.stop();
 	}
 
-	public void registerEvent(Event e){
+	public static void registerEvent(Event e){
 		eventManager.registerEvent(e);
 	}
 
-	public void unregisterEvent(Event e){
+	public static void unregisterEvent(Event e){
 		eventManager.unregisterEvent(e);
 	}
 }
