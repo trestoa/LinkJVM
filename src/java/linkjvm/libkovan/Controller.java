@@ -99,19 +99,35 @@ public class Controller {
 	public static void setDigitalValue(int port, int val){
 		LinkJVM.set_digital_value(port, val);
 	}
-
+	
+	/**
+	 * Activates triggering the events
+	 */
 	public static void startEvents(){
 		eventManager.start();
 	}
-
+	
+	/**
+	 * Deativates triggering the events. Always call this method if at the end of your program if you called <code>startEvents();</code> before.
+	 */
 	public static void stopEvents(){
 		eventManager.stop();
 	}
-
+	
+	/**
+	 * Registers a new event.
+	 * 
+	 * @param e Event which should be registered
+	 */ 
 	public static void registerEvent(Event e){
 		eventManager.registerEvent(e);
 	}
-
+	
+	/**
+	 * Unregisters the first occurence of the specified event
+	 * 
+	 * @param e Event
+	 */ 
 	public static void unregisterEvent(Event e){
 		eventManager.unregisterEvent(e);
 	}
