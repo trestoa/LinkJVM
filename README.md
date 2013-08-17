@@ -42,7 +42,7 @@ Run linkjvm-install.
 linkjvm-install is not needed anymore, you can delete it.
 
 
-###2. Building it with the Repository
+###2. Building it from the Repository
 If you always want the lastest developent state you can build LinkJVM directly from the Repository.
 Please refer to install/INSTALL.md for build instructions.
 
