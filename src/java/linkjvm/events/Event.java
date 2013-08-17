@@ -18,9 +18,10 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package libjvm.events;
+package linkjvm.events;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 /**
  * 
@@ -65,8 +66,8 @@ public abstract class Event {
 	 */	
 	public final void trigger(){
 		Iterator<Action> it = actionList.iterator();
-		while(it.hasNext){
-			it.next.perform();
+		while(it.hasNext()){
+			it.next().perform();
 		}
 	}	
 }

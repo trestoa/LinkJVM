@@ -1,4 +1,7 @@
-import java.lang.ArrayList;
+package linkjvm.events;
+
+import java.util.ArrayList;
+import java.util.Iterator;
 
 public class EventManager extends Thread{
 	private ArrayList<Event> eventList;
@@ -12,7 +15,7 @@ public class EventManager extends Thread{
 			Iterator<Event> it = eventList.iterator();
 			while(it.hasNext()){
 				Event nextEvent = it.next();
-				if(nextEvent.proof){
+				if(nextEvent.proof()){
 					nextEvent.trigger();
 				}
 			}
