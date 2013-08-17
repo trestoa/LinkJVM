@@ -21,6 +21,8 @@
 package linkjvm.libkovan;
 
 import linkjvm.libkovan.jni.LinkJVM;
+import linkjvm.events.EventManager;
+import linkjvm.events.Event;
 
 /**
  * The Controller class provides all functions from the libkovan,
@@ -30,6 +32,8 @@ import linkjvm.libkovan.jni.LinkJVM;
  * @version 1.0.0
  */
 public class Controller {
+
+	static EventManager eventManager = new EventManager();
 	
 	/**
 	 * This function wait for the light on the specified light port.
@@ -94,5 +98,21 @@ public class Controller {
 	
 	public void setDigitalValue(int port, int val){
 		LinkJVM.set_digital_value(port, val);
+	}
+
+	public void startEvents(){
+		eventManager.start();
+	}
+
+	public void stopEvents(){
+		eventManager.stop();
+	}
+
+	public void registerEvent(Event e){
+		eventManager.registerEvent(e);
+	}
+
+	public void unregisterEvent(Event e){
+		eventManager.unregisterEvent(e);
 	}
 }
