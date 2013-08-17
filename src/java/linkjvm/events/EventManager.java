@@ -26,7 +26,7 @@ public class EventManager implements Runnable{
 	
 	public void start(){
 		Thread t = new Thread(this);
-		t.start;
+		t.start();
 	}
 
 	public void stop(){
