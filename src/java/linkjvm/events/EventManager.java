@@ -3,7 +3,7 @@ package linkjvm.events;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public class EventManager extends Thread{
+public class EventManager implements Runnable{
 	private ArrayList<Event> eventList;
 	private boolean stop;	
 	
@@ -24,7 +24,11 @@ public class EventManager extends Thread{
 		}
 	}
 	
-	@Override
+	public void start(){
+		Thread t = new Thread(this);
+		t.start;
+	}
+
 	public void stop(){
 		stop = true;
 	}
