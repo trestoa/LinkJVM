@@ -74,7 +74,7 @@ public class Controller {
 	/**
 	 * Causes a beep sound. Returns when the sound is finished.
 	 */
-	public static static void beep(){
+	public static void beep(){
 		LinkJVM.beep();
 	}
 	
