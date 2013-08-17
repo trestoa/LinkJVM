@@ -5,13 +5,15 @@ import java.util.Iterator;
 
 public class EventManager extends Thread{
 	private ArrayList<Event> eventList;
+	private boolean stop;	
 	
 	public EventManager(){
 		eventList = new ArrayList<Event>();
+		stop = false;
 	}
 
 	public void run(){
-		while(true){
+		while(!stop){
 			Iterator<Event> it = eventList.iterator();
 			while(it.hasNext()){
 				Event nextEvent = it.next();
@@ -20,6 +22,11 @@ public class EventManager extends Thread{
 				}
 			}
 		}
+	}
+	
+	@Override
+	public void stop(){
+		stop = true;
 	}
 
 	public boolean registerEvent(Event e){
