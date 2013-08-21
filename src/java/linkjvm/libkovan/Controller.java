@@ -40,7 +40,7 @@ public class Controller {
 	 * 
 	 * @param lightPort Analog port of the light sensor.
 	 */
-	public static void waitForLight(int lightPort){
+	public void waitForLight(int lightPort){
 		LinkJVM.wait_for_light(lightPort);
 	}
 	
@@ -49,7 +49,7 @@ public class Controller {
 	 * 
 	 * @return The power level of the KIPR Link
 	 */
-	public static double powerLevel(){
+	public double powerLevel(){
 		return LinkJVM.power_level();
 	}
 	
@@ -58,7 +58,7 @@ public class Controller {
 	 * 
 	 * @param msecs time to wait int milliseconds
 	 */
-	public static void msleep(int msecs){
+	public void msleep(int msecs){
 		LinkJVM.msleep(msecs);
 	}
 	
@@ -67,21 +67,21 @@ public class Controller {
 	 * 
 	 * @return system time in seconds
 	 */
-	public static double seconds(){
+	public double seconds(){
 		return System.currentTimeMillis() * 1000;
 	}
 	
 	/**
 	 * Causes a beep sound. Returns when the sound is finished.
 	 */
-	public static void beep(){
+	public void beep(){
 		LinkJVM.beep();
 	}
 	
 	/**
 	 * Clears the console.
 	 */
-	public static void clearDisplay(){
+	public void clearDisplay(){
 		LinkJVM.display_clear();
 	}
 	
@@ -92,25 +92,25 @@ public class Controller {
 	 * @param port 
 	 * @param inout
 	 */
-	public static void setDigitalOutput(int port, int inout){
+	public void setDigitalOutput(int port, int inout){
 		LinkJVM.set_digital_output(port, inout);
 	}
 	
-	public static void setDigitalValue(int port, int val){
+	public void setDigitalValue(int port, int val){
 		LinkJVM.set_digital_value(port, val);
 	}
 	
 	/**
 	 * Activates triggering the events
 	 */
-	public static void startEvents(){
+	public void startEvents(){
 		eventManager.start();
 	}
 	
 	/**
 	 * Deativates triggering the events. Always call this method if at the end of your program if you called <code>startEvents();</code> before.
 	 */
-	public static void stopEvents(){
+	public void stopEvents(){
 		eventManager.stop();
 	}
 	
@@ -119,7 +119,7 @@ public class Controller {
 	 * 
 	 * @param e Event which should be registered
 	 */ 
-	public static void registerEvent(Event e){
+	public void registerEvent(Event e){
 		eventManager.registerEvent(e);
 	}
 	
@@ -128,7 +128,7 @@ public class Controller {
 	 * 
 	 * @param e Event
 	 */ 
-	public static void unregisterEvent(Event e){
+	public void unregisterEvent(Event e){
 		eventManager.unregisterEvent(e);
 	}
 }
