@@ -105,6 +105,16 @@ function install_jvm(){
 	return 0
 }
 
+function install_library(){
+	echo "compiling robot library..."
+	cd ../src/java
+	mkdir bin
+	classes=`cat class_list`
+	javac -d bin $classes
+	jar -cf  LinkJVM.jar -C bin/ .
+	
+}
+
 echo "[INSTALL] Installing LinkJVM..."
 init
 if [[ $? != 0 ]]; then
