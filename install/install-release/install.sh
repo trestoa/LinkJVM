@@ -19,24 +19,111 @@
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 #
 
+INSTALLATION_DIR=/usr/local/LinkJVM
+ECJ_JAR=ecj-3.7.jar 
+
+function init(){
+	echo "initializing installation..." 
+	rm -r /usr/bin/java /usr/bin/jamvm /usr/share/jamvm /usr/bin/javac /usr/bin/ecj $INSTALLATION_DIR
+	mkdir $INSTALLATION_DIR $INSTALLATION_DIR/include $INSTALLATION_DIR/lib $INSTALLATION_DIR/share $INSTALLATION_DIR/bin
+	if [[ $? != 0 ]]; then
+		return 1
+	fi
+	cd ../java-environment
+	if [[ $? != 0 ]]; then
+		return 1
+	fi
+	return 0
+}
+
+function install_javac(){
+	echo "installing java compiler..."
+	mkdir $INSTALLATION_DIR/lib/javac
+	if [[ $? != 0 ]]; then
+		return 1
+	fi
+	cp javac/$ECJ_JAR $INSTALLATION_DIR/lib/javac/
+	if [[ $? != 0 ]]; then
+		return 1
+	fi
+	cd javac; gcc -o javac javac.c
+	if [[ $? != 0 ]]; then
+		return 1
+	fi
+	cd ..
+	if [[ $? != 0 ]]; then
+		return 1
+	fi
+	cp javac/javac $INSTALLATION_DIR/bin/
+	if [[ $? != 0 ]]; then
+		return 1
+	fi
+	ln -s $INSTALLATION_DIR/bin/javac /usr/bin/javac
+	if [[ $? != 0 ]]; then
+		return 1
+	fi
+	ln -s $INSTALLATION_DIR/bin/javac /usr/bin/ecj
+	if [[ $? != 0 ]]; then
+		return 1
+	fi
+	return 0
+}
+
+function install_classpath(){
+	echo "installing gnu classpath..."
+	cp -r classpath/* $INSTALLATION_DIR/
+	if [[ $? != 0 ]]; then
+		return 1
+	fi
+	return 0
+}
+
+function install_jvm(){
+	echo "installing jvm..."
+	cp -r jamvm/* $INSTALLATION_DIR/
+	if [[ $? != 0 ]]; then
+		return 1
+	fi
+	ln -s $INSTALLATION_DIR/bin/jamvm /usr/bin/java
+	if [[ $? != 0 ]]; then
+		return 1
+	fi
+	ln -s $INSTALLATION_DIR/bin/jamvm /usr/bin/jamvm
+	if [[ $? != 0 ]]; then
+		return 1
+	fi
+	last_row=`sed -e '/^[<blank><tab>]*$/d' /etc/profile | sed -n -e '$p'`
+	if [[ $? != 0 ]]; then
+		return 1
+	fi
+	if [[ $last_row = 'sh /usr/local/LinkJVM/etc/environment-vars.sh' ]]; then
+		'sh /usr/local/LinkJVM/etc/environment-vars.sh' >> /etc/profile
+	fi
+	if [[ $? != 0 ]]; then
+		return 1
+	fi
+	return 0
+}
 
 echo "[INSTALL] Installing LinkJVM..."
-echo "[INSTALL] deleting pre-installed java and previous installations..."
-rm -r /usr/bin/java /usr/bin/jamvm /usr/share/jamvm /usr/local/LinkJVM
-echo "[INSTALL] copying files..."
-mkdir /usr/local
-mkdir /usr/local/LinkJVM
-cp -r * /usr/local/LinkJVM
-cd /usr/local/LinkJVM/
-echo "[INSTALL] set environment variables..."
-echo "[INSTALL] check if environment variables have already been set..."
-last_row = `sed -e '/^[<blank><tab>]*$/d'  | sed -n -e '$p'`
-if last_row = 'sh /usr/local/LinkJVM/etc/environment-vars.sh'
-        then 'sh /usr/local/LinkJVM/etc/environment-vars.sh' >> /etc/profile
+init
+if [[ $? != 0 ]]; then
+	echo "[ERROR] init returned a non zero status code"
+	exit
 fi
-echo "[INSTALL] setting jamvm symlink..."
-ln -s /usr/local/LinkJVM/bin/jamvm /usr/bin/jamvm
-ln -s /usr/local/LinkJVM/bin/jamvm /usr/bin/java
-echo "[INSTALL] cleaning up directory: deleting install script..."
-rm /usr/local/LinkJVM/install.sh
-echo "[INSTALL] Installation complete! LinkJVM installed!"
+install_javac
+if [[ $? != 0 ]]; then
+	echo "[ERROR] install_javac returned a non zero status code"
+	exit
+fi
+install_classpath
+if [[ $? != 0 ]]; then
+	echo "[ERROR] install_classpath returned a non zero status code"
+	exit
+fi
+install_jvm
+if [[ $? != 0 ]]; then
+	echo "[ERROR] install_jvm returned a non zero status code"
+	exit
+fi
+echo "[INSTALL] LinkJVM java environment installed!"
