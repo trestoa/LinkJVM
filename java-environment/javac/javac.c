@@ -2,10 +2,10 @@
 #include <string.h>
 
 int main(int argc, char *argv[]){
-	char command[255] = "java /usr/local/LinkJVM/lib/ecj-3.7.jar ";
-	int i = 0;
+	char command[255] = "java -jar ecj-3.7.jar ";
+	int i = 1;
 	for(i; i < argc; i++){
-		strcpy(command, argv[i]);
+		strcat(command, argv[i]);
 	}
 	system(command);
 }
