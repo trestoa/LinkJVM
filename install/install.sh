@@ -25,7 +25,7 @@ ECJ_JAR=ecj-3.7.jar
 function init(){
 	echo "initializing installation..." 
 	rm -r /usr/bin/java /usr/bin/jamvm /usr/share/jamvm /usr/bin/javac /usr/bin/ecj $INSTALLATION_DIR
-	mkdir $INSTALLATION_DIR $INSTALLATION_DIR/include $INSTALLATION_DIR/lib $INSTALLATION_DIR/share $INSTALLATION_DIR/bin
+	mkdir -p $INSTALLATION_DIR $INSTALLATION_DIR/include $INSTALLATION_DIR/lib $INSTALLATION_DIR/share $INSTALLATION_DIR/bin
 	if [[ $? != 0 ]]; then
 		return 1
 	fi
