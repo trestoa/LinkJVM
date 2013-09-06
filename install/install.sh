@@ -94,19 +94,19 @@ function install_jvm(){
 	fi
 	more /etc/profile | grep "export BOOTCLASSPATH=/usr/local/LinkJVM/share/jamvm/classes.zip:/usr/local/LinkJVM/share/classpath/glibj.zip:/usr/local/LinkJVM/lib/LinkJVM.jar"
 	if [[ $?=1 ]]; then
-		"export BOOTCLASSPATH=/usr/local/LinkJVM/share/jamvm/classes.zip:/usr/local/LinkJVM/share/classpath/glibj.zip:/usr/local/LinkJVM/lib/LinkJVM.jar" >> /etc/profile
+		echo "export BOOTCLASSPATH=/usr/local/LinkJVM/share/jamvm/classes.zip:/usr/local/LinkJVM/share/classpath/glibj.zip:/usr/local/LinkJVM/lib/LinkJVM.jar" >> /etc/profile
 	elif [[ $?!=0  ]]; then
 		return 1
 	fi
 	more /etc/profile | grep "export LD_LIBRARY_PATH=/usr/local/LinkJVM/lib/classpath"
 	if [[ $?=1 ]]; then
-		"export LD_LIBRARY_PATH=/usr/local/LinkJVM/lib/classpath" >> /etc/profile
+		echo "export LD_LIBRARY_PATH=/usr/local/LinkJVM/lib/classpath" >> /etc/profile
 	elif [[ $?!=0  ]]; then
 		return 1
 	fi
 	more /etc/profile | grep "export CLASSPATH=/usr/local/LinkJVM/share/jamvm/classes.zip:/usr/local/LinkJVM/share/classpath/glibj.zip:/usr/local/LinkJVM/lib/LinkJVM.jar:."
 	if [[ $?=1 ]]; then
-		"export CLASSPATH=/usr/local/LinkJVM/share/jamvm/classes.zip:/usr/local/LinkJVM/share/classpath/glibj.zip:/usr/local/LinkJVM/lib/LinkJVM.jar:." >> /etc/profile
+		echo "export CLASSPATH=/usr/local/LinkJVM/share/jamvm/classes.zip:/usr/local/LinkJVM/share/classpath/glibj.zip:/usr/local/LinkJVM/lib/LinkJVM.jar:." >> /etc/profile
 	elif [[ $?!=0  ]]; then
 		return 1
 	fi
