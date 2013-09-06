@@ -116,10 +116,42 @@ function install_jvm(){
 function install_library(){
 	echo "compiling robot library..."
 	cd ../src/java
+	if [[ $? != 0 ]]; then
+		return 1
+	fi
 	mkdir bin
+	if [[ $? != 0 ]]; then
+		return 1
+	fi
 	classes=`cat class_list`
+	if [[ $? != 0 ]]; then
+		return 1
+	fi
 	javac -d bin $classes
-	jar -cf  LinkJVM.jar -C bin/ .
+	if [[ $? != 0 ]]; then
+		return 1
+	fi
+	javac CreateJar.java
+	if [[ $? != 0 ]]; then
+		return 1
+	fi
+	mv CreateJar.class bin
+	if [[ $? != 0 ]]; then
+		return 1
+	fi
+	cd bin
+	if [[ $? != 0 ]]; then
+		return 1
+	fi
+	java CreateJar
+	if [[ $? != 0 ]]; then
+		return 1
+	fi
+	mv LinkJVM.jar ..
+	if [[ $? != 0 ]]; then
+		return 1
+	fi
+	return 0
 	
 }
 
