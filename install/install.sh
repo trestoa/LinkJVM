@@ -92,14 +92,22 @@ function install_jvm(){
 	if [[ $? != 0 ]]; then
 		return 1
 	fi
-	last_row=`sed -e '/^[<blank><tab>]*$/d' /etc/profile | sed -n -e '$p'`
-	if [[ $? != 0 ]]; then
+	more /etc/profile | grep "export BOOTCLASSPATH=/usr/local/LinkJVM/share/jamvm/classes.zip:/usr/local/LinkJVM/share/classpath/glibj.zip:/usr/local/LinkJVM/lib/LinkJVM.jar"
+	if [[ $?=1 ]]; then
+		"export BOOTCLASSPATH=/usr/local/LinkJVM/share/jamvm/classes.zip:/usr/local/LinkJVM/share/classpath/glibj.zip:/usr/local/LinkJVM/lib/LinkJVM.jar" >> /etc/profile
+	elif [[ $?!=0  ]]; then
 		return 1
 	fi
-	if [[ $last_row = 'sh /usr/local/LinkJVM/etc/environment-vars.sh' ]]; then
-		'sh /usr/local/LinkJVM/etc/environment-vars.sh' >> /etc/profile
+	more /etc/profile | grep "export LD_LIBRARY_PATH=/usr/local/LinkJVM/lib/classpath"
+	if [[ $?=1 ]]; then
+		"export LD_LIBRARY_PATH=/usr/local/LinkJVM/lib/classpath" >> /etc/profile
+	elif [[ $?!=0  ]]; then
+		return 1
 	fi
-	if [[ $? != 0 ]]; then
+	more /etc/profile | grep "export CLASSPATH=/usr/local/LinkJVM/share/jamvm/classes.zip:/usr/local/LinkJVM/share/classpath/glibj.zip:/usr/local/LinkJVM/lib/LinkJVM.jar:."
+	if [[ $?=1 ]]; then
+		"export CLASSPATH=/usr/local/LinkJVM/share/jamvm/classes.zip:/usr/local/LinkJVM/share/classpath/glibj.zip:/usr/local/LinkJVM/lib/LinkJVM.jar:." >> /etc/profile
+	elif [[ $?!=0  ]]; then
 		return 1
 	fi
 	return 0
