@@ -164,11 +164,11 @@ function install_library(){
 	if [[ $? != 0 ]]; then
 		return 1
 	fi
-	cd ../src/jni/
+	cd ../../jni/
 	if [[ $? != 0 ]]; then
 		return 1
 	fi
-	gcc -c -I /usr/local/LinkJVM/jvm/classpath/include libkovan_wrap.c
+	gcc -c -I /usr/local/LinkJVM/include libkovan_wrap.c
 	if [[ $? != 0 ]]; then
 		return 1
 	fi
