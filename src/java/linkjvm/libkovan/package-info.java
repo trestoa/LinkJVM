@@ -23,4 +23,4 @@
  * This package is the java wrapper of <a href="https://github.com/kipr/libkovan/">libkovan</a>.
  */
 
-package linkjvm.libkovan.jni;
+package linkjvm.libkovan;;
