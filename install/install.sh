@@ -110,6 +110,19 @@ function install_jvm(){
 	elif [[ $? < 0  ]]; then
 		return 1
 	fi
+	export BOOTCLASSPATH=/usr/local/LinkJVM/share/jamvm/classes.zip:/usr/local/LinkJVM/share/classpath/glibj.zip:/usr/local/LinkJVM/lib/LinkJVM.jar
+	if [[ $? != 0 ]]; then
+		return 1
+	fi
+	export LD_LIBRARY_PATH=/usr/local/LinkJVM/lib/classpath
+	if [[ $? != 0 ]]; then
+		return 1
+	fi
+	export CLASSPATH=/usr/local/LinkJVM/share/jamvm/classes.zip:/usr/local/LinkJVM/share/classpath/glibj.zip:/usr/local/LinkJVM/lib/LinkJVM.jar:.
+	if [[ $? != 0 ]]; then
+		return 1
+	fi
+
 	return 0
 }
 
@@ -151,6 +164,22 @@ function install_library(){
 	if [[ $? != 0 ]]; then
 		return 1
 	fi
+	cd ../src/jni/
+	if [[ $? != 0 ]]; then
+		return 1
+	fi
+	gcc -c -I /usr/local/LinkJVM/jvm/classpath/include libkovan_wrap.c
+	if [[ $? != 0 ]]; then
+		return 1
+	fi
+	ld -G libkovan_wrap.o /usr/lib/libkovan.so -o LinkJVM.so
+	if [[ $? != 0 ]]; then
+		return 1
+	fi
+	mv LinkJVM.so $INSTALLATION_DIR/lib/
+	if [[ $? != 0 ]]; then
+		return 1
+	fi
 	return 0
 	
 }
@@ -174,6 +203,11 @@ fi
 install_jvm
 if [[ $? != 0 ]]; then
 	echo "[ERROR] install_jvm returned a non zero status code"
+	exit
+fi
+install_library
+if [[ $? != 0 ]]; then
+	echo "[ERROR] install_library returned a non zero status code"
 	exit
 fi
 echo "[INSTALL] LinkJVM java environment installed!"
