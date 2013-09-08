@@ -19,32 +19,34 @@ LinkJVM is a Java Environment of the [KIPR Link](http://www.kipr.org/products/li
 ##Installing LinkJVM
 Basically there are two different ways to install LinkJVM:
 
-###1. Installing a Release
-The easiest way is to install a pre-built LinkJVM. You just have to download the latest release, extract it, put it on the Link and run the install.sh script.
-In this way you have always the latest stable version on you controller.
-If you just want to use LinkJVM it is strongly remommended to install release.
+###1. Install
 
 It is very easy to install LinkJVM from a release:
 
 #### 1. Download it and extract it on a flash drive
-[Download] the latest  release from the server and extract it on any external flash drive.
-If you want to use an older relase download it from the [Releaseserver of LinkJVM](http://files.mklein.co.at/LinkJVM/release/).
+There a two ways the get LinkJVM.
+
+##### Download a pre-build LinkJVM from the fileserver
+Using a pre-built version of LinkJVM is the fastest way to get Java on the KIPR Link.
+
+[LinkJVM Fileserver](http://files.mklein.co.at/LinkJVM/release)
+
+##### Download a Github Release
+The installation process of the source distribution will take slightly long.
+
+[LinkJVM Github Releases](https://github.com/kleiinnn/LinkJVM/releases)
 
 #### 2. Insert the flash drive into your Link
 
 #### 3. Compile and run the install.c programm.
 Click on "file manager" browse to the location where LinKJVM was saved on the flash drive.
 Go into `install` directory.
-Click on linkjvm-install.c and on compile.
+Click on `linkjvm-install.c` and on compile.
 Run linkjvm-install.
 
 #### 4. Code Java and have Fun!
 linkjvm-install is not needed anymore, you can delete it.
 
-
-###2. Building it from the Repository
-If you always want the lastest developent state you can build LinkJVM directly from the Repository.
-Please refer to install/INSTALL.md for build instructions.
 
 ##Robot Library
 LinkJVM provides a huge Libray for controlling the robot(reading analog and digital sensor values, controlling motors and servos, ...). This library is acually only a wrapper library for the in native c written [libkovan](https://github.com/kipr/libkovan).
@@ -62,7 +64,7 @@ LinkJVM integrates an open source library for controlling the [Parrot AR Drone](
 This file is part of LinkJVM.
 
 Java Framework for the KIPR Link
-Copyright (C) 2013 Markus Klein<m@mklein.co.at>
+Copyright (C) 2013 Markus Klein m@mklein.co.at
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by

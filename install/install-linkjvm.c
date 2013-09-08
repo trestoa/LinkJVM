@@ -23,5 +23,5 @@
 
 int main(){
 	printf("Welcome to LinkJVM!");
-	system("install.sh");
+	system("sh install.sh");
 }

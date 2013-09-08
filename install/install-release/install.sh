@@ -20,33 +20,10 @@
 #
 
 INSTALLATION_DIR=/usr/local/LinkJVM
-ECJ_JAR=ecj-3.7.jar 
 
-function init(){
-	echo "initializing installation..." 
+function install_linkjvm(){
 	rm -r /usr/bin/java /usr/bin/jamvm /usr/share/jamvm /usr/bin/javac /usr/bin/ecj $INSTALLATION_DIR
-	mkdir $INSTALLATION_DIR $INSTALLATION_DIR/include $INSTALLATION_DIR/lib $INSTALLATION_DIR/share $INSTALLATION_DIR/bin
-	if [[ $? != 0 ]]; then
-		return 1
-	fi
-	cd ../java-environment
-	if [[ $? != 0 ]]; then
-		return 1
-	fi
-	return 0
-}
-
-function install_javac(){
-	echo "installing java compiler..."
-	mkdir $INSTALLATION_DIR/lib/javac
-	if [[ $? != 0 ]]; then
-		return 1
-	fi
-	cp javac/$ECJ_JAR $INSTALLATION_DIR/lib/javac/
-	if [[ $? != 0 ]]; then
-		return 1
-	fi
-	cd javac; gcc -o javac javac.c
+	mkdir -p $INSTALLATION_DIR
 	if [[ $? != 0 ]]; then
 		return 1
 	fi
@@ -54,7 +31,7 @@ function install_javac(){
 	if [[ $? != 0 ]]; then
 		return 1
 	fi
-	cp javac/javac $INSTALLATION_DIR/bin/
+	cp -r * $INSTALLATION_DIR
 	if [[ $? != 0 ]]; then
 		return 1
 	fi
@@ -66,24 +43,6 @@ function install_javac(){
 	if [[ $? != 0 ]]; then
 		return 1
 	fi
-	return 0
-}
-
-function install_classpath(){
-	echo "installing gnu classpath..."
-	cp -r classpath/* $INSTALLATION_DIR/
-	if [[ $? != 0 ]]; then
-		return 1
-	fi
-	return 0
-}
-
-function install_jvm(){
-	echo "installing jvm..."
-	cp -r jamvm/* $INSTALLATION_DIR/
-	if [[ $? != 0 ]]; then
-		return 1
-	fi
 	ln -s $INSTALLATION_DIR/bin/jamvm /usr/bin/java
 	if [[ $? != 0 ]]; then
 		return 1
@@ -92,13 +51,33 @@ function install_jvm(){
 	if [[ $? != 0 ]]; then
 		return 1
 	fi
-	last_row=`sed -e '/^[<blank><tab>]*$/d' /etc/profile | sed -n -e '$p'`
+	more /etc/profile | grep "export BOOTCLASSPATH=/usr/local/LinkJVM/share/jamvm/classes.zip:/usr/local/LinkJVM/share/classpath/glibj.zip:/usr/local/LinkJVM/lib/LinkJVM.jar"
+	if [[ $? == 1 ]]; then
+		echo "export BOOTCLASSPATH=/usr/local/LinkJVM/share/jamvm/classes.zip:/usr/local/LinkJVM/share/classpath/glibj.zip:/usr/local/LinkJVM/lib/LinkJVM.jar" >> /etc/profile
+	elif [[ $? < 0  ]]; then
+		return 1
+	fi
+	more /etc/profile | grep "export LD_LIBRARY_PATH=/usr/local/LinkJVM/lib/classpath"
+	if [[ $? == 1 ]]; then
+		echo "export LD_LIBRARY_PATH=/usr/local/LinkJVM/lib/classpath" >> /etc/profile
+	elif [[ $? < 0  ]]; then
+		return 1
+	fi
+	more /etc/profile | grep "export CLASSPATH=/usr/local/LinkJVM/share/jamvm/classes.zip:/usr/local/LinkJVM/share/classpath/glibj.zip:/usr/local/LinkJVM/lib/LinkJVM.jar:."
+	if [[ $? == 1 ]]; then
+		echo "export CLASSPATH=/usr/local/LinkJVM/share/jamvm/classes.zip:/usr/local/LinkJVM/share/classpath/glibj.zip:/usr/local/LinkJVM/lib/LinkJVM.jar:." >> /etc/profile
+	elif [[ $? < 0  ]]; then
+		return 1
+	fi
+	export BOOTCLASSPATH=/usr/local/LinkJVM/share/jamvm/classes.zip:/usr/local/LinkJVM/share/classpath/glibj.zip:/usr/local/LinkJVM/lib/LinkJVM.jar
 	if [[ $? != 0 ]]; then
 		return 1
 	fi
-	if [[ $last_row = 'sh /usr/local/LinkJVM/etc/environment-vars.sh' ]]; then
-		'sh /usr/local/LinkJVM/etc/environment-vars.sh' >> /etc/profile
+	export LD_LIBRARY_PATH=/usr/local/LinkJVM/lib/classpath
+	if [[ $? != 0 ]]; then
+		return 1
 	fi
+	export CLASSPATH=/usr/local/LinkJVM/share/jamvm/classes.zip:/usr/local/LinkJVM/share/classpath/glibj.zip:/usr/local/LinkJVM/lib/LinkJVM.jar:.
 	if [[ $? != 0 ]]; then
 		return 1
 	fi
@@ -106,24 +85,9 @@ function install_jvm(){
 }
 
 echo "[INSTALL] Installing LinkJVM..."
-init
+install_linkjvm
 if [[ $? != 0 ]]; then
-	echo "[ERROR] init returned a non zero status code"
-	exit
-fi
-install_javac
-if [[ $? != 0 ]]; then
-	echo "[ERROR] install_javac returned a non zero status code"
-	exit
-fi
-install_classpath
-if [[ $? != 0 ]]; then
-	echo "[ERROR] install_classpath returned a non zero status code"
-	exit
-fi
-install_jvm
-if [[ $? != 0 ]]; then
-	echo "[ERROR] install_jvm returned a non zero status code"
+	echo "[ERROR] install_linkjvm returned a non zero status code"
 	exit
 fi
 echo "[INSTALL] LinkJVM java environment installed!"
