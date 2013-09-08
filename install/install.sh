@@ -160,7 +160,7 @@ function install_library(){
 	if [[ $? != 0 ]]; then
 		return 1
 	fi
-	mv LinkJVM.jar ..
+	mv LinkJVM.jar $INSTALLATION_DIR/lib/
 	if [[ $? != 0 ]]; then
 		return 1
 	fi
@@ -181,6 +181,10 @@ function install_library(){
 		return 1
 	fi
 	return 0
+	
+}
+
+function finish_installation(){
 	
 }
 
