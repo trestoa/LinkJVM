@@ -185,7 +185,28 @@ function install_library(){
 }
 
 function finish_installation(){
-	
+	echo "finshing installation..."
+	rm libkovan_wrap.o
+	if [[ $? != 0 ]]; then
+		return 1
+	fi
+	rm -r ../java/bin
+	if [[ $? != 0 ]]; then
+		return 1
+	fi
+	rm ../../java-environment/javac/javac
+	if [[ $? != 0 ]]; then
+		return 1
+	fi
+	cd ../..
+	if [[ $? != 0 ]]; then
+		return 1
+	fi
+	cp -r examples $INSTALLATION_DIR
+	if [[ $? != 0 ]]; then
+		return 1
+	fi
+	return 0
 }
 
 echo "[INSTALL] Installing LinkJVM..."
