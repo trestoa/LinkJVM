@@ -14,21 +14,22 @@ public class ServoExample {
 		AnalogSensor sensor = new AnalogSensor(0);
 		Servo servo = new Servo(0);
 		servo.enable();
+		Controller c = new Controller();
 		while(true){
 			System.out.println("Place sensor!");
-			Controller.msleep(1000);
+			c.msleep(1000);
 			int currentVal = sensor.getValue();
 			System.out.println(currentVal);
 			if(currentVal > 600){
 				servo.setPosition(2000);
-				Controller.msleep(500);
+				c.msleep(500);
 			}
 			else{
 				servo.setPosition(0);
-				Controller.msleep(500);
+				c.msleep(500);
 			}
 			servo.setPosition(1000);
-			Controller.msleep(500);
+			c.msleep(500);
 		}
 	}
 }
