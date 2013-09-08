@@ -235,4 +235,9 @@ if [[ $? != 0 ]]; then
 	echo "[ERROR] install_library returned a non zero status code"
 	exit
 fi
+finish_installation
+if [[ $? != 0 ]]; then
+	echo "[ERROR] finsh_installation returned a non zero status code"
+	exit
+fi
 echo "[INSTALL] LinkJVM java environment installed!"
