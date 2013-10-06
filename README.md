@@ -1,4 +1,6 @@
 #LinkJVM 
+*THIS BRANCH IS ONLY FOR BUILDING LINKJVM USING THE KOVAN BUILD SYSTEM.*
+*DO NOT USE IT FOR INSTALLING AND BUILDING LINKJVM ON YOUR LINK!!!*
 ##Java on the KIPR Link
 
 ##About LinkJVM
@@ -19,43 +21,6 @@ LinkJVM is a Java Environment of the [KIPR Link](http://www.kipr.org/products/li
 ##Installing LinkJVM
 Basically there are two different ways to install LinkJVM:
 
-###1. Install
-
-It is very easy to install LinkJVM from a release:
-
-#### 1. Download it and extract it on a flash drive
-There a two ways the get LinkJVM.
-
-##### Download a pre-build LinkJVM from the fileserver
-Using a pre-built version of LinkJVM is the fastest way to get Java on the KIPR Link.
-
-[LinkJVM Fileserver](http://files.mklein.co.at/LinkJVM/release)
-
-##### Download a Github Release
-The installation process of the source distribution will take slightly long.
-
-[LinkJVM Github Releases](https://github.com/kleiinnn/LinkJVM/releases)
-
-#### 2. Insert the flash drive into your Link
-
-#### 3. Compile and run the install.c programm.
-Click on "file manager" browse to the location where LinKJVM was saved on the flash drive.
-Go into `install` directory.
-Click on `linkjvm-install.c` and on compile.
-Run linkjvm-install.
-
-#### 4. Code Java and have Fun!
-linkjvm-install is not needed anymore, you can delete it.
-
-
-##Robot Library
-LinkJVM provides a huge Libray for controlling the robot(reading analog and digital sensor values, controlling motors and servos, ...). This library is acually only a wrapper library for the in native c written [libkovan](https://github.com/kipr/libkovan).
-
-##Event Interfaces
-The `linkjvm.events` package is a part of the robot library which provides an fast way and easy way for an event-driven software architecture. It allows to define events and actions triggered by the events.
-
-##YA Drone Integration 
-LinkJVM integrates an open source library for controlling the [Parrot AR Drone](http://ardrone2.parrot.com/) named [YA Drone](https://github.com/MahatmaX/YADrone). YA Drone provides a huge library for controlling the drone including listener interfaces.
 
 ##Author and Contact
 [Markus Klein](https://mklein.co.at)
