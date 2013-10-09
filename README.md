@@ -1,7 +1,9 @@
 #LinkJVM 
 *THIS BRANCH IS ONLY FOR BUILDING LINKJVM USING THE KOVAN BUILD SYSTEM.*
-*DO NOT USE IT FOR INSTALLING AND BUILDING LINKJVM ON YOUR LINK!!!*
+*DO NOT USE IT FOR INSTALLING AND BUILDING LINKJVM ON YOUR LINK!!!*    
+*Please change to the no-bitbake for installing LinkJVM*
 ##Java on the KIPR Link
+
 
 ##About LinkJVM
 LinkJVM is a Java Environment of the [KIPR Link](http://www.kipr.org/products/link/) and allows the execution of very Java language and acually very JVM supported language such as Scala and Javascript (over [Rhino](https://developer.mozilla.org/en/docs/Rhino).
