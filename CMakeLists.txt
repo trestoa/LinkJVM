@@ -21,4 +21,4 @@ set(JNI_DIR src/jni)
 
 add_jar(linkjvm-java ${JAVA_SRC})
 
-add_subdirectory(JNI_DIR)
+add_subdirectory(${JNI_DIR})
