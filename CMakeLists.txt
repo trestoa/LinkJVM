@@ -17,10 +17,8 @@ set(JAVA_SRC
 	${JAVA_SRC_DIR}/linkjvm/libkovan/jni/*.java
 	${JAVA_SRC_DIR}/linkjvm/events/*.java
 )
-set(JNI_SRC_DIR src/jni)
+set(JNI_DIR src/jni)
 
 add_jar(linkjvm-java ${JAVA_SRC})
 
-include_directories(${JNI_SRC_DIR}/include)
-add_library(linkjvm-jni ${JNI_SRC_DIR}/libkovan_wrap.c)
-target_link_libraries(linkjvm-jni libkovan)
+add_subdirectory(JNI_DIR)
