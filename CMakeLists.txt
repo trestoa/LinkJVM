@@ -19,8 +19,8 @@ set(JAVA_SRC
 )
 set(JNI_SRC_DIR src/jni)
 
-add_jar(linkjvm ${JAVA_SRC})
+add_jar(linkjvm-java ${JAVA_SRC})
 
 include_directories(${JNI_SRC_DIR}/include)
-add_library(linkjvm ${JNI_SRC_DIR}/libkovan_wrap.c)
-target_link_libraries(linkjvm libkovan)
+add_library(linkjvm-jni ${JNI_SRC_DIR}/libkovan_wrap.c)
+target_link_libraries(linkjvm-jni libkovan)
