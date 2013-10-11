@@ -1,4 +1,3 @@
-set(CMAKE_JAVA_CLASS_OUTPUT_PATH ${CMAKE_SOURCE_DIR}/lib)
 include_directories(${CMAKE_SOURCE_DIR}/java-environment/classpath/include)
 add_library(linkjvm-jni SHARED libkovan_wrap.c)
 SET_TARGET_PROPERTIES(linkjvm-jni PROPERTIES LINKER_LANGUAGE C)
