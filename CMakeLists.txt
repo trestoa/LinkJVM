@@ -18,6 +18,7 @@ set(JAVA_SRC
 	${JAVA_SRC_DIR}/linkjvm/events/*.java
 )
 set(JNI_DIR src/jni)
+set(CMAKE_JAVA_COMPILE_FLAGS -7)
 
 add_jar(linkjvm-java ${JAVA_SRC})
 
