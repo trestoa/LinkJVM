@@ -19,6 +19,8 @@ set(JAVA_SRC
 )
 set(JNI_DIR src/jni)
 set(CMAKE_JAVA_COMPILE_FLAGS -7)
+set(LIBRARY_OUTPUT_PATH ${CMAKE_SOURCE_DIR}/lib)
+set(CMAKE_JAVA_CLASS_OUTPUT_PATH ${CMAKE_SOURCE_DIR}/lib)
 
 add_jar(linkjvm-java ${JAVA_SRC})
 
