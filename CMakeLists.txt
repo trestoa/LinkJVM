@@ -18,7 +18,7 @@ set(JAVA_SRC
 	${JAVA_SRC_DIR}/linkjvm/events/*.java
 )
 set(JNI_DIR src/jni)
-set(JAVAC_DIR java_environment/javac)
+set(JAVAC_DIR java-environment/javac)
 set(CMAKE_JAVA_COMPILE_FLAGS -7)
 set(LIBRARY_OUTPUT_PATH ${CMAKE_SOURCE_DIR}/lib)
 set(CMAKE_JAVA_TARGET_OUTPUT_DIR ${CMAKE_SOURCE_DIR}/lib)
