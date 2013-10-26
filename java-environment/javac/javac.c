@@ -2,7 +2,7 @@
 #include <string.h>
 
 int main(int argc, char *argv[]){
-	char command[2048] = "java -jar /usr/local/LinkJVM/lib/javac/ecj-3.7.jar -7 ";
+	char command[2048] = "java -jar /usr/javac/ecj-3.7.jar -7 ";
 	int i = 1;
 	for(i; i < argc; i++){
 		strcat(command, argv[i]);
