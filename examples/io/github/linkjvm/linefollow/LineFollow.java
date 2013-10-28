@@ -23,16 +23,16 @@ public class LineFollow {
 		Sensor rightSensor = new AnalogSensor(1);
 		while(true){
 			if(leftSensor.getValue() < 600){
-				leftMotor.drive(100);
-				rightMotor.drive(0);
+				leftMotor.moveAtVelocity(100);
+				rightMotor.moveAtVelocity(0);
 			}
 			else if(rightSensor.getValue() < 600){
-				leftMotor.drive(0);
-				rightMotor.drive(100);
+				leftMotor.moveAtVelocity(0);
+				rightMotor.moveAtVelocity(100);
 			}
 			else{
-				leftMotor.drive(100);
-				rightMotor.drive(100);
+				leftMotor.moveAtVelocity(100);
+				rightMotor.moveAtVelocity(100);
 			}
 		}
 	}

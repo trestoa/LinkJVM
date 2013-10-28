@@ -106,7 +106,7 @@ public class Motor {
 	 * 
 	 * @param vel velocity in ticks per second (range from -1000 to 1000)
 	 */
-	public void moveAtVelecity(int vel){
+	public void drive(int vel){
 		LinkJVM.mav(motorPort, vel);
 	}
 	
