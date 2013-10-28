@@ -19,34 +19,35 @@
  **************************************************************************/
 
 /*!
- * \file kovan.h
+ * \file sensor.hpp
+ * \brief Base sensor classes
  * \author Braden McDorman
- * \copyright KISS Institute for Practical Robotics
+ * \copyright KISS Insitute for Practical Robotics
+ * \defgroup sensor Sensors
  */
 
-#ifndef _KOVAN_H_
-#define _KOVAN_H_
+#ifndef _SENSORS_HPP_
+#define _SENSORS_HPP_
 
-#include "ardrone.h"
-#include "audio.h"
-#include "motors.h"
-#include "servo.h"
-#include "button.h"
-#include "digital.h"
-#include "camera.h"
-#include "create.h"
-#include "analog.h"
-#include "ir.h"
-#include "wifi.h"
-#include "graphics.h"
-#include "battery.h"
-#include "util.h"
-#include "general.h"
-#include "console.h"
-#include "display.h"
-#include "datalog.h"
-#include "accel.h"
-#include "thread.h"
-#include "botball.h"
+#include "export.h"
+
+/*!
+ * \class Sensor
+ * \brief The base class for all sensors of any type
+ * \tparam T The return type of this sensor.
+ * For example, a sensor returning true or false should be of type bool.
+ * \ingroup sensor
+ */
+template<typename T>
+class EXPORT_SYM Sensor
+{
+public:
+	virtual ~Sensor() {}
+	/*!
+	 * Get the current value for this sensor
+	 * \return The sensor's current value
+	 */
+	virtual T value() const = 0;
+};
 
 #endif

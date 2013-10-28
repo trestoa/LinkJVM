@@ -19,34 +19,15 @@
  **************************************************************************/
 
 /*!
- * \file kovan.h
+ * \file util.hpp
+ * \brief Utility methods and classes
  * \author Braden McDorman
- * \copyright KISS Institute for Practical Robotics
+ * \copyright KISS Insitute for Practical Robotics
  */
 
-#ifndef _KOVAN_H_
-#define _KOVAN_H_
+#ifndef _UTIL_HPP_
+#define _UTIL_HPP_
 
-#include "ardrone.h"
-#include "audio.h"
-#include "motors.h"
-#include "servo.h"
-#include "button.h"
-#include "digital.h"
-#include "camera.h"
-#include "create.h"
-#include "analog.h"
-#include "ir.h"
-#include "wifi.h"
-#include "graphics.h"
-#include "battery.h"
 #include "util.h"
-#include "general.h"
-#include "console.h"
-#include "display.h"
-#include "datalog.h"
-#include "accel.h"
-#include "thread.h"
-#include "botball.h"
 
 #endif

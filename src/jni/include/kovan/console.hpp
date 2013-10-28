@@ -19,34 +19,30 @@
  **************************************************************************/
 
 /*!
- * \file kovan.h
+ * \file console.hpp
+ * \brief Classes for working with the console screen
  * \author Braden McDorman
- * \copyright KISS Institute for Practical Robotics
+ * \copyright KISS Insitute for Practical Robotics
+ * \defgroup console Console
  */
 
-#ifndef _KOVAN_H_
-#define _KOVAN_H_
+#ifndef _CONSOLE_HPP_
+#define _CONSOLE_HPP_
 
-#include "ardrone.h"
-#include "audio.h"
-#include "motors.h"
-#include "servo.h"
-#include "button.h"
-#include "digital.h"
-#include "camera.h"
-#include "create.h"
-#include "analog.h"
-#include "ir.h"
-#include "wifi.h"
-#include "graphics.h"
-#include "battery.h"
-#include "util.h"
-#include "general.h"
-#include "console.h"
-#include "display.h"
-#include "datalog.h"
-#include "accel.h"
-#include "thread.h"
-#include "botball.h"
+#include "export.h"
+
+/*!
+ * \class Console
+ * Methods for working with the console inside the UI
+ * \ingroup console
+ */
+class EXPORT_SYM Console
+{
+public:
+	/*!
+	 * Clears the console.
+	 */
+	static void clear();
+};
 
 #endif

@@ -19,34 +19,61 @@
  **************************************************************************/
 
 /*!
- * \file kovan.h
+ * \file analog.hpp
+ * \brief Classes for working with analog sensors
  * \author Braden McDorman
- * \copyright KISS Institute for Practical Robotics
+ * \copyright KISS Insitute for Practical Robotics
+ * \ingroup sensor
  */
 
-#ifndef _KOVAN_H_
-#define _KOVAN_H_
+#ifndef _ANALOG_HPP_
+#define _ANALOG_HPP_
 
-#include "ardrone.h"
-#include "audio.h"
-#include "motors.h"
-#include "servo.h"
-#include "button.h"
-#include "digital.h"
-#include "camera.h"
-#include "create.h"
-#include "analog.h"
-#include "ir.h"
-#include "wifi.h"
-#include "graphics.h"
-#include "battery.h"
-#include "util.h"
-#include "general.h"
-#include "console.h"
-#include "display.h"
-#include "datalog.h"
-#include "accel.h"
-#include "thread.h"
-#include "botball.h"
+#include "sensor.hpp"
+
+#include "export.h"
+
+/*!
+ * \class Analog
+ * \brief Implements the sensor type "analog"
+ * \details Returns 10 bit unsigned integers
+ * \see Analog8
+ * \author Braden McDorman
+ * \ingroup sensor
+ */
+class EXPORT_SYM  Analog : public Sensor<unsigned short>
+{
+public:
+	Analog(const unsigned char& port);
+	
+	virtual unsigned short value() const;
+	
+	virtual void setPullup(bool pullup);
+	virtual bool pullup() const;
+	
+	/*!
+	 * Gets the physical port associated with this analog instance
+	 * \return physical port address
+	 */
+	unsigned char port() const;
+	
+private:
+	unsigned char m_port;
+};
+
+/*!
+ * \class Analog8
+ * \brief A derivative of the Analog class that returns 8 bit values rather than 10 bit ones.
+ * \details Returns 8 bit unsigned integers
+ * \see Analog
+ * \author Braden McDorman
+ * \ingroup sensor
+ */
+class EXPORT_SYM Analog8 : public Analog
+{
+public:
+	Analog8(const unsigned char& port);
+	virtual unsigned short value() const;
+};
 
 #endif

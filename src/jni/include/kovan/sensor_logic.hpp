@@ -18,35 +18,68 @@
  *  If not, see <http://www.gnu.org/licenses/>.                           *
  **************************************************************************/
 
+#ifndef _SENSOR_LOGIC_HPP_
+#define _SENSOR_LOGIC_HPP_
+
+#include "sensor.hpp"
+#include "export.h"
+
 /*!
- * \file kovan.h
- * \author Braden McDorman
- * \copyright KISS Institute for Practical Robotics
+ * Contains all logical sensors (sensors apply logical operations to other sensors.)
+ * \ingroup sensor
  */
-
-#ifndef _KOVAN_H_
-#define _KOVAN_H_
-
-#include "ardrone.h"
-#include "audio.h"
-#include "motors.h"
-#include "servo.h"
-#include "button.h"
-#include "digital.h"
-#include "camera.h"
-#include "create.h"
-#include "analog.h"
-#include "ir.h"
-#include "wifi.h"
-#include "graphics.h"
-#include "battery.h"
-#include "util.h"
-#include "general.h"
-#include "console.h"
-#include "display.h"
-#include "datalog.h"
-#include "accel.h"
-#include "thread.h"
-#include "botball.h"
+namespace SensorLogic
+{
+	class EXPORT_SYM Base : public Sensor<bool>
+	{
+	public:
+		Base(const Sensor<bool> *a, const Sensor<bool> *b, bool owns = false);
+		~Base();
+		
+		const Sensor<bool> *a() const;
+		const Sensor<bool> *b() const;
+		bool owns() const;
+	private:
+		const Sensor<bool> *m_a;
+		const Sensor<bool> *m_b;
+		bool m_owns;
+	};
+	
+	class EXPORT_SYM And : public Base
+	{
+	public:
+		And(const Sensor<bool> *a, const Sensor<bool> *b, bool owns = false);
+		virtual bool value() const;
+	};
+	
+	class EXPORT_SYM Or : public Base
+	{
+	public:
+		Or(const Sensor<bool> *a, const Sensor<bool> *b, bool owns = false);
+		virtual bool value() const;
+	};
+	
+	class EXPORT_SYM Xor : public Base
+	{
+	public:
+		Xor(const Sensor<bool> *a, const Sensor<bool> *b, bool owns = false);
+		virtual bool value() const;
+	};
+	
+	class EXPORT_SYM Not : public Sensor<bool>
+	{
+	public:
+		Not(const Sensor<bool> *input, bool owns = false);
+		~Not();
+		virtual bool value() const;
+		
+		const Sensor<bool> *input() const;
+		bool owns() const;
+		
+	private:
+		const Sensor<bool> *m_input;
+		bool m_owns;
+	};
+}
 
 #endif

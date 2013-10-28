@@ -19,34 +19,65 @@
  **************************************************************************/
 
 /*!
- * \file kovan.h
+ * \file servo.hpp
+ * \brief Classes for working with Servos
  * \author Braden McDorman
- * \copyright KISS Institute for Practical Robotics
+ * \copyright KISS Insitute for Practical Robotics
+ * \defgroup servo Servos
  */
 
-#ifndef _KOVAN_H_
-#define _KOVAN_H_
+#ifndef _SERVOS_HPP_
+#define _SERVOS_HPP_
 
-#include "ardrone.h"
-#include "audio.h"
-#include "motors.h"
-#include "servo.h"
-#include "button.h"
-#include "digital.h"
-#include "camera.h"
-#include "create.h"
-#include "analog.h"
-#include "ir.h"
-#include "wifi.h"
-#include "graphics.h"
-#include "battery.h"
-#include "util.h"
-#include "general.h"
-#include "console.h"
-#include "display.h"
-#include "datalog.h"
-#include "accel.h"
-#include "thread.h"
-#include "botball.h"
+#include "port.hpp"
+ #include "export.h"
+
+/*!
+ * \class Servo
+ * \brief Encapsulates the concept of a servo motor
+ * \ingroup servo
+ */
+class EXPORT_SYM Servo
+{
+public:
+	typedef unsigned int ticks_t;
+	
+	/*!
+	 * Create a new servo object.
+	 * \param port The associated physical servo port
+	 */
+	Servo(port_t port);
+	
+	/*!
+	 * \param position The new servo position, between 0 and 1024
+	 *
+	 * \note Even though the servos have a _theoretical_ range between 0 and 1023,
+	 * the _actual_ range is often less. Setting the servo to a position that it cannot physically
+	 * reach will cause the servo to audibly strain and will consume battery very quickly.
+	 */
+	void setPosition(ticks_t position);
+	
+	/*!
+	 * \return The servo's position as a 10 bit integer
+	 * \note Thie method will return the last _sent_ position, not the currently _set_ position.
+	 * 
+	 * \note For example, imagine the following:
+	 * -# myServo.setPosition(700);
+	 * -# ... Some time passes ...
+	 * -# myServo.setPosition(300);
+	 * -# myServo.position();
+	 * 
+	 * \note position() will return 700 rather than 300,
+	 * because 300 hasn't been sent to the servo yet.
+	 */
+	ticks_t position() const;
+	
+	void disable();
+	void enable();
+	void setEnabled(const bool &enabled);
+	bool isEnabled() const;
+private:
+	port_t m_port;
+};
 
 #endif

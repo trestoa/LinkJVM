@@ -19,34 +19,44 @@
  **************************************************************************/
 
 /*!
- * \file kovan.h
+ * \file digital.hpp
+ * \brief Classes for working with digital sensors
  * \author Braden McDorman
- * \copyright KISS Institute for Practical Robotics
+ * \copyright KISS Insitute for Practical Robotics
+ * \ingroup sensor
  */
 
-#ifndef _KOVAN_H_
-#define _KOVAN_H_
+#ifndef _DIGITAL_HPP_
+#define _DIGITAL_HPP_
 
-#include "ardrone.h"
-#include "audio.h"
-#include "motors.h"
-#include "servo.h"
-#include "button.h"
-#include "digital.h"
-#include "camera.h"
-#include "create.h"
-#include "analog.h"
-#include "ir.h"
-#include "wifi.h"
-#include "graphics.h"
-#include "battery.h"
-#include "util.h"
-#include "general.h"
-#include "console.h"
-#include "display.h"
-#include "datalog.h"
-#include "accel.h"
-#include "thread.h"
-#include "botball.h"
+#include "sensor.hpp"
+#include "export.h" 
+
+/*!
+ * \class Digital
+ * \brief Facilitates access to a digital sensor
+ * \author Braden McDorman
+ * \ingroup sensor
+ */
+class EXPORT_SYM Digital : public Sensor<bool>
+{
+public:
+	Digital(const unsigned char& port);
+	
+	virtual void setValue(const bool& value);
+	
+	/*!
+	 * Gets the current value of the digital sensor
+	 */
+	virtual bool value() const;
+	
+	virtual void setOutput(const bool& output);
+	virtual bool isOutput() const;
+	
+	virtual void setPullup(const bool& pullup);
+	virtual bool pullup() const;
+private:
+	unsigned char m_port;
+};
 
 #endif

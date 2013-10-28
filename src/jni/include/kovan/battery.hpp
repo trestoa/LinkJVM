@@ -19,34 +19,26 @@
  **************************************************************************/
 
 /*!
- * \file kovan.h
+ * \file battery.hpp
+ * \brief Classes for determining the device's power level
  * \author Braden McDorman
- * \copyright KISS Institute for Practical Robotics
+ * \copyright KISS Insitute for Practical Robotics
  */
 
-#ifndef _KOVAN_H_
-#define _KOVAN_H_
+#ifndef _BATTERY_HPP_
+#define _BATTERY_HPP_
 
-#include "ardrone.h"
-#include "audio.h"
-#include "motors.h"
-#include "servo.h"
-#include "button.h"
-#include "digital.h"
-#include "camera.h"
-#include "create.h"
-#include "analog.h"
-#include "ir.h"
-#include "wifi.h"
-#include "graphics.h"
-#include "battery.h"
-#include "util.h"
-#include "general.h"
-#include "console.h"
-#include "display.h"
-#include "datalog.h"
-#include "accel.h"
-#include "thread.h"
-#include "botball.h"
+#include "export.h"
+
+/*!
+ * \class Battery
+ * \brief Provides helper methods for accessing the device's power level
+ */
+class EXPORT_SYM Battery
+{
+public:
+	static bool isCharging();
+	static float powerLevel();
+};
 
 #endif
