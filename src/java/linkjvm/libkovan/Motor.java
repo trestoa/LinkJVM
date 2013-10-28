@@ -180,7 +180,7 @@ public class Motor {
 	 * 
 	 * @param vel velocity from 100(full forward) to -100(full backward)
 	 */
-	public void drive(int vel){
+	public void moveAtVelocity(int vel){
 		LinkJVM.motor(motorPort, vel);
 	}
 	
