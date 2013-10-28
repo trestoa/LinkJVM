@@ -1,3 +1,5 @@
+package io.github.linkjvm.servoexample;
+
 import linkjvm.libkovan.AnalogSensor;
 import linkjvm.libkovan.Controller;
 import linkjvm.libkovan.Servo;

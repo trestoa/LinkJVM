@@ -1,3 +1,5 @@
+package io.github.linkjvm.linefollow;
+
 
 /*
  * Very simple line following program.
