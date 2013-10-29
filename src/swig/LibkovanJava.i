@@ -43,6 +43,11 @@ template<typename T> class  Sensor{
 		virtual T value() const = 0;
 };
 
+%template(intSensor) Sensor<int>
+%template(unsingnedShortSensor) Sensor<unsigned short>
+%template(shortSensor) Sensor<short>
+%template(boolSensor) Sensor<bool>
+
 /* Motor */
 class  Motor{
 	public:
@@ -124,55 +129,6 @@ class  Digital : public Sensor<bool>{
 	private:
 		unsigned char m_port;
 };
-
-/* sensor logic */
-namespace SensorLogic{
-	class  Base : public Sensor<bool>{
-		public:
-		    Base(const Sensor<bool> *a, const Sensor<bool> *b, bool owns = false);
-		    ~Base();
-		    
-		    const Sensor<bool> *a() const;
-		    const Sensor<bool> *b() const;
-		    bool owns() const;
-		private:
-		    const Sensor<bool> *m_a;
-		    const Sensor<bool> *m_b;
-		    bool m_owns;
-	};
-	
-	class  And : public Base{
-		public:
-	        And(const Sensor<bool> *a, const Sensor<bool> *b, bool owns = false);
-	        virtual bool value() const;
-	};
-	
-	class  Or : public Base{
-		public:
-	        Or(const Sensor<bool> *a, const Sensor<bool> *b, bool owns = false);
-	        virtual bool value() const;
-	};
-	
-	class  Xor : public Base{
-		public:
-	        Xor(const Sensor<bool> *a, const Sensor<bool> *b, bool owns = false);
-	        virtual bool value() const;
-	};
-	
-	class  Not : public Sensor<bool>{
-		public:
-	        Not(const Sensor<bool> *input, bool owns = false);
-	        ~Not();
-	        virtual bool value() const;
-	        
-	        const Sensor<bool> *input() const;
-	        bool owns() const;
-		        
-		private:
-	        const Sensor<bool> *m_input;
-	        bool m_owns;
-	};
-}
 
 /* button ids */
 namespace Button{
