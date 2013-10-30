@@ -34,6 +34,8 @@
 	#include <opencv2/core/core.hpp>
 	#include <cstdio>
 	#include <cstdlib>
+	#include <time.h>
+	#include <winsock2.h>
 %}
 
 /* Sensor */
@@ -43,10 +45,10 @@ template<typename T> class  Sensor{
 		virtual T value() const = 0;
 };
 
-%template(intSensor) Sensor<int>
-%template(unsingnedShortSensor) Sensor<unsigned short>
-%template(shortSensor) Sensor<short>
-%template(boolSensor) Sensor<bool>
+%template(intSensor) Sensor<int>;
+%template(unsingnedShortSensor) Sensor<unsigned short>;
+%template(shortSensor) Sensor<short>;
+%template(boolSensor) Sensor<bool>;
 
 /* Motor */
 class  Motor{
@@ -416,8 +418,6 @@ class  Battery{
 };
 
 /* Create */
-#include <time.h>
-#include <winsock2.h>
 typedef unsigned int speed_t;
 #define PI 3.14159f
 

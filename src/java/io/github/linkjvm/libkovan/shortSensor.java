@@ -8,16 +8,16 @@
 
 package io.github.linkjvm.libkovan;
 
-public class Console {
+public class shortSensor {
   private long swigCPtr;
   protected boolean swigCMemOwn;
 
-  protected Console(long cPtr, boolean cMemoryOwn) {
+  protected shortSensor(long cPtr, boolean cMemoryOwn) {
     swigCMemOwn = cMemoryOwn;
     swigCPtr = cPtr;
   }
 
-  protected static long getCPtr(Console obj) {
+  protected static long getCPtr(shortSensor obj) {
     return (obj == null) ? 0 : obj.swigCPtr;
   }
 
@@ -29,18 +29,14 @@ public class Console {
     if (swigCPtr != 0) {
       if (swigCMemOwn) {
         swigCMemOwn = false;
-        LinkJVMJNI.delete_Console(swigCPtr);
+        LinkJVMJNI.delete_shortSensor(swigCPtr);
       }
       swigCPtr = 0;
     }
   }
 
-  public static void clear() {
-    LinkJVMJNI.Console_clear();
-  }
-
-  public Console() {
-    this(LinkJVMJNI.new_Console(), true);
+  public short value() {
+    return LinkJVMJNI.shortSensor_value(swigCPtr, this);
   }
 
 }
