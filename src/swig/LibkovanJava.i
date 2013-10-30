@@ -455,93 +455,6 @@ struct CreateState{
     short leftVelocity;
 };
 
-namespace CreatePackets{
-    struct _1{
-        unsigned char bumpsAndWheelDrops;
-        unsigned char wall;
-        unsigned char cliffLeft;
-        unsigned char cliffFrontLeft;
-        unsigned char cliffFrontRight;
-        unsigned char cliffRight;
-        unsigned char virtualWall;
-        unsigned char cargoBayDigitalInputs;
-        unsigned char lowSideDriverAndWheelOvercurrents;
-    };
-
-    struct _2
-    {
-        unsigned char ir;
-        unsigned char buttons;
-        unsigned char distance[2];
-        unsigned char angle[2];
-    };
-
-    struct _3
-    {
-        unsigned char chargingState;
-        unsigned char voltage[2];
-        char current[2];
-        char batteryTemperature;
-        unsigned char batteryCharge[2];
-        unsigned char batteryCapacity[2];
-    };
-    
-    struct _4
-    {
-        unsigned char wallSignal[2];
-        unsigned char cliffLeftSignal[2];
-        unsigned char cliffFrontLeftSignal[2];
-        unsigned char cliffFrontRightSignal[2];
-        unsigned char cliffRightSignal[2];
-        unsigned char userDigitalInputs;
-        unsigned char userAnalogInput[2];
-        unsigned char chargingSourcesAvailable;
-    };
-    
-    struct _5
-    {
-        unsigned char mode;
-        unsigned char songNumber;
-        unsigned char songPlaying;
-        unsigned char numberOfStreamPackets;
-        char velocity[2];
-        char radius[2];
-        char rightVelocity[2];
-        char leftVelocity[2];
-    };
-}
-
-namespace CreateSensors
-{
-    class PlayButton;
-    class AdvanceButton;
-    class Wall;
-    class CliffLeft;
-    class CliffFrontLeft;
-    class CliffFrontRight;
-    class CliffRight;
-    class VirtualWall;
-    class WallSignal;
-    class CliffLeftSignal;
-    class CliffFrontLeftSignal;
-    class CliffFrontRightSignal;
-    class CliffRightSignal;
-    class CargoBayAnalogSignal;
-    class CargoBayDigitalInputs;
-    class IR;
-    class ChargingState;
-    class BatteryTemperature;
-    class BatteryCharge;
-    class BatteryCapacity;
-    class Angle;
-    class Distance;
-    class BumpLeft;
-    class BumpRight;
-    class WheelDropRight;
-    class WheelDropLeft;
-    class WheelDropCaster;
-}
-
 class  Create{
 	public:
 
@@ -641,19 +554,6 @@ class  Create{
         static Create *instance();
         
         const CreateState *state();
-        const CreatePackets::_1 *sensorPacket1();
-        const CreatePackets::_2 *sensorPacket2();
-        const CreatePackets::_3 *sensorPacket3();
-        const CreatePackets::_4 *sensorPacket4();
-        const CreatePackets::_5 *sensorPacket5();
-        
-        inline void beginAtomicOperation()
-        {
-        }
-
-        inline void endAtomicOperation()
-        {
-        }
         
 	private:
         Create();

@@ -308,39 +308,6 @@ public class Create {
     return (cPtr == 0) ? null : new CreateState(cPtr, false);
   }
 
-  public _1 sensorPacket1() {
-    long cPtr = LinkJVMJNI.Create_sensorPacket1(swigCPtr, this);
-    return (cPtr == 0) ? null : new _1(cPtr, false);
-  }
-
-  public _2 sensorPacket2() {
-    long cPtr = LinkJVMJNI.Create_sensorPacket2(swigCPtr, this);
-    return (cPtr == 0) ? null : new _2(cPtr, false);
-  }
-
-  public _3 sensorPacket3() {
-    long cPtr = LinkJVMJNI.Create_sensorPacket3(swigCPtr, this);
-    return (cPtr == 0) ? null : new _3(cPtr, false);
-  }
-
-  public _4 sensorPacket4() {
-    long cPtr = LinkJVMJNI.Create_sensorPacket4(swigCPtr, this);
-    return (cPtr == 0) ? null : new _4(cPtr, false);
-  }
-
-  public _5 sensorPacket5() {
-    long cPtr = LinkJVMJNI.Create_sensorPacket5(swigCPtr, this);
-    return (cPtr == 0) ? null : new _5(cPtr, false);
-  }
-
-  public void beginAtomicOperation() {
-    LinkJVMJNI.Create_beginAtomicOperation(swigCPtr, this);
-  }
-
-  public void endAtomicOperation() {
-    LinkJVMJNI.Create_endAtomicOperation(swigCPtr, this);
-  }
-
   public final static class Mode {
     public final static Create.Mode OffMode = new Create.Mode("OffMode");
     public final static Create.Mode PassiveMode = new Create.Mode("PassiveMode");
