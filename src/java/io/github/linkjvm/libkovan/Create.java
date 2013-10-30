@@ -225,24 +225,24 @@ public class Create {
     return (cPtr == 0) ? null : new unsingnedShortSensor(cPtr, false);
   }
 
-  public SWIGTYPE_p_SensorT_unsigned_char_t cargoBayDigitalInputs() {
+  public unsignedCharSensor cargoBayDigitalInputs() {
     long cPtr = LinkJVMJNI.Create_cargoBayDigitalInputs(swigCPtr, this);
-    return (cPtr == 0) ? null : new SWIGTYPE_p_SensorT_unsigned_char_t(cPtr, false);
+    return (cPtr == 0) ? null : new unsignedCharSensor(cPtr, false);
   }
 
-  public SWIGTYPE_p_SensorT_unsigned_char_t ir() {
+  public unsignedCharSensor ir() {
     long cPtr = LinkJVMJNI.Create_ir(swigCPtr, this);
-    return (cPtr == 0) ? null : new SWIGTYPE_p_SensorT_unsigned_char_t(cPtr, false);
+    return (cPtr == 0) ? null : new unsignedCharSensor(cPtr, false);
   }
 
-  public SWIGTYPE_p_SensorT_unsigned_char_t chargingState() {
+  public unsignedCharSensor chargingState() {
     long cPtr = LinkJVMJNI.Create_chargingState(swigCPtr, this);
-    return (cPtr == 0) ? null : new SWIGTYPE_p_SensorT_unsigned_char_t(cPtr, false);
+    return (cPtr == 0) ? null : new unsignedCharSensor(cPtr, false);
   }
 
-  public SWIGTYPE_p_SensorT_char_t batteryTemperature() {
+  public charSensor batteryTemperature() {
     long cPtr = LinkJVMJNI.Create_batteryTemperature(swigCPtr, this);
-    return (cPtr == 0) ? null : new SWIGTYPE_p_SensorT_char_t(cPtr, false);
+    return (cPtr == 0) ? null : new charSensor(cPtr, false);
   }
 
   public unsingnedShortSensor batteryCharge() {

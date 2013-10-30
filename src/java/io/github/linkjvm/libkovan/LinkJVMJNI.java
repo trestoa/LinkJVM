@@ -17,6 +17,10 @@ public class LinkJVMJNI {
   public final static native short shortSensor_value(long jarg1, shortSensor jarg1_);
   public final static native void delete_boolSensor(long jarg1);
   public final static native boolean boolSensor_value(long jarg1, boolSensor jarg1_);
+  public final static native void delete_unsignedCharSensor(long jarg1);
+  public final static native short unsignedCharSensor_value(long jarg1, unsignedCharSensor jarg1_);
+  public final static native void delete_charSensor(long jarg1);
+  public final static native char charSensor_value(long jarg1, charSensor jarg1_);
   public final static native long new_Motor(long jarg1);
   public final static native void Motor_clearPositionCounter(long jarg1, Motor jarg1_);
   public final static native void Motor_moveAtVelocity(long jarg1, Motor jarg1_, short jarg2);

@@ -49,6 +49,8 @@ template<typename T> class  Sensor{
 %template(unsingnedShortSensor) Sensor<unsigned short>;
 %template(shortSensor) Sensor<short>;
 %template(boolSensor) Sensor<bool>;
+%template(unsignedCharSensor) Sensor<unsigned char>;
+%template(charSensor) Sensor<char>;
 
 /* Motor */
 class  Motor{

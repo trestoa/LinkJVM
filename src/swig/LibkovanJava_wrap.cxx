@@ -225,6 +225,8 @@ static void SWIGUNUSED SWIG_JavaThrowException(JNIEnv *jenv, SWIG_JavaExceptionC
 	#include <opencv2/core/core.hpp>
 	#include <cstdio>
 	#include <cstdlib>
+	#include <time.h>
+	#include <winsock2.h>
 
 
 #ifdef __cplusplus
@@ -327,6 +329,56 @@ SWIGEXPORT jboolean JNICALL Java_io_github_linkjvm_libkovan_LinkJVMJNI_boolSenso
   arg1 = *(Sensor< bool > **)&jarg1; 
   result = (bool)((Sensor< bool > const *)arg1)->value();
   jresult = (jboolean)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void JNICALL Java_io_github_linkjvm_libkovan_LinkJVMJNI_delete_1unsignedCharSensor(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+  Sensor< unsigned char > *arg1 = (Sensor< unsigned char > *) 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  arg1 = *(Sensor< unsigned char > **)&jarg1; 
+  delete arg1;
+}
+
+
+SWIGEXPORT jshort JNICALL Java_io_github_linkjvm_libkovan_LinkJVMJNI_unsignedCharSensor_1value(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+  jshort jresult = 0 ;
+  Sensor< unsigned char > *arg1 = (Sensor< unsigned char > *) 0 ;
+  unsigned char result;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(Sensor< unsigned char > **)&jarg1; 
+  result = (unsigned char)((Sensor< unsigned char > const *)arg1)->value();
+  jresult = (jshort)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void JNICALL Java_io_github_linkjvm_libkovan_LinkJVMJNI_delete_1charSensor(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+  Sensor< char > *arg1 = (Sensor< char > *) 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  arg1 = *(Sensor< char > **)&jarg1; 
+  delete arg1;
+}
+
+
+SWIGEXPORT jchar JNICALL Java_io_github_linkjvm_libkovan_LinkJVMJNI_charSensor_1value(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+  jchar jresult = 0 ;
+  Sensor< char > *arg1 = (Sensor< char > *) 0 ;
+  char result;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(Sensor< char > **)&jarg1; 
+  result = (char)((Sensor< char > const *)arg1)->value();
+  jresult = (jchar)result; 
   return jresult;
 }
 
