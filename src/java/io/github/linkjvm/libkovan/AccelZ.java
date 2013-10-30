@@ -8,7 +8,7 @@
 
 package io.github.linkjvm.libkovan;
 
-public class AccelZ extends shortSensor {
+public class AccelZ extends ShortSensor {
   private long swigCPtr;
 
   protected AccelZ(long cPtr, boolean cMemoryOwn) {

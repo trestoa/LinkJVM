@@ -8,16 +8,16 @@
 
 package io.github.linkjvm.libkovan;
 
-public class boolSensor {
+public class BoolSensor {
   private long swigCPtr;
   protected boolean swigCMemOwn;
 
-  protected boolSensor(long cPtr, boolean cMemoryOwn) {
+  protected BoolSensor(long cPtr, boolean cMemoryOwn) {
     swigCMemOwn = cMemoryOwn;
     swigCPtr = cPtr;
   }
 
-  protected static long getCPtr(boolSensor obj) {
+  protected static long getCPtr(BoolSensor obj) {
     return (obj == null) ? 0 : obj.swigCPtr;
   }
 
@@ -29,14 +29,14 @@ public class boolSensor {
     if (swigCPtr != 0) {
       if (swigCMemOwn) {
         swigCMemOwn = false;
-        LinkJVMJNI.delete_boolSensor(swigCPtr);
+        LinkJVMJNI.delete_BoolSensor(swigCPtr);
       }
       swigCPtr = 0;
     }
   }
 
   public boolean value() {
-    return LinkJVMJNI.boolSensor_value(swigCPtr, this);
+    return LinkJVMJNI.BoolSensor_value(swigCPtr, this);
   }
 
 }

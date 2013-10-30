@@ -9,18 +9,18 @@
 package io.github.linkjvm.libkovan;
 
 public class LinkJVMJNI {
-  public final static native void delete_intSensor(long jarg1);
-  public final static native int intSensor_value(long jarg1, intSensor jarg1_);
-  public final static native void delete_unsingnedShortSensor(long jarg1);
-  public final static native int unsingnedShortSensor_value(long jarg1, unsingnedShortSensor jarg1_);
-  public final static native void delete_shortSensor(long jarg1);
-  public final static native short shortSensor_value(long jarg1, shortSensor jarg1_);
-  public final static native void delete_boolSensor(long jarg1);
-  public final static native boolean boolSensor_value(long jarg1, boolSensor jarg1_);
-  public final static native void delete_unsignedCharSensor(long jarg1);
-  public final static native short unsignedCharSensor_value(long jarg1, unsignedCharSensor jarg1_);
-  public final static native void delete_charSensor(long jarg1);
-  public final static native char charSensor_value(long jarg1, charSensor jarg1_);
+  public final static native void delete_IntSensor(long jarg1);
+  public final static native int IntSensor_value(long jarg1, IntSensor jarg1_);
+  public final static native void delete_UnsingnedShortSensor(long jarg1);
+  public final static native int UnsingnedShortSensor_value(long jarg1, UnsingnedShortSensor jarg1_);
+  public final static native void delete_ShortSensor(long jarg1);
+  public final static native short ShortSensor_value(long jarg1, ShortSensor jarg1_);
+  public final static native void delete_BoolSensor(long jarg1);
+  public final static native boolean BoolSensor_value(long jarg1, BoolSensor jarg1_);
+  public final static native void delete_UnsignedCharSensor(long jarg1);
+  public final static native short UnsignedCharSensor_value(long jarg1, UnsignedCharSensor jarg1_);
+  public final static native void delete_CharSensor(long jarg1);
+  public final static native char CharSensor_value(long jarg1, CharSensor jarg1_);
   public final static native long new_Motor(long jarg1);
   public final static native void Motor_clearPositionCounter(long jarg1, Motor jarg1_);
   public final static native void Motor_moveAtVelocity(long jarg1, Motor jarg1_, short jarg2);

@@ -8,7 +8,7 @@
 
 package io.github.linkjvm.libkovan;
 
-public class Digital extends boolSensor {
+public class Digital extends BoolSensor {
   private long swigCPtr;
 
   protected Digital(long cPtr, boolean cMemoryOwn) {

@@ -8,16 +8,16 @@
 
 package io.github.linkjvm.libkovan;
 
-public class charSensor {
+public class CharSensor {
   private long swigCPtr;
   protected boolean swigCMemOwn;
 
-  protected charSensor(long cPtr, boolean cMemoryOwn) {
+  protected CharSensor(long cPtr, boolean cMemoryOwn) {
     swigCMemOwn = cMemoryOwn;
     swigCPtr = cPtr;
   }
 
-  protected static long getCPtr(charSensor obj) {
+  protected static long getCPtr(CharSensor obj) {
     return (obj == null) ? 0 : obj.swigCPtr;
   }
 
@@ -29,14 +29,14 @@ public class charSensor {
     if (swigCPtr != 0) {
       if (swigCMemOwn) {
         swigCMemOwn = false;
-        LinkJVMJNI.delete_charSensor(swigCPtr);
+        LinkJVMJNI.delete_CharSensor(swigCPtr);
       }
       swigCPtr = 0;
     }
   }
 
   public char value() {
-    return LinkJVMJNI.charSensor_value(swigCPtr, this);
+    return LinkJVMJNI.CharSensor_value(swigCPtr, this);
   }
 
 }

@@ -8,16 +8,16 @@
 
 package io.github.linkjvm.libkovan;
 
-public class unsingnedShortSensor {
+public class UnsingnedShortSensor {
   private long swigCPtr;
   protected boolean swigCMemOwn;
 
-  protected unsingnedShortSensor(long cPtr, boolean cMemoryOwn) {
+  protected UnsingnedShortSensor(long cPtr, boolean cMemoryOwn) {
     swigCMemOwn = cMemoryOwn;
     swigCPtr = cPtr;
   }
 
-  protected static long getCPtr(unsingnedShortSensor obj) {
+  protected static long getCPtr(UnsingnedShortSensor obj) {
     return (obj == null) ? 0 : obj.swigCPtr;
   }
 
@@ -29,14 +29,14 @@ public class unsingnedShortSensor {
     if (swigCPtr != 0) {
       if (swigCMemOwn) {
         swigCMemOwn = false;
-        LinkJVMJNI.delete_unsingnedShortSensor(swigCPtr);
+        LinkJVMJNI.delete_UnsingnedShortSensor(swigCPtr);
       }
       swigCPtr = 0;
     }
   }
 
   public int value() {
-    return LinkJVMJNI.unsingnedShortSensor_value(swigCPtr, this);
+    return LinkJVMJNI.UnsingnedShortSensor_value(swigCPtr, this);
   }
 
 }

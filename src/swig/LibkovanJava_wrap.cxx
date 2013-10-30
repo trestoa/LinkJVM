@@ -233,7 +233,7 @@ static void SWIGUNUSED SWIG_JavaThrowException(JNIEnv *jenv, SWIG_JavaExceptionC
 extern "C" {
 #endif
 
-SWIGEXPORT void JNICALL Java_io_github_linkjvm_libkovan_LinkJVMJNI_delete_1intSensor(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+SWIGEXPORT void JNICALL Java_io_github_linkjvm_libkovan_LinkJVMJNI_delete_1IntSensor(JNIEnv *jenv, jclass jcls, jlong jarg1) {
   Sensor< int > *arg1 = (Sensor< int > *) 0 ;
   
   (void)jenv;
@@ -243,7 +243,7 @@ SWIGEXPORT void JNICALL Java_io_github_linkjvm_libkovan_LinkJVMJNI_delete_1intSe
 }
 
 
-SWIGEXPORT jint JNICALL Java_io_github_linkjvm_libkovan_LinkJVMJNI_intSensor_1value(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT jint JNICALL Java_io_github_linkjvm_libkovan_LinkJVMJNI_IntSensor_1value(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jint jresult = 0 ;
   Sensor< int > *arg1 = (Sensor< int > *) 0 ;
   int result;
@@ -258,7 +258,7 @@ SWIGEXPORT jint JNICALL Java_io_github_linkjvm_libkovan_LinkJVMJNI_intSensor_1va
 }
 
 
-SWIGEXPORT void JNICALL Java_io_github_linkjvm_libkovan_LinkJVMJNI_delete_1unsingnedShortSensor(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+SWIGEXPORT void JNICALL Java_io_github_linkjvm_libkovan_LinkJVMJNI_delete_1UnsingnedShortSensor(JNIEnv *jenv, jclass jcls, jlong jarg1) {
   Sensor< unsigned short > *arg1 = (Sensor< unsigned short > *) 0 ;
   
   (void)jenv;
@@ -268,7 +268,7 @@ SWIGEXPORT void JNICALL Java_io_github_linkjvm_libkovan_LinkJVMJNI_delete_1unsin
 }
 
 
-SWIGEXPORT jint JNICALL Java_io_github_linkjvm_libkovan_LinkJVMJNI_unsingnedShortSensor_1value(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT jint JNICALL Java_io_github_linkjvm_libkovan_LinkJVMJNI_UnsingnedShortSensor_1value(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jint jresult = 0 ;
   Sensor< unsigned short > *arg1 = (Sensor< unsigned short > *) 0 ;
   unsigned short result;
@@ -283,7 +283,7 @@ SWIGEXPORT jint JNICALL Java_io_github_linkjvm_libkovan_LinkJVMJNI_unsingnedShor
 }
 
 
-SWIGEXPORT void JNICALL Java_io_github_linkjvm_libkovan_LinkJVMJNI_delete_1shortSensor(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+SWIGEXPORT void JNICALL Java_io_github_linkjvm_libkovan_LinkJVMJNI_delete_1ShortSensor(JNIEnv *jenv, jclass jcls, jlong jarg1) {
   Sensor< short > *arg1 = (Sensor< short > *) 0 ;
   
   (void)jenv;
@@ -293,7 +293,7 @@ SWIGEXPORT void JNICALL Java_io_github_linkjvm_libkovan_LinkJVMJNI_delete_1short
 }
 
 
-SWIGEXPORT jshort JNICALL Java_io_github_linkjvm_libkovan_LinkJVMJNI_shortSensor_1value(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT jshort JNICALL Java_io_github_linkjvm_libkovan_LinkJVMJNI_ShortSensor_1value(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jshort jresult = 0 ;
   Sensor< short > *arg1 = (Sensor< short > *) 0 ;
   short result;
@@ -308,7 +308,7 @@ SWIGEXPORT jshort JNICALL Java_io_github_linkjvm_libkovan_LinkJVMJNI_shortSensor
 }
 
 
-SWIGEXPORT void JNICALL Java_io_github_linkjvm_libkovan_LinkJVMJNI_delete_1boolSensor(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+SWIGEXPORT void JNICALL Java_io_github_linkjvm_libkovan_LinkJVMJNI_delete_1BoolSensor(JNIEnv *jenv, jclass jcls, jlong jarg1) {
   Sensor< bool > *arg1 = (Sensor< bool > *) 0 ;
   
   (void)jenv;
@@ -318,7 +318,7 @@ SWIGEXPORT void JNICALL Java_io_github_linkjvm_libkovan_LinkJVMJNI_delete_1boolS
 }
 
 
-SWIGEXPORT jboolean JNICALL Java_io_github_linkjvm_libkovan_LinkJVMJNI_boolSensor_1value(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT jboolean JNICALL Java_io_github_linkjvm_libkovan_LinkJVMJNI_BoolSensor_1value(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jboolean jresult = 0 ;
   Sensor< bool > *arg1 = (Sensor< bool > *) 0 ;
   bool result;
@@ -333,7 +333,7 @@ SWIGEXPORT jboolean JNICALL Java_io_github_linkjvm_libkovan_LinkJVMJNI_boolSenso
 }
 
 
-SWIGEXPORT void JNICALL Java_io_github_linkjvm_libkovan_LinkJVMJNI_delete_1unsignedCharSensor(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+SWIGEXPORT void JNICALL Java_io_github_linkjvm_libkovan_LinkJVMJNI_delete_1UnsignedCharSensor(JNIEnv *jenv, jclass jcls, jlong jarg1) {
   Sensor< unsigned char > *arg1 = (Sensor< unsigned char > *) 0 ;
   
   (void)jenv;
@@ -343,7 +343,7 @@ SWIGEXPORT void JNICALL Java_io_github_linkjvm_libkovan_LinkJVMJNI_delete_1unsig
 }
 
 
-SWIGEXPORT jshort JNICALL Java_io_github_linkjvm_libkovan_LinkJVMJNI_unsignedCharSensor_1value(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT jshort JNICALL Java_io_github_linkjvm_libkovan_LinkJVMJNI_UnsignedCharSensor_1value(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jshort jresult = 0 ;
   Sensor< unsigned char > *arg1 = (Sensor< unsigned char > *) 0 ;
   unsigned char result;
@@ -358,7 +358,7 @@ SWIGEXPORT jshort JNICALL Java_io_github_linkjvm_libkovan_LinkJVMJNI_unsignedCha
 }
 
 
-SWIGEXPORT void JNICALL Java_io_github_linkjvm_libkovan_LinkJVMJNI_delete_1charSensor(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+SWIGEXPORT void JNICALL Java_io_github_linkjvm_libkovan_LinkJVMJNI_delete_1CharSensor(JNIEnv *jenv, jclass jcls, jlong jarg1) {
   Sensor< char > *arg1 = (Sensor< char > *) 0 ;
   
   (void)jenv;
@@ -368,7 +368,7 @@ SWIGEXPORT void JNICALL Java_io_github_linkjvm_libkovan_LinkJVMJNI_delete_1charS
 }
 
 
-SWIGEXPORT jchar JNICALL Java_io_github_linkjvm_libkovan_LinkJVMJNI_charSensor_1value(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT jchar JNICALL Java_io_github_linkjvm_libkovan_LinkJVMJNI_CharSensor_1value(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jchar jresult = 0 ;
   Sensor< char > *arg1 = (Sensor< char > *) 0 ;
   char result;

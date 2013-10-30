@@ -45,12 +45,12 @@ template<typename T> class  Sensor{
 		virtual T value() const = 0;
 };
 
-%template(intSensor) Sensor<int>;
-%template(unsingnedShortSensor) Sensor<unsigned short>;
-%template(shortSensor) Sensor<short>;
-%template(boolSensor) Sensor<bool>;
-%template(unsignedCharSensor) Sensor<unsigned char>;
-%template(charSensor) Sensor<char>;
+%template(IntSensor) Sensor<int>;
+%template(UnsingnedShortSensor) Sensor<unsigned short>;
+%template(ShortSensor) Sensor<short>;
+%template(BoolSensor) Sensor<bool>;
+%template(UnsignedCharSensor) Sensor<unsigned char>;
+%template(CharSensor) Sensor<char>;
 
 /* Motor */
 class  Motor{

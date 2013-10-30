@@ -8,7 +8,7 @@
 
 package io.github.linkjvm.libkovan;
 
-public class BackEMF extends intSensor {
+public class BackEMF extends IntSensor {
   private long swigCPtr;
 
   protected BackEMF(long cPtr, boolean cMemoryOwn) {

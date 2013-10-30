@@ -8,7 +8,7 @@
 
 package io.github.linkjvm.libkovan;
 
-public class Analog extends unsingnedShortSensor {
+public class Analog extends UnsingnedShortSensor {
   private long swigCPtr;
 
   protected Analog(long cPtr, boolean cMemoryOwn) {

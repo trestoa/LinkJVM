@@ -8,7 +8,7 @@
 
 package io.github.linkjvm.libkovan;
 
-public class AbstractButton extends boolSensor {
+public class AbstractButton extends BoolSensor {
   private long swigCPtr;
 
   protected AbstractButton(long cPtr, boolean cMemoryOwn) {
