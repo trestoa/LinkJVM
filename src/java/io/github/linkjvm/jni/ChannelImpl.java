@@ -39,8 +39,8 @@ public class ChannelImpl {
     LinkJVMJNI.ChannelImpl_setImage(swigCPtr, this, SWIGTYPE_p_cv__Mat.getCPtr(image));
   }
 
-  public SWIGTYPE_p_std__vectorT_Camera__Object_t objects(SWIGTYPE_p_Config config) {
-    return new SWIGTYPE_p_std__vectorT_Camera__Object_t(LinkJVMJNI.ChannelImpl_objects(swigCPtr, this, SWIGTYPE_p_Config.getCPtr(config)), true);
+  public SWIGTYPE_p_std__vectorT_Camera__Object_t objects(Config config) {
+    return new SWIGTYPE_p_std__vectorT_Camera__Object_t(LinkJVMJNI.ChannelImpl_objects(swigCPtr, this, Config.getCPtr(config), config), true);
   }
 
 }

@@ -8,18 +8,18 @@
 
 package io.github.linkjvm.jni;
 
-public class SWIGTYPE_p_Config {
+public class SWIGTYPE_p_std__mapT_std__string_std__string_t {
   private long swigCPtr;
 
-  protected SWIGTYPE_p_Config(long cPtr, boolean futureUse) {
+  protected SWIGTYPE_p_std__mapT_std__string_std__string_t(long cPtr, boolean futureUse) {
     swigCPtr = cPtr;
   }
 
-  protected SWIGTYPE_p_Config() {
+  protected SWIGTYPE_p_std__mapT_std__string_std__string_t() {
     swigCPtr = 0;
   }
 
-  protected static long getCPtr(SWIGTYPE_p_Config obj) {
+  protected static long getCPtr(SWIGTYPE_p_std__mapT_std__string_std__string_t obj) {
     return (obj == null) ? 0 : obj.swigCPtr;
   }
 }

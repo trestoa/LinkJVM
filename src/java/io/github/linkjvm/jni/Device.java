@@ -88,12 +88,12 @@ public class Device {
     return new SWIGTYPE_p_cv__Mat(LinkJVMJNI.Device_rawImage(swigCPtr, this), false);
   }
 
-  public void setConfig(SWIGTYPE_p_Config config) {
-    LinkJVMJNI.Device_setConfig(swigCPtr, this, SWIGTYPE_p_Config.getCPtr(config));
+  public void setConfig(Config config) {
+    LinkJVMJNI.Device_setConfig(swigCPtr, this, Config.getCPtr(config), config);
   }
 
-  public SWIGTYPE_p_Config config() {
-    return new SWIGTYPE_p_Config(LinkJVMJNI.Device_config(swigCPtr, this), false);
+  public Config config() {
+    return new Config(LinkJVMJNI.Device_config(swigCPtr, this), false);
   }
 
   public void setChannelImplManager(ChannelImplManager channelImplManager) {

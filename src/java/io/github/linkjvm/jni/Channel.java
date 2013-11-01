@@ -35,8 +35,8 @@ public class Channel {
     }
   }
 
-  public Channel(Device device, SWIGTYPE_p_Config config) {
-    this(LinkJVMJNI.new_Channel(Device.getCPtr(device), device, SWIGTYPE_p_Config.getCPtr(config)), true);
+  public Channel(Device device, Config config) {
+    this(LinkJVMJNI.new_Channel(Device.getCPtr(device), device, Config.getCPtr(config), config), true);
   }
 
   public void invalidate() {
@@ -53,8 +53,8 @@ public class Channel {
     return (cPtr == 0) ? null : new Device(cPtr, false);
   }
 
-  public void setConfig(SWIGTYPE_p_Config config) {
-    LinkJVMJNI.Channel_setConfig(swigCPtr, this, SWIGTYPE_p_Config.getCPtr(config));
+  public void setConfig(Config config) {
+    LinkJVMJNI.Channel_setConfig(swigCPtr, this, Config.getCPtr(config), config);
   }
 
 }
