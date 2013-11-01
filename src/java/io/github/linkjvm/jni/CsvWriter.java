@@ -35,8 +35,8 @@ public class CsvWriter extends DataLogWriter {
     super.delete();
   }
 
-  public CsvWriter(SWIGTYPE_p_std__string path) {
-    this(LinkJVMJNI.new_CsvWriter(SWIGTYPE_p_std__string.getCPtr(path)), true);
+  public CsvWriter(String path) {
+    this(LinkJVMJNI.new_CsvWriter(path), true);
   }
 
   public boolean write(DataLog dataLog) {

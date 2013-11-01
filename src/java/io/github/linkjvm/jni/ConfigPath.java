@@ -35,32 +35,32 @@ public class ConfigPath {
     }
   }
 
-  public static SWIGTYPE_p_std__string extension() {
-    return new SWIGTYPE_p_std__string(LinkJVMJNI.ConfigPath_extension(), true);
+  public static String extension() {
+    return LinkJVMJNI.ConfigPath_extension();
   }
 
-  public static void setBasePath(SWIGTYPE_p_std__string path) {
-    LinkJVMJNI.ConfigPath_setBasePath(SWIGTYPE_p_std__string.getCPtr(path));
+  public static void setBasePath(String path) {
+    LinkJVMJNI.ConfigPath_setBasePath(path);
   }
 
-  public static SWIGTYPE_p_std__string path(SWIGTYPE_p_std__string name) {
-    return new SWIGTYPE_p_std__string(LinkJVMJNI.ConfigPath_path__SWIG_0(SWIGTYPE_p_std__string.getCPtr(name)), true);
+  public static String path(String name) {
+    return LinkJVMJNI.ConfigPath_path__SWIG_0(name);
   }
 
-  public static SWIGTYPE_p_std__string path() {
-    return new SWIGTYPE_p_std__string(LinkJVMJNI.ConfigPath_path__SWIG_1(), true);
+  public static String path() {
+    return LinkJVMJNI.ConfigPath_path__SWIG_1();
   }
 
-  public static SWIGTYPE_p_std__string defaultPath() {
-    return new SWIGTYPE_p_std__string(LinkJVMJNI.ConfigPath_defaultPath(), true);
+  public static String defaultPath() {
+    return LinkJVMJNI.ConfigPath_defaultPath();
   }
 
-  public static SWIGTYPE_p_std__string defaultConfigPath() {
-    return new SWIGTYPE_p_std__string(LinkJVMJNI.ConfigPath_defaultConfigPath(), true);
+  public static String defaultConfigPath() {
+    return LinkJVMJNI.ConfigPath_defaultConfigPath();
   }
 
-  public static void setDefaultConfigPath(SWIGTYPE_p_std__string name) {
-    LinkJVMJNI.ConfigPath_setDefaultConfigPath(SWIGTYPE_p_std__string.getCPtr(name));
+  public static void setDefaultConfigPath(String name) {
+    LinkJVMJNI.ConfigPath_setDefaultConfigPath(name);
   }
 
   public ConfigPath() {

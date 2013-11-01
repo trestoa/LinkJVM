@@ -35,8 +35,8 @@ public class Category {
     }
   }
 
-  public void append(SWIGTYPE_p_std__string data) {
-    LinkJVMJNI.Category_append__SWIG_0(swigCPtr, this, SWIGTYPE_p_std__string.getCPtr(data));
+  public void append(String data) {
+    LinkJVMJNI.Category_append__SWIG_0(swigCPtr, this, data);
   }
 
   public void append(double data) {
@@ -51,8 +51,8 @@ public class Category {
     return new SWIGTYPE_p_std__vectorT_std__string_t(LinkJVMJNI.Category_entries(swigCPtr, this), false);
   }
 
-  public SWIGTYPE_p_std__string name() {
-    return new SWIGTYPE_p_std__string(LinkJVMJNI.Category_name(swigCPtr, this), false);
+  public String name() {
+    return LinkJVMJNI.Category_name(swigCPtr, this);
   }
 
 }

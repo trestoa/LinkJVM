@@ -43,8 +43,8 @@ public class DefaultChannelImplManager extends ChannelImplManager {
     LinkJVMJNI.DefaultChannelImplManager_setImage(swigCPtr, this, SWIGTYPE_p_cv__Mat.getCPtr(image));
   }
 
-  public ChannelImpl channelImpl(SWIGTYPE_p_std__string name) {
-    long cPtr = LinkJVMJNI.DefaultChannelImplManager_channelImpl(swigCPtr, this, SWIGTYPE_p_std__string.getCPtr(name));
+  public ChannelImpl channelImpl(String name) {
+    long cPtr = LinkJVMJNI.DefaultChannelImplManager_channelImpl(swigCPtr, this, name);
     return (cPtr == 0) ? null : new ChannelImpl(cPtr, false);
   }
 

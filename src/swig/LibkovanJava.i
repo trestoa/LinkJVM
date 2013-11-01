@@ -37,6 +37,9 @@
 	#include <winsock2.h>
 %}
 
+// String include for java combatibilty to std::string
+%include "std_string.i"
+
 /* Sensor */
 template<typename T> class  Sensor{
 	public:

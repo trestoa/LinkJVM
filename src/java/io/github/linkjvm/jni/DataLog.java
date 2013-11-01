@@ -35,13 +35,13 @@ public class DataLog {
     }
   }
 
-  public Category category(SWIGTYPE_p_std__string name) {
-    long cPtr = LinkJVMJNI.DataLog_category(swigCPtr, this, SWIGTYPE_p_std__string.getCPtr(name));
+  public Category category(String name) {
+    long cPtr = LinkJVMJNI.DataLog_category(swigCPtr, this, name);
     return (cPtr == 0) ? null : new Category(cPtr, false);
   }
 
-  public void removeCategory(SWIGTYPE_p_std__string name) {
-    LinkJVMJNI.DataLog_removeCategory(swigCPtr, this, SWIGTYPE_p_std__string.getCPtr(name));
+  public void removeCategory(String name) {
+    LinkJVMJNI.DataLog_removeCategory(swigCPtr, this, name);
   }
 
   public SWIGTYPE_p_std__vectorT_Category_p_t categories() {

@@ -35,8 +35,8 @@ public class PlainWriter extends DataLogWriter {
     super.delete();
   }
 
-  public PlainWriter(SWIGTYPE_p_std__string path) {
-    this(LinkJVMJNI.new_PlainWriter(SWIGTYPE_p_std__string.getCPtr(path)), true);
+  public PlainWriter(String path) {
+    this(LinkJVMJNI.new_PlainWriter(path), true);
   }
 
   public boolean write(DataLog dataLog) {
