@@ -1587,6 +1587,314 @@ SWIGEXPORT jlong JNICALL Java_io_github_linkjvm_jni_LinkJVMJNI_all_1get(JNIEnv *
 }
 
 
+SWIGEXPORT jlong JNICALL Java_io_github_linkjvm_jni_LinkJVMJNI_new_1unsignedIntPoint2(JNIEnv *jenv, jclass jcls, jlong jarg1, jlong jarg2) {
+  jlong jresult = 0 ;
+  unsigned int *arg1 = 0 ;
+  unsigned int *arg2 = 0 ;
+  unsigned int temp1 ;
+  unsigned int temp2 ;
+  Point2< unsigned int > *result = 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  temp1 = (unsigned int)jarg1; 
+  arg1 = &temp1; 
+  temp2 = (unsigned int)jarg2; 
+  arg2 = &temp2; 
+  result = (Point2< unsigned int > *)new Point2< unsigned int >((unsigned int const &)*arg1,(unsigned int const &)*arg2);
+  *(Point2< unsigned int > **)&jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT jlong JNICALL Java_io_github_linkjvm_jni_LinkJVMJNI_unsignedIntPoint2_1x(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+  jlong jresult = 0 ;
+  Point2< unsigned int > *arg1 = (Point2< unsigned int > *) 0 ;
+  unsigned int *result = 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(Point2< unsigned int > **)&jarg1; 
+  result = (unsigned int *) &((Point2< unsigned int > const *)arg1)->x();
+  jresult = (jlong)*result; 
+  return jresult;
+}
+
+
+SWIGEXPORT jlong JNICALL Java_io_github_linkjvm_jni_LinkJVMJNI_unsignedIntPoint2_1y(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+  jlong jresult = 0 ;
+  Point2< unsigned int > *arg1 = (Point2< unsigned int > *) 0 ;
+  unsigned int *result = 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(Point2< unsigned int > **)&jarg1; 
+  result = (unsigned int *) &((Point2< unsigned int > const *)arg1)->y();
+  jresult = (jlong)*result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void JNICALL Java_io_github_linkjvm_jni_LinkJVMJNI_unsignedIntPoint2_1setX(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2) {
+  Point2< unsigned int > *arg1 = (Point2< unsigned int > *) 0 ;
+  unsigned int *arg2 = 0 ;
+  unsigned int temp2 ;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(Point2< unsigned int > **)&jarg1; 
+  temp2 = (unsigned int)jarg2; 
+  arg2 = &temp2; 
+  (arg1)->setX((unsigned int const &)*arg2);
+}
+
+
+SWIGEXPORT void JNICALL Java_io_github_linkjvm_jni_LinkJVMJNI_unsignedIntPoint2_1setY(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2) {
+  Point2< unsigned int > *arg1 = (Point2< unsigned int > *) 0 ;
+  unsigned int *arg2 = 0 ;
+  unsigned int temp2 ;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(Point2< unsigned int > **)&jarg1; 
+  temp2 = (unsigned int)jarg2; 
+  arg2 = &temp2; 
+  (arg1)->setY((unsigned int const &)*arg2);
+}
+
+
+SWIGEXPORT jlong JNICALL Java_io_github_linkjvm_jni_LinkJVMJNI_unsignedIntPoint2_1toCPoint2(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+  jlong jresult = 0 ;
+  Point2< unsigned int > *arg1 = (Point2< unsigned int > *) 0 ;
+  point2 result;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(Point2< unsigned int > **)&jarg1; 
+  result = ((Point2< unsigned int > const *)arg1)->toCPoint2();
+  *(point2 **)&jresult = new point2((const point2 &)result); 
+  return jresult;
+}
+
+
+SWIGEXPORT void JNICALL Java_io_github_linkjvm_jni_LinkJVMJNI_delete_1unsignedIntPoint2(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+  Point2< unsigned int > *arg1 = (Point2< unsigned int > *) 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  arg1 = *(Point2< unsigned int > **)&jarg1; 
+  delete arg1;
+}
+
+
+SWIGEXPORT jlong JNICALL Java_io_github_linkjvm_jni_LinkJVMJNI_new_1unsignedIntRect2(JNIEnv *jenv, jclass jcls, jlong jarg1, jlong jarg2, jlong jarg3, jlong jarg4) {
+  jlong jresult = 0 ;
+  unsigned int *arg1 = 0 ;
+  unsigned int *arg2 = 0 ;
+  unsigned int *arg3 = 0 ;
+  unsigned int *arg4 = 0 ;
+  unsigned int temp1 ;
+  unsigned int temp2 ;
+  unsigned int temp3 ;
+  unsigned int temp4 ;
+  Rect< unsigned int > *result = 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  temp1 = (unsigned int)jarg1; 
+  arg1 = &temp1; 
+  temp2 = (unsigned int)jarg2; 
+  arg2 = &temp2; 
+  temp3 = (unsigned int)jarg3; 
+  arg3 = &temp3; 
+  temp4 = (unsigned int)jarg4; 
+  arg4 = &temp4; 
+  result = (Rect< unsigned int > *)new Rect< unsigned int >((unsigned int const &)*arg1,(unsigned int const &)*arg2,(unsigned int const &)*arg3,(unsigned int const &)*arg4);
+  *(Rect< unsigned int > **)&jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT jlong JNICALL Java_io_github_linkjvm_jni_LinkJVMJNI_unsignedIntRect2_1x(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+  jlong jresult = 0 ;
+  Rect< unsigned int > *arg1 = (Rect< unsigned int > *) 0 ;
+  unsigned int *result = 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(Rect< unsigned int > **)&jarg1; 
+  result = (unsigned int *) &((Rect< unsigned int > const *)arg1)->x();
+  jresult = (jlong)*result; 
+  return jresult;
+}
+
+
+SWIGEXPORT jlong JNICALL Java_io_github_linkjvm_jni_LinkJVMJNI_unsignedIntRect2_1y(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+  jlong jresult = 0 ;
+  Rect< unsigned int > *arg1 = (Rect< unsigned int > *) 0 ;
+  unsigned int *result = 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(Rect< unsigned int > **)&jarg1; 
+  result = (unsigned int *) &((Rect< unsigned int > const *)arg1)->y();
+  jresult = (jlong)*result; 
+  return jresult;
+}
+
+
+SWIGEXPORT jlong JNICALL Java_io_github_linkjvm_jni_LinkJVMJNI_unsignedIntRect2_1width(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+  jlong jresult = 0 ;
+  Rect< unsigned int > *arg1 = (Rect< unsigned int > *) 0 ;
+  unsigned int *result = 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(Rect< unsigned int > **)&jarg1; 
+  result = (unsigned int *) &((Rect< unsigned int > const *)arg1)->width();
+  jresult = (jlong)*result; 
+  return jresult;
+}
+
+
+SWIGEXPORT jlong JNICALL Java_io_github_linkjvm_jni_LinkJVMJNI_unsignedIntRect2_1height(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+  jlong jresult = 0 ;
+  Rect< unsigned int > *arg1 = (Rect< unsigned int > *) 0 ;
+  unsigned int *result = 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(Rect< unsigned int > **)&jarg1; 
+  result = (unsigned int *) &((Rect< unsigned int > const *)arg1)->height();
+  jresult = (jlong)*result; 
+  return jresult;
+}
+
+
+SWIGEXPORT jlong JNICALL Java_io_github_linkjvm_jni_LinkJVMJNI_unsignedIntRect2_1center(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+  jlong jresult = 0 ;
+  Rect< unsigned int > *arg1 = (Rect< unsigned int > *) 0 ;
+  SwigValueWrapper< Point2< unsigned int > > result;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(Rect< unsigned int > **)&jarg1; 
+  result = ((Rect< unsigned int > const *)arg1)->center();
+  *(Point2< unsigned int > **)&jresult = new Point2< unsigned int >((const Point2< unsigned int > &)result); 
+  return jresult;
+}
+
+
+SWIGEXPORT void JNICALL Java_io_github_linkjvm_jni_LinkJVMJNI_unsignedIntRect2_1setX(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2) {
+  Rect< unsigned int > *arg1 = (Rect< unsigned int > *) 0 ;
+  unsigned int *arg2 = 0 ;
+  unsigned int temp2 ;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(Rect< unsigned int > **)&jarg1; 
+  temp2 = (unsigned int)jarg2; 
+  arg2 = &temp2; 
+  (arg1)->setX((unsigned int const &)*arg2);
+}
+
+
+SWIGEXPORT void JNICALL Java_io_github_linkjvm_jni_LinkJVMJNI_unsignedIntRect2_1setY(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2) {
+  Rect< unsigned int > *arg1 = (Rect< unsigned int > *) 0 ;
+  unsigned int *arg2 = 0 ;
+  unsigned int temp2 ;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(Rect< unsigned int > **)&jarg1; 
+  temp2 = (unsigned int)jarg2; 
+  arg2 = &temp2; 
+  (arg1)->setY((unsigned int const &)*arg2);
+}
+
+
+SWIGEXPORT void JNICALL Java_io_github_linkjvm_jni_LinkJVMJNI_unsignedIntRect2_1setWidth(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2) {
+  Rect< unsigned int > *arg1 = (Rect< unsigned int > *) 0 ;
+  unsigned int *arg2 = 0 ;
+  unsigned int temp2 ;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(Rect< unsigned int > **)&jarg1; 
+  temp2 = (unsigned int)jarg2; 
+  arg2 = &temp2; 
+  (arg1)->setWidth((unsigned int const &)*arg2);
+}
+
+
+SWIGEXPORT void JNICALL Java_io_github_linkjvm_jni_LinkJVMJNI_unsignedIntRect2_1setHeight(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2) {
+  Rect< unsigned int > *arg1 = (Rect< unsigned int > *) 0 ;
+  unsigned int *arg2 = 0 ;
+  unsigned int temp2 ;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(Rect< unsigned int > **)&jarg1; 
+  temp2 = (unsigned int)jarg2; 
+  arg2 = &temp2; 
+  (arg1)->setHeight((unsigned int const &)*arg2);
+}
+
+
+SWIGEXPORT jlong JNICALL Java_io_github_linkjvm_jni_LinkJVMJNI_unsignedIntRect2_1area(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+  jlong jresult = 0 ;
+  Rect< unsigned int > *arg1 = (Rect< unsigned int > *) 0 ;
+  unsigned int result;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(Rect< unsigned int > **)&jarg1; 
+  result = (unsigned int)((Rect< unsigned int > const *)arg1)->area();
+  jresult = (jlong)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT jlong JNICALL Java_io_github_linkjvm_jni_LinkJVMJNI_unsignedIntRect2_1toCRectangle(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+  jlong jresult = 0 ;
+  Rect< unsigned int > *arg1 = (Rect< unsigned int > *) 0 ;
+  rectangle result;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(Rect< unsigned int > **)&jarg1; 
+  result = ((Rect< unsigned int > const *)arg1)->toCRectangle();
+  *(rectangle **)&jresult = new rectangle((const rectangle &)result); 
+  return jresult;
+}
+
+
+SWIGEXPORT void JNICALL Java_io_github_linkjvm_jni_LinkJVMJNI_delete_1unsignedIntRect2(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+  Rect< unsigned int > *arg1 = (Rect< unsigned int > *) 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  arg1 = *(Rect< unsigned int > **)&jarg1; 
+  delete arg1;
+}
+
+
 SWIGEXPORT jlong JNICALL Java_io_github_linkjvm_jni_LinkJVMJNI_new_1Config_1_1SWIG_10(JNIEnv *jenv, jclass jcls) {
   jlong jresult = 0 ;
   Config *result = 0 ;
@@ -2061,7 +2369,7 @@ SWIGEXPORT jstring JNICALL Java_io_github_linkjvm_jni_LinkJVMJNI_CAMERA_1CHANNEL
 }
 
 
-SWIGEXPORT jlong JNICALL Java_io_github_linkjvm_jni_LinkJVMJNI_new_1Object_1_1SWIG_10(JNIEnv *jenv, jclass jcls, jlong jarg1, jlong jarg2, jdouble jarg3, jstring jarg4, jlong jarg5) {
+SWIGEXPORT jlong JNICALL Java_io_github_linkjvm_jni_LinkJVMJNI_new_1Object_1_1SWIG_10(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_, jdouble jarg3, jstring jarg4, jlong jarg5) {
   jlong jresult = 0 ;
   Point2< unsigned int > *arg1 = 0 ;
   Rect< unsigned int > *arg2 = 0 ;
@@ -2074,6 +2382,8 @@ SWIGEXPORT jlong JNICALL Java_io_github_linkjvm_jni_LinkJVMJNI_new_1Object_1_1SW
   
   (void)jenv;
   (void)jcls;
+  (void)jarg1_;
+  (void)jarg2_;
   arg1 = *(Point2< unsigned int > **)&jarg1;
   if (!arg1) {
     SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Point2< unsigned int > const & reference is null");
@@ -2100,7 +2410,7 @@ SWIGEXPORT jlong JNICALL Java_io_github_linkjvm_jni_LinkJVMJNI_new_1Object_1_1SW
 }
 
 
-SWIGEXPORT jlong JNICALL Java_io_github_linkjvm_jni_LinkJVMJNI_new_1Object_1_1SWIG_11(JNIEnv *jenv, jclass jcls, jlong jarg1, jlong jarg2, jdouble jarg3, jstring jarg4) {
+SWIGEXPORT jlong JNICALL Java_io_github_linkjvm_jni_LinkJVMJNI_new_1Object_1_1SWIG_11(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_, jdouble jarg3, jstring jarg4) {
   jlong jresult = 0 ;
   Point2< unsigned int > *arg1 = 0 ;
   Rect< unsigned int > *arg2 = 0 ;
@@ -2111,6 +2421,8 @@ SWIGEXPORT jlong JNICALL Java_io_github_linkjvm_jni_LinkJVMJNI_new_1Object_1_1SW
   
   (void)jenv;
   (void)jcls;
+  (void)jarg1_;
+  (void)jarg2_;
   arg1 = *(Point2< unsigned int > **)&jarg1;
   if (!arg1) {
     SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Point2< unsigned int > const & reference is null");
@@ -2135,7 +2447,7 @@ SWIGEXPORT jlong JNICALL Java_io_github_linkjvm_jni_LinkJVMJNI_new_1Object_1_1SW
 }
 
 
-SWIGEXPORT jlong JNICALL Java_io_github_linkjvm_jni_LinkJVMJNI_new_1Object_1_1SWIG_12(JNIEnv *jenv, jclass jcls, jlong jarg1, jlong jarg2, jdouble jarg3) {
+SWIGEXPORT jlong JNICALL Java_io_github_linkjvm_jni_LinkJVMJNI_new_1Object_1_1SWIG_12(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_, jdouble jarg3) {
   jlong jresult = 0 ;
   Point2< unsigned int > *arg1 = 0 ;
   Rect< unsigned int > *arg2 = 0 ;
@@ -2145,6 +2457,8 @@ SWIGEXPORT jlong JNICALL Java_io_github_linkjvm_jni_LinkJVMJNI_new_1Object_1_1SW
   
   (void)jenv;
   (void)jcls;
+  (void)jarg1_;
+  (void)jarg2_;
   arg1 = *(Point2< unsigned int > **)&jarg1;
   if (!arg1) {
     SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Point2< unsigned int > const & reference is null");

@@ -35,28 +35,28 @@ public class Object {
     }
   }
 
-  public Object(SWIGTYPE_p_Point2T_unsigned_int_t centroid, SWIGTYPE_p_RectT_unsigned_int_t boundingBox, double confidence, String data, long dataLength) {
-    this(LinkJVMJNI.new_Object__SWIG_0(SWIGTYPE_p_Point2T_unsigned_int_t.getCPtr(centroid), SWIGTYPE_p_RectT_unsigned_int_t.getCPtr(boundingBox), confidence, data, dataLength), true);
+  public Object(unsignedIntPoint2 centroid, unsignedIntRect2 boundingBox, double confidence, String data, long dataLength) {
+    this(LinkJVMJNI.new_Object__SWIG_0(unsignedIntPoint2.getCPtr(centroid), centroid, unsignedIntRect2.getCPtr(boundingBox), boundingBox, confidence, data, dataLength), true);
   }
 
-  public Object(SWIGTYPE_p_Point2T_unsigned_int_t centroid, SWIGTYPE_p_RectT_unsigned_int_t boundingBox, double confidence, String data) {
-    this(LinkJVMJNI.new_Object__SWIG_1(SWIGTYPE_p_Point2T_unsigned_int_t.getCPtr(centroid), SWIGTYPE_p_RectT_unsigned_int_t.getCPtr(boundingBox), confidence, data), true);
+  public Object(unsignedIntPoint2 centroid, unsignedIntRect2 boundingBox, double confidence, String data) {
+    this(LinkJVMJNI.new_Object__SWIG_1(unsignedIntPoint2.getCPtr(centroid), centroid, unsignedIntRect2.getCPtr(boundingBox), boundingBox, confidence, data), true);
   }
 
-  public Object(SWIGTYPE_p_Point2T_unsigned_int_t centroid, SWIGTYPE_p_RectT_unsigned_int_t boundingBox, double confidence) {
-    this(LinkJVMJNI.new_Object__SWIG_2(SWIGTYPE_p_Point2T_unsigned_int_t.getCPtr(centroid), SWIGTYPE_p_RectT_unsigned_int_t.getCPtr(boundingBox), confidence), true);
+  public Object(unsignedIntPoint2 centroid, unsignedIntRect2 boundingBox, double confidence) {
+    this(LinkJVMJNI.new_Object__SWIG_2(unsignedIntPoint2.getCPtr(centroid), centroid, unsignedIntRect2.getCPtr(boundingBox), boundingBox, confidence), true);
   }
 
   public Object(Object rhs) {
     this(LinkJVMJNI.new_Object__SWIG_3(Object.getCPtr(rhs), rhs), true);
   }
 
-  public SWIGTYPE_p_Point2T_unsigned_int_t centroid() {
-    return new SWIGTYPE_p_Point2T_unsigned_int_t(LinkJVMJNI.Object_centroid(swigCPtr, this), false);
+  public unsignedIntPoint2 centroid() {
+    return new unsignedIntPoint2(LinkJVMJNI.Object_centroid(swigCPtr, this), false);
   }
 
-  public SWIGTYPE_p_RectT_unsigned_int_t boundingBox() {
-    return new SWIGTYPE_p_RectT_unsigned_int_t(LinkJVMJNI.Object_boundingBox(swigCPtr, this), false);
+  public unsignedIntRect2 boundingBox() {
+    return new unsignedIntRect2(LinkJVMJNI.Object_boundingBox(swigCPtr, this), false);
   }
 
   public double confidence() {

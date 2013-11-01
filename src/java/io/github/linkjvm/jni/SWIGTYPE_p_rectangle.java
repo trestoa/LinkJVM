@@ -8,18 +8,18 @@
 
 package io.github.linkjvm.jni;
 
-public class SWIGTYPE_p_Point2T_unsigned_int_t {
+public class SWIGTYPE_p_rectangle {
   private long swigCPtr;
 
-  protected SWIGTYPE_p_Point2T_unsigned_int_t(long cPtr, boolean futureUse) {
+  protected SWIGTYPE_p_rectangle(long cPtr, boolean futureUse) {
     swigCPtr = cPtr;
   }
 
-  protected SWIGTYPE_p_Point2T_unsigned_int_t() {
+  protected SWIGTYPE_p_rectangle() {
     swigCPtr = 0;
   }
 
-  protected static long getCPtr(SWIGTYPE_p_Point2T_unsigned_int_t obj) {
+  protected static long getCPtr(SWIGTYPE_p_rectangle obj) {
     return (obj == null) ? 0 : obj.swigCPtr;
   }
 }
