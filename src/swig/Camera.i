@@ -23,6 +23,13 @@
 	#include "include/kovan/geom.hpp"
 	#include "include/kovan/color.hpp"
 	#include "include/kovan/config.hpp"
+	#include <cstring>
+    #include <string>
+    #include <vector>
+    #include <map>
+    #include <iostream>
+    #include <time.h>
+    #include <winsock2.h>
 %}
 
 %include "stl.i"

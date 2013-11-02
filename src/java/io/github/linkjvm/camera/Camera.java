@@ -1,10 +1,9 @@
 package io.github.linkjvm.camera;
 
-import io.github.linkjvm.jni.Device;
-import io.github.linkjvm.jni.InputProvider;
-import io.github.linkjvm.jni.UsbInputProvider;
+import io.github.linkjvm.jni.*;
+import io.github.linkjvm.jni.Object;
 
-public class Camera {
+public class Camera{
 	private Device cameraDevice;
 
 	/**
@@ -40,6 +39,50 @@ public class Camera {
 	 */
 	public Camera(){
 		this(new UsbInputProvider(), CameraResolution.medResolution);
+	}
+
+	/**
+	 *
+	 * @param name
+	 * @return
+	 */
+	public boolean setConfig(String name){
+		Config config = Config.load(ConfigPath.path(name));
+		if(config == null){
+			return false;
+		}
+		cameraDevice.setConfig(config);
+		config.delete();
+		return true;
+	}
+
+	/**
+	 *
+	 * @return
+	 */
+	public Config getConfig(){
+		return cameraDevice.config();
+	}
+
+	/**
+	 *
+	 * @return
+	 */
+	public boolean update(){
+		return cameraDevice.update();
+	}
+
+	/**
+	 *
+	 * @return
+	 */
+	public int getObjectCount(){
+		return (int) cameraDevice;
+	}
+
+	public Frame getFrame(){
+		Object[] objects;
+
 	}
 
 }

@@ -20,7 +20,7 @@
 
 %module linkjvm_config
 
-%include "stl.i";
+%include "stl.i"
 
 class Config
 {
