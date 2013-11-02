@@ -38,21 +38,21 @@ namespace Button{
 }
 
 class  AbstractButton : public Sensor<bool>{
-	public:
-	    virtual ~AbstractButton();
-	    virtual void setPressed(bool pressed) = 0;
-	    inline bool isPressed() const { return value(); };
-	    inline bool isNotPressed() const { return !isPressed(); }
-	    inline bool isClicked() const
-	    {
-	            const bool ret = isPressed();
-	            waitUntilReleased();
-	            return ret;
-	    }
-	    virtual void waitUntilReleased() const;
-	    virtual void waitUntilPressed() const;
+	pub
 	    virtual void waitUntilClicked() const;
-};
+};lic:
+  	    virtual ~AbstractButton();
+  	    virtual void setPressed(bool pressed) = 0;
+  	    inline bool isPressed() const { return value(); };
+  	    inline bool isNotPressed() const { return !isPressed(); }
+  	    inline bool isClicked() const
+  	    {
+  	            const bool ret = isPressed();
+  	            waitUntilReleased();
+  	            return ret;
+  	    }
+  	    virtual void waitUntilReleased() const;
+  	    virtual void waitUntilPressed() const;
 
 class  AbstractTextButton : public AbstractButton{
 	public:
