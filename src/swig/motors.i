@@ -22,7 +22,10 @@
 %{
     #include "include/kovan/port.hpp"
     #include "include/kovan/sensor.hpp"
-}
+%}
+
+%import "sensors.i"
+%typemap("javaimports") BackEMF "import io.github.linkjvm.jni.sensors.IntSensor;";
 
 class  Motor{
 	public:

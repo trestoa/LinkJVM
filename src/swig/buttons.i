@@ -21,7 +21,10 @@
 %module linkjvm_buttons
 %{
     #include "include/kovan/sensor.hpp"
-}
+%}
+
+%import "sensors.i"
+%typemap("javaimports") AbstractButton "import io.github.linkjvm.jni.sensors.BoolSensor;";
 
 namespace Button{
 	namespace Type{
@@ -38,9 +41,8 @@ namespace Button{
 }
 
 class  AbstractButton : public Sensor<bool>{
-	pub
+	public:
 	    virtual void waitUntilClicked() const;
-};lic:
   	    virtual ~AbstractButton();
   	    virtual void setPressed(bool pressed) = 0;
   	    inline bool isPressed() const { return value(); };
@@ -53,6 +55,7 @@ class  AbstractButton : public Sensor<bool>{
   	    }
   	    virtual void waitUntilReleased() const;
   	    virtual void waitUntilPressed() const;
+};
 
 class  AbstractTextButton : public AbstractButton{
 	public:

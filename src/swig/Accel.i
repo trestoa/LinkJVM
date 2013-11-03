@@ -19,6 +19,14 @@
 */
 
 %module linkjvm_accel
+%{
+    #include "include/kovan/sensor.hpp"
+%}
+
+%import "sensors.i"
+%typemap("javaimports") AccelX "import io.github.linkjvm.jni.sensors.ShortSensor;";
+%typemap("javaimports") AccelY "import io.github.linkjvm.jni.sensors.ShortSensor;";
+%typemap("javaimports") AccelZ "import io.github.linkjvm.jni.sensors.ShortSensor;";
 
 class Acceleration{
 	public:

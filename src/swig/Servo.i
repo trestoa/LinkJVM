@@ -21,7 +21,7 @@
 %module linkjvm_servo
 %{
     #include "include/kovan/port.hpp"
-}
+%}
 
 class  Servo{
 	public:

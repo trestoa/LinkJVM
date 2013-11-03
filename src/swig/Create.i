@@ -29,7 +29,7 @@
     #include <vector>
     #include "include/kovan/sensor.hpp"
     #include "include/kovan/button.hpp"
-}
+%}
 
 %include "stl.i"
 

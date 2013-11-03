@@ -21,7 +21,10 @@
 %module linkjvm_analog
 %{
     #include "include/kovan/sensor.hpp"
-}
+%}
+
+%import "sensors.i"
+%typemap("javaimports") Analog "import io.github.linkjvm.jni.sensors.UnsignedShortSensor;";
 
 class  Analog : public Sensor<unsigned short>{
 	public:

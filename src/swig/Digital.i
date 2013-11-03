@@ -21,7 +21,10 @@
 %module linkjvm_digital
 %{
     #include "include/kovan/sensor.hpp"
-}
+%}
+
+%import "sensors.i"
+%typemap("javaimports") Digital "import io.github.linkjvm.jni.sensors.BoolSensor;";
 
 class  Digital : public Sensor<bool>{
 	public:
