@@ -618,7 +618,7 @@ SWIGEXPORT void JNICALL Java_io_github_linkjvm_jni_camera_linkjvm_1cameraJNI_Cha
 }
 
 
-SWIGEXPORT jlong JNICALL Java_io_github_linkjvm_jni_camera_linkjvm_1cameraJNI_ChannelImpl_1objects(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2) {
+SWIGEXPORT jlong JNICALL Java_io_github_linkjvm_jni_camera_linkjvm_1cameraJNI_ChannelImpl_1objects(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_) {
   jlong jresult = 0 ;
   Camera::ChannelImpl *arg1 = (Camera::ChannelImpl *) 0 ;
   Config *arg2 = 0 ;
@@ -627,6 +627,7 @@ SWIGEXPORT jlong JNICALL Java_io_github_linkjvm_jni_camera_linkjvm_1cameraJNI_Ch
   (void)jenv;
   (void)jcls;
   (void)jarg1_;
+  (void)jarg2_;
   arg1 = *(Camera::ChannelImpl **)&jarg1; 
   arg2 = *(Config **)&jarg2;
   if (!arg2) {
@@ -755,7 +756,7 @@ SWIGEXPORT jlong JNICALL Java_io_github_linkjvm_jni_camera_linkjvm_1cameraJNI_De
 }
 
 
-SWIGEXPORT jlong JNICALL Java_io_github_linkjvm_jni_camera_linkjvm_1cameraJNI_new_1Channel(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2) {
+SWIGEXPORT jlong JNICALL Java_io_github_linkjvm_jni_camera_linkjvm_1cameraJNI_new_1Channel(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_) {
   jlong jresult = 0 ;
   Camera::Device *arg1 = (Camera::Device *) 0 ;
   Config *arg2 = 0 ;
@@ -764,6 +765,7 @@ SWIGEXPORT jlong JNICALL Java_io_github_linkjvm_jni_camera_linkjvm_1cameraJNI_ne
   (void)jenv;
   (void)jcls;
   (void)jarg1_;
+  (void)jarg2_;
   arg1 = *(Camera::Device **)&jarg1; 
   arg2 = *(Config **)&jarg2;
   if (!arg2) {
@@ -827,13 +829,14 @@ SWIGEXPORT jlong JNICALL Java_io_github_linkjvm_jni_camera_linkjvm_1cameraJNI_Ch
 }
 
 
-SWIGEXPORT void JNICALL Java_io_github_linkjvm_jni_camera_linkjvm_1cameraJNI_Channel_1setConfig(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2) {
+SWIGEXPORT void JNICALL Java_io_github_linkjvm_jni_camera_linkjvm_1cameraJNI_Channel_1setConfig(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_) {
   Camera::Channel *arg1 = (Camera::Channel *) 0 ;
   Config *arg2 = 0 ;
   
   (void)jenv;
   (void)jcls;
   (void)jarg1_;
+  (void)jarg2_;
   arg1 = *(Camera::Channel **)&jarg1; 
   arg2 = *(Config **)&jarg2;
   if (!arg2) {
@@ -1395,13 +1398,14 @@ SWIGEXPORT jlong JNICALL Java_io_github_linkjvm_jni_camera_linkjvm_1cameraJNI_De
 }
 
 
-SWIGEXPORT void JNICALL Java_io_github_linkjvm_jni_camera_linkjvm_1cameraJNI_Device_1setConfig(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2) {
+SWIGEXPORT void JNICALL Java_io_github_linkjvm_jni_camera_linkjvm_1cameraJNI_Device_1setConfig(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_) {
   Camera::Device *arg1 = (Camera::Device *) 0 ;
   Config *arg2 = 0 ;
   
   (void)jenv;
   (void)jcls;
   (void)jarg1_;
+  (void)jarg2_;
   arg1 = *(Camera::Device **)&jarg1; 
   arg2 = *(Config **)&jarg2;
   if (!arg2) {

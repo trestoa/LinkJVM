@@ -33,6 +33,7 @@
 %}
 
 %include "stl.i"
+%import "config.i"
 
 /* Camera */
 #define CAMERA_GROUP ("camera")
@@ -48,6 +49,7 @@ namespace cv{
 }
 
 namespace Camera{
+    %typemap("javaimports") Device "import io.github.linkjvm.jni.Config;";
 	class Device;
 
     class  Object{
