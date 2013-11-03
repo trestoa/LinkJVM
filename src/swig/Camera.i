@@ -20,10 +20,10 @@
 
 %module linkjvm_camera
 %{
-	#include "include/kovan/geom.hpp"
-	#include "include/kovan/color.hpp"
-	#include "include/kovan/config.hpp"
-	#include <cstring>
+    #include "include/kovan/geom.hpp"
+    #include "include/kovan/color.hpp"
+    #include "include/kovan/config.hpp"
+    #include <cstring>
     #include <string>
     #include <vector>
     #include <map>
@@ -33,9 +33,47 @@
 %}
 
 %include "stl.i"
-%import "config.i"
 
-/* Camera */
+class Config
+{
+    public:
+        Config();
+        Config(const std::map<std::string, std::string> &config);
+
+        static Config *load(const std::string &path);
+        bool save(const std::string &path) const;
+
+        void beginGroup(const std::string &group);
+        void endGroup();
+        void clearGroup();
+
+        void clear();
+
+        bool containsKey(const std::string &key) const;
+
+        bool boolValue(const std::string &key) const;
+        int intValue(const std::string &key) const;
+        double doubleValue(const std::string &key) const;
+        std::string stringValue(const std::string &key) const;
+
+        void setValue(const std::string &key, const bool &value);
+        void setValue(const std::string &key, const int &value);
+        void setValue(const std::string &key, const double &value);
+        void setValue(const std::string &key, const char *value);
+        void setValue(const std::string &key, const std::string &value);
+
+        Config values() const;
+        void addValues(const Config &config);
+
+    private:
+        std::string safeKey(std::string key) const;
+        std::string group() const;
+
+        std::map<std::string, std::string> m_config;
+        std::vector<std::string> m_groups;
+        mutable std::string m_cachedGroup;
+};
+
 #define CAMERA_GROUP ("camera")
 #define CAMERA_NUM_CHANNELS_KEY ("num_channels")
 #define CAMERA_CHANNEL_GROUP_PREFIX ("channel_")
@@ -49,25 +87,24 @@ namespace cv{
 }
 
 namespace Camera{
-    %typemap("javaimports") Device "import io.github.linkjvm.jni.Config;";
-	class Device;
+        class Device;
 
-    class  Object{
-		public:
-		    Object(const Point2<unsigned> &centroid,
-		            const Rect<unsigned> &boundingBox,
-		            const double &confidence, const char *data = 0,
-		            const size_t &dataLength = 0);
-		    Object(const Object &rhs);
-		    ~Object();
+    class Object{
+                public:
+                 Object(const Point2<unsigned> &centroid,
+                 const Rect<unsigned> &boundingBox,
+                 const double &confidence, const char *data = 0,
+                 const size_t &dataLength = 0);
+                 Object(const Object &rhs);
+                 ~Object();
 
-		    const Point2<unsigned> &centroid() const;
-		    const Rect<unsigned> &boundingBox() const;
-		    const double confidence() const;
-		    const char *data() const;
-		    const size_t dataLength() const;
+                 const Point2<unsigned> &centroid() const;
+                 const Rect<unsigned> &boundingBox() const;
+                 const double confidence() const;
+                 const char *data() const;
+                 const size_t dataLength() const;
 
-    	private:
+            private:
             Point2<unsigned> m_centroid;
             Rect<unsigned> m_boundingBox;
             double m_confidence;
@@ -75,45 +112,45 @@ namespace Camera{
             size_t m_dataLength;
     };
 
-	typedef std::vector<Object> ObjectVector;
+        typedef std::vector<Object> ObjectVector;
 
-    class  ChannelImpl{
-    	public:
+    class ChannelImpl{
+            public:
             ChannelImpl();
             virtual ~ChannelImpl();
 
             void setImage(const cv::Mat &image);
             ObjectVector objects(const Config &config);
 
-    	protected:
+            protected:
             virtual void update(const cv::Mat &image) = 0;
             virtual ObjectVector findObjects(const Config &config) = 0;
 
-    	private:
+            private:
             bool m_dirty;
             cv::Mat m_image;
     };
 
-    class  ChannelImplManager{
-    	public:
+    class ChannelImplManager{
+            public:
             virtual ~ChannelImplManager();
             virtual void setImage(const cv::Mat &image) = 0;
             virtual ChannelImpl *channelImpl(const std::string &name) = 0;
     };
 
-    class  DefaultChannelImplManager : public ChannelImplManager{
-    	public:
+    class DefaultChannelImplManager : public ChannelImplManager{
+            public:
             DefaultChannelImplManager();
             ~DefaultChannelImplManager();
 
             virtual void setImage(const cv::Mat &image);
             virtual ChannelImpl *channelImpl(const std::string &name);
 
-    	private:
+            private:
             std::map<std::string, ChannelImpl *> m_channelImpls;
     };
-    class  Channel{
-    	public:
+    class Channel{
+            public:
             Channel(Device *device, const Config &config);
             ~Channel();
 
@@ -128,7 +165,7 @@ namespace Camera{
              */
             void setConfig(const Config &config);
 
-    	private:
+            private:
             Device *m_device;
             Config m_config;
             mutable ObjectVector m_objects;
@@ -136,8 +173,8 @@ namespace Camera{
             mutable bool m_valid;
     };
     typedef std::vector<Channel *> ChannelPtrVector;
-    class  ConfigPath{
-   		public:
+    class ConfigPath{
+                   public:
             static std::string extension();
 
             static void setBasePath(const std::string &path);
@@ -146,12 +183,12 @@ namespace Camera{
             static std::string defaultConfigPath();
             static void setDefaultConfigPath(const std::string &name);
 
-    	private:
+            private:
             static std::string s_path;
     };
 
-    class  InputProvider{
-    	public:
+    class InputProvider{
+            public:
             virtual ~InputProvider();
             virtual bool open(const int number) = 0;
             virtual bool isOpen() const = 0;
@@ -161,8 +198,8 @@ namespace Camera{
             virtual bool close() = 0;
     };
 
-    class  UsbInputProvider : public InputProvider{
-    	public:
+    class UsbInputProvider : public InputProvider{
+            public:
             UsbInputProvider();
             ~UsbInputProvider();
 
@@ -173,12 +210,12 @@ namespace Camera{
             virtual bool next(cv::Mat &image);
             virtual bool close();
 
-    	private:
+            private:
             cv::VideoCapture *m_capture;
     };
 
-    class  Device{
-    	public:
+    class Device{
+            public:
             Device(InputProvider *const inputProvider);
             ~Device();
 
@@ -206,18 +243,18 @@ namespace Camera{
 
             const unsigned char *bgr() const;
 
-	    private:
-	        void updateConfig();
+         private:
+         void updateConfig();
 
-	        InputProvider *const m_inputProvider;
-	        Config m_config;
-	        ChannelPtrVector m_channels;
-	        ChannelImplManager *m_channelImplManager;
-	        cv::Mat m_image;
-	        timeval m_lastUpdate;
+         InputProvider *const m_inputProvider;
+         Config m_config;
+         ChannelPtrVector m_channels;
+         ChannelImplManager *m_channelImplManager;
+         cv::Mat m_image;
+         timeval m_lastUpdate;
 
-	        mutable unsigned char *m_bgr;
-	        mutable unsigned m_bgrSize;
+         mutable unsigned char *m_bgr;
+         mutable unsigned m_bgrSize;
     };
 
     Camera::Device *cDevice();
