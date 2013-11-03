@@ -1,7 +1,6 @@
 package io.github.linkjvm.camera;
 
-import io.github.linkjvm.jni.*;
-import io.github.linkjvm.jni.Object;
+import io.github.linkjvm.jni.camera.*;
 
 public class Camera{
 	private Device cameraDevice;
@@ -77,11 +76,12 @@ public class Camera{
 	 * @return
 	 */
 	public int getObjectCount(){
-		return (int) cameraDevice;
+		return (int) cameraDevice.channels().size();
 	}
 
 	public Frame getFrame(){
-		Object[] objects;
+		cameraDevice.channels().get(0).
+		return new Frame();
 
 	}
 

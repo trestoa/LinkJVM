@@ -228,10 +228,10 @@ static void SWIGUNUSED SWIG_JavaThrowException(JNIEnv *jenv, SWIG_JavaExceptionC
 
 
 
-        #include "include/kovan/geom.hpp"
-        #include "include/kovan/color.hpp"
-        #include "include/kovan/config.hpp"
-        #include <cstring>
+    #include "include/kovan/geom.hpp"
+    #include "include/kovan/color.hpp"
+    #include "include/kovan/config.hpp"
+    #include <cstring>
     #include <string>
     #include <vector>
     #include <map>
@@ -302,6 +302,20 @@ SWIGINTERN Camera::std::vector< Camera::Channel * >::const_reference std_vector_
                     throw std::out_of_range("vector index out of range");
             }
 SWIGINTERN void std_vector_Sl_Camera_Channel_Sm__Sg__set(std::vector< Camera::Channel * > *self,int i,Camera::std::vector< Camera::Channel * >::value_type const &val){
+                int size = int(self->size());
+                if (i>=0 && i<size)
+                    (*self)[i] = val;
+                else
+                    throw std::out_of_range("vector index out of range");
+            }
+SWIGINTERN Camera::std::vector< Camera::Object >::const_reference std_vector_Sl_Camera_Object_Sg__get(std::vector< Camera::Object > *self,int i){
+                int size = int(self->size());
+                if (i>=0 && i<size)
+                    return (*self)[i];
+                else
+                    throw std::out_of_range("vector index out of range");
+            }
+SWIGINTERN void std_vector_Sl_Camera_Object_Sg__set(std::vector< Camera::Object > *self,int i,Camera::std::vector< Camera::Object >::value_type const &val){
                 int size = int(self->size());
                 if (i>=0 && i<size)
                     (*self)[i] = val;
@@ -1024,7 +1038,7 @@ SWIGEXPORT jlong JNICALL Java_io_github_linkjvm_jni_camera_linkjvm_1cameraJNI_Ch
   jlong jresult = 0 ;
   Camera::ChannelImpl *arg1 = (Camera::ChannelImpl *) 0 ;
   Config *arg2 = 0 ;
-  SwigValueWrapper< std::vector< Camera::Object > > result;
+  Camera::ObjectVector result;
   
   (void)jenv;
   (void)jcls;
@@ -2057,6 +2071,182 @@ SWIGEXPORT void JNICALL Java_io_github_linkjvm_jni_camera_linkjvm_1cameraJNI_del
   (void)jenv;
   (void)jcls;
   arg1 = *(std::vector< Camera::Channel * > **)&jarg1; 
+  delete arg1;
+}
+
+
+SWIGEXPORT jlong JNICALL Java_io_github_linkjvm_jni_camera_linkjvm_1cameraJNI_new_1ObjectVector_1_1SWIG_10(JNIEnv *jenv, jclass jcls) {
+  jlong jresult = 0 ;
+  std::vector< Camera::Object > *result = 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  result = (std::vector< Camera::Object > *)new std::vector< Camera::Object >();
+  *(std::vector< Camera::Object > **)&jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT jlong JNICALL Java_io_github_linkjvm_jni_camera_linkjvm_1cameraJNI_new_1ObjectVector_1_1SWIG_11(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+  jlong jresult = 0 ;
+  Camera::std::vector< Camera::Object >::size_type arg1 ;
+  std::vector< Camera::Object > *result = 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  arg1 = (Camera::std::vector< Camera::Object >::size_type)jarg1; 
+  result = (std::vector< Camera::Object > *)new std::vector< Camera::Object >(arg1);
+  *(std::vector< Camera::Object > **)&jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT jlong JNICALL Java_io_github_linkjvm_jni_camera_linkjvm_1cameraJNI_ObjectVector_1size(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+  jlong jresult = 0 ;
+  std::vector< Camera::Object > *arg1 = (std::vector< Camera::Object > *) 0 ;
+  Camera::std::vector< Camera::Object >::size_type result;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(std::vector< Camera::Object > **)&jarg1; 
+  result = ((std::vector< Camera::Object > const *)arg1)->size();
+  jresult = (jlong)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT jlong JNICALL Java_io_github_linkjvm_jni_camera_linkjvm_1cameraJNI_ObjectVector_1capacity(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+  jlong jresult = 0 ;
+  std::vector< Camera::Object > *arg1 = (std::vector< Camera::Object > *) 0 ;
+  Camera::std::vector< Camera::Object >::size_type result;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(std::vector< Camera::Object > **)&jarg1; 
+  result = ((std::vector< Camera::Object > const *)arg1)->capacity();
+  jresult = (jlong)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void JNICALL Java_io_github_linkjvm_jni_camera_linkjvm_1cameraJNI_ObjectVector_1reserve(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2) {
+  std::vector< Camera::Object > *arg1 = (std::vector< Camera::Object > *) 0 ;
+  Camera::std::vector< Camera::Object >::size_type arg2 ;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(std::vector< Camera::Object > **)&jarg1; 
+  arg2 = (Camera::std::vector< Camera::Object >::size_type)jarg2; 
+  (arg1)->reserve(arg2);
+}
+
+
+SWIGEXPORT jboolean JNICALL Java_io_github_linkjvm_jni_camera_linkjvm_1cameraJNI_ObjectVector_1isEmpty(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+  jboolean jresult = 0 ;
+  std::vector< Camera::Object > *arg1 = (std::vector< Camera::Object > *) 0 ;
+  bool result;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(std::vector< Camera::Object > **)&jarg1; 
+  result = (bool)((std::vector< Camera::Object > const *)arg1)->empty();
+  jresult = (jboolean)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void JNICALL Java_io_github_linkjvm_jni_camera_linkjvm_1cameraJNI_ObjectVector_1clear(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+  std::vector< Camera::Object > *arg1 = (std::vector< Camera::Object > *) 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(std::vector< Camera::Object > **)&jarg1; 
+  (arg1)->clear();
+}
+
+
+SWIGEXPORT void JNICALL Java_io_github_linkjvm_jni_camera_linkjvm_1cameraJNI_ObjectVector_1add(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_) {
+  std::vector< Camera::Object > *arg1 = (std::vector< Camera::Object > *) 0 ;
+  Camera::std::vector< Camera::Object >::value_type *arg2 = 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  (void)jarg2_;
+  arg1 = *(std::vector< Camera::Object > **)&jarg1; 
+  arg2 = *(Camera::std::vector< Camera::Object >::value_type **)&jarg2;
+  if (!arg2) {
+    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Camera::std::vector< Camera::Object >::value_type const & reference is null");
+    return ;
+  } 
+  (arg1)->push_back((Camera::std::vector< Camera::Object >::value_type const &)*arg2);
+}
+
+
+SWIGEXPORT jlong JNICALL Java_io_github_linkjvm_jni_camera_linkjvm_1cameraJNI_ObjectVector_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jint jarg2) {
+  jlong jresult = 0 ;
+  std::vector< Camera::Object > *arg1 = (std::vector< Camera::Object > *) 0 ;
+  int arg2 ;
+  Camera::std::vector< Camera::Object >::value_type *result = 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(std::vector< Camera::Object > **)&jarg1; 
+  arg2 = (int)jarg2; 
+  try {
+    result = (Camera::std::vector< Camera::Object >::value_type *) &std_vector_Sl_Camera_Object_Sg__get(arg1,arg2);
+  }
+  catch(Camera::std::out_of_range &_e) {
+    (void)_e;
+    SWIG_JavaThrowException(jenv, SWIG_JavaRuntimeException, "C++ Camera::std::out_of_range exception thrown");
+    return 0; 
+  }
+  
+  *(Camera::std::vector< Camera::Object >::value_type **)&jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void JNICALL Java_io_github_linkjvm_jni_camera_linkjvm_1cameraJNI_ObjectVector_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jint jarg2, jlong jarg3, jobject jarg3_) {
+  std::vector< Camera::Object > *arg1 = (std::vector< Camera::Object > *) 0 ;
+  int arg2 ;
+  Camera::std::vector< Camera::Object >::value_type *arg3 = 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  (void)jarg3_;
+  arg1 = *(std::vector< Camera::Object > **)&jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = *(Camera::std::vector< Camera::Object >::value_type **)&jarg3;
+  if (!arg3) {
+    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Camera::std::vector< Camera::Object >::value_type const & reference is null");
+    return ;
+  } 
+  try {
+    std_vector_Sl_Camera_Object_Sg__set(arg1,arg2,(Camera::Object const &)*arg3);
+  }
+  catch(Camera::std::out_of_range &_e) {
+    (void)_e;
+    SWIG_JavaThrowException(jenv, SWIG_JavaRuntimeException, "C++ Camera::std::out_of_range exception thrown");
+    return ; 
+  }
+  
+}
+
+
+SWIGEXPORT void JNICALL Java_io_github_linkjvm_jni_camera_linkjvm_1cameraJNI_delete_1ObjectVector(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+  std::vector< Camera::Object > *arg1 = (std::vector< Camera::Object > *) 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  arg1 = *(std::vector< Camera::Object > **)&jarg1; 
   delete arg1;
 }
 

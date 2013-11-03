@@ -43,9 +43,9 @@ public class Channel {
     linkjvm_cameraJNI.Channel_invalidate(swigCPtr, this);
   }
 
-  public SWIGTYPE_p_std__vectorT_Camera__Object_t objects() {
+  public ObjectVector objects() {
     long cPtr = linkjvm_cameraJNI.Channel_objects(swigCPtr, this);
-    return (cPtr == 0) ? null : new SWIGTYPE_p_std__vectorT_Camera__Object_t(cPtr, false);
+    return (cPtr == 0) ? null : new ObjectVector(cPtr, false);
   }
 
   public Device device() {

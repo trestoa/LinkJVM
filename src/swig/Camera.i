@@ -112,7 +112,7 @@ namespace Camera{
             size_t m_dataLength;
     };
 
-        typedef std::vector<Object> ObjectVector;
+       typedef std::vector<Object> ObjectVector;
 
     class ChannelImpl{
             public:
@@ -259,4 +259,5 @@ namespace Camera{
 
     Camera::Device *cDevice();
     %template(ChannelVector) std::vector<Channel *>;
+    %template(ObjectVector) std::vector<Object>;
 }

@@ -116,6 +116,17 @@ public class linkjvm_cameraJNI {
   public final static native long ChannelVector_get(long jarg1, ChannelVector jarg1_, int jarg2);
   public final static native void ChannelVector_set(long jarg1, ChannelVector jarg1_, int jarg2, long jarg3, Channel jarg3_);
   public final static native void delete_ChannelVector(long jarg1);
+  public final static native long new_ObjectVector__SWIG_0();
+  public final static native long new_ObjectVector__SWIG_1(long jarg1);
+  public final static native long ObjectVector_size(long jarg1, ObjectVector jarg1_);
+  public final static native long ObjectVector_capacity(long jarg1, ObjectVector jarg1_);
+  public final static native void ObjectVector_reserve(long jarg1, ObjectVector jarg1_, long jarg2);
+  public final static native boolean ObjectVector_isEmpty(long jarg1, ObjectVector jarg1_);
+  public final static native void ObjectVector_clear(long jarg1, ObjectVector jarg1_);
+  public final static native void ObjectVector_add(long jarg1, ObjectVector jarg1_, long jarg2, Object jarg2_);
+  public final static native long ObjectVector_get(long jarg1, ObjectVector jarg1_, int jarg2);
+  public final static native void ObjectVector_set(long jarg1, ObjectVector jarg1_, int jarg2, long jarg3, Object jarg3_);
+  public final static native void delete_ObjectVector(long jarg1);
   public final static native long DefaultChannelImplManager_SWIGUpcast(long jarg1);
   public final static native long UsbInputProvider_SWIGUpcast(long jarg1);
 }
