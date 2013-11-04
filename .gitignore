@@ -6,3 +6,4 @@ bin
 *.tmproj
 *.iml
 .idea
+out
