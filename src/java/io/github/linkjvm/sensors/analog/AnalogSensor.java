@@ -13,11 +13,6 @@ public class AnalogSensor implements AbstractAnalogSensor{
 
 	private int port;
 
-	private void createJniSensors(){
-		jniSensor = new Analog((short) port);
-		jniSensor8 = new Analog8((short) port);
-	}
-
 	/**
 	 *
 	 * @param port
@@ -27,31 +22,8 @@ public class AnalogSensor implements AbstractAnalogSensor{
 			throw new InvalidPortException();
 		}
 		this.port = port;
-		createJniSensors();
-	}
-
-	/**
-	 *
-	 * @param port
-	 */
-	public AnalogSensor(short port) throws InvalidPortException{
-		if(port < 0 || port > 7){
-			throw new InvalidPortException();
-		}
-		this.port = port;
-		createJniSensors();
-	}
-
-	/**
-	 *
-	 * @param port
-	 */
-	public AnalogSensor(byte port) throws InvalidPortException{
-		if(port < 0 || port > 7){
-			throw new InvalidPortException();
-		}
-		this.port = port;
-		createJniSensors();
+		jniSensor = new Analog((short) port);
+		jniSensor8 = new Analog8((short) port);
 	}
 
 	/**
