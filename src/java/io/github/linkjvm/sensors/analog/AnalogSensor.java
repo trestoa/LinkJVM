@@ -53,6 +53,10 @@ public class AnalogSensor implements AbstractAnalogSensor{
 		jniSensor8.setPullup(pullup);
 	}
 
+	public boolean getDigitalPullup(){
+		return jniSensor.pullup();
+	}
+
 	/**
 	 *
 	 * @return
