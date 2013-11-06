@@ -212,6 +212,7 @@ static void SWIGUNUSED SWIG_JavaThrowException(JNIEnv *jenv, SWIG_JavaExceptionC
 
 
     #include "include/kovan/port.hpp"
+    #include "include/kovan/servo.hpp"
 
 
 #ifdef __cplusplus
