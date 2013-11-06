@@ -19,6 +19,10 @@
 */
 
 %module linkjvm_geom
+%{
+    #include "include/kovan/geom.h"
+    #include "include/kovan/geom.hpp"
+%}
 
 typedef struct point2
 {

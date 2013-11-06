@@ -9,7 +9,6 @@
 package io.github.linkjvm.jni.create;
 
 public class linkjvm_createJNI {
-  public final static native double PI_get();
   public final static native long new_CreateScript__SWIG_0();
   public final static native long new_CreateScript__SWIG_1(long jarg1, CreateScript jarg1_);
   public final static native void CreateScript_append__SWIG_0(long jarg1, CreateScript jarg1_, short jarg2);

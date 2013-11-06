@@ -19,6 +19,9 @@
 */
 
 %module linkjvm_battery
+%{
+    #include "include/kovan/battery.hpp"
+%}
 
 class  Battery{
 	public:

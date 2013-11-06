@@ -212,6 +212,8 @@ static void SWIGUNUSED SWIG_JavaThrowException(JNIEnv *jenv, SWIG_JavaExceptionC
 
 
     #include "include/kovan/sensor.hpp"
+    #include "include/kovan/button_ids.hpp"
+    #include "include/kovan/button.hpp"
 
 
 #ifdef __cplusplus

@@ -22,6 +22,7 @@
 %{
     #include "include/kovan/port.hpp"
     #include "include/kovan/sensor.hpp"
+    #include "include/kovan/motors.hpp"
 %}
 
 %import "sensors.i"

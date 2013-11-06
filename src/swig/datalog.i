@@ -23,6 +23,7 @@
     #include <string>
     #include <vector>
     #include <map>
+    #include "include/kovan/datalog.hpp"
 %}
 
 %include "stl.i"

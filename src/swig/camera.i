@@ -30,6 +30,8 @@
     #include <iostream>
     #include <time.h>
     #include <winsock2.h>
+    #include <opencv2/core/core.hpp>
+    #include "include/kovan/camera.hpp"
 %}
 
 %include "stl.i"

@@ -21,6 +21,8 @@
 %module linkjvm_buttons
 %{
     #include "include/kovan/sensor.hpp"
+    #include "include/kovan/button_ids.hpp"
+    #include "include/kovan/button.hpp"
 %}
 
 %import "sensors.i"

@@ -231,6 +231,7 @@ static void SWIGUNUSED SWIG_JavaThrowException(JNIEnv *jenv, SWIG_JavaExceptionC
     #include <string>
     #include <vector>
     #include <map>
+    #include "include/kovan/datalog.hpp"
 
 
 #include <stdexcept>

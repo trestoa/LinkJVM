@@ -8,5 +8,5 @@
 
 package io.github.linkjvm.jni.create;
 
-public class linkjvm_create implements linkjvm_createConstants {
+public class linkjvm_create {
 }

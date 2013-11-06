@@ -19,6 +19,9 @@
 */
 
 %module linkjvm_console
+%{
+    #include "include/kovan/console.hpp"
+%}
 
 class  Console{
 	public:

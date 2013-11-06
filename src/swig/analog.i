@@ -21,6 +21,7 @@
 %module linkjvm_analog
 %{
     #include "include/kovan/sensor.hpp"
+    #include "include/kovan/analog.hpp"
 %}
 
 %import "sensors.i"

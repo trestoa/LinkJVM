@@ -21,6 +21,7 @@
 %module linkjvm_accel
 %{
     #include "include/kovan/sensor.hpp"
+    #include "include/kovan/accel.hpp"
 %}
 
 %import "sensors.i"

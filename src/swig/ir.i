@@ -19,6 +19,9 @@
 */
 
 %module linkjvm_ir
+%{
+    #include "include/kovan/ir.hpp"
+%}
 
 class  Ir{
 	public:

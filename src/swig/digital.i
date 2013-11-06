@@ -21,6 +21,7 @@
 %module linkjvm_digital
 %{
     #include "include/kovan/sensor.hpp"
+    #include "include/kovan/digital.hpp"
 %}
 
 %import "sensors.i"

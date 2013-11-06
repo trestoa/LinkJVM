@@ -29,12 +29,13 @@
     #include <vector>
     #include "include/kovan/sensor.hpp"
     #include "include/kovan/button.hpp"
+    #include "include/kovan/create.hpp"
+    #define PI 3.14159f
 %}
 
 %include "stl.i"
 
 typedef unsigned int speed_t;
-#define PI 3.14159f
 
 class  CreateScript{
 	public:

@@ -236,6 +236,8 @@ static void SWIGUNUSED SWIG_JavaThrowException(JNIEnv *jenv, SWIG_JavaExceptionC
     #include <vector>
     #include "include/kovan/sensor.hpp"
     #include "include/kovan/button.hpp"
+    #include "include/kovan/create.hpp"
+    #define PI 3.14159f
 
 
 #include <stdexcept>
@@ -296,18 +298,6 @@ SWIGINTERN void SWIG_JavaException(JNIEnv *jenv, int code, const char *msg) {
 #ifdef __cplusplus
 extern "C" {
 #endif
-
-SWIGEXPORT jdouble JNICALL Java_io_github_linkjvm_jni_create_linkjvm_1createJNI_PI_1get(JNIEnv *jenv, jclass jcls) {
-  jdouble jresult = 0 ;
-  double result;
-  
-  (void)jenv;
-  (void)jcls;
-  result = (double)(3.14159);
-  jresult = (jdouble)result; 
-  return jresult;
-}
-
 
 SWIGEXPORT jlong JNICALL Java_io_github_linkjvm_jni_create_linkjvm_1createJNI_new_1CreateScript_1_1SWIG_10(JNIEnv *jenv, jclass jcls) {
   jlong jresult = 0 ;
