@@ -11,6 +11,11 @@ public class DigitalSensor implements AbstractDigitalSensor{
 
 	private int port;
 
+	/**
+	 * 
+	 * @param port
+	 * @throws InvalidPortException
+	 */
 	public DigitalSensor(int port) throws InvalidPortException{
 		if(port < 8 || port > 15){
 			throw new InvalidPortException();
@@ -18,6 +23,20 @@ public class DigitalSensor implements AbstractDigitalSensor{
 		this.port = port;
 		jniSensor = new Digital((short) port);
 	}
+
+	/**
+	 * 
+	 * @return
+	 */
+	public int getPort(){
+		return port;
+	}
+	
+	public void setPort(int port){
+		jniSensor = new Digital((short) port);
+		this.port = port;
+	}
+	
 
 	/**
 	 *
