@@ -20,7 +20,6 @@
 
 %module linkjvm_motor
 %{
-    #include "include/kovan/port.hpp"
     #include "include/kovan/sensor.hpp"
     #include "include/kovan/motors.hpp"
 %}
@@ -30,7 +29,7 @@
 
 class  Motor{
 	public:
-		Motor(const port_t& port) throw();
+		Motor(const int& port) throw();
 		void clearPositionCounter();
 		void moveAtVelocity(const short& velocity);
 		void moveToPosition(const short& speed, const int& goalPos);
@@ -44,10 +43,10 @@ class  Motor{
 		void backward();
 		void motor(int percent);
 		void off();
-		const port_t& port() const;
+		const int& port() const;
 
 	private:
-	        port_t m_port;
+	        int m_port;
 };
 
 class BackEMF : public Sensor<int>{

@@ -32,6 +32,10 @@ public class DigitalSensor implements AbstractDigitalSensor{
 		return port;
 	}
 	
+	/**
+	 * 
+	 * @param port
+	 */
 	public void setPort(int port){
 		jniSensor = new Digital((short) port);
 		this.port = port;

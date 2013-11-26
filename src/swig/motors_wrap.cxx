@@ -211,7 +211,6 @@ static void SWIGUNUSED SWIG_JavaThrowException(JNIEnv *jenv, SWIG_JavaExceptionC
 #define SWIG_contract_assert(nullreturn, expr, msg) if (!(expr)) {SWIG_JavaThrowException(jenv, SWIG_JavaIllegalArgumentException, msg); return nullreturn; } else
 
 
-    #include "include/kovan/port.hpp"
     #include "include/kovan/sensor.hpp"
     #include "include/kovan/motors.hpp"
 
@@ -220,19 +219,17 @@ static void SWIGUNUSED SWIG_JavaThrowException(JNIEnv *jenv, SWIG_JavaExceptionC
 extern "C" {
 #endif
 
-SWIGEXPORT jlong JNICALL Java_io_github_linkjvm_jni_motors_linkjvm_1motorJNI_new_1Motor(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+SWIGEXPORT jlong JNICALL Java_io_github_linkjvm_jni_motors_linkjvm_1motorJNI_new_1Motor(JNIEnv *jenv, jclass jcls, jint jarg1) {
   jlong jresult = 0 ;
-  port_t *arg1 = 0 ;
+  int *arg1 = 0 ;
+  int temp1 ;
   Motor *result = 0 ;
   
   (void)jenv;
   (void)jcls;
-  arg1 = *(port_t **)&jarg1;
-  if (!arg1) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "port_t const & reference is null");
-    return 0;
-  } 
-  result = (Motor *)new Motor((port_t const &)*arg1);
+  temp1 = (int)jarg1; 
+  arg1 = &temp1; 
+  result = (Motor *)new Motor((int const &)*arg1);
   *(Motor **)&jresult = result; 
   return jresult;
 }
@@ -467,17 +464,17 @@ SWIGEXPORT void JNICALL Java_io_github_linkjvm_jni_motors_linkjvm_1motorJNI_Moto
 }
 
 
-SWIGEXPORT jlong JNICALL Java_io_github_linkjvm_jni_motors_linkjvm_1motorJNI_Motor_1port(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
-  jlong jresult = 0 ;
+SWIGEXPORT jint JNICALL Java_io_github_linkjvm_jni_motors_linkjvm_1motorJNI_Motor_1port(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+  jint jresult = 0 ;
   Motor *arg1 = (Motor *) 0 ;
-  port_t *result = 0 ;
+  int *result = 0 ;
   
   (void)jenv;
   (void)jcls;
   (void)jarg1_;
   arg1 = *(Motor **)&jarg1; 
-  result = (port_t *) &((Motor const *)arg1)->port();
-  *(port_t **)&jresult = result; 
+  result = (int *) &((Motor const *)arg1)->port();
+  jresult = (jint)*result; 
   return jresult;
 }
 

@@ -35,8 +35,8 @@ public class Motor {
     }
   }
 
-  public Motor(SWIGTYPE_p_port_t port) {
-    this(linkjvm_motorJNI.new_Motor(SWIGTYPE_p_port_t.getCPtr(port)), true);
+  public Motor(int port) {
+    this(linkjvm_motorJNI.new_Motor(port), true);
   }
 
   public void clearPositionCounter() {
@@ -91,8 +91,8 @@ public class Motor {
     linkjvm_motorJNI.Motor_off(swigCPtr, this);
   }
 
-  public SWIGTYPE_p_port_t port() {
-    return new SWIGTYPE_p_port_t(linkjvm_motorJNI.Motor_port(swigCPtr, this), false);
+  public int port() {
+    return linkjvm_motorJNI.Motor_port(swigCPtr, this);
   }
 
 }

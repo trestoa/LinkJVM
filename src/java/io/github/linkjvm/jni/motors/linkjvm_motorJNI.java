@@ -9,7 +9,7 @@
 package io.github.linkjvm.jni.motors;
 
 public class linkjvm_motorJNI {
-  public final static native long new_Motor(long jarg1);
+  public final static native long new_Motor(int jarg1);
   public final static native void Motor_clearPositionCounter(long jarg1, Motor jarg1_);
   public final static native void Motor_moveAtVelocity(long jarg1, Motor jarg1_, short jarg2);
   public final static native void Motor_moveToPosition(long jarg1, Motor jarg1_, short jarg2, int jarg3);
@@ -23,7 +23,7 @@ public class linkjvm_motorJNI {
   public final static native void Motor_backward(long jarg1, Motor jarg1_);
   public final static native void Motor_motor(long jarg1, Motor jarg1_, int jarg2);
   public final static native void Motor_off(long jarg1, Motor jarg1_);
-  public final static native long Motor_port(long jarg1, Motor jarg1_);
+  public final static native int Motor_port(long jarg1, Motor jarg1_);
   public final static native void delete_Motor(long jarg1);
   public final static native long new_BackEMF(short jarg1);
   public final static native int BackEMF_value(long jarg1, BackEMF jarg1_);
