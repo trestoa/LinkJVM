@@ -33,22 +33,13 @@ public class AccelerationSensor implements AbstractAnalogSensor{
 	 * @param axis
 	 */
 	public AccelerationSensor(Axis axis){
-		if(axis == Axis.X){
-			jniAccelSensor = new AccelX();
-		}
-		else if(axis == Axis.Y){
-			jniAccelSensor = new AccelY();
-		}
-		else{
-			jniAccelSensor = new AccelZ();
-		}
-		this.axis = axis;
+		setAxis(axis);
 	}
 	
 	/**
 	 * 
 	 */
-	public void calibrate(){
+	public static void calibrate(){
 		Acceleration.calibrate();
 	}
 	
@@ -75,5 +66,30 @@ public class AccelerationSensor implements AbstractAnalogSensor{
 	 */
 	public void setJniAcceleration(ShortSensor jniAccelSensor){
 		this.jniAccelSensor = jniAccelSensor;
+	}
+	
+	/**
+	 * 
+	 * @return
+	 */
+	public Axis getAxis(){
+		return axis;
+	}
+	
+	/**
+	 * 
+	 * @param axis
+	 */
+	public void setAxis(Axis axis){
+		if(axis == Axis.X){
+			jniAccelSensor = new AccelX();
+		}
+		else if(axis == Axis.Y){
+			jniAccelSensor = new AccelY();
+		}
+		else{
+			jniAccelSensor = new AccelZ();
+		}
+		this.axis = axis;
 	}
 }
