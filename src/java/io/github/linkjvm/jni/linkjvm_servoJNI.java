@@ -9,7 +9,7 @@
 package io.github.linkjvm.jni;
 
 public class linkjvm_servoJNI {
-  public final static native long new_Servo(long jarg1);
+  public final static native long new_Servo(int jarg1);
   public final static native void Servo_setPosition(long jarg1, Servo jarg1_, long jarg2);
   public final static native long Servo_position(long jarg1, Servo jarg1_);
   public final static native void Servo_disable(long jarg1, Servo jarg1_);

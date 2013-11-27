@@ -35,8 +35,8 @@ public class Servo {
     }
   }
 
-  public Servo(SWIGTYPE_p_port_t port) {
-    this(linkjvm_servoJNI.new_Servo(SWIGTYPE_p_port_t.getCPtr(port)), true);
+  public Servo(int port) {
+    this(linkjvm_servoJNI.new_Servo(port), true);
   }
 
   public void setPosition(long position) {

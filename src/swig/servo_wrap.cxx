@@ -211,7 +211,6 @@ static void SWIGUNUSED SWIG_JavaThrowException(JNIEnv *jenv, SWIG_JavaExceptionC
 #define SWIG_contract_assert(nullreturn, expr, msg) if (!(expr)) {SWIG_JavaThrowException(jenv, SWIG_JavaIllegalArgumentException, msg); return nullreturn; } else
 
 
-    #include "include/kovan/port.hpp"
     #include "include/kovan/servo.hpp"
 
 
@@ -219,20 +218,14 @@ static void SWIGUNUSED SWIG_JavaThrowException(JNIEnv *jenv, SWIG_JavaExceptionC
 extern "C" {
 #endif
 
-SWIGEXPORT jlong JNICALL Java_io_github_linkjvm_jni_linkjvm_1servoJNI_new_1Servo(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+SWIGEXPORT jlong JNICALL Java_io_github_linkjvm_jni_linkjvm_1servoJNI_new_1Servo(JNIEnv *jenv, jclass jcls, jint jarg1) {
   jlong jresult = 0 ;
-  port_t arg1 ;
-  port_t *argp1 ;
+  int arg1 ;
   Servo *result = 0 ;
   
   (void)jenv;
   (void)jcls;
-  argp1 = *(port_t **)&jarg1; 
-  if (!argp1) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null port_t");
-    return 0;
-  }
-  arg1 = *argp1; 
+  arg1 = (int)jarg1; 
   result = (Servo *)new Servo(arg1);
   *(Servo **)&jresult = result; 
   return jresult;

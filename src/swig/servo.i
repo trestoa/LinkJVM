@@ -20,14 +20,13 @@
 
 %module linkjvm_servo
 %{
-    #include "include/kovan/port.hpp"
     #include "include/kovan/servo.hpp"
 %}
 
 class  Servo{
 	public:
 		typedef unsigned int ticks_t;
-		Servo(port_t port);
+		Servo(int port);
 		void setPosition(ticks_t position);
 		ticks_t position() const;
 		void disable();
@@ -36,5 +35,5 @@ class  Servo{
 		bool isEnabled() const;
 
 	private:
-	    port_t m_port;
+	    int m_port;
 };
