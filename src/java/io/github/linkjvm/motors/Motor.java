@@ -136,4 +136,12 @@ public class Motor {
 		}
 		jniMotor = new io.github.linkjvm.jni.motors.Motor((short) port);
 	}
+	
+	public void setJniMotor(io.github.linkjvm.jni.motors.Motor jniMotor){
+		this.jniMotor = jniMotor;
+	}
+	
+	public io.github.linkjvm.jni.motors.Motor getJniMotor(){
+		return jniMotor;
+	}
 }
