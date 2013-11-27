@@ -4,6 +4,10 @@ package io.github.linkjvm.sensors;
  *
  */
 public class InvalidPortException extends Exception{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -2317447340566282872L;
 	public InvalidPortException(){
 		super();
 	}
