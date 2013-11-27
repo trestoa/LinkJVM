@@ -39,7 +39,6 @@ public class AnalogSensor implements AbstractAnalogSensor{
 	 *
 	 * @return
 	 */
-	@Override
 	public int getValue8(){
 		return jniSensor8.value();
 	}

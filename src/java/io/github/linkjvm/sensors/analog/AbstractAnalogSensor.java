@@ -9,10 +9,4 @@ public interface AbstractAnalogSensor {
 	 * @return
 	 */
 	public abstract int getValue();
-
-	/**
-	 *
-	 * @return
-	 */
-	public abstract int getValue8();
 }
