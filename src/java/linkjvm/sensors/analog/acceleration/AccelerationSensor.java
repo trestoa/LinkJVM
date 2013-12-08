@@ -1,0 +1,95 @@
+package linkjvm.sensors.analog.acceleration;
+
+import linkjvm.jni.accel.AccelX;
+import linkjvm.jni.accel.AccelY;
+import linkjvm.jni.accel.AccelZ;
+import linkjvm.jni.accel.Acceleration;
+import linkjvm.jni.sensors.ShortSensor;
+import linkjvm.sensors.analog.AbstractAnalogSensor;
+
+/**
+ * 
+ * @author Markus Klein
+ *
+ */
+public class AccelerationSensor implements AbstractAnalogSensor{
+	
+	/**
+	 * 
+	 * @author Markus Klein
+	 *
+	 */
+	public static enum Axis{
+		Y,
+		X,
+		Z
+	}
+	
+	private ShortSensor jniAccelSensor = null;
+	private Axis axis;
+	
+	/**
+	 * 
+	 * @param axis
+	 */
+	public AccelerationSensor(Axis axis){
+		setAxis(axis);
+	}
+	
+	/**
+	 * 
+	 */
+	public static void calibrate(){
+		Acceleration.calibrate();
+	}
+	
+	/**
+	 * 
+	 * @return
+	 */
+	@Override
+	public int getValue() {
+		return jniAccelSensor.value();
+	}
+	
+	/**
+	 * 
+	 * @return
+	 */
+	public ShortSensor getJniAcceleration(){
+		return jniAccelSensor;
+	}
+	
+	/**
+	 * 
+	 * @param jniAccel
+	 */
+	public void setJniAcceleration(ShortSensor jniAccelSensor){
+		this.jniAccelSensor = jniAccelSensor;
+	}
+	
+	/**
+	 * 
+	 * @return
+	 */
+	public Axis getAxis(){
+		return axis;
+	}
+	
+	/**
+	 * 
+	 * @param axis
+	 */
+	public void setAxis(Axis axis){
+		if(axis == Axis.X){
+			jniAccelSensor = new AccelX();
+		}
+		else if(axis == Axis.Y){
+			jniAccelSensor = new AccelY();
+		}
+		else{
+			jniAccelSensor = new AccelZ();
+		}
+		this.axis = axis;
+	}
+}
