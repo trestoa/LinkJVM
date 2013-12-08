@@ -5,9 +5,9 @@ package io.github.linkjvm.linefollow;
  * Very simple line following program.
  */
 
-import linkjvm.libkovan.AnalogSensor;
-import linkjvm.libkovan.Motor;
-import linkjvm.libkovan.Sensor;
+import old.linkjvm.libkovan.AnalogSensor;
+import old.linkjvm.libkovan.Motor;
+import old.linkjvm.libkovan.Sensor;
 
 public class LineFollow {
 
