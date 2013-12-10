@@ -17,9 +17,6 @@ public abstract class AbstractButton implements AbstractDigitalSensor{
 	 * @return
 	 */
 	@Override
-	public boolean getValue() {
-		// TODO Auto-generated method stub
-		return false;
-	}
+	public abstract boolean getValue();
 
 }
