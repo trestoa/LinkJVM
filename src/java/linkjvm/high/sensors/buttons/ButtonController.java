@@ -1,0 +1,76 @@
+package linkjvm.high.sensors.buttons;
+
+public class ButtonController {
+	private static AButton aButton;
+	private static BButton bButton;
+	private static CButton cButton;
+	private static XButton xButton;
+	private static YButton yButton;
+	private static ZButton zButton;
+	
+	/**
+	 * 
+	 * @return
+	 */
+	public static AButton getAButton(){
+		if(aButton == null) {
+			aButton = new AButton();
+		}
+		return aButton;
+	}
+	
+	/**
+	 * 
+	 * @return
+	 */
+	public static BButton getBButton(){
+		if(bButton == null) {
+			bButton = new BButton();
+		}
+		return bButton;
+	}
+	
+	/**
+	 * 
+	 * @return
+	 */
+	public static CButton getCButton(){
+		if(cButton == null) {
+			cButton = new CButton();
+		}
+		return cButton;
+	}
+	
+	/**
+	 * 
+	 * @return
+	 */
+	public static XButton getXButton(){
+		if(xButton == null) {
+			xButton = new XButton();
+		}
+		return xButton;
+	}
+	
+	/**
+	 * 
+	 * @return
+	 */
+	public static YButton getYButton(){
+		if(yButton == null) {
+			yButton = new YButton();
+		}
+		return yButton;
+	}
+	
+	/**
+	 * 
+	 * @return
+	 */
+	public static ZButton getZButton(){
+		if(zButton == null) {
+			zButton = new ZButton();
+		}
+		return zButton;
+	}
+}
