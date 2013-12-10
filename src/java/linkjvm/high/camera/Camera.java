@@ -73,6 +73,7 @@ public class Camera{
 
 	/**
 	 *
+	 * @param channel
 	 * @return
 	 */
 	public int getObjectCount(){
@@ -83,5 +84,4 @@ public class Camera{
 		return new Frame();
 
 	}
-
 }
