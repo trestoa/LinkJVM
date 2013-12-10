@@ -1,21 +1,23 @@
 package linkjvm.high.sensors.buttons;
 
-public class AButton extends AbstractButton{
+import linkjvm.low.buttons.IdButton;
+import linkjvm.low.buttons.linkjvm_buttons;
+
+class AButton extends AbstractButton{
+	private IdButton jniButton;
 	
 	public AButton(){
-		
+		jniButton = linkjvm_buttons.getA();
 	}
 	
 	@Override
 	public boolean isPressed() {
-		// TODO Auto-generated method stub
-		return false;
+		return jniButton.isPressed();
 	}
 
 	@Override
 	public boolean getValue() {
-		// TODO Auto-generated method stub
-		return false;
+		return isPressed();
 	}
 
 }
