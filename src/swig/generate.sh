@@ -1,5 +1,5 @@
 #!/bin/sh
-rm *.cxx
+rm ../jni/*.cxx
 rm ../java/io/github/linkjvm/jni/*.java
 for f in *.i; do
 	dirname=`echo "$f" | cut -d'.' -f1`
@@ -10,4 +10,5 @@ for f in *.i; do
 		swig -c++ -package io.github.linkjvm.jni.$dirname -outdir ../java/io/github/linkjvm/jni/$dirname -java $f
 	fi
 done
+mv *.cxx ../jni/
 	
