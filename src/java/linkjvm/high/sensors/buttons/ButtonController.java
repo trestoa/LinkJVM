@@ -9,6 +9,7 @@ public class ButtonController {
 	private static XButton xButton;
 	private static YButton yButton;
 	private static ZButton zButton;
+	private static SideButton sideButton;
 	
 	/**
 	 * 
@@ -74,6 +75,17 @@ public class ButtonController {
 			zButton = new ZButton();
 		}
 		return zButton;
+	}
+	
+	/**
+	 * 
+	 * @return
+	 */
+	public static SideButton getSideButton(){
+		if(sideButton == null){
+			sideButton = new SideButton();
+		}
+		return sideButton;
 	}
 	
 	/**
