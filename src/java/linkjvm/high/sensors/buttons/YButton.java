@@ -10,15 +10,10 @@ private IdButton jniButton;
 	public YButton(){
 		jniButton = linkjvm_buttons.getY();
 	}
-	
-	@Override
-	public boolean isPressed() {
-		return jniButton.isPressed();
-	}
 
 	@Override
 	public boolean getValue() {
-		return isPressed();
+		return jniButton.isPressed();
 	}
 
 }

@@ -8,13 +8,7 @@ public abstract class AbstractButton implements AbstractDigitalSensor{
 	 * 
 	 * @return
 	 */
-	public abstract boolean isPressed();
-	
-	/**
-	 * 
-	 * @return
-	 */
-	@Override
-	public abstract boolean getValue();
-
+	public boolean isPressed(){
+		return getValue();
+	}
 }

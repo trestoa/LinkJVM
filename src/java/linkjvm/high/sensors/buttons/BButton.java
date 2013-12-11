@@ -12,13 +12,8 @@ class BButton extends AbstractButton{
 	}
 	
 	@Override
-	public boolean isPressed() {
-		return jniButton.isPressed();
-	}
-
-	@Override
 	public boolean getValue() {
-		return isPressed();
+		return jniButton.isPressed();
 	}
 
 }
