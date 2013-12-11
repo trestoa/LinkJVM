@@ -1,5 +1,7 @@
 package linkjvm.high.sensors.buttons;
 
+import linkjvm.low.buttons.ExtraButtons;
+
 public class ButtonController {
 	private static AButton aButton;
 	private static BButton bButton;
@@ -73,4 +75,34 @@ public class ButtonController {
 		}
 		return zButton;
 	}
+	
+	/**
+	 * 
+	 */
+	public static void showExtraButtons(){
+		ExtraButtons.show();
+	}
+	
+	/**
+	 * 
+	 */
+	public static void hideExtraButtons(){
+		ExtraButtons.hide();
+	}
+	
+	/**
+	 * 
+	 * @return
+	 */
+	public static boolean getExtraButtonsShown(){
+		return ExtraButtons.isShown();
+	}
+	
+	/**
+	 * @param shown
+	 */
+	public static void setExtraButtonsDhown(boolean shown){
+		ExtraButtons.setShown(shown);
+	}
+	
 }
