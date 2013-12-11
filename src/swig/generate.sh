@@ -1,13 +1,13 @@
 #!/bin/sh
 rm ../jni/*.cxx
-rm ../java/io/github/linkjvm/jni/*.java
+rm ../java/linkjvm/low/*.java
 for f in *.i; do
 	dirname=`echo "$f" | cut -d'.' -f1`
-	if [ ! -d "../java/io/github/linkjvm/jni/$dirname" ]; then
-		swig -c++ -package io.github.linkjvm.jni -outdir ../java/io/github/linkjvm/jni -java $f
+	if [ ! -d "../java/linkjvm/low/$dirname" ]; then
+		swig -c++ -package linkjvm.low -outdir ../java/linkjvm/low/ -java $f
 	else
-		rm ../java/io/github/linkjvm/jni/$dirname/*.java
-		swig -c++ -package io.github.linkjvm.jni.$dirname -outdir ../java/io/github/linkjvm/jni/$dirname -java $f
+		rm ../java/linkjvm/low/$dirname/*.java
+		swig -c++ -package linkjvm.low.$dirname -outdir ../java/linkjvm/low/$dirname -java $f
 	fi
 done
 mv *.cxx ../jni/
