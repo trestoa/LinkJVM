@@ -26,7 +26,7 @@
 %}
 
 %import "sensors.i"
-%typemap("javaimports") AbstractButton "import io.github.linkjvm.jni.sensors.BoolSensor;";
+%typemap("javaimports") AbstractButton "import linkjvm.low.sensors.BoolSensor;";
 
 namespace Button{
 	namespace Type{

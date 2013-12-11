@@ -25,7 +25,7 @@
 %}
 
 %import "sensors.i"
-%typemap("javaimports") Analog "import io.github.linkjvm.jni.sensors.UnsignedShortSensor;";
+%typemap("javaimports") Analog "import linkjvm.low.sensors.UnsignedShortSensor;";
 
 class  Analog : public Sensor<unsigned short>{
 	public:

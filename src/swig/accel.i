@@ -25,9 +25,9 @@
 %}
 
 %import "sensors.i"
-%typemap("javaimports") AccelX "import io.github.linkjvm.jni.sensors.ShortSensor;";
-%typemap("javaimports") AccelY "import io.github.linkjvm.jni.sensors.ShortSensor;";
-%typemap("javaimports") AccelZ "import io.github.linkjvm.jni.sensors.ShortSensor;";
+%typemap("javaimports") AccelX "import linkjvm.low.sensors.ShortSensor;";
+%typemap("javaimports") AccelY "import linkjvm.low.sensors.ShortSensor;";
+%typemap("javaimports") AccelZ "import linkjvm.low.sensors.ShortSensor;";
 
 class Acceleration{
 	public:

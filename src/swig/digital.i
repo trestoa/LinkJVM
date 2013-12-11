@@ -25,7 +25,7 @@
 %}
 
 %import "sensors.i"
-%typemap("javaimports") Digital "import io.github.linkjvm.jni.sensors.BoolSensor;";
+%typemap("javaimports") Digital "import linkjvm.low.sensors.BoolSensor;";
 
 class  Digital : public Sensor<bool>{
 	public:

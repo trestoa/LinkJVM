@@ -25,7 +25,7 @@
 %}
 
 %import "sensors.i"
-%typemap("javaimports") BackEMF "import io.github.linkjvm.jni.sensors.IntSensor;";
+%typemap("javaimports") BackEMF "import linkjvm.low.sensors.IntSensor;";
 
 class  Motor{
 	public:
