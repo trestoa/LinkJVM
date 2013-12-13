@@ -1,0 +1,9 @@
+.project
+.settings
+.classpath
+.DS_Store
+bin
+*.tmproj
+*.iml
+.idea
+out
