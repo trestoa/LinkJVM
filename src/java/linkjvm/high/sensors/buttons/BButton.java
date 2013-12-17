@@ -23,7 +23,7 @@ package linkjvm.high.sensors.buttons;
 import linkjvm.low.buttons.IdButton;
 import linkjvm.low.buttons.linkjvm_buttons;
 
-class BButton extends AbstractButton implements TextButton{
+public class BButton extends AbstractButton implements TextButton{
 	
 	private IdButton jniButton;
 	
