@@ -37,4 +37,12 @@ public abstract class AbstractMultiton<U, I>{
 	 * @return
 	 */
 	protected abstract I getNewConcreteInstance(U uniqueIdentifier);
+	
+	/**
+	 * 
+	 * @param uniqueIdentifier
+	 */
+	protected void removeInstance(U uniqueIdentifier){
+		instances.remove(uniqueIdentifier);
+	}
 }
