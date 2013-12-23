@@ -1,7 +1,5 @@
 package linkjvm.low.factory;
 
-import java.lang.ref.ReferenceQueue;
-
 import linkjvm.low.accel.AccelX;
 import linkjvm.low.accel.AccelY;
 import linkjvm.low.accel.AccelZ;
@@ -19,11 +17,6 @@ enum Axis{
  *
  */
 public class AccelerationFactory extends AbstractMultiton<Axis, ShortSensor> {
-	
-	
-	public AccelerationFactory(ReferenceQueue<ShortSensor> rq) {
-		super(rq);
-	}
 
 	@Override
 	protected ShortSensor getNewConcreteInstance(Axis uniqueIdentifier) {
