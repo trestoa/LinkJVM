@@ -13,11 +13,11 @@ public abstract class AbstractMultiton<U, I>{
 	public I getInstance(U uniqueIdentifier){
 		WeakReference<I> weakReference = instances.get(uniqueIdentifier);
 		if(weakReference == null){
-			weakReference = new WeakReference<I>(getNewConcreteInstance());
+			weakReference = new WeakReference<I>(getNewConcreteInstance(uniqueIdentifier));
 			instances.put(uniqueIdentifier, weakReference);
 		}
 		return weakReference.get();
 	}
 	
-	protected abstract I getNewConcreteInstance();
+	protected abstract I getNewConcreteInstance(U uniqueIdentifier);
 }
