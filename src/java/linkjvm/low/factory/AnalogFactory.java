@@ -1,5 +1,7 @@
 package linkjvm.low.factory;
 
+import java.lang.ref.ReferenceQueue;
+
 import linkjvm.low.analog.Analog;
 
 /**
@@ -8,6 +10,10 @@ import linkjvm.low.analog.Analog;
  *
  */
 public class AnalogFactory extends AbstractMultiton<Integer, Analog> {
+
+	public AnalogFactory(ReferenceQueue<Analog> rq) {
+		super(rq);
+	}
 
 	@Override
 	protected Analog getNewConcreteInstance(Integer uniqueIdentifier) {
