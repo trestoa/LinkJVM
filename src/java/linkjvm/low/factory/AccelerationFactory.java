@@ -5,19 +5,19 @@ import linkjvm.low.accel.AccelY;
 import linkjvm.low.accel.AccelZ;
 import linkjvm.low.sensors.ShortSensor;
 
-enum Axis{
-	X,
-	Y,
-	Z
-}
 
 /**
  * 
  * @author Markus Klein
  *
  */
-public class AccelerationFactory extends AbstractMultiton<Axis, ShortSensor> {
-
+public class AccelerationFactory extends AbstractMultiton<AccelerationFactory.Axis, ShortSensor> {
+	public static enum Axis{
+		X,
+		Y,
+		Z
+	}
+	
 	@Override
 	protected ShortSensor getNewConcreteInstance(Axis uniqueIdentifier) {
 		switch(uniqueIdentifier){
