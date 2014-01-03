@@ -20,19 +20,18 @@
 
 package linkjvm.high.sensors.analog.acceleration;
 
-import linkjvm.high.sensors.analog.AbstractAnalogSensor;
-import linkjvm.low.accel.AccelX;
-import linkjvm.low.accel.AccelY;
-import linkjvm.low.accel.AccelZ;
+import linkjvm.high.sensors.analog.IAnalogSensor;
 import linkjvm.low.accel.Acceleration;
 import linkjvm.low.sensors.ShortSensor;
+import linkjvm.low.factory.JNIController;
+import linkjvm.low.factory.AccelerationFactory;
 
 /**
  * 
  * @author Markus Klein
  *
  */
-public class AccelerationSensor implements AbstractAnalogSensor{
+public class AccelerationSensor implements IAnalogSensor{
 	
 	/**
 	 * 
@@ -102,13 +101,13 @@ public class AccelerationSensor implements AbstractAnalogSensor{
 	 */
 	public void setAxis(Axis axis){
 		if(axis == Axis.X){
-			jniAccelSensor = new AccelX();
+			jniAccelSensor = JNIController.getInstance().getAccelerationFactory().getInstance(AccelerationFactory.Axis.X);
 		}
 		else if(axis == Axis.Y){
-			jniAccelSensor = new AccelY();
+			jniAccelSensor = JNIController.getInstance().getAccelerationFactory().getInstance(AccelerationFactory.Axis.Y);
 		}
 		else{
-			jniAccelSensor = new AccelZ();
+			jniAccelSensor = JNIController.getInstance().getAccelerationFactory().getInstance(AccelerationFactory.Axis.Z);
 		}
 		this.axis = axis;
 	}

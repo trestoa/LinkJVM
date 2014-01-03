@@ -20,8 +20,9 @@
 
 package linkjvm.high.create;
 
+import linkjvm.low.factory.JNIController;
+
 public class Create {
-	private static Create createInstance = new Create();
 	
 	/**
 	 * 
@@ -36,20 +37,12 @@ public class Create {
 	}
 	
 	private linkjvm.low.create.Create jniCreate = null;
-	
-	/**
-	 * 
-	 * @return
-	 */
-	public static Create getInstance(){
-		return createInstance;
-	}
 
 	/**
 	 * 
 	 */
 	private Create(){
-		jniCreate = linkjvm.low.create.Create.instance();
+		jniCreate = JNIController.getInstance().getCreateFactory().getInstance();
 	}
 	
 	/**

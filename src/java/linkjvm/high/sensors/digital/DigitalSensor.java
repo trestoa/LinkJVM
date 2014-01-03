@@ -26,7 +26,7 @@ import linkjvm.low.Digital;
 /**
  * @author Markus Klein
  */
-public class DigitalSensor implements AbstractDigitalSensor{
+public class DigitalSensor implements IDigitalSensor{
 	private Digital jniSensor;
 
 	private int port;

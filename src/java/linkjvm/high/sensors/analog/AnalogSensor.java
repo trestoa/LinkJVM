@@ -23,11 +23,12 @@ package linkjvm.high.sensors.analog;
 import linkjvm.high.sensors.InvalidPortException;
 import linkjvm.low.analog.Analog;
 import linkjvm.low.analog.Analog8;
+import linkjvm.low.factory.JNIController;
 
 /**
  * @author Markus Klein
  */
-public class AnalogSensor implements AbstractAnalogSensor{
+public class AnalogSensor implements IAnalogSensor{
 	private Analog8 jniSensor8;
 	private Analog jniSensor;
 
@@ -42,8 +43,8 @@ public class AnalogSensor implements AbstractAnalogSensor{
 			throw new InvalidPortException();
 		}
 		this.port = port;
-		jniSensor = new Analog((short) port);
-		jniSensor8 = new Analog8((short) port);
+		jniSensor = JNIController.getInstance().getAnalogFactory().getInstance(port);
+		jniSensor8 = JNIController.getInstance().getAnalog8Factory().getInstance(port);
 	}
 
 	/**

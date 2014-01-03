@@ -21,6 +21,7 @@
 package linkjvm.high.motors;
 
 import linkjvm.high.sensors.InvalidPortException;
+import linkjvm.low.factory.JNIController;
 
 /**
  * 
@@ -154,7 +155,7 @@ public class Motor {
 		if(port > 4 || port < 0){
 			throw new InvalidPortException();
 		}
-		jniMotor = new linkjvm.low.motors.Motor((short) port);
+		jniMotor = JNIController.getInstance().getMotorFactory().getInstance(port);
 	}
 	
 	public void setJniMotor(linkjvm.low.motors.Motor jniMotor){

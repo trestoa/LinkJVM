@@ -21,6 +21,7 @@
 package linkjvm.high.motors;
 
 import linkjvm.high.sensors.InvalidPortException;
+import linkjvm.low.factory.JNIController;
 
 public class Servo {
 
@@ -44,7 +45,7 @@ public class Servo {
 		if(port > 4 || port < 0){
 			throw new InvalidPortException();
 		}
-		jniServo = new linkjvm.low.Servo(port);
+		jniServo = JNIController.getInstance().getServoFactory().getInstance(port);
 	}
 	
 	/**
