@@ -36,7 +36,6 @@ public class JNIController implements Runnable{
 		
 		createFactory = new CreateFactory();
 		cleanupThread = new Thread(this);
-		cleanupThread.start();
 	}
 
 	@Override
