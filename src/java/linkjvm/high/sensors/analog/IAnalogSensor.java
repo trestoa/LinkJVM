@@ -23,7 +23,7 @@ package linkjvm.high.sensors.analog;
 /**
  * @author Markus Klein
  */
-public interface AbstractAnalogSensor {
+public interface IAnalogSensor {
 	/**
 	 *
 	 * @return
