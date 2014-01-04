@@ -20,9 +20,9 @@
 
 package linkjvm.high.sensors.buttons;
 
-import linkjvm.high.sensors.digital.AbstractDigitalSensor;
+import linkjvm.high.sensors.digital.IDigitalSensor;
 
-public abstract class AbstractButton implements AbstractDigitalSensor{	
+public abstract class AbstractButton implements IDigitalSensor{	
 	
 	/**
 	 * 

@@ -21,14 +21,14 @@
 package linkjvm.high.sensors.buttons;
 
 import linkjvm.low.buttons.IdButton;
-import linkjvm.low.buttons.linkjvm_buttons;
+import linkjvm.low.factory.JNIController;
 
 public class ZButton extends AbstractButton implements TextButton{
 
 private IdButton jniButton;
 	
 	public ZButton(){
-		jniButton = linkjvm_buttons.getZ();
+		jniButton = JNIController.getInstance().getButtonFactory().getInstance(linkjvm.low.buttons.Id.Z);
 	}
 
 	@Override

@@ -22,6 +22,7 @@ package linkjvm.high.sensors.digital;
 
 import linkjvm.high.sensors.InvalidPortException;
 import linkjvm.low.Digital;
+import linkjvm.low.factory.JNIController;
 
 /**
  * @author Markus Klein
@@ -41,7 +42,7 @@ public class DigitalSensor implements IDigitalSensor{
 			throw new InvalidPortException();
 		}
 		this.port = port;
-		jniSensor = new Digital((short) port);
+		jniSensor = JNIController.getInstance().getDigitalFactory().getInstance(port);
 	}
 
 	/**
@@ -57,7 +58,7 @@ public class DigitalSensor implements IDigitalSensor{
 	 * @param port
 	 */
 	public void setPort(int port){
-		jniSensor = new Digital((short) port);
+		jniSensor = JNIController.getInstance().getDigitalFactory().getInstance(port);
 		this.port = port;
 	}
 	
