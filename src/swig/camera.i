@@ -29,12 +29,12 @@
     #include <map>
     #include <iostream>
     #include <time.h>
-    #include <winsock2.h>
     #include <opencv2/core/core.hpp>
     #include "include/kovan/camera.hpp"
 %}
 
-%include "stl.i"
+%include "std_vector.i"
+
 
 class Config
 {
@@ -174,7 +174,13 @@ namespace Camera{
             ChannelImpl *m_impl;
             mutable bool m_valid;
     };
-    typedef std::vector<Channel *> ChannelPtrVector;
+   
+    %{
+        typedef unsigned int size_t;
+    %}
+ 
+    typedef std::vector<Channel *> ChannelPtrVector; 
+    
     class ConfigPath{
                    public:
             static std::string extension();
@@ -216,6 +222,7 @@ namespace Camera{
             cv::VideoCapture *m_capture;
     };
 
+    
     class Device{
             public:
             Device(InputProvider *const inputProvider);
@@ -260,6 +267,6 @@ namespace Camera{
     };
 
     Camera::Device *cDevice();
-    %template(ChannelVector) std::vector<Channel *>;
-    %template(ObjectVector) std::vector<Object>;
 }
+
+%template(ChannelVector) std::vector<Camera::Channel*>;

@@ -20,7 +20,7 @@
 
 %module linkjvm_sensor
 %{
-    include "include/kovan/sensor.hpp"
+    #include "include/kovan/sensor.hpp"
 %}
 
 template<typename T> class  Sensor{

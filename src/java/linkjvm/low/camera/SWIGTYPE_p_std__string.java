@@ -6,11 +6,21 @@
  * the SWIG interface file instead.
  * ----------------------------------------------------------------------------- */
 
-package linkjvm.low;
+package linkjvm.low.camera;
 
-public class linkjvm_batteryJNI {
-  public final static native boolean Battery_isCharging();
-  public final static native float Battery_powerLevel();
-  public final static native long new_Battery();
-  public final static native void delete_Battery(long jarg1);
+public class SWIGTYPE_p_std__string {
+  private long swigCPtr;
+
+  protected SWIGTYPE_p_std__string(long cPtr, boolean futureUse) {
+    swigCPtr = cPtr;
+  }
+
+  protected SWIGTYPE_p_std__string() {
+    swigCPtr = 0;
+  }
+
+  protected static long getCPtr(SWIGTYPE_p_std__string obj) {
+    return (obj == null) ? 0 : obj.swigCPtr;
+  }
 }
+

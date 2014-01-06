@@ -22,7 +22,6 @@
 
 %{
     #include <time.h>
-    #include <winsock2.h>
     typedef unsigned int speed_t;
     #include <cstdio>
     #include <cstdlib>
