@@ -1,5 +1,5 @@
 include_directories(${CMAKE_SOURCE_DIR}/java-environment/classpath/include)
-add_library(linkjvm-jni SHARED 
+add_library(linkjvmjni SHARED 
 	buttons_wrap.cxx
 	accel_wrap.cxx
 	analog_wrap.cxx
