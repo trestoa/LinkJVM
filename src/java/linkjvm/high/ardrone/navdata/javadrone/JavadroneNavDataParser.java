@@ -24,10 +24,44 @@
  * in the LICENSE file.
  */
 
-package old.linkjvm.ardrone.listeners;
+package linkjvm.high.ardrone.navdata.javadrone;
 
-import old.linkjvm.ardrone.navdata.DroneState;
+import java.nio.ByteBuffer;
 
-public interface StateListener {
-	void stateChanged(DroneState state);
+import linkjvm.high.ardrone.listeners.NavDataListener;
+import linkjvm.high.ardrone.navdata.NavDataException;
+
+
+
+public class JavadroneNavDataParser {
+	private NavDataListener navDataListener;
+	
+	long lastSequenceNumber=1;
+	
+	//set listeners
+	public void setNavDataListener(NavDataListener navDataListener){
+		this.navDataListener=navDataListener;
+	}
+		
+	public void parseNavData(ByteBuffer buffer) throws NavDataException{
+		
+		dispatch(buffer, buffer.remaining());
+	}
+	
+	private void dispatch(ByteBuffer optionData, int length)
+	{
+		try
+		{
+			NavData navData = NavData.createFromData(optionData, length);
+			
+			if(navDataListener!=null){
+				navDataListener.navDataUpdated(navData);
+			}
+
+		}
+		catch (NavDataFormatException e)
+		{
+			e.printStackTrace();
+		}
+	}
 }

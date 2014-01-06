@@ -23,10 +23,8 @@
  * Use of this source code is governed by a BSD-style license that can be found
  * in the LICENSE file.
  */
-package old.linkjvm.ardrone.listeners;
+package linkjvm.high.ardrone.listeners;
 
-import old.linkjvm.ardrone.navdata.javadrone.NavData;
-
-public interface NavDataListener {
-	void navDataUpdated(NavData navData);
+public interface AttitudeListener {
+	void attitudeUpdated(float pitch, float roll, float yaw, int altitude);
 }

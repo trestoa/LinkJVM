@@ -18,7 +18,7 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 */
 
-package old.linkjvm.ardrone.navdata.javadrone;
+package linkjvm.high.ardrone.navdata.javadrone;
 
 public class VisionTag
 {

@@ -24,15 +24,15 @@
  * in the LICENSE file.
  */
 
-package old.linkjvm.ardrone.navdata;
+package linkjvm.high.ardrone.navdata;
 
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 
-import old.linkjvm.ardrone.listeners.AttitudeListener;
-import old.linkjvm.ardrone.listeners.BatteryListener;
-import old.linkjvm.ardrone.listeners.StateListener;
-import old.linkjvm.ardrone.listeners.VelocityListener;
+import linkjvm.high.ardrone.listeners.AttitudeListener;
+import linkjvm.high.ardrone.listeners.BatteryListener;
+import linkjvm.high.ardrone.listeners.StateListener;
+import linkjvm.high.ardrone.listeners.VelocityListener;
 
 
 

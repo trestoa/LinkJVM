@@ -23,45 +23,26 @@
  * Use of this source code is governed by a BSD-style license that can be found
  * in the LICENSE file.
  */
+package linkjvm.high.ardrone.navdata;
 
-package old.linkjvm.ardrone.navdata.javadrone;
-
-import java.nio.ByteBuffer;
-
-import old.linkjvm.ardrone.listeners.NavDataListener;
-import old.linkjvm.ardrone.navdata.NavDataException;
-
-
-
-public class JavadroneNavDataParser {
-	private NavDataListener navDataListener;
+public class DroneState {
+	private final int bits;
 	
-	long lastSequenceNumber=1;
-	
-	//set listeners
-	public void setNavDataListener(NavDataListener navDataListener){
-		this.navDataListener=navDataListener;
-	}
-		
-	public void parseNavData(ByteBuffer buffer) throws NavDataException{
-		
-		dispatch(buffer, buffer.remaining());
+	public DroneState(int bits){
+		this.bits=bits;
 	}
 	
-	private void dispatch(ByteBuffer optionData, int length)
-	{
-		try
-		{
-			NavData navData = NavData.createFromData(optionData, length);
-			
-			if(navDataListener!=null){
-				navDataListener.navDataUpdated(navData);
-			}
-
-		}
-		catch (NavDataFormatException e)
-		{
-			e.printStackTrace();
-		}
+	public String toString(){
+		return "DroneState("+Integer.toHexString(bits)+")";
+	}
+	
+	public boolean equals(Object o){
+		if(o==null || o.getClass()!=getClass())
+			return false;
+		return bits==((DroneState)o).bits;
+	}
+	
+	public int hashCode(){
+		return 31*bits;
 	}
 }

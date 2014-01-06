@@ -18,7 +18,7 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 */
 
-package old.linkjvm.ardrone.navdata.javadrone;
+package linkjvm.high.ardrone.navdata.javadrone;
 
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
@@ -26,7 +26,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
 
-import old.linkjvm.ardrone.navdata.javadrone.VisionTag.VisionTagType;
+import linkjvm.high.ardrone.navdata.javadrone.VisionTag.VisionTagType;
 
 
 public class NavData

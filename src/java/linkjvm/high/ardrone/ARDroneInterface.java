@@ -19,7 +19,8 @@
 */
 
 /*
- * Copyright (c) <2011>, <Shigeo Yoshida>
+ *
+  Copyright (c) <2011>, <Shigeo Yoshida>
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
@@ -34,10 +35,55 @@ SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PRO
  HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package old.linkjvm.ardrone.listeners;
+package linkjvm.high.ardrone;
 
-import java.awt.image.BufferedImage;
+public interface ARDroneInterface {
 
-public interface ImageListener {
-	void imageUpdated(BufferedImage image);
+	//connection
+	public boolean connect();
+	public boolean connectVideo();
+	public boolean connectNav();
+	public void disconnect();
+
+	public void start();
+	
+	//camera
+	public void setHorizontalCamera();//setFrontCameraStreaming()
+	public void setVerticalCamera();//setBellyCameraStreaming()
+	public void setHorizontalCameraWithVertical();//setFrontCameraWithSmallBellyStreaming()
+	public void setVerticalCameraWithHorizontal();//setBellyCameraWithSmallFrontStreaming()
+	public void toggleCamera();
+	
+	//control command
+	public void landing();
+	public void takeOff();
+	public void reset();
+	public void forward();
+	public void forward(int speed);
+	public void backward();
+	public void backward(int speed);
+	public void spinRight();
+	public void spinRight(int speed);
+	public void spinLeft();
+	public void spinLeft(int speed);
+	public void up();
+	public void up(int speed);
+	public void down();
+	public void down(int speed);
+	public void goRight();
+	public void goRight(int speed);
+	public void goLeft();
+	public void goLeft(int speed);
+	public void stop();
+	
+	//getter
+	public int getSpeed();
+	//setter
+	public void setSpeed(int speed);
+	
+	//set max/min altitude
+	public void setMaxAltitude(int altitude);
+	public void setMinAltitude(int altitude);
+	
+	public void move3D(int speedX, int speedY, int speedZ, int speedSpin);
 }

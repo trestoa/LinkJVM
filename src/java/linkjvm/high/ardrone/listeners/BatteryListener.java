@@ -23,7 +23,7 @@
  * Use of this source code is governed by a BSD-style license that can be found
  * in the LICENSE file.
  */
-package old.linkjvm.ardrone.listeners;
+package linkjvm.high.ardrone.listeners;
 
 public interface BatteryListener {
 	void batteryLevelChanged(int percentage); 

@@ -36,7 +36,7 @@
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-package old.linkjvm.ardrone;
+package linkjvm.high.ardrone;
 
 //import java.awt.image.BufferedImage;
 import java.net.InetAddress;
@@ -45,17 +45,16 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.StringTokenizer;
 
-import old.linkjvm.ardrone.command.CommandManager;
-import old.linkjvm.ardrone.listeners.AttitudeListener;
-import old.linkjvm.ardrone.listeners.BatteryListener;
-import old.linkjvm.ardrone.listeners.NavDataListener;
-import old.linkjvm.ardrone.listeners.StateListener;
-import old.linkjvm.ardrone.listeners.VelocityListener;
-import old.linkjvm.ardrone.navdata.DroneState;
-import old.linkjvm.ardrone.navdata.NavDataManager;
-import old.linkjvm.ardrone.navdata.javadrone.NavData;
-import old.linkjvm.ardrone.utils.ARDroneUtils;
-//import linkjvm.ardrone.listeners.ImageListener;
+import linkjvm.high.ardrone.command.CommandManager;
+import linkjvm.high.ardrone.listeners.AttitudeListener;
+import linkjvm.high.ardrone.listeners.BatteryListener;
+import linkjvm.high.ardrone.listeners.NavDataListener;
+import linkjvm.high.ardrone.listeners.StateListener;
+import linkjvm.high.ardrone.listeners.VelocityListener;
+import linkjvm.high.ardrone.navdata.DroneState;
+import linkjvm.high.ardrone.navdata.NavDataManager;
+import linkjvm.high.ardrone.navdata.javadrone.NavData;
+import linkjvm.high.ardrone.utils.ARDroneUtils;
 
 
 

@@ -35,7 +35,7 @@ SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PRO
  HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package old.linkjvm.ardrone.command;
+package linkjvm.high.ardrone.command;
 
 import java.io.IOException;
 import java.net.DatagramPacket;
@@ -44,7 +44,7 @@ import java.nio.ByteBuffer;
 import java.nio.FloatBuffer;
 import java.nio.IntBuffer;
 
-import old.linkjvm.ardrone.manager.AbstractManager;
+import linkjvm.high.ardrone.manager.AbstractManager;
 
 
 public class CommandManager extends AbstractManager{

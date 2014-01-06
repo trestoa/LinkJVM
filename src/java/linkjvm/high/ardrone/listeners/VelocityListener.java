@@ -18,38 +18,13 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 */
 
-package old.linkjvm.ardrone.navdata.javadrone;
+/*
+ * Copyright 2010 Cliff L. Biffle.  All Rights Reserved.
+ * Use of this source code is governed by a BSD-style license that can be found
+ * in the LICENSE file.
+ */
+package linkjvm.high.ardrone.listeners;
 
-public class Point
-{
-    private int x;
-    private int y;
-
-    public Point(int x, int y)
-    {
-        super();
-        this.x = x;
-        this.y = y;
-    }
-
-    public int getX()
-    {
-        return x;
-    }
-
-    public void setX(int x)
-    {
-        this.x = x;
-    }
-
-    public int getY()
-    {
-        return y;
-    }
-
-    public void setY(int y)
-    {
-        this.y = y;
-    }
-
+public interface VelocityListener {
+	void velocityChanged(float vx, float vy, float vz);
 }

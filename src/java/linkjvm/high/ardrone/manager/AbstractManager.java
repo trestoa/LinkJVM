@@ -35,55 +35,45 @@ SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PRO
  HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package old.linkjvm.ardrone;
+package linkjvm.high.ardrone.manager;
 
-public interface ARDroneInterface {
+import java.io.IOException;
+import java.net.DatagramPacket;
+import java.net.DatagramSocket;
+import java.net.InetAddress;
+import java.net.SocketException;
 
-	//connection
-	public boolean connect();
-	public boolean connectVideo();
-	public boolean connectNav();
-	public void disconnect();
-
-	public void start();
+public abstract class AbstractManager implements Runnable{
 	
-	//camera
-	public void setHorizontalCamera();//setFrontCameraStreaming()
-	public void setVerticalCamera();//setBellyCameraStreaming()
-	public void setHorizontalCameraWithVertical();//setFrontCameraWithSmallBellyStreaming()
-	public void setVerticalCameraWithHorizontal();//setBellyCameraWithSmallFrontStreaming()
-	public void toggleCamera();
+	protected InetAddress inetaddr=null;
+	protected DatagramSocket socket=null;
 	
-	//control command
-	public void landing();
-	public void takeOff();
-	public void reset();
-	public void forward();
-	public void forward(int speed);
-	public void backward();
-	public void backward(int speed);
-	public void spinRight();
-	public void spinRight(int speed);
-	public void spinLeft();
-	public void spinLeft(int speed);
-	public void up();
-	public void up(int speed);
-	public void down();
-	public void down(int speed);
-	public void goRight();
-	public void goRight(int speed);
-	public void goLeft();
-	public void goLeft(int speed);
-	public void stop();
+	protected boolean doStop = false;
 	
-	//getter
-	public int getSpeed();
-	//setter
-	public void setSpeed(int speed);
+	public boolean connect(int port){
+		try {
+			socket=new DatagramSocket(port);
+			socket.setSoTimeout(3000);
+		} catch (SocketException e) {
+			e.printStackTrace();
+			return false;
+		}
+		return true;
+	}
 	
-	//set max/min altitude
-	public void setMaxAltitude(int altitude);
-	public void setMinAltitude(int altitude);
+	public void close(){
+		socket.close();
+		doStop = true;
+	}
 	
-	public void move3D(int speedX, int speedY, int speedZ, int speedSpin);
+	
+	protected void ticklePort(int port){
+        byte[] buf={0x01, 0x00, 0x00, 0x00};
+        DatagramPacket packet=new DatagramPacket(buf, buf.length, inetaddr, port);
+        try {
+			socket.send(packet);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
 }

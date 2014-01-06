@@ -18,38 +18,16 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 */
 
-package old.linkjvm.ardrone.navdata.javadrone;
+/*
+ * Copyright 2010 Cliff L. Biffle.  All Rights Reserved.
+ * Use of this source code is governed by a BSD-style license that can be found
+ * in the LICENSE file.
+ */
 
-public class Dimension
-{
-    private int width;
-    private int height;
+package linkjvm.high.ardrone.listeners;
 
-    public Dimension(int width, int height)
-    {
-        super();
-        this.width = width;
-        this.height = height;
-    }
+import linkjvm.high.ardrone.navdata.DroneState;
 
-    public int getWidth()
-    {
-        return width;
-    }
-
-    public void setWidth(int width)
-    {
-        this.width = width;
-    }
-
-    public int getHeight()
-    {
-        return height;
-    }
-
-    public void setHeight(int height)
-    {
-        this.height = height;
-    }
-
+public interface StateListener {
+	void stateChanged(DroneState state);
 }

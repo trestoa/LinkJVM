@@ -35,22 +35,22 @@ SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PRO
  HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package old.linkjvm.ardrone.navdata;
+package linkjvm.high.ardrone.navdata;
 
 import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.InetAddress;
 import java.nio.ByteBuffer;
 
-import old.linkjvm.ardrone.command.CommandManager;
-import old.linkjvm.ardrone.listeners.AttitudeListener;
-import old.linkjvm.ardrone.listeners.BatteryListener;
-import old.linkjvm.ardrone.listeners.NavDataListener;
-import old.linkjvm.ardrone.listeners.StateListener;
-import old.linkjvm.ardrone.listeners.VelocityListener;
-import old.linkjvm.ardrone.manager.AbstractManager;
-import old.linkjvm.ardrone.navdata.javadrone.JavadroneNavDataParser;
-import old.linkjvm.ardrone.utils.ARDroneUtils;
+import linkjvm.high.ardrone.command.CommandManager;
+import linkjvm.high.ardrone.listeners.AttitudeListener;
+import linkjvm.high.ardrone.listeners.BatteryListener;
+import linkjvm.high.ardrone.listeners.NavDataListener;
+import linkjvm.high.ardrone.listeners.StateListener;
+import linkjvm.high.ardrone.listeners.VelocityListener;
+import linkjvm.high.ardrone.manager.AbstractManager;
+import linkjvm.high.ardrone.navdata.javadrone.JavadroneNavDataParser;
+import linkjvm.high.ardrone.utils.ARDroneUtils;
 
 
 

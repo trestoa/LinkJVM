@@ -18,13 +18,16 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 */
 
-/*
- * Copyright 2010 Cliff L. Biffle.  All Rights Reserved.
- * Use of this source code is governed by a BSD-style license that can be found
- * in the LICENSE file.
- */
-package old.linkjvm.ardrone.listeners;
 
-public interface AttitudeListener {
-	void attitudeUpdated(float pitch, float roll, float yaw, int altitude);
+package linkjvm.high.ardrone.navdata.javadrone;
+
+@SuppressWarnings("serial")
+public class NavDataFormatException extends Exception
+{
+
+    public NavDataFormatException(String why)
+    {
+        super(why);
+    }
+
 }
