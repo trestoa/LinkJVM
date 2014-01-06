@@ -1,6 +1,11 @@
 package linkjvm.low.factory;
 
 public class JNIController implements Runnable{
+
+	static {
+		System.loadLibrary("linkjvmjni");
+	}
+	
 	private final static JNIController instance = new JNIController();
 	
 	public static JNIController getInstance(){
