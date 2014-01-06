@@ -1,4 +1,19 @@
 include_directories(${CMAKE_SOURCE_DIR}/java-environment/classpath/include)
-add_library(linkjvm-jni SHARED libkovan_wrap.c)
-SET_TARGET_PROPERTIES(linkjvm-jni PROPERTIES LINKER_LANGUAGE C)
-target_link_libraries(linkjvm-jni libkovan.so)
+add_library(linkjvm-jni SHARED 
+	buttons_wrap.cxx
+	accel_wrap.cxx
+	analog_wrap.cxx
+	battery_wrap.cxx
+	datalog_wrap.cxx
+	camera_wrap.cxx
+	console_wrap.cxx
+	create_wrap.cxx
+	ir_wrap.cxx
+	digital_wrap.cxx
+	geom_wrap.cxx
+	motors_wrap.cxx
+	sensors_wrap.cxx
+	servo_wrap.cxx
+)
+SET_TARGET_PROPERTIES(linkjvmjni PROPERTIES LINKER_LANGUAGE C)
+target_link_libraries(linkjvmjni libkovan.so)
