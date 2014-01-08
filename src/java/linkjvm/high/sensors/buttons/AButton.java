@@ -24,7 +24,8 @@ import linkjvm.low.buttons.IdButton;
 import linkjvm.low.buttons.linkjvm_buttons;
 
 public class AButton extends AbstractButton implements TextButton{
-	private IdButton jniButton;
+	
+	private volatile IdButton jniButton;
 	
 	public AButton(){
 		jniButton = linkjvm_buttons.getA();

@@ -44,7 +44,7 @@ public class AccelerationSensor implements IAnalogSensor{
 		Z
 	}
 	
-	private ShortSensor jniAccelSensor = null;
+	private volatile ShortSensor jniAccelSensor = null;
 	private Axis axis;
 	
 	/**

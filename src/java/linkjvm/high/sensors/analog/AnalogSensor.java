@@ -29,8 +29,8 @@ import linkjvm.low.factory.JNIController;
  * @author Markus Klein
  */
 public class AnalogSensor implements IAnalogSensor{
-	private Analog8 jniSensor8;
-	private Analog jniSensor;
+	private volatile Analog8 jniSensor8;
+	private volatile Analog jniSensor;
 
 	private int port;
 

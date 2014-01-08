@@ -30,7 +30,7 @@ import linkjvm.low.factory.JNIController;
  */
 public class Motor {
 	
-	private linkjvm.low.motors.Motor jniMotor = null;
+	private volatile linkjvm.low.motors.Motor jniMotor = null;
 	
 	/**
 	 * 

@@ -25,7 +25,7 @@ import linkjvm.low.factory.JNIController;
 
 public class SideButton extends AbstractButton {
 
-	private IdButton jniButton;
+	private volatile IdButton jniButton;
 	
 	public SideButton(){
 		jniButton = JNIController.getInstance().getButtonFactory().getInstance(linkjvm.low.buttons.Id.Side);

@@ -36,7 +36,7 @@ public class Create {
 		Off
 	}
 	
-	private linkjvm.low.create.Create jniCreate = null;
+	private volatile linkjvm.low.create.Create jniCreate = null;
 
 	/**
 	 * 

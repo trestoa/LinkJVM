@@ -28,7 +28,7 @@ import linkjvm.low.factory.JNIController;
  * @author Markus Klein
  */
 public class DigitalSensor implements IDigitalSensor{
-	private Digital jniSensor;
+	private volatile Digital jniSensor;
 
 	private int port;
 

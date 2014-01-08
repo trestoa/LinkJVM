@@ -25,7 +25,7 @@ import linkjvm.low.factory.JNIController;
 
 public class YButton extends AbstractButton implements TextButton{
 
-private IdButton jniButton;
+private volatile IdButton jniButton;
 	
 	public YButton(){
 		jniButton = JNIController.getInstance().getButtonFactory().getInstance(linkjvm.low.buttons.Id.Y);

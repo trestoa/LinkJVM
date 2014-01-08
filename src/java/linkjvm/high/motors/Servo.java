@@ -25,7 +25,7 @@ import linkjvm.low.factory.JNIController;
 
 public class Servo {
 
-	private linkjvm.low.Servo jniServo = null;
+	private volatile linkjvm.low.Servo jniServo = null;
 	
 	/**
 	 * 
