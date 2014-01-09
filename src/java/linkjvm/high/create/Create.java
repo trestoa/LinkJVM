@@ -30,10 +30,10 @@ public class Create {
 	 *
 	 */
 	public static enum Mode{
-		Safe,
-		Passive,
-		Full,
-		Off
+		SAFE,
+		PASSIVE,
+		FULL,
+		OFF;
 	}
 	
 	private volatile linkjvm.low.create.Create jniCreate = null;
@@ -78,13 +78,13 @@ public class Create {
 	 * @param mode 
 	 */
 	public void setMode(Mode mode){	
-		if(mode == Mode.Safe){
+		if(mode == Mode.SAFE){
 			jniCreate.setSafeMode();
 		}
-		else if(mode == Mode.Full){
+		else if(mode == Mode.FULL){
 			jniCreate.setFullMode();
 		}
-		else if(mode == Mode.Passive){
+		else if(mode == Mode.PASSIVE){
 			jniCreate.setPassiveMode();
 		}
 	}
