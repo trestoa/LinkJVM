@@ -130,6 +130,14 @@ public class linkjvm_visionJNI {
   public final static native int DepthImage_depthAt(long jarg1, DepthImage jarg1_, long jarg2, long jarg3);
   public final static native void DepthImage_depth(long jarg1, DepthImage jarg1_, int[] jarg2, long jarg3, long jarg4);
   public final static native long DepthImage_pointAt(long jarg1, DepthImage jarg1_, long jarg2, long jarg3);
+  public final static native long DepthDriver_instance();
+  public final static native void delete_DepthDriver(long jarg1);
+  public final static native void DepthDriver_open(long jarg1, DepthDriver jarg1_);
+  public final static native void DepthDriver_close(long jarg1, DepthDriver jarg1_);
+  public final static native boolean DepthDriver_isOpen(long jarg1, DepthDriver jarg1_);
+  public final static native int DepthDriver_depthCameraResolution(long jarg1, DepthDriver jarg1_);
+  public final static native void DepthDriver_setDepthCameraResolution(long jarg1, DepthDriver jarg1_, int jarg2);
+  public final static native long DepthDriver_depthImage(long jarg1, DepthDriver jarg1_);
   public final static native long XtionDepthDriver_instance();
   public final static native void XtionDepthDriver_open(long jarg1, XtionDepthDriver jarg1_);
   public final static native void XtionDepthDriver_close(long jarg1, XtionDepthDriver jarg1_);
@@ -200,5 +208,6 @@ public class linkjvm_visionJNI {
   public final static native void delete_IntPoint3(long jarg1);
   public final static native long DefaultChannelImplManager_SWIGUpcast(long jarg1);
   public final static native long UsbInputProvider_SWIGUpcast(long jarg1);
+  public final static native long XtionDepthDriver_SWIGUpcast(long jarg1);
   public final static native long XtionDepthImage_SWIGUpcast(long jarg1);
 }

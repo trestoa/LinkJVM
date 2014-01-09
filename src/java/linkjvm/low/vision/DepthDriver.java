@@ -8,15 +8,16 @@
 
 package linkjvm.low.vision;
 
-public class XtionDepthDriver extends DepthDriver {
+public class DepthDriver {
   private long swigCPtr;
+  protected boolean swigCMemOwn;
 
-  protected XtionDepthDriver(long cPtr, boolean cMemoryOwn) {
-    super(linkjvm_visionJNI.XtionDepthDriver_SWIGUpcast(cPtr), cMemoryOwn);
+  protected DepthDriver(long cPtr, boolean cMemoryOwn) {
+    swigCMemOwn = cMemoryOwn;
     swigCPtr = cPtr;
   }
 
-  protected static long getCPtr(XtionDepthDriver obj) {
+  protected static long getCPtr(DepthDriver obj) {
     return (obj == null) ? 0 : obj.swigCPtr;
   }
 
@@ -28,39 +29,38 @@ public class XtionDepthDriver extends DepthDriver {
     if (swigCPtr != 0) {
       if (swigCMemOwn) {
         swigCMemOwn = false;
-        linkjvm_visionJNI.delete_XtionDepthDriver(swigCPtr);
+        linkjvm_visionJNI.delete_DepthDriver(swigCPtr);
       }
       swigCPtr = 0;
     }
-    super.delete();
   }
 
-  public static XtionDepthDriver instance() {
-    return new XtionDepthDriver(linkjvm_visionJNI.XtionDepthDriver_instance(), false);
+  public static DepthDriver instance() {
+    return new DepthDriver(linkjvm_visionJNI.DepthDriver_instance(), false);
   }
 
   public void open() {
-    linkjvm_visionJNI.XtionDepthDriver_open(swigCPtr, this);
+    linkjvm_visionJNI.DepthDriver_open(swigCPtr, this);
   }
 
   public void close() {
-    linkjvm_visionJNI.XtionDepthDriver_close(swigCPtr, this);
+    linkjvm_visionJNI.DepthDriver_close(swigCPtr, this);
   }
 
   public boolean isOpen() {
-    return linkjvm_visionJNI.XtionDepthDriver_isOpen(swigCPtr, this);
+    return linkjvm_visionJNI.DepthDriver_isOpen(swigCPtr, this);
   }
 
   public DepthResolution depthCameraResolution() {
-    return DepthResolution.swigToEnum(linkjvm_visionJNI.XtionDepthDriver_depthCameraResolution(swigCPtr, this));
+    return DepthResolution.swigToEnum(linkjvm_visionJNI.DepthDriver_depthCameraResolution(swigCPtr, this));
   }
 
   public void setDepthCameraResolution(DepthResolution resolution) {
-    linkjvm_visionJNI.XtionDepthDriver_setDepthCameraResolution(swigCPtr, this, resolution.swigValue());
+    linkjvm_visionJNI.DepthDriver_setDepthCameraResolution(swigCPtr, this, resolution.swigValue());
   }
 
   public DepthImage depthImage() {
-    long cPtr = linkjvm_visionJNI.XtionDepthDriver_depthImage(swigCPtr, this);
+    long cPtr = linkjvm_visionJNI.DepthDriver_depthImage(swigCPtr, this);
     return (cPtr == 0) ? null : new DepthImage(cPtr, false);
   }
 

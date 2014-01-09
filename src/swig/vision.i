@@ -461,18 +461,32 @@ typedef enum DepthResolution_
 
 namespace depth
 {
-  class DepthImage
-  {
-  public:
-    virtual ~DepthImage();
-    virtual void setOrientation(const uint16_t orientation) = 0;
-    virtual uint16_t orientation() const = 0;
-    virtual uint32_t height() const = 0;
-    virtual uint32_t width() const = 0;
-    virtual uint16_t depthAt(const uint32_t row, const uint32_t column) const = 0;
-    virtual void depth(uint16_t *const data, const uint32_t offset, const uint32_t size) const = 0;
-    virtual Point3<int32_t> pointAt(const uint32_t row, const uint32_t column) const = 0;
-  };
+    class DepthImage
+    {
+    public:
+      virtual ~DepthImage();
+      virtual void setOrientation(const uint16_t orientation) = 0;
+      virtual uint16_t orientation() const = 0;
+      virtual uint32_t height() const = 0;
+      virtual uint32_t width() const = 0;
+      virtual uint16_t depthAt(const uint32_t row, const uint32_t column) const = 0;
+      virtual void depth(uint16_t *const data, const uint32_t offset, const uint32_t size) const = 0;
+      virtual Point3<int32_t> pointAt(const uint32_t row, const uint32_t column) const = 0;
+    };
+class DepthDriver
+{
+	public:
+	  static DepthDriver &instance();
+
+	  virtual ~DepthDriver() {};
+	  virtual void open() = 0;
+	  virtual void close() = 0;
+	  virtual bool isOpen() const = 0;
+	  virtual DepthResolution depthCameraResolution() const = 0;
+	  virtual void setDepthCameraResolution(const DepthResolution resolution) = 0;
+	  virtual DepthImage *depthImage() const = 0;
+	};
+	
   
   class XtionDepthDriverImpl;
   

@@ -2169,6 +2169,108 @@ SWIGEXPORT jlong JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_DepthImage_1
 }
 
 
+SWIGEXPORT jlong JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_DepthDriver_1instance(JNIEnv *jenv, jclass jcls) {
+  jlong jresult = 0 ;
+  depth::DepthDriver *result = 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  result = (depth::DepthDriver *) &depth::DepthDriver::instance();
+  *(depth::DepthDriver **)&jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_delete_1DepthDriver(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+  depth::DepthDriver *arg1 = (depth::DepthDriver *) 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  arg1 = *(depth::DepthDriver **)&jarg1; 
+  delete arg1;
+}
+
+
+SWIGEXPORT void JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_DepthDriver_1open(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+  depth::DepthDriver *arg1 = (depth::DepthDriver *) 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(depth::DepthDriver **)&jarg1; 
+  (arg1)->open();
+}
+
+
+SWIGEXPORT void JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_DepthDriver_1close(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+  depth::DepthDriver *arg1 = (depth::DepthDriver *) 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(depth::DepthDriver **)&jarg1; 
+  (arg1)->close();
+}
+
+
+SWIGEXPORT jboolean JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_DepthDriver_1isOpen(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+  jboolean jresult = 0 ;
+  depth::DepthDriver *arg1 = (depth::DepthDriver *) 0 ;
+  bool result;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(depth::DepthDriver **)&jarg1; 
+  result = (bool)((depth::DepthDriver const *)arg1)->isOpen();
+  jresult = (jboolean)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT jint JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_DepthDriver_1depthCameraResolution(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+  jint jresult = 0 ;
+  depth::DepthDriver *arg1 = (depth::DepthDriver *) 0 ;
+  DepthResolution result;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(depth::DepthDriver **)&jarg1; 
+  result = (DepthResolution)((depth::DepthDriver const *)arg1)->depthCameraResolution();
+  jresult = (jint)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_DepthDriver_1setDepthCameraResolution(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jint jarg2) {
+  depth::DepthDriver *arg1 = (depth::DepthDriver *) 0 ;
+  DepthResolution arg2 ;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(depth::DepthDriver **)&jarg1; 
+  arg2 = (DepthResolution)jarg2; 
+  (arg1)->setDepthCameraResolution(arg2);
+}
+
+
+SWIGEXPORT jlong JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_DepthDriver_1depthImage(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+  jlong jresult = 0 ;
+  depth::DepthDriver *arg1 = (depth::DepthDriver *) 0 ;
+  depth::DepthImage *result = 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(depth::DepthDriver **)&jarg1; 
+  result = (depth::DepthImage *)((depth::DepthDriver const *)arg1)->depthImage();
+  *(depth::DepthImage **)&jresult = result; 
+  return jresult;
+}
+
+
 SWIGEXPORT jlong JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_XtionDepthDriver_1instance(JNIEnv *jenv, jclass jcls) {
   jlong jresult = 0 ;
   depth::XtionDepthDriver *result = 0 ;
@@ -3239,6 +3341,14 @@ SWIGEXPORT jlong JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_UsbInputProv
     (void)jenv;
     (void)jcls;
     *(Camera::InputProvider **)&baseptr = *(Camera::UsbInputProvider **)&jarg1;
+    return baseptr;
+}
+
+SWIGEXPORT jlong JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_XtionDepthDriver_1SWIGUpcast(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+    jlong baseptr = 0;
+    (void)jenv;
+    (void)jcls;
+    *(depth::DepthDriver **)&baseptr = *(depth::XtionDepthDriver **)&jarg1;
     return baseptr;
 }
 
