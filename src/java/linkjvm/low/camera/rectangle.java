@@ -6,7 +6,7 @@
  * the SWIG interface file instead.
  * ----------------------------------------------------------------------------- */
 
-package linkjvm.low.geom;
+package linkjvm.low.camera;
 
 public class rectangle {
   private long swigCPtr;
@@ -29,46 +29,46 @@ public class rectangle {
     if (swigCPtr != 0) {
       if (swigCMemOwn) {
         swigCMemOwn = false;
-        linkjvm_geomJNI.delete_rectangle(swigCPtr);
+        linkjvm_cameraJNI.delete_rectangle(swigCPtr);
       }
       swigCPtr = 0;
     }
   }
 
   public void setUlx(int value) {
-    linkjvm_geomJNI.rectangle_ulx_set(swigCPtr, this, value);
+    linkjvm_cameraJNI.rectangle_ulx_set(swigCPtr, this, value);
   }
 
   public int getUlx() {
-    return linkjvm_geomJNI.rectangle_ulx_get(swigCPtr, this);
+    return linkjvm_cameraJNI.rectangle_ulx_get(swigCPtr, this);
   }
 
   public void setUly(int value) {
-    linkjvm_geomJNI.rectangle_uly_set(swigCPtr, this, value);
+    linkjvm_cameraJNI.rectangle_uly_set(swigCPtr, this, value);
   }
 
   public int getUly() {
-    return linkjvm_geomJNI.rectangle_uly_get(swigCPtr, this);
+    return linkjvm_cameraJNI.rectangle_uly_get(swigCPtr, this);
   }
 
   public void setWidth(int value) {
-    linkjvm_geomJNI.rectangle_width_set(swigCPtr, this, value);
+    linkjvm_cameraJNI.rectangle_width_set(swigCPtr, this, value);
   }
 
   public int getWidth() {
-    return linkjvm_geomJNI.rectangle_width_get(swigCPtr, this);
+    return linkjvm_cameraJNI.rectangle_width_get(swigCPtr, this);
   }
 
   public void setHeight(int value) {
-    linkjvm_geomJNI.rectangle_height_set(swigCPtr, this, value);
+    linkjvm_cameraJNI.rectangle_height_set(swigCPtr, this, value);
   }
 
   public int getHeight() {
-    return linkjvm_geomJNI.rectangle_height_get(swigCPtr, this);
+    return linkjvm_cameraJNI.rectangle_height_get(swigCPtr, this);
   }
 
   public rectangle() {
-    this(linkjvm_geomJNI.new_rectangle(), true);
+    this(linkjvm_cameraJNI.new_rectangle(), true);
   }
 
 }

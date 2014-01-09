@@ -6,17 +6,18 @@
  * the SWIG interface file instead.
  * ----------------------------------------------------------------------------- */
 
-package linkjvm.low.motors;
-import linkjvm.low.sensors.IntSensor;
-public class BackEMF extends IntSensor {
-  private long swigCPtr;
+package linkjvm.low.camera;
 
-  protected BackEMF(long cPtr, boolean cMemoryOwn) {
-    super(linkjvm_motorJNI.BackEMF_SWIGUpcast(cPtr), cMemoryOwn);
+public class point2 {
+  private long swigCPtr;
+  protected boolean swigCMemOwn;
+
+  protected point2(long cPtr, boolean cMemoryOwn) {
+    swigCMemOwn = cMemoryOwn;
     swigCPtr = cPtr;
   }
 
-  protected static long getCPtr(BackEMF obj) {
+  protected static long getCPtr(point2 obj) {
     return (obj == null) ? 0 : obj.swigCPtr;
   }
 
@@ -28,23 +29,30 @@ public class BackEMF extends IntSensor {
     if (swigCPtr != 0) {
       if (swigCMemOwn) {
         swigCMemOwn = false;
-        linkjvm_motorJNI.delete_BackEMF(swigCPtr);
+        linkjvm_cameraJNI.delete_point2(swigCPtr);
       }
       swigCPtr = 0;
     }
-    super.delete();
   }
 
-  public BackEMF(short port) {
-    this(linkjvm_motorJNI.new_BackEMF(port), true);
+  public void setX(int value) {
+    linkjvm_cameraJNI.point2_x_set(swigCPtr, this, value);
   }
 
-  public int value() {
-    return linkjvm_motorJNI.BackEMF_value(swigCPtr, this);
+  public int getX() {
+    return linkjvm_cameraJNI.point2_x_get(swigCPtr, this);
   }
 
-  public short port() {
-    return linkjvm_motorJNI.BackEMF_port(swigCPtr, this);
+  public void setY(int value) {
+    linkjvm_cameraJNI.point2_y_set(swigCPtr, this, value);
+  }
+
+  public int getY() {
+    return linkjvm_cameraJNI.point2_y_get(swigCPtr, this);
+  }
+
+  public point2() {
+    this(linkjvm_cameraJNI.new_point2(), true);
   }
 
 }
