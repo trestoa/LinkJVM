@@ -26,130 +26,135 @@ import linkjvm.low.factory.JNIController;
 /**
  * 
  * @author Markus Klein
+ * @version 2.0.0
+ * @since 2.0.0
  *
+ * Represents a Motor object with a given port.
  */
 public class Motor {
 	
 	private volatile linkjvm.low.motors.Motor jniMotor = null;
 	
 	/**
-	 * 
-	 * @param port
-	 * @throws InvalidPortException
+	 * Creates a new Motor object.
+	 * @param port port of the Link, where the motor is connected to
+	 * @throws InvalidPortException If the specified port is invalid
 	 */
 	public Motor(int port) throws InvalidPortException{
 		setPort(port);
 	}
 	
 	/**
-	 * 
+	 * Resets the position counter of this motor object to 0 
 	 */
 	public void clearPositionCount(){
 		jniMotor.clearPositionCounter();
 	}
 	
 	/**
-	 * 
-	 * @param velocity
+	 * Moves the motor at velocity with the specified ticks per seconds.
+	 * @param velocity velocity in ticks per second (range from -1000 to 1000)
 	 */
 	public void moveAtVelocity(int velocity){
 		jniMotor.moveAtVelocity((short) velocity);
 	}
 	
 	/**
-	 * 
-	 * @param speed
-	 * @param targetPos
+	 * Moves the motor to the specified position at the specified.
+     * If motorPosition > specifiedPosition, the motor does not move.
+	 * @param speed motor speed (range from 0 to 1000)
+	 * @param targetPos motor position until the motor stops
 	 */
 	public void moveToPosition(int speed, int targetPos){
 		jniMotor.moveToPosition((short) speed, targetPos);
 	}
 	
 	/**
-	 * 
-	 * @param speed
-	 * @param posDelta
+	 * Moves the motor from its current position to current position + pos.
+	 * @param speed speed in ticks (range from -1000 to 1000)
+	 * @param posDelta difference of the current and the final position
 	 */
 	public void moveToRelativePosition(int speed, int posDelta){
 		jniMotor.moveRelativePosition((short) speed, posDelta);
 	}
 	
 	/**
-	 * 
-	 * @param p
-	 * @param i
-	 * @param d
-	 * @param pd
-	 * @param id
-	 * @param dd
+	 * Adjusts the weights of the PID control. If the motor is jerky, the p and d values should be reduced.
+     * If a motor lags far behind they should be increased.
+	 * @param p numerator for p coefficient
+	 * @param i numerator for i coefficient
+	 * @param d numerator for d coefficient
+	 * @param pd p respective denominator
+	 * @param id i respective denominator
+	 * @param dd d respective denominator
 	 */
 	public void setPidGains(short p, short i, short d, short pd, short id, short dd){
 		jniMotor.setPidGains(p, i, d, pd, id, dd);
 	}
 	
 	/**
-	 * 
+	 * Prevents the current motor movement.
 	 */
 	public void freeze(){
 		jniMotor.freeze();
 	}
 	
 	/**
-	 * 
-	 * @return
+	 * Returns if the motor is done with movement.
+	 * @return <code>true</code> if motor is done with movement, <code>false</code> otherwise
 	 */
 	public boolean isMotorDone(){
 		return jniMotor.isMotorDone();
 	}
 	
 	/**
-	 * 
+	 * Sets the current thread to idle until the motor is done with movement.
 	 */
 	public void blockMotorDone(){
 		jniMotor.blockMotorDone();
 	}
 	
 	/**
-	 * 
+	 * Turns the motor speed to full forward.
 	 */
 	public void forward(){
 		jniMotor.forward();
 	}
 	
 	/**
-	 * 
+	 * Turns the motor speed to full backward.
 	 */
 	public void backward(){
 		jniMotor.backward();
 	}
 	
 	/**
-	 * 
-	 * @param percent
+	 * Turn motor on the specified percentage.
+	 * @param percent percentage with which the motor turns
 	 */
 	public void turn(int percent){
 		jniMotor.motor(percent);
 	}
 	
 	/**
-	 * 
+	 * Turns the motor off.
 	 */
 	public void off(){
 		jniMotor.off();
 	}
 	
 	/**
-	 * 
-	 * @return
+	 * Returns the port of this motor object.
+	 * @return port of the link, where the motor is connected to
 	 */
 	public int getPort(){
 		return jniMotor.port();
 	}
 	
 	/**
-	 * 
-	 * @param port
-	 * @throws InvalidPortException
+	 * Sets the port of this motor object.
+	 * @param port port of the Link, where the motor is connected to
+	 * @throws InvalidPortException If the specified port is invalid
 	 */
 	public void setPort(int port) throws InvalidPortException{
 		if(port > 4 || port < 0){
@@ -158,11 +163,11 @@ public class Motor {
 		jniMotor = JNIController.getInstance().getMotorFactory().getInstance(port);
 	}
 	
-	public void setJniMotor(linkjvm.low.motors.Motor jniMotor){
+	void setJniMotor(linkjvm.low.motors.Motor jniMotor){
 		this.jniMotor = jniMotor;
 	}
 	
-	public linkjvm.low.motors.Motor getJniMotor(){
+	linkjvm.low.motors.Motor getJniMotor(){
 		return jniMotor;
 	}
 }
