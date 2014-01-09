@@ -93,20 +93,12 @@ public class Servo {
 	public boolean isEnabled(){
 		return jniServo.isEnabled();
 	}
-	
-	/**
-	 * 
-	 * @param jniServo
-	 */
-	public void setJniServo(linkjvm.low.Servo jniServo){
+
+	void setJniServo(linkjvm.low.Servo jniServo){
 		this.jniServo = jniServo;
 	}
 	
-	/**
-	 * 
-	 * @return
-	 */
-	public linkjvm.low.Servo getJniServo(){
+	linkjvm.low.Servo getJniServo(){
 		return jniServo;
 	}
 }

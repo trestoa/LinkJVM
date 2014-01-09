@@ -77,19 +77,11 @@ public class AnalogSensor implements IAnalogSensor{
 		return jniSensor.pullup();
 	}
 
-	/**
-	 *
-	 * @return
-	 */
-	public Analog getJniSensor(){
+	Analog getJniSensor(){
 		return jniSensor;
 	}
 
-	/**
-	 *
-	 * @return
-	 */
-	public Analog8 getJni8Sensor(){
+	Analog8 getJni8Sensor(){
 		return jniSensor8;
 	}
 

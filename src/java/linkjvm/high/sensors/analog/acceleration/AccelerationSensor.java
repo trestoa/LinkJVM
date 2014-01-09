@@ -71,19 +71,11 @@ public class AccelerationSensor implements IAnalogSensor{
 		return jniAccelSensor.value();
 	}
 	
-	/**
-	 * 
-	 * @return
-	 */
-	public ShortSensor getJniAcceleration(){
+	ShortSensor getJniAcceleration(){
 		return jniAccelSensor;
 	}
 	
-	/**
-	 * 
-	 * @param jniAccel
-	 */
-	public void setJniAcceleration(ShortSensor jniAccelSensor){
+	void setJniAcceleration(ShortSensor jniAccelSensor){
 		this.jniAccelSensor = jniAccelSensor;
 	}
 	
