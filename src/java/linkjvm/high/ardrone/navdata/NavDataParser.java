@@ -35,7 +35,7 @@ import linkjvm.high.ardrone.listeners.StateListener;
 import linkjvm.high.ardrone.listeners.VelocityListener;
 
 
-
+@SuppressWarnings("unused")
 public class NavDataParser {
 	private AttitudeListener attitudeListener;
 	private StateListener stateListener;
