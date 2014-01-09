@@ -10,7 +10,7 @@ import java.net.Socket;
  * @author Markus Klein
  *
  */
-public class Debugger {
+public class Debugger {	
 	private Socket socket;
 	private PrintWriter writer = null;
 	
@@ -66,6 +66,7 @@ public class Debugger {
 	public boolean write(String text){
 		if(!socket.isClosed() && writer != null){
 			writer.print(text);
+			writer.flush();
 			return true;
 		}
 		else{
