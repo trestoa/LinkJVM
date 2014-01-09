@@ -30,10 +30,10 @@ public class Create {
 	 *
 	 */
 	public static enum Mode{
-		Safe,
-		Passive,
-		Full,
-		Off
+		SAFE,
+		PASSIVE,
+		FULL,
+		OFF;
 	}
 	
 	private volatile linkjvm.low.create.Create jniCreate = null;
@@ -46,41 +46,45 @@ public class Create {
 	}
 	
 	/**
+	 * Builds up a connection to the Create.
 	 * 
-	 * @return
+	 * @return <code>true</code> if everything worked fine, <code>false</code> if an error occurred
 	 */
 	public boolean connect(){
 		return jniCreate.connect();
 	}
 	
 	/**
+	 * Closes the connection to the Create.
 	 * 
-	 * @return
+	 * @return <code>true</code> if everything worked fine, <code>false</code> if an error occurred
 	 */
 	public boolean disconnect(){
 		return jniCreate.disconnect();
 	}
 	
 	/**
+	 * Returns <code>true</code>, when connected to the Create, <code>false</code> otherwise.
 	 * 
-	 * @return
+	 * @return <code>true</code>, when connected to the Create, <code>false</code> otherwise
 	 */
 	public boolean isConnected(){
 		return jniCreate.isConnected();
 	}
 	
 	/**
+	 * Sets the mode 
 	 * 
-	 * @param mode
+	 * @param mode 
 	 */
 	public void setMode(Mode mode){	
-		if(mode == Mode.Safe){
+		if(mode == Mode.SAFE){
 			jniCreate.setSafeMode();
 		}
-		else if(mode == Mode.Full){
+		else if(mode == Mode.FULL){
 			jniCreate.setFullMode();
 		}
-		else if(mode == Mode.Passive){
+		else if(mode == Mode.PASSIVE){
 			jniCreate.setPassiveMode();
 		}
 	}
