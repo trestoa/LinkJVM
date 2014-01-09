@@ -1,6 +1,6 @@
 package linkjvm.high.vision;
 
-public enum Resoultion {
+public enum Resolution {
 
 	LOW_RES(160, 120),
 	MED_RES(320, 240),
@@ -9,7 +9,7 @@ public enum Resoultion {
 	public int width;
 	public int height;
 	
-	private Resoultion(int width, int height) {
+	private Resolution(int width, int height) {
 		
 		this.width = width;
 		this.height = height;
