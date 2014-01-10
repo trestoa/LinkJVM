@@ -169,6 +169,10 @@ public class JNIController implements Runnable{
 		return cameraFactory;
 	}
 	
+	/**
+	 * 
+	 * @return
+	 */
 	public DepthFactory getDepthFactory(){
 		return depthFactory;
 	}
