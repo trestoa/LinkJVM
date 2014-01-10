@@ -83,7 +83,7 @@ public class CameraConfig {
 	 * 
 	 * @return
 	 */
-	public Resolution getRes() {
+	public Resolution getResolution() {
 		return res;
 	}
 
