@@ -4,6 +4,11 @@ import linkjvm.low.factory.JNIController;
 import linkjvm.low.vision.Config;
 import linkjvm.low.vision.InputProvider;
 
+/**
+ * 
+ * @author Markus Klein
+ *
+ */
 public class CameraConfig {
 	
 	/**

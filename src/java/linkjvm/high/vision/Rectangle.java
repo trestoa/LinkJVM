@@ -1,5 +1,10 @@
 package linkjvm.high.vision;
 
+/**
+ * 
+ * @author Markus Klein
+ *
+ */
 public class Rectangle {
 	private long width;
 	private long height;
@@ -100,5 +105,5 @@ public class Rectangle {
 	 */
 	public long getArea(){
 		return width * height;
-	}
+	}	
 }

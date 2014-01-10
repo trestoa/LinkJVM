@@ -1,5 +1,10 @@
 package linkjvm.high.vision;
 
+/**
+ * 
+ * @author Klaus Ableitinger
+ *
+ */
 public enum Resolution {
 
 	LOW_RES(160, 120),

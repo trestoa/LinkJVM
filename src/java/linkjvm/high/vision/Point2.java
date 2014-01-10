@@ -1,5 +1,10 @@
 package linkjvm.high.vision;
 
+/**
+ * 
+ * @author Markus Klein
+ *
+ */
 public class Point2 {
 	private long x;
 	private long y;
