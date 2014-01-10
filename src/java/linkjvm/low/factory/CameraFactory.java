@@ -7,7 +7,10 @@ public class CameraFactory extends AbstractMultiton<CameraConfig, Device>{
 
 	@Override
 	protected Device getNewConcreteInstance(CameraConfig uniqueIdentifier) {
-		return new Device(uniqueIdentifier.getInputProvider());
+		Device ret = new Device(uniqueIdentifier.getInputProvider());
+		ret.setWidth(uniqueIdentifier.getResolution().width);
+		ret.setHeight(uniqueIdentifier.getResolution().height);
+		return ret;
 	}
 
 }
