@@ -39,8 +39,8 @@ public class ChannelImplManager {
     linkjvm_visionJNI.ChannelImplManager_setImage(swigCPtr, this, SWIGTYPE_p_cv__Mat.getCPtr(image));
   }
 
-  public ChannelImpl channelImpl(SWIGTYPE_p_std__string name) {
-    long cPtr = linkjvm_visionJNI.ChannelImplManager_channelImpl(swigCPtr, this, SWIGTYPE_p_std__string.getCPtr(name));
+  public ChannelImpl channelImpl(String name) {
+    long cPtr = linkjvm_visionJNI.ChannelImplManager_channelImpl(swigCPtr, this, name);
     return (cPtr == 0) ? null : new ChannelImpl(cPtr, false);
   }
 

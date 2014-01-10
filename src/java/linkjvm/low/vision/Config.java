@@ -39,21 +39,21 @@ public class Config {
     this(linkjvm_visionJNI.new_Config__SWIG_0(), true);
   }
 
-  public Config(SWIGTYPE_p_std__mapT_std__string_std__string_t config) {
-    this(linkjvm_visionJNI.new_Config__SWIG_1(SWIGTYPE_p_std__mapT_std__string_std__string_t.getCPtr(config)), true);
+  public Config(ConfigMap config) {
+    this(linkjvm_visionJNI.new_Config__SWIG_1(ConfigMap.getCPtr(config), config), true);
   }
 
-  public static Config load(SWIGTYPE_p_std__string path) {
-    long cPtr = linkjvm_visionJNI.Config_load(SWIGTYPE_p_std__string.getCPtr(path));
+  public static Config load(String path) {
+    long cPtr = linkjvm_visionJNI.Config_load(path);
     return (cPtr == 0) ? null : new Config(cPtr, false);
   }
 
-  public boolean save(SWIGTYPE_p_std__string path) {
-    return linkjvm_visionJNI.Config_save(swigCPtr, this, SWIGTYPE_p_std__string.getCPtr(path));
+  public boolean save(String path) {
+    return linkjvm_visionJNI.Config_save(swigCPtr, this, path);
   }
 
-  public void beginGroup(SWIGTYPE_p_std__string group) {
-    linkjvm_visionJNI.Config_beginGroup(swigCPtr, this, SWIGTYPE_p_std__string.getCPtr(group));
+  public void beginGroup(String group) {
+    linkjvm_visionJNI.Config_beginGroup(swigCPtr, this, group);
   }
 
   public void endGroup() {
@@ -68,44 +68,40 @@ public class Config {
     linkjvm_visionJNI.Config_clear(swigCPtr, this);
   }
 
-  public boolean containsKey(SWIGTYPE_p_std__string key) {
-    return linkjvm_visionJNI.Config_containsKey(swigCPtr, this, SWIGTYPE_p_std__string.getCPtr(key));
+  public boolean containsKey(String key) {
+    return linkjvm_visionJNI.Config_containsKey(swigCPtr, this, key);
   }
 
-  public boolean boolValue(SWIGTYPE_p_std__string key) {
-    return linkjvm_visionJNI.Config_boolValue(swigCPtr, this, SWIGTYPE_p_std__string.getCPtr(key));
+  public boolean boolValue(String key) {
+    return linkjvm_visionJNI.Config_boolValue(swigCPtr, this, key);
   }
 
-  public int intValue(SWIGTYPE_p_std__string key) {
-    return linkjvm_visionJNI.Config_intValue(swigCPtr, this, SWIGTYPE_p_std__string.getCPtr(key));
+  public int intValue(String key) {
+    return linkjvm_visionJNI.Config_intValue(swigCPtr, this, key);
   }
 
-  public double doubleValue(SWIGTYPE_p_std__string key) {
-    return linkjvm_visionJNI.Config_doubleValue(swigCPtr, this, SWIGTYPE_p_std__string.getCPtr(key));
+  public double doubleValue(String key) {
+    return linkjvm_visionJNI.Config_doubleValue(swigCPtr, this, key);
   }
 
-  public SWIGTYPE_p_std__string stringValue(SWIGTYPE_p_std__string key) {
-    return new SWIGTYPE_p_std__string(linkjvm_visionJNI.Config_stringValue(swigCPtr, this, SWIGTYPE_p_std__string.getCPtr(key)), true);
+  public String stringValue(String key) {
+    return linkjvm_visionJNI.Config_stringValue(swigCPtr, this, key);
   }
 
-  public void setValue(SWIGTYPE_p_std__string key, boolean value) {
-    linkjvm_visionJNI.Config_setValue__SWIG_0(swigCPtr, this, SWIGTYPE_p_std__string.getCPtr(key), value);
+  public void setValue(String key, boolean value) {
+    linkjvm_visionJNI.Config_setValue__SWIG_0(swigCPtr, this, key, value);
   }
 
-  public void setValue(SWIGTYPE_p_std__string key, int value) {
-    linkjvm_visionJNI.Config_setValue__SWIG_1(swigCPtr, this, SWIGTYPE_p_std__string.getCPtr(key), value);
+  public void setValue(String key, int value) {
+    linkjvm_visionJNI.Config_setValue__SWIG_1(swigCPtr, this, key, value);
   }
 
-  public void setValue(SWIGTYPE_p_std__string key, double value) {
-    linkjvm_visionJNI.Config_setValue__SWIG_2(swigCPtr, this, SWIGTYPE_p_std__string.getCPtr(key), value);
+  public void setValue(String key, double value) {
+    linkjvm_visionJNI.Config_setValue__SWIG_2(swigCPtr, this, key, value);
   }
 
-  public void setValue(SWIGTYPE_p_std__string key, String value) {
-    linkjvm_visionJNI.Config_setValue__SWIG_3(swigCPtr, this, SWIGTYPE_p_std__string.getCPtr(key), value);
-  }
-
-  public void setValue(SWIGTYPE_p_std__string key, SWIGTYPE_p_std__string value) {
-    linkjvm_visionJNI.Config_setValue__SWIG_4(swigCPtr, this, SWIGTYPE_p_std__string.getCPtr(key), SWIGTYPE_p_std__string.getCPtr(value));
+  public void setValue(String key, String value) {
+    linkjvm_visionJNI.Config_setValue__SWIG_3(swigCPtr, this, key, value);
   }
 
   public Config values() {

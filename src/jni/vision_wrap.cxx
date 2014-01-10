@@ -234,6 +234,14 @@ static void SWIGUNUSED SWIG_JavaThrowException(JNIEnv *jenv, SWIG_JavaExceptionC
 #include <stdexcept>
 
 
+#include <map>
+#include <algorithm>
+#include <stdexcept>
+
+
+#include <string>
+
+
 #include <stdint.h>		// Use the C99 official header
 
 
@@ -274,6 +282,27 @@ SWIGINTERN void std_vector_Sl_Camera_Object_Sg__set(std::vector< Camera::Object 
                     (*self)[i] = val;
                 else
                     throw std::out_of_range("vector index out of range");
+            }
+SWIGINTERN std::string const &std_map_Sl_std_string_Sc_std_string_Sg__get(std::map< std::string,std::string > *self,std::string const &key){
+                std::map<std::string,std::string >::iterator i = self->find(key);
+                if (i != self->end())
+                    return i->second;
+                else
+                    throw std::out_of_range("key not found");
+            }
+SWIGINTERN void std_map_Sl_std_string_Sc_std_string_Sg__set(std::map< std::string,std::string > *self,std::string const &key,std::string const &x){
+                (*self)[key] = x;
+            }
+SWIGINTERN void std_map_Sl_std_string_Sc_std_string_Sg__del(std::map< std::string,std::string > *self,std::string const &key){
+                std::map<std::string,std::string >::iterator i = self->find(key);
+                if (i != self->end())
+                    self->erase(i);
+                else
+                    throw std::out_of_range("key not found");
+            }
+SWIGINTERN bool std_map_Sl_std_string_Sc_std_string_Sg__has_key(std::map< std::string,std::string > *self,std::string const &key){
+                std::map<std::string,std::string >::iterator i = self->find(key);
+                return i != self->end();
             }
 
 #ifdef __cplusplus
@@ -504,13 +533,14 @@ SWIGEXPORT jlong JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_new_1Config_
 }
 
 
-SWIGEXPORT jlong JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_new_1Config_1_1SWIG_11(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+SWIGEXPORT jlong JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_new_1Config_1_1SWIG_11(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jlong jresult = 0 ;
   std::map< std::string,std::string > *arg1 = 0 ;
   Config *result = 0 ;
   
   (void)jenv;
   (void)jcls;
+  (void)jarg1_;
   arg1 = *(std::map< std::string,std::string > **)&jarg1;
   if (!arg1) {
     SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "std::map< std::string,std::string > const & reference is null");
@@ -522,25 +552,29 @@ SWIGEXPORT jlong JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_new_1Config_
 }
 
 
-SWIGEXPORT jlong JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_Config_1load(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+SWIGEXPORT jlong JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_Config_1load(JNIEnv *jenv, jclass jcls, jstring jarg1) {
   jlong jresult = 0 ;
   std::string *arg1 = 0 ;
   Config *result = 0 ;
   
   (void)jenv;
   (void)jcls;
-  arg1 = *(std::string **)&jarg1;
-  if (!arg1) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "std::string const & reference is null");
+  if(!jarg1) {
+    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "null string");
     return 0;
-  } 
+  }
+  const char *arg1_pstr = (const char *)jenv->GetStringUTFChars(jarg1, 0); 
+  if (!arg1_pstr) return 0;
+  std::string arg1_str(arg1_pstr);
+  arg1 = &arg1_str;
+  jenv->ReleaseStringUTFChars(jarg1, arg1_pstr); 
   result = (Config *)Config::load((std::string const &)*arg1);
   *(Config **)&jresult = result; 
   return jresult;
 }
 
 
-SWIGEXPORT jboolean JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_Config_1save(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2) {
+SWIGEXPORT jboolean JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_Config_1save(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2) {
   jboolean jresult = 0 ;
   Config *arg1 = (Config *) 0 ;
   std::string *arg2 = 0 ;
@@ -550,18 +584,22 @@ SWIGEXPORT jboolean JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_Config_1s
   (void)jcls;
   (void)jarg1_;
   arg1 = *(Config **)&jarg1; 
-  arg2 = *(std::string **)&jarg2;
-  if (!arg2) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "std::string const & reference is null");
+  if(!jarg2) {
+    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "null string");
     return 0;
-  } 
+  }
+  const char *arg2_pstr = (const char *)jenv->GetStringUTFChars(jarg2, 0); 
+  if (!arg2_pstr) return 0;
+  std::string arg2_str(arg2_pstr);
+  arg2 = &arg2_str;
+  jenv->ReleaseStringUTFChars(jarg2, arg2_pstr); 
   result = (bool)((Config const *)arg1)->save((std::string const &)*arg2);
   jresult = (jboolean)result; 
   return jresult;
 }
 
 
-SWIGEXPORT void JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_Config_1beginGroup(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2) {
+SWIGEXPORT void JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_Config_1beginGroup(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2) {
   Config *arg1 = (Config *) 0 ;
   std::string *arg2 = 0 ;
   
@@ -569,11 +607,15 @@ SWIGEXPORT void JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_Config_1begin
   (void)jcls;
   (void)jarg1_;
   arg1 = *(Config **)&jarg1; 
-  arg2 = *(std::string **)&jarg2;
-  if (!arg2) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "std::string const & reference is null");
+  if(!jarg2) {
+    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "null string");
     return ;
-  } 
+  }
+  const char *arg2_pstr = (const char *)jenv->GetStringUTFChars(jarg2, 0); 
+  if (!arg2_pstr) return ;
+  std::string arg2_str(arg2_pstr);
+  arg2 = &arg2_str;
+  jenv->ReleaseStringUTFChars(jarg2, arg2_pstr); 
   (arg1)->beginGroup((std::string const &)*arg2);
 }
 
@@ -611,7 +653,7 @@ SWIGEXPORT void JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_Config_1clear
 }
 
 
-SWIGEXPORT jboolean JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_Config_1containsKey(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2) {
+SWIGEXPORT jboolean JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_Config_1containsKey(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2) {
   jboolean jresult = 0 ;
   Config *arg1 = (Config *) 0 ;
   std::string *arg2 = 0 ;
@@ -621,18 +663,22 @@ SWIGEXPORT jboolean JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_Config_1c
   (void)jcls;
   (void)jarg1_;
   arg1 = *(Config **)&jarg1; 
-  arg2 = *(std::string **)&jarg2;
-  if (!arg2) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "std::string const & reference is null");
+  if(!jarg2) {
+    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "null string");
     return 0;
-  } 
+  }
+  const char *arg2_pstr = (const char *)jenv->GetStringUTFChars(jarg2, 0); 
+  if (!arg2_pstr) return 0;
+  std::string arg2_str(arg2_pstr);
+  arg2 = &arg2_str;
+  jenv->ReleaseStringUTFChars(jarg2, arg2_pstr); 
   result = (bool)((Config const *)arg1)->containsKey((std::string const &)*arg2);
   jresult = (jboolean)result; 
   return jresult;
 }
 
 
-SWIGEXPORT jboolean JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_Config_1boolValue(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2) {
+SWIGEXPORT jboolean JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_Config_1boolValue(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2) {
   jboolean jresult = 0 ;
   Config *arg1 = (Config *) 0 ;
   std::string *arg2 = 0 ;
@@ -642,18 +688,22 @@ SWIGEXPORT jboolean JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_Config_1b
   (void)jcls;
   (void)jarg1_;
   arg1 = *(Config **)&jarg1; 
-  arg2 = *(std::string **)&jarg2;
-  if (!arg2) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "std::string const & reference is null");
+  if(!jarg2) {
+    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "null string");
     return 0;
-  } 
+  }
+  const char *arg2_pstr = (const char *)jenv->GetStringUTFChars(jarg2, 0); 
+  if (!arg2_pstr) return 0;
+  std::string arg2_str(arg2_pstr);
+  arg2 = &arg2_str;
+  jenv->ReleaseStringUTFChars(jarg2, arg2_pstr); 
   result = (bool)((Config const *)arg1)->boolValue((std::string const &)*arg2);
   jresult = (jboolean)result; 
   return jresult;
 }
 
 
-SWIGEXPORT jint JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_Config_1intValue(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2) {
+SWIGEXPORT jint JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_Config_1intValue(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2) {
   jint jresult = 0 ;
   Config *arg1 = (Config *) 0 ;
   std::string *arg2 = 0 ;
@@ -663,18 +713,22 @@ SWIGEXPORT jint JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_Config_1intVa
   (void)jcls;
   (void)jarg1_;
   arg1 = *(Config **)&jarg1; 
-  arg2 = *(std::string **)&jarg2;
-  if (!arg2) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "std::string const & reference is null");
+  if(!jarg2) {
+    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "null string");
     return 0;
-  } 
+  }
+  const char *arg2_pstr = (const char *)jenv->GetStringUTFChars(jarg2, 0); 
+  if (!arg2_pstr) return 0;
+  std::string arg2_str(arg2_pstr);
+  arg2 = &arg2_str;
+  jenv->ReleaseStringUTFChars(jarg2, arg2_pstr); 
   result = (int)((Config const *)arg1)->intValue((std::string const &)*arg2);
   jresult = (jint)result; 
   return jresult;
 }
 
 
-SWIGEXPORT jdouble JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_Config_1doubleValue(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2) {
+SWIGEXPORT jdouble JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_Config_1doubleValue(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2) {
   jdouble jresult = 0 ;
   Config *arg1 = (Config *) 0 ;
   std::string *arg2 = 0 ;
@@ -684,19 +738,23 @@ SWIGEXPORT jdouble JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_Config_1do
   (void)jcls;
   (void)jarg1_;
   arg1 = *(Config **)&jarg1; 
-  arg2 = *(std::string **)&jarg2;
-  if (!arg2) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "std::string const & reference is null");
+  if(!jarg2) {
+    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "null string");
     return 0;
-  } 
+  }
+  const char *arg2_pstr = (const char *)jenv->GetStringUTFChars(jarg2, 0); 
+  if (!arg2_pstr) return 0;
+  std::string arg2_str(arg2_pstr);
+  arg2 = &arg2_str;
+  jenv->ReleaseStringUTFChars(jarg2, arg2_pstr); 
   result = (double)((Config const *)arg1)->doubleValue((std::string const &)*arg2);
   jresult = (jdouble)result; 
   return jresult;
 }
 
 
-SWIGEXPORT jlong JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_Config_1stringValue(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2) {
-  jlong jresult = 0 ;
+SWIGEXPORT jstring JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_Config_1stringValue(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2) {
+  jstring jresult = 0 ;
   Config *arg1 = (Config *) 0 ;
   std::string *arg2 = 0 ;
   std::string result;
@@ -705,18 +763,22 @@ SWIGEXPORT jlong JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_Config_1stri
   (void)jcls;
   (void)jarg1_;
   arg1 = *(Config **)&jarg1; 
-  arg2 = *(std::string **)&jarg2;
-  if (!arg2) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "std::string const & reference is null");
+  if(!jarg2) {
+    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "null string");
     return 0;
-  } 
+  }
+  const char *arg2_pstr = (const char *)jenv->GetStringUTFChars(jarg2, 0); 
+  if (!arg2_pstr) return 0;
+  std::string arg2_str(arg2_pstr);
+  arg2 = &arg2_str;
+  jenv->ReleaseStringUTFChars(jarg2, arg2_pstr); 
   result = ((Config const *)arg1)->stringValue((std::string const &)*arg2);
-  *(std::string **)&jresult = new std::string((const std::string &)result); 
+  jresult = jenv->NewStringUTF((&result)->c_str()); 
   return jresult;
 }
 
 
-SWIGEXPORT void JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_Config_1setValue_1_1SWIG_10(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jboolean jarg3) {
+SWIGEXPORT void JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_Config_1setValue_1_1SWIG_10(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2, jboolean jarg3) {
   Config *arg1 = (Config *) 0 ;
   std::string *arg2 = 0 ;
   bool *arg3 = 0 ;
@@ -726,18 +788,22 @@ SWIGEXPORT void JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_Config_1setVa
   (void)jcls;
   (void)jarg1_;
   arg1 = *(Config **)&jarg1; 
-  arg2 = *(std::string **)&jarg2;
-  if (!arg2) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "std::string const & reference is null");
+  if(!jarg2) {
+    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "null string");
     return ;
-  } 
+  }
+  const char *arg2_pstr = (const char *)jenv->GetStringUTFChars(jarg2, 0); 
+  if (!arg2_pstr) return ;
+  std::string arg2_str(arg2_pstr);
+  arg2 = &arg2_str;
+  jenv->ReleaseStringUTFChars(jarg2, arg2_pstr); 
   temp3 = jarg3 ? true : false; 
   arg3 = &temp3; 
   (arg1)->setValue((std::string const &)*arg2,(bool const &)*arg3);
 }
 
 
-SWIGEXPORT void JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_Config_1setValue_1_1SWIG_11(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jint jarg3) {
+SWIGEXPORT void JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_Config_1setValue_1_1SWIG_11(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2, jint jarg3) {
   Config *arg1 = (Config *) 0 ;
   std::string *arg2 = 0 ;
   int *arg3 = 0 ;
@@ -747,18 +813,22 @@ SWIGEXPORT void JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_Config_1setVa
   (void)jcls;
   (void)jarg1_;
   arg1 = *(Config **)&jarg1; 
-  arg2 = *(std::string **)&jarg2;
-  if (!arg2) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "std::string const & reference is null");
+  if(!jarg2) {
+    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "null string");
     return ;
-  } 
+  }
+  const char *arg2_pstr = (const char *)jenv->GetStringUTFChars(jarg2, 0); 
+  if (!arg2_pstr) return ;
+  std::string arg2_str(arg2_pstr);
+  arg2 = &arg2_str;
+  jenv->ReleaseStringUTFChars(jarg2, arg2_pstr); 
   temp3 = (int)jarg3; 
   arg3 = &temp3; 
   (arg1)->setValue((std::string const &)*arg2,(int const &)*arg3);
 }
 
 
-SWIGEXPORT void JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_Config_1setValue_1_1SWIG_12(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jdouble jarg3) {
+SWIGEXPORT void JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_Config_1setValue_1_1SWIG_12(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2, jdouble jarg3) {
   Config *arg1 = (Config *) 0 ;
   std::string *arg2 = 0 ;
   double *arg3 = 0 ;
@@ -768,18 +838,22 @@ SWIGEXPORT void JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_Config_1setVa
   (void)jcls;
   (void)jarg1_;
   arg1 = *(Config **)&jarg1; 
-  arg2 = *(std::string **)&jarg2;
-  if (!arg2) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "std::string const & reference is null");
+  if(!jarg2) {
+    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "null string");
     return ;
-  } 
+  }
+  const char *arg2_pstr = (const char *)jenv->GetStringUTFChars(jarg2, 0); 
+  if (!arg2_pstr) return ;
+  std::string arg2_str(arg2_pstr);
+  arg2 = &arg2_str;
+  jenv->ReleaseStringUTFChars(jarg2, arg2_pstr); 
   temp3 = (double)jarg3; 
   arg3 = &temp3; 
   (arg1)->setValue((std::string const &)*arg2,(double const &)*arg3);
 }
 
 
-SWIGEXPORT void JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_Config_1setValue_1_1SWIG_13(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jstring jarg3) {
+SWIGEXPORT void JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_Config_1setValue_1_1SWIG_13(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2, jstring jarg3) {
   Config *arg1 = (Config *) 0 ;
   std::string *arg2 = 0 ;
   char *arg3 = (char *) 0 ;
@@ -788,11 +862,15 @@ SWIGEXPORT void JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_Config_1setVa
   (void)jcls;
   (void)jarg1_;
   arg1 = *(Config **)&jarg1; 
-  arg2 = *(std::string **)&jarg2;
-  if (!arg2) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "std::string const & reference is null");
+  if(!jarg2) {
+    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "null string");
     return ;
-  } 
+  }
+  const char *arg2_pstr = (const char *)jenv->GetStringUTFChars(jarg2, 0); 
+  if (!arg2_pstr) return ;
+  std::string arg2_str(arg2_pstr);
+  arg2 = &arg2_str;
+  jenv->ReleaseStringUTFChars(jarg2, arg2_pstr); 
   arg3 = 0;
   if (jarg3) {
     arg3 = (char *)jenv->GetStringUTFChars(jarg3, 0);
@@ -800,29 +878,6 @@ SWIGEXPORT void JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_Config_1setVa
   }
   (arg1)->setValue((std::string const &)*arg2,(char const *)arg3);
   if (arg3) jenv->ReleaseStringUTFChars(jarg3, (const char *)arg3);
-}
-
-
-SWIGEXPORT void JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_Config_1setValue_1_1SWIG_14(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jlong jarg3) {
-  Config *arg1 = (Config *) 0 ;
-  std::string *arg2 = 0 ;
-  std::string *arg3 = 0 ;
-  
-  (void)jenv;
-  (void)jcls;
-  (void)jarg1_;
-  arg1 = *(Config **)&jarg1; 
-  arg2 = *(std::string **)&jarg2;
-  if (!arg2) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "std::string const & reference is null");
-    return ;
-  } 
-  arg3 = *(std::string **)&jarg3;
-  if (!arg3) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "std::string const & reference is null");
-    return ;
-  } 
-  (arg1)->setValue((std::string const &)*arg2,(std::string const &)*arg3);
 }
 
 
@@ -1229,7 +1284,7 @@ SWIGEXPORT void JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_ChannelImplMa
 }
 
 
-SWIGEXPORT jlong JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_ChannelImplManager_1channelImpl(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2) {
+SWIGEXPORT jlong JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_ChannelImplManager_1channelImpl(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2) {
   jlong jresult = 0 ;
   Camera::ChannelImplManager *arg1 = (Camera::ChannelImplManager *) 0 ;
   std::string *arg2 = 0 ;
@@ -1239,11 +1294,15 @@ SWIGEXPORT jlong JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_ChannelImplM
   (void)jcls;
   (void)jarg1_;
   arg1 = *(Camera::ChannelImplManager **)&jarg1; 
-  arg2 = *(std::string **)&jarg2;
-  if (!arg2) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "std::string const & reference is null");
+  if(!jarg2) {
+    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "null string");
     return 0;
-  } 
+  }
+  const char *arg2_pstr = (const char *)jenv->GetStringUTFChars(jarg2, 0); 
+  if (!arg2_pstr) return 0;
+  std::string arg2_str(arg2_pstr);
+  arg2 = &arg2_str;
+  jenv->ReleaseStringUTFChars(jarg2, arg2_pstr); 
   result = (Camera::ChannelImpl *)(arg1)->channelImpl((std::string const &)*arg2);
   *(Camera::ChannelImpl **)&jresult = result; 
   return jresult;
@@ -1289,7 +1348,7 @@ SWIGEXPORT void JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_DefaultChanne
 }
 
 
-SWIGEXPORT jlong JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_DefaultChannelImplManager_1channelImpl(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2) {
+SWIGEXPORT jlong JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_DefaultChannelImplManager_1channelImpl(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2) {
   jlong jresult = 0 ;
   Camera::DefaultChannelImplManager *arg1 = (Camera::DefaultChannelImplManager *) 0 ;
   std::string *arg2 = 0 ;
@@ -1299,11 +1358,15 @@ SWIGEXPORT jlong JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_DefaultChann
   (void)jcls;
   (void)jarg1_;
   arg1 = *(Camera::DefaultChannelImplManager **)&jarg1; 
-  arg2 = *(std::string **)&jarg2;
-  if (!arg2) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "std::string const & reference is null");
+  if(!jarg2) {
+    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "null string");
     return 0;
-  } 
+  }
+  const char *arg2_pstr = (const char *)jenv->GetStringUTFChars(jarg2, 0); 
+  if (!arg2_pstr) return 0;
+  std::string arg2_str(arg2_pstr);
+  arg2 = &arg2_str;
+  jenv->ReleaseStringUTFChars(jarg2, arg2_pstr); 
   result = (Camera::ChannelImpl *)(arg1)->channelImpl((std::string const &)*arg2);
   *(Camera::ChannelImpl **)&jresult = result; 
   return jresult;
@@ -1401,96 +1464,108 @@ SWIGEXPORT void JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_Channel_1setC
 }
 
 
-SWIGEXPORT jlong JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_ConfigPath_1extension(JNIEnv *jenv, jclass jcls) {
-  jlong jresult = 0 ;
+SWIGEXPORT jstring JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_ConfigPath_1extension(JNIEnv *jenv, jclass jcls) {
+  jstring jresult = 0 ;
   std::string result;
   
   (void)jenv;
   (void)jcls;
   result = Camera::ConfigPath::extension();
-  *(std::string **)&jresult = new std::string((const std::string &)result); 
+  jresult = jenv->NewStringUTF((&result)->c_str()); 
   return jresult;
 }
 
 
-SWIGEXPORT void JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_ConfigPath_1setBasePath(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+SWIGEXPORT void JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_ConfigPath_1setBasePath(JNIEnv *jenv, jclass jcls, jstring jarg1) {
   std::string *arg1 = 0 ;
   
   (void)jenv;
   (void)jcls;
-  arg1 = *(std::string **)&jarg1;
-  if (!arg1) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "std::string const & reference is null");
+  if(!jarg1) {
+    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "null string");
     return ;
-  } 
+  }
+  const char *arg1_pstr = (const char *)jenv->GetStringUTFChars(jarg1, 0); 
+  if (!arg1_pstr) return ;
+  std::string arg1_str(arg1_pstr);
+  arg1 = &arg1_str;
+  jenv->ReleaseStringUTFChars(jarg1, arg1_pstr); 
   Camera::ConfigPath::setBasePath((std::string const &)*arg1);
 }
 
 
-SWIGEXPORT jlong JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_ConfigPath_1path_1_1SWIG_10(JNIEnv *jenv, jclass jcls, jlong jarg1) {
-  jlong jresult = 0 ;
+SWIGEXPORT jstring JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_ConfigPath_1path_1_1SWIG_10(JNIEnv *jenv, jclass jcls, jstring jarg1) {
+  jstring jresult = 0 ;
   std::string *arg1 = 0 ;
   std::string result;
   
   (void)jenv;
   (void)jcls;
-  arg1 = *(std::string **)&jarg1;
-  if (!arg1) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "std::string const & reference is null");
+  if(!jarg1) {
+    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "null string");
     return 0;
-  } 
+  }
+  const char *arg1_pstr = (const char *)jenv->GetStringUTFChars(jarg1, 0); 
+  if (!arg1_pstr) return 0;
+  std::string arg1_str(arg1_pstr);
+  arg1 = &arg1_str;
+  jenv->ReleaseStringUTFChars(jarg1, arg1_pstr); 
   result = Camera::ConfigPath::path((std::string const &)*arg1);
-  *(std::string **)&jresult = new std::string((const std::string &)result); 
+  jresult = jenv->NewStringUTF((&result)->c_str()); 
   return jresult;
 }
 
 
-SWIGEXPORT jlong JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_ConfigPath_1path_1_1SWIG_11(JNIEnv *jenv, jclass jcls) {
-  jlong jresult = 0 ;
+SWIGEXPORT jstring JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_ConfigPath_1path_1_1SWIG_11(JNIEnv *jenv, jclass jcls) {
+  jstring jresult = 0 ;
   std::string result;
   
   (void)jenv;
   (void)jcls;
   result = Camera::ConfigPath::path();
-  *(std::string **)&jresult = new std::string((const std::string &)result); 
+  jresult = jenv->NewStringUTF((&result)->c_str()); 
   return jresult;
 }
 
 
-SWIGEXPORT jlong JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_ConfigPath_1defaultPath(JNIEnv *jenv, jclass jcls) {
-  jlong jresult = 0 ;
+SWIGEXPORT jstring JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_ConfigPath_1defaultPath(JNIEnv *jenv, jclass jcls) {
+  jstring jresult = 0 ;
   std::string result;
   
   (void)jenv;
   (void)jcls;
   result = Camera::ConfigPath::defaultPath();
-  *(std::string **)&jresult = new std::string((const std::string &)result); 
+  jresult = jenv->NewStringUTF((&result)->c_str()); 
   return jresult;
 }
 
 
-SWIGEXPORT jlong JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_ConfigPath_1defaultConfigPath(JNIEnv *jenv, jclass jcls) {
-  jlong jresult = 0 ;
+SWIGEXPORT jstring JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_ConfigPath_1defaultConfigPath(JNIEnv *jenv, jclass jcls) {
+  jstring jresult = 0 ;
   std::string result;
   
   (void)jenv;
   (void)jcls;
   result = Camera::ConfigPath::defaultConfigPath();
-  *(std::string **)&jresult = new std::string((const std::string &)result); 
+  jresult = jenv->NewStringUTF((&result)->c_str()); 
   return jresult;
 }
 
 
-SWIGEXPORT void JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_ConfigPath_1setDefaultConfigPath(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+SWIGEXPORT void JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_ConfigPath_1setDefaultConfigPath(JNIEnv *jenv, jclass jcls, jstring jarg1) {
   std::string *arg1 = 0 ;
   
   (void)jenv;
   (void)jcls;
-  arg1 = *(std::string **)&jarg1;
-  if (!arg1) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "std::string const & reference is null");
+  if(!jarg1) {
+    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "null string");
     return ;
-  } 
+  }
+  const char *arg1_pstr = (const char *)jenv->GetStringUTFChars(jarg1, 0); 
+  if (!arg1_pstr) return ;
+  std::string arg1_str(arg1_pstr);
+  arg1 = &arg1_str;
+  jenv->ReleaseStringUTFChars(jarg1, arg1_pstr); 
   Camera::ConfigPath::setDefaultConfigPath((std::string const &)*arg1);
 }
 
@@ -2877,6 +2952,204 @@ SWIGEXPORT void JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_delete_1Objec
   (void)jenv;
   (void)jcls;
   arg1 = *(std::vector< Camera::Object > **)&jarg1; 
+  delete arg1;
+}
+
+
+SWIGEXPORT jlong JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_new_1ConfigMap_1_1SWIG_10(JNIEnv *jenv, jclass jcls) {
+  jlong jresult = 0 ;
+  std::map< std::string,std::string > *result = 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  result = (std::map< std::string,std::string > *)new std::map< std::string,std::string >();
+  *(std::map< std::string,std::string > **)&jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT jlong JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_new_1ConfigMap_1_1SWIG_11(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+  jlong jresult = 0 ;
+  std::map< std::string,std::string > *arg1 = 0 ;
+  std::map< std::string,std::string > *result = 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(std::map< std::string,std::string > **)&jarg1;
+  if (!arg1) {
+    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "std::map< std::string,std::string > const & reference is null");
+    return 0;
+  } 
+  result = (std::map< std::string,std::string > *)new std::map< std::string,std::string >((std::map< std::string,std::string > const &)*arg1);
+  *(std::map< std::string,std::string > **)&jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT jlong JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_ConfigMap_1size(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+  jlong jresult = 0 ;
+  std::map< std::string,std::string > *arg1 = (std::map< std::string,std::string > *) 0 ;
+  unsigned int result;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(std::map< std::string,std::string > **)&jarg1; 
+  result = (unsigned int)((std::map< std::string,std::string > const *)arg1)->size();
+  jresult = (jlong)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT jboolean JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_ConfigMap_1empty(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+  jboolean jresult = 0 ;
+  std::map< std::string,std::string > *arg1 = (std::map< std::string,std::string > *) 0 ;
+  bool result;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(std::map< std::string,std::string > **)&jarg1; 
+  result = (bool)((std::map< std::string,std::string > const *)arg1)->empty();
+  jresult = (jboolean)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_ConfigMap_1clear(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+  std::map< std::string,std::string > *arg1 = (std::map< std::string,std::string > *) 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(std::map< std::string,std::string > **)&jarg1; 
+  (arg1)->clear();
+}
+
+
+SWIGEXPORT jstring JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_ConfigMap_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2) {
+  jstring jresult = 0 ;
+  std::map< std::string,std::string > *arg1 = (std::map< std::string,std::string > *) 0 ;
+  std::string *arg2 = 0 ;
+  std::string *result = 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(std::map< std::string,std::string > **)&jarg1; 
+  if(!jarg2) {
+    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "null string");
+    return 0;
+  }
+  const char *arg2_pstr = (const char *)jenv->GetStringUTFChars(jarg2, 0); 
+  if (!arg2_pstr) return 0;
+  std::string arg2_str(arg2_pstr);
+  arg2 = &arg2_str;
+  jenv->ReleaseStringUTFChars(jarg2, arg2_pstr); 
+  try {
+    result = (std::string *) &std_map_Sl_std_string_Sc_std_string_Sg__get(arg1,(std::string const &)*arg2);
+  }
+  catch(std::out_of_range &_e) {
+    SWIG_JavaThrowException(jenv, SWIG_JavaIndexOutOfBoundsException, (&_e)->what());
+    return 0;
+  }
+  
+  jresult = jenv->NewStringUTF(result->c_str()); 
+  return jresult;
+}
+
+
+SWIGEXPORT void JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_ConfigMap_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2, jstring jarg3) {
+  std::map< std::string,std::string > *arg1 = (std::map< std::string,std::string > *) 0 ;
+  std::string *arg2 = 0 ;
+  std::string *arg3 = 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(std::map< std::string,std::string > **)&jarg1; 
+  if(!jarg2) {
+    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "null string");
+    return ;
+  }
+  const char *arg2_pstr = (const char *)jenv->GetStringUTFChars(jarg2, 0); 
+  if (!arg2_pstr) return ;
+  std::string arg2_str(arg2_pstr);
+  arg2 = &arg2_str;
+  jenv->ReleaseStringUTFChars(jarg2, arg2_pstr); 
+  if(!jarg3) {
+    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "null string");
+    return ;
+  }
+  const char *arg3_pstr = (const char *)jenv->GetStringUTFChars(jarg3, 0); 
+  if (!arg3_pstr) return ;
+  std::string arg3_str(arg3_pstr);
+  arg3 = &arg3_str;
+  jenv->ReleaseStringUTFChars(jarg3, arg3_pstr); 
+  std_map_Sl_std_string_Sc_std_string_Sg__set(arg1,(std::string const &)*arg2,(std::string const &)*arg3);
+}
+
+
+SWIGEXPORT void JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_ConfigMap_1del(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2) {
+  std::map< std::string,std::string > *arg1 = (std::map< std::string,std::string > *) 0 ;
+  std::string *arg2 = 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(std::map< std::string,std::string > **)&jarg1; 
+  if(!jarg2) {
+    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "null string");
+    return ;
+  }
+  const char *arg2_pstr = (const char *)jenv->GetStringUTFChars(jarg2, 0); 
+  if (!arg2_pstr) return ;
+  std::string arg2_str(arg2_pstr);
+  arg2 = &arg2_str;
+  jenv->ReleaseStringUTFChars(jarg2, arg2_pstr); 
+  try {
+    std_map_Sl_std_string_Sc_std_string_Sg__del(arg1,(std::string const &)*arg2);
+  }
+  catch(std::out_of_range &_e) {
+    SWIG_JavaThrowException(jenv, SWIG_JavaIndexOutOfBoundsException, (&_e)->what());
+    return ;
+  }
+  
+}
+
+
+SWIGEXPORT jboolean JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_ConfigMap_1has_1key(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jstring jarg2) {
+  jboolean jresult = 0 ;
+  std::map< std::string,std::string > *arg1 = (std::map< std::string,std::string > *) 0 ;
+  std::string *arg2 = 0 ;
+  bool result;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(std::map< std::string,std::string > **)&jarg1; 
+  if(!jarg2) {
+    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "null string");
+    return 0;
+  }
+  const char *arg2_pstr = (const char *)jenv->GetStringUTFChars(jarg2, 0); 
+  if (!arg2_pstr) return 0;
+  std::string arg2_str(arg2_pstr);
+  arg2 = &arg2_str;
+  jenv->ReleaseStringUTFChars(jarg2, arg2_pstr); 
+  result = (bool)std_map_Sl_std_string_Sc_std_string_Sg__has_key(arg1,(std::string const &)*arg2);
+  jresult = (jboolean)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_delete_1ConfigMap(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+  std::map< std::string,std::string > *arg1 = (std::map< std::string,std::string > *) 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  arg1 = *(std::map< std::string,std::string > **)&jarg1; 
   delete arg1;
 }
 

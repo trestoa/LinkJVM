@@ -37,6 +37,8 @@
 %}
 
 %include "std_vector.i"
+%include "std_map.i"
+%include "std_string.i"
 %include "typemaps.i"
 %include "stdint.i"
 %apply uint16_t *OUTPUT { uint16_t *const data }
@@ -537,7 +539,7 @@ class DepthDriver
 
 %template(ChannelVector) std::vector<Camera::Channel*>;
 %template(ObjectVector) std::vector<Camera::Object>;
-
+%template(ConfigMap) std::map<std::string, std::string>;
 %template(IntPoint2) Point2<unsigned int>;
 %template(IntRectangle) Rect<unsigned int>;
 %template(IntPoint3) Point3<int32_t>;

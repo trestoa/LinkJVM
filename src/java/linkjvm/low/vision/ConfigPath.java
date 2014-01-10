@@ -35,32 +35,32 @@ public class ConfigPath {
     }
   }
 
-  public static SWIGTYPE_p_std__string extension() {
-    return new SWIGTYPE_p_std__string(linkjvm_visionJNI.ConfigPath_extension(), true);
+  public static String extension() {
+    return linkjvm_visionJNI.ConfigPath_extension();
   }
 
-  public static void setBasePath(SWIGTYPE_p_std__string path) {
-    linkjvm_visionJNI.ConfigPath_setBasePath(SWIGTYPE_p_std__string.getCPtr(path));
+  public static void setBasePath(String path) {
+    linkjvm_visionJNI.ConfigPath_setBasePath(path);
   }
 
-  public static SWIGTYPE_p_std__string path(SWIGTYPE_p_std__string name) {
-    return new SWIGTYPE_p_std__string(linkjvm_visionJNI.ConfigPath_path__SWIG_0(SWIGTYPE_p_std__string.getCPtr(name)), true);
+  public static String path(String name) {
+    return linkjvm_visionJNI.ConfigPath_path__SWIG_0(name);
   }
 
-  public static SWIGTYPE_p_std__string path() {
-    return new SWIGTYPE_p_std__string(linkjvm_visionJNI.ConfigPath_path__SWIG_1(), true);
+  public static String path() {
+    return linkjvm_visionJNI.ConfigPath_path__SWIG_1();
   }
 
-  public static SWIGTYPE_p_std__string defaultPath() {
-    return new SWIGTYPE_p_std__string(linkjvm_visionJNI.ConfigPath_defaultPath(), true);
+  public static String defaultPath() {
+    return linkjvm_visionJNI.ConfigPath_defaultPath();
   }
 
-  public static SWIGTYPE_p_std__string defaultConfigPath() {
-    return new SWIGTYPE_p_std__string(linkjvm_visionJNI.ConfigPath_defaultConfigPath(), true);
+  public static String defaultConfigPath() {
+    return linkjvm_visionJNI.ConfigPath_defaultConfigPath();
   }
 
-  public static void setDefaultConfigPath(SWIGTYPE_p_std__string name) {
-    linkjvm_visionJNI.ConfigPath_setDefaultConfigPath(SWIGTYPE_p_std__string.getCPtr(name));
+  public static void setDefaultConfigPath(String name) {
+    linkjvm_visionJNI.ConfigPath_setDefaultConfigPath(name);
   }
 
   public ConfigPath() {
