@@ -21,6 +21,7 @@ set(JAVA_SRC
 	${JAVA_SRC_DIR}/linkjvm/high/sensors/buttons/*.java
 	${JAVA_SRC_DIR}/linkjvm/high/sensors/digital/*.java
 	${JAVA_SRC_DIR}/linkjvm/high/sensors/*.java
+	${JAVA_SRC_DIR}/linkjvm/high/vision/*.java
 	${JAVA_SRC_DIR}/linkjvm/low/accel/*.java
 	${JAVA_SRC_DIR}/linkjvm/low/analog/*.java
 	${JAVA_SRC_DIR}/linkjvm/low/buttons/*.java
