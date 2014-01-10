@@ -105,17 +105,12 @@ public class ImageProcessor {
 		return toHighRectangle(jniRectangle);
 	}
 	
-	private Point2 toHighPoint(IntPoint2 point){
-		IntPoint2 jniPoint = point;
-		Point2 ret = new Point2(jniPoint.x(), jniPoint.y()); 
-		jniPoint.delete();
-		return ret;
+	private Point2 toHighPoint(IntPoint2 jniPoint){ 
+		return new Point2(jniPoint.x(), jniPoint.y());
 	}
 	
-	private Rectangle toHighRectangle(IntRectangle rect){
-		IntRectangle jniRectangle = rect;
+	private Rectangle toHighRectangle(IntRectangle jniRectangle){
 		Rectangle ret = new Rectangle(jniRectangle.width(), jniRectangle.height(), jniRectangle.x(), jniRectangle.y(), toHighPoint(jniRectangle.center()));
-		jniRectangle.delete();
 		return ret;
 	}
 }
