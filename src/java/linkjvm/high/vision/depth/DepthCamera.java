@@ -91,8 +91,21 @@ public class DepthCamera {
 		}
 	}
 	
+	/**
+	 * 
+	 * @return
+	 */
 	public boolean isOpen(){
 		return jniDepthCamera.isOpen();
-	}	
+	}
+	
+	/**
+	 * 
+	 * @return
+	 */
+	public DepthImage getImage(){
+		return new DepthImage(jniDepthCamera.depthImage());
+	}
+
 	
 }
