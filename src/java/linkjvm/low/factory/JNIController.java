@@ -43,6 +43,7 @@ public class JNIController implements Runnable{
 	private final MotorFactory motorFactory;
 	private final ServoFactory servoFactory;
 	private final CameraFactory cameraFactory;
+	private final DepthFactory depthFactory;
 	
 	private volatile boolean stopCleanup = false;
 	
@@ -60,6 +61,7 @@ public class JNIController implements Runnable{
 		motorFactory = new MotorFactory();
 		servoFactory = new ServoFactory();
 		cameraFactory = new CameraFactory();
+		depthFactory = new DepthFactory();
 		
 		createFactory = new CreateFactory();
 		cleanupThread = new Thread(this);
@@ -159,7 +161,15 @@ public class JNIController implements Runnable{
 		return servoFactory;
 	}
 	
+	/**
+	 * 
+	 * @return
+	 */
 	public CameraFactory getCameraFactory(){
 		return cameraFactory;
+	}
+	
+	public DepthFactory getDepthFactory(){
+		return depthFactory;
 	}
 }
