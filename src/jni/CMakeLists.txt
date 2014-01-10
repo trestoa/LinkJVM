@@ -5,7 +5,7 @@ add_library(linkjvmjni SHARED
 	analog_wrap.cxx
 	battery_wrap.cxx
 	datalog_wrap.cxx
-	camera_wrap.cxx
+	vision_wrap.cxx
 	console_wrap.cxx
 	create_wrap.cxx
 	ir_wrap.cxx
