@@ -1,13 +1,13 @@
 package linkjvm.low.factory;
 
+import linkjvm.high.vision.CameraConfig;
 import linkjvm.low.vision.Device;
-import linkjvm.low.vision.InputProvider;
 
-public class CameraFactory extends AbstractMultiton<InputProvider, Device>{
+public class CameraFactory extends AbstractMultiton<CameraConfig, Device>{
 
 	@Override
-	protected Device getNewConcreteInstance(InputProvider uniqueIdentifier) {
-		return new Device(uniqueIdentifier);
+	protected Device getNewConcreteInstance(CameraConfig uniqueIdentifier) {
+		return new Device(uniqueIdentifier.getInputProvider());
 	}
 
 }
