@@ -10,7 +10,6 @@ add_library(linkjvmjni SHARED
 	create_wrap.cxx
 	ir_wrap.cxx
 	digital_wrap.cxx
-	geom_wrap.cxx
 	motors_wrap.cxx
 	sensors_wrap.cxx
 	servo_wrap.cxx
