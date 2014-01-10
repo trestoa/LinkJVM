@@ -7,7 +7,7 @@ import linkjvm.low.vision.XtionDepthDriver;
  * @author Markus Klein
  *
  */
-public class DepthFactory {
+public class DepthFactory implements ISingleton<XtionDepthDriver>{
 	
 	/**
 	 * 
