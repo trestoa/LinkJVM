@@ -26,9 +26,6 @@
     #include "include/kovan/config.hpp"
 	#include "include/kovan/depth_exception.hpp"
     #include <cstring>
-    #include <string>
-    #include <vector>
-    #include <map>
     #include <iostream>
     #include <time.h>
     #include <opencv2/core/core.hpp>
@@ -36,13 +33,13 @@
 	#include <stdint.h>
 %}
 
+%ignore std::vector<Camera::Object>::vector(size_type); 
 %include "std_vector.i"
 %include "std_map.i"
 %include "std_string.i"
 %include "typemaps.i"
 %include "stdint.i"
 %apply uint16_t *OUTPUT { uint16_t *const data }
-
 typedef struct point2
 {
         int x;
