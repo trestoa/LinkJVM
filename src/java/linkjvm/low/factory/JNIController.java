@@ -68,8 +68,6 @@ public class JNIController implements Runnable{
 		createFactory = new CreateFactory();
 		depthFactory = new DepthFactory();
 		usbInputProviderFactory = new UsbInputProviderFactory();
-		
-		cleanupThread = new Thread(this);
 	}
 
 	@Override
@@ -97,7 +95,8 @@ public class JNIController implements Runnable{
 	 * 
 	 */
 	public void startCleanup(){
-		if(!cleanupThread.isAlive()){
+		if(cleanupThread != null && !cleanupThread.isAlive()){
+			cleanupThread = new Thread(this);
 			cleanupThread.start();
 		}
 	}
