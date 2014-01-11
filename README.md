@@ -17,10 +17,10 @@ Building LinkJVM from source is really complex, because it is embedded into KIRP
 You can download the latest image from my [fileserver](http://files.mklein.co.at/LinkJVM).
 
 ###Using LinkJVM-Installer
-Follow the instructions on the LinkJVM-Installer repository.
+Follow the instructions on the [LinkJVM-Installer](https://github.com/LinkJVM/LinkJVM-Installer) repository.
 
 ##Updating LinkJVM
-You can update LinkJVM with [LinkJVM-Updater](https://github.com/LinkJVM/LinkJVM-Updater.git).
+You can update LinkJVM with [LinkJVM-Updater](https://github.com/LinkJVM/LinkJVM-Updater).
 
 ##Authors and Contact
 + [Markus Klein](https://github.com/kleiinnn): Project Leader, Developer 
