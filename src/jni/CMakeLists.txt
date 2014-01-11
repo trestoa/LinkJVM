@@ -14,5 +14,4 @@ add_library(linkjvmjni SHARED
 	sensors_wrap.cxx
 	servo_wrap.cxx
 )
-SET_TARGET_PROPERTIES(linkjvmjni PROPERTIES LINKER_LANGUAGE C)
 target_link_libraries(linkjvmjni libkovan.so)

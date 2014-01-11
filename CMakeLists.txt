@@ -2,7 +2,7 @@ CMAKE_MINIMUM_REQUIRED(VERSION 2.8.2)
 FIND_PACKAGE(Java)
 INCLUDE(./cmake/UseJava.cmake)
 
-PROJECT(LinkJVM Java C)
+PROJECT(LinkJVM Java C CXX)
 
 set(JAVA_SRC_DIR src/java)
 set(JAVA_SRC
