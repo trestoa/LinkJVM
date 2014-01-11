@@ -1,37 +1,37 @@
 #LinkJVM 
-*THIS BRANCH IS ONLY FOR BUILDING LINKJVM USING THE KOVAN BUILD SYSTEM.*
-*DO NOT USE IT FOR INSTALLING AND BUILDING LINKJVM ON YOUR LINK!!!*    
-*Please change to the no-bitbake for installing LinkJVM*
-##Java on the KIPR Link
+Java on the KIPR Link
 
 
 ##About LinkJVM
-LinkJVM is a Java Environment of the [KIPR Link](http://www.kipr.org/products/link/) and allows the execution of very Java language and acually very JVM supported language such as Scala and Javascript (over [Rhino](https://developer.mozilla.org/en/docs/Rhino).
+LinkJVM is a Java Environment of the [KIPR Link](http://www.kipr.org/products/link/) and allows the execution of very Java language and acually very JVM supported language such as Scala and Javascript (over [Rhino](https://developer.mozilla.org/en/docs/Rhino)).
 
-##Java?
-####Why is the opportunity to program the robot in Java important?
-+ First, the most students in school get started in programming using Java, so they should be able to use the learned skills in botball.
-+ Java provides automatic garbage collection and an excellent set of basic data types like lists, maps and so on.
-+ Compared to C Java has a much better maintainability especially in very large libraries because of object orientation.
+##Getting LinkJVM
+###Building from Source
+Building LinkJVM from source is really complex, because it is embedded into KIRP Link´s build system, bitbake:
 
-####Isn´t Java much slower than C?
-+ No, not much. Of course is Java slower the C, but not that much. In another way: For normal usage it won´t make a difference.
++ First, you´ll need to [setup the build server](http://bmcdorman.github.io/link/2013/06/13/build-server.html).
++ Add the linkjvm-metalayer [meta-linkjvm](https://github.com/LinkJVM/meta-linkjvm) to the buildserver.
++ Build LinkJVM 
 
-####So are there Benchmarks?
-+ No, I have not had the time to generate benchmark for LinkJVM yet, but I plan to make one.
+###Download an Firmware-Image with LinkJVM
+You can download the latest image from my [fileserver](http://files.mklein.co.at/LinkJVM).
 
-##Installing LinkJVM
-Basically there are two different ways to install LinkJVM:
+###Using LinkJVM-Installer
+Follow the instructions on the [LinkJVM-Installer](https://github.com/LinkJVM/LinkJVM-Installer) repository.
 
+##Updating LinkJVM
+You can update LinkJVM with [LinkJVM-Updater](https://github.com/LinkJVM/LinkJVM-Updater).
 
-##Author and Contact
-[Markus Klein](https://mklein.co.at)
+##Authors and Contact
++ [Markus Klein](https://github.com/kleiinnn): Project Leader, Developer 
++ Chistoph Hackenberger: Developer
++ Klaus Ableitinger: Developer
 
 ##License 
 This file is part of LinkJVM.
 
 Java Framework for the KIPR Link
-Copyright (C) 2013 Markus Klein m@mklein.co.at
+Copyright (C) 2014 LinkJVM
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
