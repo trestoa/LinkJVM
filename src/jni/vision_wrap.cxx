@@ -246,7 +246,7 @@ static void SWIGUNUSED SWIG_JavaThrowException(JNIEnv *jenv, SWIG_JavaExceptionC
 
 
         typedef unsigned int size_t;
-    
+     	typedef std::vector<Object> ObjectVector;
 
 	typedef enum DepthResolution_
 	{
