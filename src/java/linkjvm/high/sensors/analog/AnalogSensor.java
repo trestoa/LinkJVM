@@ -26,8 +26,8 @@ import linkjvm.low.analog.Analog8;
 import linkjvm.low.factory.JNIController;
 
 /**
- * @author Markus Klein
  * This class represents an analog sensor.
+ * @author Markus Klein
  * @version 2.0.0
  * @since 2.0.0
  */

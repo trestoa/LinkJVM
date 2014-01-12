@@ -21,10 +21,10 @@
 package linkjvm.high.sensors.digital;
 
 /**
+ * This interface contains all required methods of an digital sensor.
  * @author Markus Klein
  * @version 2.0.0
  * @since 2.0.0
- * This interface contains all required methods of an digital sensor.
  */
 public interface IDigitalSensor {
 	/**

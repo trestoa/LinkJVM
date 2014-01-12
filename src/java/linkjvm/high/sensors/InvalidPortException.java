@@ -21,10 +21,11 @@
 package linkjvm.high.sensors;
 
 /**
+ * This class provides the InvalidPortException which should be thrown, 
+ * when the a specified port does not exist.
  * @since 2.0.0
  * @version 2.0.0
  * @author Markus Klein
- * This class provides the InvalidPortException which should be throwen, when the a specified port does not exist.
  */
 public class InvalidPortException extends Exception{
 	

@@ -65,7 +65,7 @@ public class AccelerationSensor implements IAnalogSensor{
 	
 	/**
 	 * Returns the current sensor value.
-	 * @return
+	 * @return sensor value
 	 */
 	@Override
 	public int getValue() {

@@ -24,12 +24,10 @@ import linkjvm.high.sensors.InvalidPortException;
 import linkjvm.low.factory.JNIController;
 
 /**
- * 
+ * Represents a motor object with a given port.
  * @author Markus Klein
  * @version 2.0.0
  * @since 2.0.0
- *
- * Represents a Motor object with a given port.
  */
 public class Motor {
 	

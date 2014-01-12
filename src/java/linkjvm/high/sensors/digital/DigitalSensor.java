@@ -25,10 +25,10 @@ import linkjvm.low.Digital;
 import linkjvm.low.factory.JNIController;
 
 /**
+ * An instance of this class is used to control one digital sensor on the specified sensor port.
  * @author Markus Klein
  * @since 2.0.0
  * @version 2.0.0
- * An instance of this class is used to control one digital sensor on the specified sensor port.
  */
 public class DigitalSensor implements IDigitalSensor{
 	private volatile Digital jniSensor;

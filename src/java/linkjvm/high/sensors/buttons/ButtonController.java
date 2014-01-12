@@ -30,29 +30,30 @@ import linkjvm.low.buttons.ExtraButtons;
  */
 public class ButtonController {	
 	/**
-	 * 
+	 * shows the extra buttons
 	 */
 	public static void showExtraButtons(){
 		ExtraButtons.show();
 	}
 	
 	/**
-	 * 
+	 * hides the extra buttons
 	 */
 	public static void hideExtraButtons(){
 		ExtraButtons.hide();
 	}
 	
 	/**
-	 * 
-	 * @return
+	 * Returns if the extra buttons are shown.
+	 * @return <code>true</code> if the extra buttons are shown, <code>false</code> if not
 	 */
 	public static boolean getExtraButtonsShown(){
 		return ExtraButtons.isShown();
 	}
 	
 	/**
-	 * @param shown
+	 * Sets the extra buttons shown
+	 * @param shown if the extra buttons should be shown
 	 */
 	public static void setExtraButtonsDhown(boolean shown){
 		ExtraButtons.setShown(shown);
