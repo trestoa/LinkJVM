@@ -43,7 +43,7 @@ public class Servo {
 	}
 	
 	/**
-	 * Sets the servo«s port.
+	 * Sets the servo's port.
 	 * @param port port
 	 * @throws InvalidPortException
 	 */
@@ -55,7 +55,7 @@ public class Servo {
 	}
 	
 	/**
-	 * Sets the servo«s position.
+	 * Sets the servo's position.
 	 * @param pos position
 	 */
 	public void setPosition(int pos){

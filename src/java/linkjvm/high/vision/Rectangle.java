@@ -52,7 +52,7 @@ public class Rectangle {
 	}
 
 	/**
-	 * Returns the rectangle«s width.
+	 * Returns the rectangle's width.
 	 * @return width
 	 */
 	public synchronized long getWidth() {
@@ -60,7 +60,7 @@ public class Rectangle {
 	}
 
 	/**
-	 * Sets the rectangle«s width.
+	 * Sets the rectangle's width.
 	 * @param width width
 	 */
 	public synchronized void setWidth(long width) {
@@ -68,7 +68,7 @@ public class Rectangle {
 	}
 
 	/**
-	 * Returns the rectangle«s Height.
+	 * Returns the rectangle's Height.
 	 * @return height
 	 */
 	public synchronized long getHeight() {
@@ -76,7 +76,7 @@ public class Rectangle {
 	}
 
 	/**
-	 * Sets the rectangle«s height.
+	 * Sets the rectangle's height.
 	 * @param height height
 	 */
 	public synchronized void setHeight(long height) {
@@ -84,7 +84,7 @@ public class Rectangle {
 	}
 	
 	/**
-	 * Returns the rectangle«s x position.
+	 * Returns the rectangle's x position.
 	 * @return x position
 	 */
 	public synchronized long getX() {
@@ -92,7 +92,7 @@ public class Rectangle {
 	}
 
 	/**
-	 * Sets the rectangle«s x position.
+	 * Sets the rectangle's x position.
 	 * @param x x position
 	 */
 	public synchronized void setX(long x) {
@@ -100,7 +100,7 @@ public class Rectangle {
 	}
 
 	/**
-	 * Returns the rectangle«s y position.
+	 * Returns the rectangle's y position.
 	 * @return y position
 	 */
 	public synchronized long getY() {
@@ -108,7 +108,7 @@ public class Rectangle {
 	}
 
 	/**
-	 * Sets the rectangle«s y position.
+	 * Sets the rectangle's y position.
 	 * @param y y position
 	 */
 	public synchronized void setY(long y) {
@@ -116,7 +116,7 @@ public class Rectangle {
 	}
 
 	/**
-	 * Returns the rectangle«s center position.
+	 * Returns the rectangle's center position.
 	 * @return center point
 	 */
 	public synchronized Point2 getCenter() {
@@ -124,7 +124,7 @@ public class Rectangle {
 	}
 
 	/**
-	 * Sets the rectangle«s center position.
+	 * Sets the rectangle's center position.
 	 * @param center center point
 	 */
 	public synchronized void setCenter(Point2 center) {

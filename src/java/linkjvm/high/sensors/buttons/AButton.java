@@ -24,7 +24,7 @@ import linkjvm.low.buttons.IdButton;
 import linkjvm.low.buttons.linkjvm_buttons;
 
 /**
- * This class reprsents the KIPR Link«s a button
+ * This class reprsents the KIPR Link's a button
  * @author Markus Klein
  * @version 2.0.0
  * @since 2.0.0

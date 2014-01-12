@@ -27,7 +27,7 @@ import linkjvm.low.factory.JNIController;
 import linkjvm.low.factory.AccelerationFactory;
 
 /**
- * An object of this class is used to access the KIPR Link«s acceleration sensors.
+ * An object of this class is used to access the KIPR Link's acceleration sensors.
  * @author Markus Klein
  * @version 2.0.0
  * @since 2.0.0
@@ -81,7 +81,7 @@ public class AccelerationSensor implements IAnalogSensor{
 	}
 	
 	/**
-	 * Returns the sensor«s axis.
+	 * Returns the sensor's axis.
 	 * @return axis
 	 */
 	public Axis getAxis(){
@@ -89,7 +89,7 @@ public class AccelerationSensor implements IAnalogSensor{
 	}
 	
 	/**
-	 * Sets the sensor«s axis.
+	 * Sets the sensor's axis.
 	 * @param axis 
 	 */
 	public void setAxis(Axis axis){

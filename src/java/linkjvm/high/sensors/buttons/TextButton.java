@@ -21,7 +21,7 @@
 package linkjvm.high.sensors.buttons;
 
 /**
- * If an button implements this interface, it is able to change it«s text.
+ * If an button implements this interface, it is able to change it's text.
  * @author Markus Klein
  * 
  */

@@ -80,9 +80,9 @@ public class ImageProcessor {
 	
 	/**
 	 * Return the confidence of the object at the specified position.
-	 * The objects are sorted in descending order according it«s size.
-	 * @param object object«s position
-	 * @return the object«s confidence
+	 * The objects are sorted in descending order according it's size.
+	 * @param object object's position
+	 * @return the object's confidence
 	 */
 	public double getObjectConfidence(int object){
 		return jniDevice.channels().get(channel).objects().get(object).confidence();
@@ -90,8 +90,8 @@ public class ImageProcessor {
 	
 	/**
 	 * Return the object at the specified position.
-	 * The objects are sorted in descending order according it«s size.
-	 * @param object object«s position
+	 * The objects are sorted in descending order according it's size.
+	 * @param object object's position
 	 * @return the object
 	 */
 	public Object getObject(int object){
@@ -101,9 +101,9 @@ public class ImageProcessor {
 	
 	/**
 	 * Return the centroid of the object at the specified position.
-	 * The objects are sorted in descending order according it«s size.
-	 * @param object object«s position
-	 * @return the object«s centroid
+	 * The objects are sorted in descending order according it's size.
+	 * @param object object's position
+	 * @return the object's centroid
 	 */
 	public Point2 getCentroid(int object){
 		return toHighPoint(jniDevice.channels().get(channel).objects().get(object).centroid());
@@ -111,9 +111,9 @@ public class ImageProcessor {
 	
 	/**
 	 * Return the bounding box of the object at the specified position.
-	 * The objects are sorted in descending order according it«s size.
-	 * @param object object«s position
-	 * @return the object«s bouding box
+	 * The objects are sorted in descending order according it's size.
+	 * @param object object's position
+	 * @return the object's bounding box
 	 */
 	public Rectangle getBoundingBox(int object){
 		IntRectangle jniRectangle = jniDevice.channels().get(channel).objects().get(object).boundingBox();

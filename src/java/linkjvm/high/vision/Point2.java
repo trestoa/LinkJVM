@@ -42,28 +42,28 @@ public class Point2 {
 	}
 
 	/**
-	 * @return the point«s x coordinate
+	 * @return the point's x coordinate
 	 */
 	public synchronized long getX() {
 		return x;
 	}
 
 	/**
-	 * @param the point«s x coordinate
+	 * @param the point's x coordinate
 	 */
 	public synchronized void setX(long x) {
 		this.x = x;
 	}
 
 	/**
-	 * @return the point«s y coordinate
+	 * @return the point's y coordinate
 	 */
 	public synchronized long getY() {
 		return y;
 	}
 
 	/**
-	 * @param the point«s y coordinate
+	 * @param the point's y coordinate
 	 */
 	public synchronized void setY(long y) {
 		this.y = y;

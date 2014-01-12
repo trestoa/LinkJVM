@@ -39,7 +39,7 @@ public class AnalogSensor implements IAnalogSensor{
 
 	/**
 	 * Constructs a new analog sensor with at the specified port.
-	 * @param port the analog sensor«s port number
+	 * @param port the analog sensor's port number
 	 * @throws InvalidPortException
 	 */
 	public AnalogSensor(int port) throws InvalidPortException{
@@ -52,8 +52,8 @@ public class AnalogSensor implements IAnalogSensor{
 	}
 
 	/**
-	 * Returns the analog sensor«s current value as 10 bit number.
-	 * @return sensor«s current value as 10 bit number
+	 * Returns the analog sensor's current value as 10 bit number.
+	 * @return sensor's current value as 10 bit number
 	 */
 	@Override
 	public int getValue(){
@@ -62,22 +62,22 @@ public class AnalogSensor implements IAnalogSensor{
 	
 	/**
 	 * The same as <code>getValue()</code>.
-	 * @return sensor«s current value as 10 bit number
+	 * @return sensor's current value as 10 bit number
 	 */
 	public int getValue10(){
 		return getValue();
 	}
 
 	/**
-	 * Returns the analog sensor«s current value as 8 bit number.
-	 * @return sensor«s current value as 8 bit number
+	 * Returns the analog sensor's current value as 8 bit number.
+	 * @return sensor's current value as 8 bit number
 	 */
 	public int getValue8(){
 		return jniSensor8.value();
 	}
 
 	/**
-	 * Sets the sensor«s pullup.
+	 * Sets the sensor's pullup.
 	 * @param pullup pullup
 	 */
 	public void setPullup(boolean pullup){
@@ -102,7 +102,7 @@ public class AnalogSensor implements IAnalogSensor{
 	}
 
 	/**
-	 * Returns the sensor«s port.
+	 * Returns the sensor's port.
 	 * @return port
 	 */
 	public int getPort(){

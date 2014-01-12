@@ -41,7 +41,7 @@ public class DigitalSensor implements IDigitalSensor{
      * {@code DigitalSensor sensor = new DigitalSensor();
      * sensor.setPort(0);}
      * 
-	 * @param port the sensor«s port
+	 * @param port the sensor's port
 	 * @throws InvalidPortException
 	 */
 	public DigitalSensor(int port) throws InvalidPortException{
@@ -61,8 +61,8 @@ public class DigitalSensor implements IDigitalSensor{
 	}
 	
 	/**
-	 * Sets the sensor«s port.
-	 * @param port sensor«s port
+	 * Sets the sensor's port.
+	 * @param port sensor's port
 	 */
 	public void setPort(int port){
 		jniSensor = JNIController.getInstance().getDigitalFactory().getInstance(port);

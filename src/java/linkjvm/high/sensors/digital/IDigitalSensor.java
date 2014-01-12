@@ -28,7 +28,7 @@ package linkjvm.high.sensors.digital;
  */
 public interface IDigitalSensor {
 	/**
-	 * Return the sensor«s current value.
+	 * Return the sensor's current value.
 	 * @return sensor value
 	 */
 	public abstract boolean getValue();

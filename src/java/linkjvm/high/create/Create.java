@@ -34,7 +34,7 @@ public class Create {
 	/**
 	 * 
 	 * @author Markus Klein
-	 * This enum represents the create«s mode.
+	 * This enum represents the create's mode.
 	 * The different modes are:
 	 * <ul>
 	 * 	<li>Safe: The create will execute all command until the drop or cliff fire. Then it will stop.</li>
@@ -104,7 +104,7 @@ public class Create {
 	}
 	
 	/**
-	 * Sets the craete LEDs.
+	 * Sets the create LEDs.
 	 * @param advance if the advanced led should be on
 	 * @param play if the play led should be on
 	 * @param color the LEDs color
@@ -135,7 +135,7 @@ public class Create {
 	}
 	
 	/**
-	 * Causes the craete to drive streight at a specific speed.
+	 * Causes the create to drive streight at a specific speed.
 	 * @param speed velocity form -500 (full backward) to 500 (full forward)
 	 */
 	public void driveStraigth(int speed){
@@ -186,7 +186,7 @@ public class Create {
 	}
 	
 	/**
-	 * Causes to craete to spin clockwise.
+	 * Causes to create to spin clockwise.
 	 * @param speed speed
 	 */
 	public void spinClockwise(int speed){
@@ -194,7 +194,7 @@ public class Create {
 	}
 	
 	/**
-	 * Causes the craete to spin counterclockwise.
+	 * Causes the create to spin counterclockwise.
 	 * @param speed speed
 	 */
 	public void spinCounterClockwise(int speed){
@@ -202,7 +202,7 @@ public class Create {
 	}
 	
 	/**
-	 * Sets the craetes distance.
+	 * Sets the creates distance.
 	 * 
 	 * @param distance distance
 	 */
