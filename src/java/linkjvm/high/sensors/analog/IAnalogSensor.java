@@ -22,11 +22,14 @@ package linkjvm.high.sensors.analog;
 
 /**
  * @author Markus Klein
+ * @version 2.0.0
+ * @since 2.0.0
+ * This interface contains all required methods of an analog sensor.
  */
 public interface IAnalogSensor {
 	/**
-	 *
-	 * @return
+	 * Return the sensors current value.
+	 * @return sensors value
 	 */
 	public abstract int getValue();
 }
