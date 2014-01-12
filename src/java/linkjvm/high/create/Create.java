@@ -25,7 +25,8 @@ import linkjvm.low.factory.JNIController;
 /**
  * 
  * @author Markus Klein
- * 
+ * @version 2.0.0
+ * @since 2.0.0
  * An instance of this class is used to control the iRobot create.
  */
 public class Create {
@@ -40,6 +41,8 @@ public class Create {
 	 * 	<li>Full: Create will to everything and never stop even if cliff or drop fire.</li>
 	 * 	<li>Passive: Sets the create into the passive mode(no motors).</li>
 	 * </ul>
+	 * @version 2.0.0
+	 * @since 2.0.0
 	 */
 	public static enum Mode{
 		SAFE,
@@ -175,7 +178,7 @@ public class Create {
 	}
 	
 	/**
-	 * Return the angular velocity
+	 * Return the angular velocity.
 	 * @return angular velocity
 	 */
 	public int angularVelocity(){

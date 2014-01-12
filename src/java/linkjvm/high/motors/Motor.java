@@ -21,6 +21,7 @@
 package linkjvm.high.motors;
 
 import linkjvm.high.sensors.InvalidPortException;
+import linkjvm.low.buttons.linkjvm_buttons;
 import linkjvm.low.factory.JNIController;
 
 /**
@@ -163,6 +164,12 @@ public class Motor {
 		jniMotor = JNIController.getInstance().getMotorFactory().getInstance(port);
 	}
 	
+	/**
+	 * Sets the native motor object.
+	 * DO NOT USE THIS METHOD UNLESS TO KNOW WHAT YOU ARE DOING!
+	 * @see linkjvm.low.motors.Motor
+	 * @param jniMotor the native motor object
+	 */
 	void setJniMotor(linkjvm.low.motors.Motor jniMotor){
 		this.jniMotor = jniMotor;
 	}
