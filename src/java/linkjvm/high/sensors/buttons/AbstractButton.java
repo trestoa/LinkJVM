@@ -22,11 +22,17 @@ package linkjvm.high.sensors.buttons;
 
 import linkjvm.high.sensors.digital.IDigitalSensor;
 
+/**
+ * This class contains all methods for an button.
+ * @author Markus Klein
+ * @version 2.0.0
+ * @since 2.0.0
+ */
 public abstract class AbstractButton implements IDigitalSensor{	
 	
 	/**
-	 * 
-	 * @return
+	 * Returns if the button is pressed.
+	 * @return <code>true</code> if the button is pressed, <code>false</code if not
 	 */
 	public boolean isPressed(){
 		return getValue();

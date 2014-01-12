@@ -23,10 +23,19 @@ package linkjvm.high.sensors.buttons;
 import linkjvm.low.buttons.IdButton;
 import linkjvm.low.factory.JNIController;
 
+/**
+ * This class reprsents the KIPR Link's x button
+ * @author Markus Klein
+ * @version 2.0.0
+ * @since 2.0.0
+ */
 public class XButton extends AbstractButton implements TextButton{
 
 private volatile IdButton jniButton;
 	
+	/**
+	 * Constructs a new x button.
+	 */
 	public XButton(){
 		jniButton = JNIController.getInstance().getButtonFactory().getInstance(linkjvm.low.buttons.Id.X);
 	}

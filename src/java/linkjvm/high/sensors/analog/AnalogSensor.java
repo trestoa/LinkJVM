@@ -26,7 +26,10 @@ import linkjvm.low.analog.Analog8;
 import linkjvm.low.factory.JNIController;
 
 /**
+ * This class represents an analog sensor.
  * @author Markus Klein
+ * @version 2.0.0
+ * @since 2.0.0
  */
 public class AnalogSensor implements IAnalogSensor{
 	private volatile Analog8 jniSensor8;
@@ -35,8 +38,9 @@ public class AnalogSensor implements IAnalogSensor{
 	private int port;
 
 	/**
-	 *
-	 * @param port
+	 * Constructs a new analog sensor with at the specified port.
+	 * @param port the analog sensor's port number
+	 * @throws InvalidPortException
 	 */
 	public AnalogSensor(int port) throws InvalidPortException{
 		if(port < 0 || port > 7){
@@ -48,46 +52,58 @@ public class AnalogSensor implements IAnalogSensor{
 	}
 
 	/**
-	 *
-	 * @return
+	 * Returns the analog sensor's current value as 10 bit number.
+	 * @return sensor's current value as 10 bit number
 	 */
 	@Override
 	public int getValue(){
 		return jniSensor.value();
 	}
+	
+	/**
+	 * The same as <code>getValue()</code>.
+	 * @return sensor's current value as 10 bit number
+	 */
+	public int getValue10(){
+		return getValue();
+	}
 
 	/**
-	 *
-	 * @return
+	 * Returns the analog sensor's current value as 8 bit number.
+	 * @return sensor's current value as 8 bit number
 	 */
 	public int getValue8(){
 		return jniSensor8.value();
 	}
 
 	/**
-	 *
-	 * @param pullup
+	 * Sets the sensor's pullup.
+	 * @param pullup pullup
 	 */
 	public void setPullup(boolean pullup){
 		jniSensor.setPullup(pullup);
 		jniSensor8.setPullup(pullup);
 	}
 
-	public boolean getDigitalPullup(){
-		return jniSensor.pullup();
-	}
-
+	/**
+	 * Returns the native 10bit sensor.
+	 * @return native sensor
+	 */
 	Analog getJniSensor(){
 		return jniSensor;
 	}
 
+	/**
+	 * Returns the native 8bit sensor.
+	 * @return native sensor
+	 */
 	Analog8 getJni8Sensor(){
 		return jniSensor8;
 	}
 
 	/**
-	 *
-	 * @return
+	 * Returns the sensor's port.
+	 * @return port
 	 */
 	public int getPort(){
 		return port;

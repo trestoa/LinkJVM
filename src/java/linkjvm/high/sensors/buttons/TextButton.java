@@ -20,17 +20,22 @@
 
 package linkjvm.high.sensors.buttons;
 
+/**
+ * If an button implements this interface, it is able to change it's text.
+ * @author Markus Klein
+ * 
+ */
 public interface TextButton {
 	
 	/**
-	 * 
-	 * @param text
+	 * Sets the text.
+	 * @param text text
 	 */
 	public void setText(String text);
 	
 	/**
-	 * 
-	 * @return
+	 * Returns the text.
+	 * @return text
 	 */
 	public String getText();
 }
