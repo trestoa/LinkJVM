@@ -11,6 +11,8 @@ import java.net.Socket;
  *
  */
 public class Debugger {	
+	public static final int DEFAULT_PORT = 62512;
+	
 	private Socket socket;
 	private PrintWriter writer = null;
 	
@@ -19,6 +21,33 @@ public class Debugger {
 	 */
 	public Debugger(){
 		socket = new Socket();
+	}
+	
+	/**
+	 * 
+	 * @param host
+	 */
+	public Debugger(String host){
+		this(host, DEFAULT_PORT);
+	}
+	
+	/**
+	 * 
+	 * @param host
+	 * @param port
+	 */
+	public Debugger(String host, int port){
+		socket = new Socket();
+		connect(host, port);
+	}
+	
+	/**
+	 * 
+	 * @param host
+	 * @return
+	 */
+	public boolean connect(String host){
+		return connect(host);
 	}
 	
 	/**
