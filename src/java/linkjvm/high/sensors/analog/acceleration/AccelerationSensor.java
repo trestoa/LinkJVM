@@ -27,14 +27,15 @@ import linkjvm.low.factory.JNIController;
 import linkjvm.low.factory.AccelerationFactory;
 
 /**
- * 
+ * An object of this class is used to access the KIPR Link«s acceleration sensors.
  * @author Markus Klein
- *
+ * @version 2.0.0
+ * @since 2.0.0
  */
 public class AccelerationSensor implements IAnalogSensor{
 	
 	/**
-	 * 
+	 * The Axis enum contains all possible axis for an acceleration sensors.
 	 * @author Markus Klein
 	 *
 	 */
@@ -48,7 +49,7 @@ public class AccelerationSensor implements IAnalogSensor{
 	private Axis axis;
 	
 	/**
-	 * 
+	 * Constructs a new acceleration sensor with the giver axis.
 	 * @param axis
 	 */
 	public AccelerationSensor(Axis axis){
@@ -56,14 +57,14 @@ public class AccelerationSensor implements IAnalogSensor{
 	}
 	
 	/**
-	 * 
+	 * Calibrates the acceleration sensors.
 	 */
 	public static void calibrate(){
 		Acceleration.calibrate();
 	}
 	
 	/**
-	 * 
+	 * Returns the current sensor value.
 	 * @return
 	 */
 	@Override
@@ -80,16 +81,16 @@ public class AccelerationSensor implements IAnalogSensor{
 	}
 	
 	/**
-	 * 
-	 * @return
+	 * Returns the sensor«s axis.
+	 * @return axis
 	 */
 	public Axis getAxis(){
 		return axis;
 	}
 	
 	/**
-	 * 
-	 * @param axis
+	 * Sets the sensor«s axis.
+	 * @param axis 
 	 */
 	public void setAxis(Axis axis){
 		if(axis == Axis.X){

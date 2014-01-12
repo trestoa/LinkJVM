@@ -21,7 +21,7 @@
 package linkjvm.high.vision;
 
 /**
- * 
+ * This enum contains all possible camera resolution.
  * @author Klaus Ableitinger
  *
  */
@@ -31,11 +31,17 @@ public enum Resolution {
 	MED_RES(320, 240),
 	HIGH_RES(640, 480);
 		
+	/**
+	 * The width of the resolution.
+	 */
 	public int width;
+	
+	/**
+	 * The height of the resolution.
+	 */
 	public int height;
 	
 	private Resolution(int width, int height) {
-		
 		this.width = width;
 		this.height = height;
 	}

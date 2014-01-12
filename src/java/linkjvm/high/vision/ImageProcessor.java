@@ -26,18 +26,19 @@ import linkjvm.low.vision.IntPoint2;
 import linkjvm.low.vision.IntRectangle;
 
 /**
- * 
+ * This class is used to process images and to blob tracking.
  * @author Markus Klein
- *
+ * @version 2.0.0
+ * @since 2.0.0
  */
 public class ImageProcessor {
 	private Device jniDevice;
 	private int channel;
 	
 	/**
-	 * 
-	 * @param cameraConfig
-	 * @param channel
+	 * Cunstructs a new ImageProcessor with the given {@link CameraConfig} and a channel number 
+	 * @param cameraConfig the camera config
+	 * @param channel the channel number
 	 */
 	public ImageProcessor(CameraConfig cameraConfig, int channel){
 		jniDevice = JNIController.getInstance().getCameraFactory().getInstance(cameraConfig);
@@ -46,15 +47,15 @@ public class ImageProcessor {
 	}
 	
 	/**
-	 * 
-	 * @return
+	 * Opens the camera.
+	 * @return <code>true</code> on success and <code>false</code> if an error occurs.
 	 */
 	public boolean openCamera(){
 		return jniDevice.open();
 	}
 	
 	/**
-	 * 
+	 * Open a specific camera device.
 	 * @param deviceNum
 	 * @return
 	 */
@@ -63,42 +64,56 @@ public class ImageProcessor {
 	}
 	
 	/**
-	 * 
+	 * Closes the connection to the camera.
 	 */
 	public void close(){
 		jniDevice.close();
 	}
 	
 	/**
-	 * 
-	 * @return
+	 * Returns the number of object with have been tracked.
+	 * @return object count
 	 */
 	public long getObjectCount(){
 		return jniDevice.channels().get(channel).objects().size();
 	}
 	
 	/**
-	 * 
-	 * @param object
-	 * @return
+	 * Return the confidence of the object at the specified position.
+	 * The objects are sorted in descending order according it«s size.
+	 * @param object object«s position
+	 * @return the object«s confidence
 	 */
 	public double getObjectConfidence(int object){
 		return jniDevice.channels().get(channel).objects().get(object).confidence();
 	}
 	
 	/**
-	 * 
-	 * @param object
-	 * @return
+	 * Return the object at the specified position.
+	 * The objects are sorted in descending order according it«s size.
+	 * @param object object«s position
+	 * @return the object
+	 */
+	public Object getObject(int object){
+		linkjvm.low.vision.Object jniObject = jniDevice.channels().get(channel).objects().get(object);
+		return new Object(toHighRectangle(jniObject.boundingBox()), toHighPoint(jniObject.centroid()), jniObject.confidence());
+	}
+	
+	/**
+	 * Return the centroid of the object at the specified position.
+	 * The objects are sorted in descending order according it«s size.
+	 * @param object object«s position
+	 * @return the object«s centroid
 	 */
 	public Point2 getCentroid(int object){
 		return toHighPoint(jniDevice.channels().get(channel).objects().get(object).centroid());
 	}
 	
 	/**
-	 * 
-	 * @param object
-	 * @return
+	 * Return the bounding box of the object at the specified position.
+	 * The objects are sorted in descending order according it«s size.
+	 * @param object object«s position
+	 * @return the object«s bouding box
 	 */
 	public Rectangle getBoundingBox(int object){
 		IntRectangle jniRectangle = jniDevice.channels().get(channel).objects().get(object).boundingBox();
