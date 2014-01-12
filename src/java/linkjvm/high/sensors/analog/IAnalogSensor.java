@@ -28,7 +28,7 @@ package linkjvm.high.sensors.analog;
  */
 public interface IAnalogSensor {
 	/**
-	 * Return the sensors current value.
+	 * Return the sensor«s current value.
 	 * @return sensors value
 	 */
 	public abstract int getValue();

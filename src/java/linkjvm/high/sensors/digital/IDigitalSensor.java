@@ -22,11 +22,14 @@ package linkjvm.high.sensors.digital;
 
 /**
  * @author Markus Klein
+ * @version 2.0.0
+ * @since 2.0.0
+ * This interface contains all required methods of an digital sensor.
  */
 public interface IDigitalSensor {
 	/**
-	 *
-	 * @return
+	 * Return the sensor«s current value.
+	 * @return sensor value
 	 */
 	public abstract boolean getValue();
 }

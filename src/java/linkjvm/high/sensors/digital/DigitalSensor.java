@@ -26,6 +26,9 @@ import linkjvm.low.factory.JNIController;
 
 /**
  * @author Markus Klein
+ * @since 2.0.0
+ * @version 2.0.0
+ * An instance of this class is used to control one digital sensor on the specified sensor port.
  */
 public class DigitalSensor implements IDigitalSensor{
 	private volatile Digital jniSensor;
@@ -33,8 +36,12 @@ public class DigitalSensor implements IDigitalSensor{
 	private int port;
 
 	/**
-	 * 
-	 * @param port
+	 * Creates a new digital sensor on the specified port.
+     * The invocation {@code DigitalSensor sensor = new DigitalSensor(0)} is equivalent to:
+     * {@code DigitalSensor sensor = new DigitalSensor();
+     * sensor.setPort(0);}
+     * 
+	 * @param port the sensor«s port
 	 * @throws InvalidPortException
 	 */
 	public DigitalSensor(int port) throws InvalidPortException{
@@ -46,16 +53,16 @@ public class DigitalSensor implements IDigitalSensor{
 	}
 
 	/**
-	 * 
-	 * @return
+	 * Returns the sensor port.
+	 * @return sensor port
 	 */
 	public int getPort(){
 		return port;
 	}
 	
 	/**
-	 * 
-	 * @param port
+	 * Sets the sensor«s port.
+	 * @param port sensor«s port
 	 */
 	public void setPort(int port){
 		jniSensor = JNIController.getInstance().getDigitalFactory().getInstance(port);
@@ -64,8 +71,8 @@ public class DigitalSensor implements IDigitalSensor{
 	
 
 	/**
-	 *
-	 * @return
+	 * Returns the current sensor value.
+	 * @return sensor value
 	 */
 	@Override
 	public boolean getValue(){

@@ -22,6 +22,12 @@ package linkjvm.high.sensors.buttons;
 
 import linkjvm.low.buttons.ExtraButtons;
 
+/**
+ * This class contains static methods to show an hide the extra buttons.
+ * @author Markus Klein
+ * @version 2.0.0
+ * @since 2.0.0
+ */
 public class ButtonController {	
 	/**
 	 * 

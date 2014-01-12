@@ -40,6 +40,7 @@ public class AnalogSensor implements IAnalogSensor{
 	/**
 	 * Constructs a new analog sensor with at the specified port.
 	 * @param port the analog sensor«s port number
+	 * @throws InvalidPortException
 	 */
 	public AnalogSensor(int port) throws InvalidPortException{
 		if(port < 0 || port > 7){
