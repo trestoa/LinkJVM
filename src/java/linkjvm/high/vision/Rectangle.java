@@ -21,9 +21,10 @@
 package linkjvm.high.vision;
 
 /**
- * 
+ * This class represents an rectangle.
  * @author Markus Klein
- *
+ * @version 2.0.0
+ * @since 2.0.0
  */
 public class Rectangle {
 	private long width;
@@ -34,11 +35,12 @@ public class Rectangle {
 	private Point2 center;
 
 	/**
-	 * @param width
-	 * @param height
-	 * @param x
-	 * @param y
-	 * @param center
+	 * Constructs a new rectangle with the specified values.
+	 * @param width width
+	 * @param height height
+	 * @param x x position
+	 * @param y y position
+	 * @param center center
 	 */
 	public Rectangle(long width, long height, long x, long y, Point2 center) {
 		super();
@@ -50,78 +52,88 @@ public class Rectangle {
 	}
 
 	/**
-	 * @return the width
+	 * Returns the rectangle's width.
+	 * @return width
 	 */
 	public synchronized long getWidth() {
 		return width;
 	}
 
 	/**
-	 * @param width the width to set
+	 * Sets the rectangle's width.
+	 * @param width width
 	 */
 	public synchronized void setWidth(long width) {
 		this.width = width;
 	}
 
 	/**
-	 * @return the height
+	 * Returns the rectangle's Height.
+	 * @return height
 	 */
 	public synchronized long getHeight() {
 		return height;
 	}
 
 	/**
-	 * @param height the height to set
+	 * Sets the rectangle's height.
+	 * @param height height
 	 */
 	public synchronized void setHeight(long height) {
 		this.height = height;
 	}
-
+	
 	/**
-	 * @return the x
+	 * Returns the rectangle's x position.
+	 * @return x position
 	 */
 	public synchronized long getX() {
 		return x;
 	}
 
 	/**
-	 * @param x the x to set
+	 * Sets the rectangle's x position.
+	 * @param x x position
 	 */
 	public synchronized void setX(long x) {
 		this.x = x;
 	}
 
 	/**
-	 * @return the y
+	 * Returns the rectangle's y position.
+	 * @return y position
 	 */
 	public synchronized long getY() {
 		return y;
 	}
 
 	/**
-	 * @param y the y to set
+	 * Sets the rectangle's y position.
+	 * @param y y position
 	 */
 	public synchronized void setY(long y) {
 		this.y = y;
 	}
 
 	/**
-	 * @return the center
+	 * Returns the rectangle's center position.
+	 * @return center point
 	 */
 	public synchronized Point2 getCenter() {
 		return center;
 	}
 
 	/**
-	 * @param center the center to set
+	 * Sets the rectangle's center position.
+	 * @param center center point
 	 */
 	public synchronized void setCenter(Point2 center) {
 		this.center = center;
 	}
 	
 	/**
-	 * 
-	 * @return
+	 * Returns the rectangles area.
+	 * @return area
 	 */
 	public long getArea(){
 		return width * height;

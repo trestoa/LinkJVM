@@ -21,9 +21,10 @@
 package linkjvm.high.vision;
 
 /**
- * 
+ * An instance of this class represents an object which has been tracked by an {@link ImageProcessor}.
  * @author Markus Klein
- *
+ * @version 2.0.0
+ * @since 2.0.0
  */
 public class Object {
 	private final Rectangle boundingBox;
@@ -38,21 +39,24 @@ public class Object {
 	}
 
 	/**
-	 * @return the boundingBox
+	 * Returns the bounding box of this object.
+	 * @return bounding box
 	 */
 	public synchronized Rectangle getBoundingBox() {
 		return boundingBox;
 	}
 
 	/**
-	 * @return the centroid
+	 * Returns the centroid of this object.
+	 * @return centroid
 	 */
 	public synchronized Point2 getCentroid() {
 		return centroid;
 	}
 
 	/**
-	 * @return the confidence
+	 * Returns the confidence of this object.
+	 * @return confidence
 	 */
 	public synchronized double getConfidence() {
 		return confidence;

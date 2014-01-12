@@ -21,18 +21,19 @@
 package linkjvm.high.vision;
 
 /**
- * 
+ * This class represents an 2 dimensional point
  * @author Markus Klein
- *
+ * @since 2.0.0
+ * @version 2.0.0
  */
 public class Point2 {
 	private long x;
 	private long y;
 	
 	/**
-	 * 
-	 * @param x
-	 * @param y
+	 * Constructs a new Point with the specified coordinates.
+	 * @param x the x coordinate
+	 * @param y the y coordinate
 	 */
 	public Point2(long x, long y) {
 		super();
@@ -41,28 +42,28 @@ public class Point2 {
 	}
 
 	/**
-	 * @return the x
+	 * @return the point's x coordinate
 	 */
 	public synchronized long getX() {
 		return x;
 	}
 
 	/**
-	 * @param x the x to set
+	 * @param the point's x coordinate
 	 */
 	public synchronized void setX(long x) {
 		this.x = x;
 	}
 
 	/**
-	 * @return the y
+	 * @return the point's y coordinate
 	 */
 	public synchronized long getY() {
 		return y;
 	}
 
 	/**
-	 * @param y the y to set
+	 * @param the point's y coordinate
 	 */
 	public synchronized void setY(long y) {
 		this.y = y;

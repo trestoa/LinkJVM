@@ -23,10 +23,19 @@ package linkjvm.high.sensors.buttons;
 import linkjvm.low.buttons.IdButton;
 import linkjvm.low.buttons.linkjvm_buttons;
 
+/**
+ * This class reprsents the KIPR Link's a button
+ * @author Markus Klein
+ * @version 2.0.0
+ * @since 2.0.0
+ */
 public class AButton extends AbstractButton implements TextButton{
 	
 	private volatile IdButton jniButton;
 	
+	/**
+	 * Constructs a new a button.
+	 */
 	public AButton(){
 		jniButton = linkjvm_buttons.getA();
 	}

@@ -23,10 +23,19 @@ package linkjvm.high.sensors.buttons;
 import linkjvm.low.buttons.IdButton;
 import linkjvm.low.factory.JNIController;
 
+/**
+ * This class reprsents the KIPR Link's side button
+ * @author Markus Klein
+ * @version 2.0.0
+ * @since 2.0.0
+ */
 public class SideButton extends AbstractButton {
 
 	private volatile IdButton jniButton;
 	
+	/**
+	 * Constructs a new side button.
+	 */
 	public SideButton(){
 		jniButton = JNIController.getInstance().getButtonFactory().getInstance(linkjvm.low.buttons.Id.Side);
 	}

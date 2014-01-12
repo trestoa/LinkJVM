@@ -22,24 +22,38 @@ package linkjvm.high.create;
 
 import linkjvm.low.factory.JNIController;
 
+/**
+ * 
+ * @author Markus Klein
+ * @version 2.0.0
+ * @since 2.0.0
+ * An instance of this class is used to control the iRobot create.
+ */
 public class Create {
 	
 	/**
 	 * 
 	 * @author Markus Klein
-	 *
+	 * This enum represents the create's mode.
+	 * The different modes are:
+	 * <ul>
+	 * 	<li>Safe: The create will execute all command until the drop or cliff fire. Then it will stop.</li>
+	 * 	<li>Full: Create will to everything and never stop even if cliff or drop fire.</li>
+	 * 	<li>Passive: Sets the create into the passive mode(no motors).</li>
+	 * </ul>
+	 * @version 2.0.0
+	 * @since 2.0.0
 	 */
 	public static enum Mode{
 		SAFE,
 		PASSIVE,
-		FULL,
-		OFF;
+		FULL;
 	}
 	
 	private volatile linkjvm.low.create.Create jniCreate = null;
 
 	/**
-	 * 
+	 * Create a new create object.
 	 */
 	private Create(){
 		jniCreate = JNIController.getInstance().getCreateFactory().getInstance();
@@ -73,8 +87,8 @@ public class Create {
 	}
 	
 	/**
-	 * Sets the mode 
-	 * 
+	 * Sets the creates mode.
+	 * @see Create.Mode
 	 * @param mode 
 	 */
 	public void setMode(Mode mode){	
@@ -90,110 +104,116 @@ public class Create {
 	}
 	
 	/**
-	 * 
-	 * @param advance
-	 * @param play
-	 * @param color
-	 * @param brightness
+	 * Sets the create LEDs.
+	 * @param advance if the advanced led should be on
+	 * @param play if the play led should be on
+	 * @param color the LEDs color
+	 * @param brightness the LEDs brightness
 	 */
 	public void setLeds(boolean advance, boolean play, int color, short brightness){
 		jniCreate.setLeds(advance, play, (short) color, (short) brightness);
 	}
 	
 	/**
+	 * Drives an arc.
 	 * 
-	 * @param velocity
-	 * @param radius
+	 * @param velocity speed from 20 to 500 mm/sec
+	 * @param radius radius
 	 */
 	public void drive(int velocity, int radius){
 		jniCreate.drive((short) velocity, (short) radius);
 	}
 	
 	/**
+	 * Sets the speed of every motor in mm per sec from -500 (full backward) to 500 (full forward).
 	 * 
-	 * @param left
-	 * @param right
+	 * @param left left motors speed
+	 * @param right right motors speed
 	 */
 	public void driveDirect(int left, int right){
 		jniCreate.driveDirect((short) left, (short) right);
 	}
 	
 	/**
-	 * 
-	 * @param speed
+	 * Causes the create to drive streight at a specific speed.
+	 * @param speed velocity form -500 (full backward) to 500 (full forward)
 	 */
 	public void driveStraigth(int speed){
 		jniCreate.driveStraight((short) speed);
 	}
 	
 	/**
-	 * 
+	 * Causes the create to stop.
 	 */
 	public void stop(){
 		jniCreate.stop();
 	}
 	
 	/**
+	 * Turns the create.
 	 * 
-	 * @param angle
-	 * @param speed
+	 * @param angle angle
+	 * @param speed speed
 	 */
 	public void turn(int angle, int speed){
 		jniCreate.turn((short) angle, speed);
 	}
 	
 	/**
+	 * Moves the to a specific position.
 	 * 
-	 * @param millimeters
-	 * @param speed
+	 * @param millimeters the distance which should be covered
+	 * @param speed speed
 	 */
 	public void move(int millimeters, int speed){
 		jniCreate.move((short) millimeters, speed);
 	}
 	
 	/**
-	 * 
-	 * @param speed
+	 * Lets the create spin at its current position.
+	 * @param speed spped
 	 */
 	public void spin(int speed){
 		jniCreate.spin((short) speed);
 	}
 	
 	/**
-	 * 
-	 * @return
+	 * Return the angular velocity.
+	 * @return angular velocity
 	 */
 	public int angularVelocity(){
 		return (int) jniCreate.angularVelocity();
 	}
 	
 	/**
-	 * 
-	 * @param speed
+	 * Causes to create to spin clockwise.
+	 * @param speed speed
 	 */
 	public void spinClockwise(int speed){
 		jniCreate.spinClockwise((short) speed);
 	}
 	
 	/**
-	 * 
-	 * @param speed
+	 * Causes the create to spin counterclockwise.
+	 * @param speed speed
 	 */
 	public void spinCounterClockwise(int speed){
 		jniCreate.spinCounterClockwise((short) speed);
 	}
 	
 	/**
+	 * Sets the creates distance.
 	 * 
-	 * @param distance
+	 * @param distance distance
 	 */
 	public void setDistance(int distance){
 		jniCreate.setDistance(distance);
 	}
 	
 	/**
+	 * Sets the creates angle.
 	 * 
-	 * @param angle
+	 * @param angle angle
 	 */
 	public void setAngle(int angle){
 		jniCreate.setAngle(angle);
