@@ -21,7 +21,6 @@
 package linkjvm.high.motors;
 
 import linkjvm.high.sensors.InvalidPortException;
-import linkjvm.low.buttons.linkjvm_buttons;
 import linkjvm.low.factory.JNIController;
 
 /**
