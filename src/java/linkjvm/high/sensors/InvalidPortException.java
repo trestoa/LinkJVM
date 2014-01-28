@@ -27,7 +27,7 @@ package linkjvm.high.sensors;
  * @version 2.0.0
  * @author Markus Klein
  */
-public class InvalidPortException extends Exception{
+public class InvalidPortException extends RuntimeException {
 	
 	/**
 	 * 
