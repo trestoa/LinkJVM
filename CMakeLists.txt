@@ -36,6 +36,7 @@ set(JAVA_SRC
 	${JAVA_SRC_DIR}/linkjvm/low/*.java
 )
 set(JNI_DIR src/jni)
+set(TOOLS_DIR tools)
 set(JAVAC_DIR java-environment/javac)
 set(JAR_DIR java-environment/jar)
 set(CMAKE_JAVA_COMPILE_FLAGS -source 6)
@@ -48,3 +49,4 @@ add_jar(linkjvmjava ${JAVA_SRC})
 add_subdirectory(${JNI_DIR})
 add_subdirectory(${JAVAC_DIR})
 add_subdirectory(${JAR_DIR})
+add_subdirectory(${TOOLS_DIR}/kar-gen)
