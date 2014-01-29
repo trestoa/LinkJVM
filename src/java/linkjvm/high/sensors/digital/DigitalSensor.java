@@ -76,6 +76,6 @@ public class DigitalSensor implements IDigitalSensor{
 	 */
 	@Override
 	public boolean getValue(){
-		return jniSensor.value();
+		return !jniSensor.value();
 	}
 }
