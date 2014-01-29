@@ -7,7 +7,7 @@
  * ----------------------------------------------------------------------------- */
 
 package linkjvm.low.create;
-
+import linkjvm.low.sensors.*;
 public class Create {
   private long swigCPtr;
   protected boolean swigCMemOwn;
@@ -165,129 +165,129 @@ public class Create {
     return (cPtr == 0) ? null : new SWIGTYPE_p_AbstractButton(cPtr, false);
   }
 
-  public SWIGTYPE_p_SensorT_bool_t wall() {
+  public BoolSensor wall() {
     long cPtr = linkjvm_createJNI.Create_wall(swigCPtr, this);
-    return (cPtr == 0) ? null : new SWIGTYPE_p_SensorT_bool_t(cPtr, false);
+    return (cPtr == 0) ? null : new BoolSensor(cPtr, false);
   }
 
-  public SWIGTYPE_p_SensorT_bool_t cliffLeft() {
+  public BoolSensor cliffLeft() {
     long cPtr = linkjvm_createJNI.Create_cliffLeft(swigCPtr, this);
-    return (cPtr == 0) ? null : new SWIGTYPE_p_SensorT_bool_t(cPtr, false);
+    return (cPtr == 0) ? null : new BoolSensor(cPtr, false);
   }
 
-  public SWIGTYPE_p_SensorT_bool_t cliffFrontLeft() {
+  public BoolSensor cliffFrontLeft() {
     long cPtr = linkjvm_createJNI.Create_cliffFrontLeft(swigCPtr, this);
-    return (cPtr == 0) ? null : new SWIGTYPE_p_SensorT_bool_t(cPtr, false);
+    return (cPtr == 0) ? null : new BoolSensor(cPtr, false);
   }
 
-  public SWIGTYPE_p_SensorT_bool_t cliffFrontRight() {
+  public BoolSensor cliffFrontRight() {
     long cPtr = linkjvm_createJNI.Create_cliffFrontRight(swigCPtr, this);
-    return (cPtr == 0) ? null : new SWIGTYPE_p_SensorT_bool_t(cPtr, false);
+    return (cPtr == 0) ? null : new BoolSensor(cPtr, false);
   }
 
-  public SWIGTYPE_p_SensorT_bool_t cliffRight() {
+  public BoolSensor cliffRight() {
     long cPtr = linkjvm_createJNI.Create_cliffRight(swigCPtr, this);
-    return (cPtr == 0) ? null : new SWIGTYPE_p_SensorT_bool_t(cPtr, false);
+    return (cPtr == 0) ? null : new BoolSensor(cPtr, false);
   }
 
-  public SWIGTYPE_p_SensorT_bool_t virtualWall() {
+  public BoolSensor virtualWall() {
     long cPtr = linkjvm_createJNI.Create_virtualWall(swigCPtr, this);
-    return (cPtr == 0) ? null : new SWIGTYPE_p_SensorT_bool_t(cPtr, false);
+    return (cPtr == 0) ? null : new BoolSensor(cPtr, false);
   }
 
-  public SWIGTYPE_p_SensorT_unsigned_short_t wallSignal() {
+  public UnsignedShortSensor wallSignal() {
     long cPtr = linkjvm_createJNI.Create_wallSignal(swigCPtr, this);
-    return (cPtr == 0) ? null : new SWIGTYPE_p_SensorT_unsigned_short_t(cPtr, false);
+    return (cPtr == 0) ? null : new UnsignedShortSensor(cPtr, false);
   }
 
-  public SWIGTYPE_p_SensorT_unsigned_short_t cliffLeftSignal() {
+  public UnsignedShortSensor cliffLeftSignal() {
     long cPtr = linkjvm_createJNI.Create_cliffLeftSignal(swigCPtr, this);
-    return (cPtr == 0) ? null : new SWIGTYPE_p_SensorT_unsigned_short_t(cPtr, false);
+    return (cPtr == 0) ? null : new UnsignedShortSensor(cPtr, false);
   }
 
-  public SWIGTYPE_p_SensorT_unsigned_short_t cliffFrontLeftSignal() {
+  public UnsignedShortSensor cliffFrontLeftSignal() {
     long cPtr = linkjvm_createJNI.Create_cliffFrontLeftSignal(swigCPtr, this);
-    return (cPtr == 0) ? null : new SWIGTYPE_p_SensorT_unsigned_short_t(cPtr, false);
+    return (cPtr == 0) ? null : new UnsignedShortSensor(cPtr, false);
   }
 
-  public SWIGTYPE_p_SensorT_unsigned_short_t cliffFrontRightSignal() {
+  public UnsignedShortSensor cliffFrontRightSignal() {
     long cPtr = linkjvm_createJNI.Create_cliffFrontRightSignal(swigCPtr, this);
-    return (cPtr == 0) ? null : new SWIGTYPE_p_SensorT_unsigned_short_t(cPtr, false);
+    return (cPtr == 0) ? null : new UnsignedShortSensor(cPtr, false);
   }
 
-  public SWIGTYPE_p_SensorT_unsigned_short_t cliffRightSignal() {
+  public UnsignedShortSensor cliffRightSignal() {
     long cPtr = linkjvm_createJNI.Create_cliffRightSignal(swigCPtr, this);
-    return (cPtr == 0) ? null : new SWIGTYPE_p_SensorT_unsigned_short_t(cPtr, false);
+    return (cPtr == 0) ? null : new UnsignedShortSensor(cPtr, false);
   }
 
-  public SWIGTYPE_p_SensorT_unsigned_short_t cargoBayAnalogSignal() {
+  public UnsignedShortSensor cargoBayAnalogSignal() {
     long cPtr = linkjvm_createJNI.Create_cargoBayAnalogSignal(swigCPtr, this);
-    return (cPtr == 0) ? null : new SWIGTYPE_p_SensorT_unsigned_short_t(cPtr, false);
+    return (cPtr == 0) ? null : new UnsignedShortSensor(cPtr, false);
   }
 
-  public SWIGTYPE_p_SensorT_unsigned_char_t cargoBayDigitalInputs() {
+  public UnsignedCharSensor cargoBayDigitalInputs() {
     long cPtr = linkjvm_createJNI.Create_cargoBayDigitalInputs(swigCPtr, this);
-    return (cPtr == 0) ? null : new SWIGTYPE_p_SensorT_unsigned_char_t(cPtr, false);
+    return (cPtr == 0) ? null : new UnsignedCharSensor(cPtr, false);
   }
 
-  public SWIGTYPE_p_SensorT_unsigned_char_t ir() {
+  public UnsignedCharSensor ir() {
     long cPtr = linkjvm_createJNI.Create_ir(swigCPtr, this);
-    return (cPtr == 0) ? null : new SWIGTYPE_p_SensorT_unsigned_char_t(cPtr, false);
+    return (cPtr == 0) ? null : new UnsignedCharSensor(cPtr, false);
   }
 
-  public SWIGTYPE_p_SensorT_unsigned_char_t chargingState() {
+  public UnsignedCharSensor chargingState() {
     long cPtr = linkjvm_createJNI.Create_chargingState(swigCPtr, this);
-    return (cPtr == 0) ? null : new SWIGTYPE_p_SensorT_unsigned_char_t(cPtr, false);
+    return (cPtr == 0) ? null : new UnsignedCharSensor(cPtr, false);
   }
 
-  public SWIGTYPE_p_SensorT_char_t batteryTemperature() {
+  public CharSensor batteryTemperature() {
     long cPtr = linkjvm_createJNI.Create_batteryTemperature(swigCPtr, this);
-    return (cPtr == 0) ? null : new SWIGTYPE_p_SensorT_char_t(cPtr, false);
+    return (cPtr == 0) ? null : new CharSensor(cPtr, false);
   }
 
-  public SWIGTYPE_p_SensorT_unsigned_short_t batteryCharge() {
+  public UnsignedShortSensor batteryCharge() {
     long cPtr = linkjvm_createJNI.Create_batteryCharge(swigCPtr, this);
-    return (cPtr == 0) ? null : new SWIGTYPE_p_SensorT_unsigned_short_t(cPtr, false);
+    return (cPtr == 0) ? null : new UnsignedShortSensor(cPtr, false);
   }
 
-  public SWIGTYPE_p_SensorT_unsigned_short_t batteryCapacity() {
+  public UnsignedShortSensor batteryCapacity() {
     long cPtr = linkjvm_createJNI.Create_batteryCapacity(swigCPtr, this);
-    return (cPtr == 0) ? null : new SWIGTYPE_p_SensorT_unsigned_short_t(cPtr, false);
+    return (cPtr == 0) ? null : new UnsignedShortSensor(cPtr, false);
   }
 
-  public SWIGTYPE_p_SensorT_int_t angle() {
+  public IntSensor angle() {
     long cPtr = linkjvm_createJNI.Create_angle(swigCPtr, this);
-    return (cPtr == 0) ? null : new SWIGTYPE_p_SensorT_int_t(cPtr, false);
+    return (cPtr == 0) ? null : new IntSensor(cPtr, false);
   }
 
-  public SWIGTYPE_p_SensorT_int_t distance() {
+  public IntSensor distance() {
     long cPtr = linkjvm_createJNI.Create_distance(swigCPtr, this);
-    return (cPtr == 0) ? null : new SWIGTYPE_p_SensorT_int_t(cPtr, false);
+    return (cPtr == 0) ? null : new IntSensor(cPtr, false);
   }
 
-  public SWIGTYPE_p_SensorT_bool_t bumpLeft() {
+  public BoolSensor bumpLeft() {
     long cPtr = linkjvm_createJNI.Create_bumpLeft(swigCPtr, this);
-    return (cPtr == 0) ? null : new SWIGTYPE_p_SensorT_bool_t(cPtr, false);
+    return (cPtr == 0) ? null : new BoolSensor(cPtr, false);
   }
 
-  public SWIGTYPE_p_SensorT_bool_t bumpRight() {
+  public BoolSensor bumpRight() {
     long cPtr = linkjvm_createJNI.Create_bumpRight(swigCPtr, this);
-    return (cPtr == 0) ? null : new SWIGTYPE_p_SensorT_bool_t(cPtr, false);
+    return (cPtr == 0) ? null : new BoolSensor(cPtr, false);
   }
 
-  public SWIGTYPE_p_SensorT_bool_t wheelDropLeft() {
+  public BoolSensor wheelDropLeft() {
     long cPtr = linkjvm_createJNI.Create_wheelDropLeft(swigCPtr, this);
-    return (cPtr == 0) ? null : new SWIGTYPE_p_SensorT_bool_t(cPtr, false);
+    return (cPtr == 0) ? null : new BoolSensor(cPtr, false);
   }
 
-  public SWIGTYPE_p_SensorT_bool_t wheelDropRight() {
+  public BoolSensor wheelDropRight() {
     long cPtr = linkjvm_createJNI.Create_wheelDropRight(swigCPtr, this);
-    return (cPtr == 0) ? null : new SWIGTYPE_p_SensorT_bool_t(cPtr, false);
+    return (cPtr == 0) ? null : new BoolSensor(cPtr, false);
   }
 
-  public SWIGTYPE_p_SensorT_bool_t wheelDropCaster() {
+  public BoolSensor wheelDropCaster() {
     long cPtr = linkjvm_createJNI.Create_wheelDropCaster(swigCPtr, this);
-    return (cPtr == 0) ? null : new SWIGTYPE_p_SensorT_bool_t(cPtr, false);
+    return (cPtr == 0) ? null : new BoolSensor(cPtr, false);
   }
 
   public void setRefreshRate(int refreshRate) {

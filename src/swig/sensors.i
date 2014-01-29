@@ -30,9 +30,9 @@ template<typename T> class  Sensor{
 };
 
 /* Sensor instantaions */
-%template(IntSensor) Sensor<int>;
+/*%template(IntSensor) Sensor<int>;
 %template(UnsignedShortSensor) Sensor<unsigned short>;
 %template(ShortSensor) Sensor<short>;
 %template(BoolSensor) Sensor<bool>;
 %template(UnsignedCharSensor) Sensor<unsigned char>;
-%template(CharSensor) Sensor<char>;
+%template(CharSensor) Sensor<char>;*/

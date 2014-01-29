@@ -2101,7 +2101,7 @@ SWIGEXPORT jlong JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_cDevice(JNIE
 }
 
 
-/*SWIGEXPORT void JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_delete_1DepthImage(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+SWIGEXPORT void JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_delete_1DepthImage(JNIEnv *jenv, jclass jcls, jlong jarg1) {
   depth::DepthImage *arg1 = (depth::DepthImage *) 0 ;
   
   (void)jenv;
@@ -2606,7 +2606,7 @@ SWIGEXPORT jlong JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_XtionDepthIm
   result = ((depth::XtionDepthImage const *)arg1)->pointAt(arg2,arg3);
   *(Point3< int32_t > **)&jresult = new Point3< int32_t >((const Point3< int32_t > &)result); 
   return jresult;
-}*/
+}
 
 
 SWIGEXPORT jlong JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_new_1ChannelVector_1_1SWIG_10(JNIEnv *jenv, jclass jcls) {
@@ -3600,7 +3600,7 @@ SWIGEXPORT jlong JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_UsbInputProv
     return baseptr;
 }
 
-/*SWIGEXPORT jlong JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_XtionDepthDriver_1SWIGUpcast(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+SWIGEXPORT jlong JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_XtionDepthDriver_1SWIGUpcast(JNIEnv *jenv, jclass jcls, jlong jarg1) {
     jlong baseptr = 0;
     (void)jenv;
     (void)jcls;
@@ -3614,7 +3614,7 @@ SWIGEXPORT jlong JNICALL Java_linkjvm_low_vision_linkjvm_1visionJNI_XtionDepthIm
     (void)jcls;
     *(depth::DepthImage **)&baseptr = *(depth::XtionDepthImage **)&jarg1;
     return baseptr;
-}*/
+}
 
 #ifdef __cplusplus
 }

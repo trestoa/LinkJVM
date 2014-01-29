@@ -218,4 +218,52 @@ public class Create {
 	public void setAngle(int angle){
 		jniCreate.setAngle(angle);
 	}
+	
+	/**
+	 * 
+	 * @return
+	 */
+	public boolean getRightBump(){
+		return jniCreate.bumpRight().value();
+	}
+	
+	/**
+	 * 
+	 * @return
+	 */
+	public boolean getLeftBump(){
+		return jniCreate.bumpLeft().value();
+	}
+	
+	/**
+	 * 
+	 * @return
+	 */
+	public int getLeftCliff(){
+		return jniCreate.cliffLeftSignal().value();
+	}
+	
+	/**
+	 * 
+	 * @return
+	 */
+	public int getRightCliff(){
+		return jniCreate.cliffRightSignal().value();
+	}
+	
+	/**
+	 * 
+	 * @return
+	 */
+	public int getLeftFrontCliff(){
+		return jniCreate.cliffFrontLeftSignal().value();
+	}
+	
+	/**
+	 * 
+	 * @return
+	 */
+	public int getRightFrontCliff(){
+		return jniCreate.cliffFrontRightSignal().value();
+	}
 }
