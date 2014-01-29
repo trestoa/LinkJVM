@@ -55,7 +55,7 @@ public class Create {
 	/**
 	 * Create a new create object.
 	 */
-	private Create(){
+	public Create(){
 		jniCreate = JNIController.getInstance().getCreateFactory().getInstance();
 	}
 	
