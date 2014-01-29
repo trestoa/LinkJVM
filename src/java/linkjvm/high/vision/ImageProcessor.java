@@ -64,6 +64,13 @@ public class ImageProcessor {
 	}
 	
 	/**
+	 * Updates the camera image for foture processing
+	 */
+	public void update(){
+		jniDevice.update();
+	}
+	
+	/**
 	 * Closes the connection to the camera.
 	 */
 	public void close(){
