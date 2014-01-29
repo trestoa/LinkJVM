@@ -220,48 +220,48 @@ public class Create {
 	}
 	
 	/**
-	 * 
-	 * @return
+	 * Returns the right bumper value.
+	 * @return <code>true</code> if the bumper is pressed, <code>false</code> otherwise
 	 */
 	public boolean getRightBump(){
 		return jniCreate.bumpRight().value();
 	}
 	
 	/**
-	 * 
-	 * @return
+	 * Returns the left bumper value.
+	 * @return <code>true</code> if the bumper is pressed, <code>false</code> otherwise
 	 */
 	public boolean getLeftBump(){
 		return jniCreate.bumpLeft().value();
 	}
 	
 	/**
-	 * 
-	 * @return
+	 * Returns the left cliff value
+	 * @return left cliff value
 	 */
 	public int getLeftCliff(){
 		return jniCreate.cliffLeftSignal().value();
 	}
 	
 	/**
-	 * 
-	 * @return
+	 * Returns the right cliff value
+	 * @return right cliff value
 	 */
 	public int getRightCliff(){
 		return jniCreate.cliffRightSignal().value();
 	}
 	
 	/**
-	 * 
-	 * @return
+	 * Returns the left front cliff value
+	 * @return left front cliff value
 	 */
 	public int getLeftFrontCliff(){
 		return jniCreate.cliffFrontLeftSignal().value();
 	}
 	
 	/**
-	 * 
-	 * @return
+	 * Returns the right front cliff value
+	 * @return right front cliff value
 	 */
 	public int getRightFrontCliff(){
 		return jniCreate.cliffFrontRightSignal().value();
