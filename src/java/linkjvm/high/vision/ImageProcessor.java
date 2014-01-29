@@ -43,6 +43,8 @@ public class ImageProcessor {
 	public ImageProcessor(CameraConfig cameraConfig, int channel){
 		jniDevice = JNIController.getInstance().getCameraFactory().getInstance(cameraConfig);
 		jniDevice.setConfig(cameraConfig.getChannelConfig());
+		jniDevice.setHeight(cameraConfig.getResolution().height);
+		jniDevice.setWidth(cameraConfig.getResolution().width);
 		this.channel = channel;
 	}
 	
