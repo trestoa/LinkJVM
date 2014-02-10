@@ -29,7 +29,7 @@ import linkjvm.sensors.buttons.ButtonController;
 import linkjvm.sensors.buttons.CButton;
 
 /**
- * 
+ * This class contains some static helper methods for the turnament
  * @author Markus Klein
  * @version 2.1.0
  * @since 2.1.0
@@ -101,5 +101,21 @@ public class Botball {
 		new AButton().setText("A");
 		new CButton().setText("C");
 		button.setText("B");
+	}
+	
+	/**
+	 * Causes the program to terminate after a specified time.
+	 * @param seconds time to shutdown
+	 */
+	public static void shutDownIn(final double seconds){
+		new Thread(new Runnable() {
+			@Override
+			public void run() {
+				try {
+					Thread.sleep((long)seconds * 1000);
+				} catch (InterruptedException e) {}
+				System.exit(0);
+			}
+		}).start();
 	}
 }
