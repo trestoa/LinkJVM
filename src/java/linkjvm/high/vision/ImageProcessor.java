@@ -28,7 +28,7 @@ import linkjvm.low.vision.IntRectangle;
 /**
  * This class is used to process images and to blob tracking.
  * @author Markus Klein
- * @version 2.0.0
+ * @version 2.0.3
  * @since 2.0.0
  */
 public class ImageProcessor {

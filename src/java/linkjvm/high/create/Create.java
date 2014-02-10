@@ -25,7 +25,7 @@ import linkjvm.low.factory.JNIController;
 /**
  * 
  * @author Markus Klein
- * @version 2.0.0
+ * @version 2.0.3
  * @since 2.0.0
  * An instance of this class is used to control the iRobot create.
  */
