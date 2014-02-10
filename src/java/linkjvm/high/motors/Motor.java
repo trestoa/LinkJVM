@@ -26,7 +26,7 @@ import linkjvm.low.factory.JNIController;
 /**
  * Represents a motor object with a given port.
  * @author Markus Klein
- * @version 2.0.0
+ * @version 2.1.0
  * @since 2.0.0
  */
 public class Motor {
@@ -129,8 +129,17 @@ public class Motor {
 	/**
 	 * Turn motor on the specified percentage.
 	 * @param percent percentage with which the motor turns
+	 * @deprecated
 	 */
 	public void turn(int percent){
+		run(percent);
+	}
+	
+	/**
+	 * Turn motor on the specified percentage.
+	 * @param percent motor's percentage
+	 */
+	public void run(int percent){
 		jniMotor.motor(percent);
 	}
 	
