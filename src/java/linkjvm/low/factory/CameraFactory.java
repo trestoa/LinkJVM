@@ -1,7 +1,7 @@
 package linkjvm.low.factory;
 
-import linkjvm.high.vision.CameraConfig;
 import linkjvm.low.vision.Device;
+import linkjvm.vision.CameraConfig;
 
 public class CameraFactory extends AbstractMultiton<CameraConfig, Device>{
 
