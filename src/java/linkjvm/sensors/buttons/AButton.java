@@ -21,7 +21,6 @@
 package linkjvm.sensors.buttons;
 
 import linkjvm.low.buttons.IdButton;
-import linkjvm.low.buttons.linkjvm_buttons;
 import linkjvm.low.factory.JNIController;
 
 /**
