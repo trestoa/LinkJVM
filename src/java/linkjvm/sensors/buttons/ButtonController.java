@@ -21,6 +21,7 @@
 package linkjvm.sensors.buttons;
 
 import linkjvm.low.buttons.ExtraButtons;
+import linkjvm.low.factory.JNIController;
 
 /**
  * This class contains static methods to show an hide the extra buttons.
@@ -28,7 +29,12 @@ import linkjvm.low.buttons.ExtraButtons;
  * @version 2.1.0
  * @since 2.0.0
  */
-public class ButtonController {	
+public class ButtonController {
+	
+	static{
+		JNIController.init();
+	}
+	
 	/**
 	 * shows the extra buttons
 	 */

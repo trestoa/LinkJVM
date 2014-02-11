@@ -21,14 +21,12 @@
 package linkjvm.low.factory;
 
 public class JNIController implements Runnable{
-
-	static {
-		System.loadLibrary("linkjvmjni");
-	}
 	
 	private final static JNIController instance = new JNIController();
+	private static boolean isInited = false;
 	
 	public static JNIController getInstance(){
+		init();
 		instance.startCleanup();
 		return instance;
 	}
@@ -70,6 +68,15 @@ public class JNIController implements Runnable{
 		usbInputProviderFactory = new UsbInputProviderFactory();
 	}
 
+	/**
+	 * 
+	 */
+	public static void init(){
+		if(!isInited){
+			System.loadLibrary("linkjvmjni");
+		}
+	}
+	
 	@Override
 	public void run() {
 		stopCleanup = false;
