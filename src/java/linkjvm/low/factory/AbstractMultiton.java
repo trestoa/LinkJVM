@@ -63,9 +63,11 @@ public abstract class AbstractMultiton<U, I>{
 	 * 
 	 */
 	protected synchronized final void cleanup(){
+		System.out.println("Cleanup!");
 		@SuppressWarnings("unchecked")
 		Reference<I> referenceToDeletedObject = (Reference<I>) referenceQueue.poll();
 		if(referenceToDeletedObject != null){
+			System.out.println("Deleting object!");
 			LinkedList<WeakReference<I>> list = (LinkedList<WeakReference<I>>) instances.values();
 			list.remove(referenceToDeletedObject.get());
 		}		
