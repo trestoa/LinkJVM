@@ -20,8 +20,6 @@
 
 package linkjvm;
 
-import java.io.IOException;
-
 import linkjvm.sensors.analog.AnalogSensor;
 import linkjvm.sensors.buttons.AButton;
 import linkjvm.sensors.buttons.BButton;
@@ -57,34 +55,24 @@ public class Botball {
 		BButton button = new BButton();
 		AnalogSensor lightSensor = new AnalogSensor(lightPort);
 		lightSensor.setPullup(true);
-		try {
-			Runtime.getRuntime().exec("clear");
-		} catch (IOException e) {}
+		System.out.println("\f");
 		button.setText("Light is On");
 		int onValue, offValue;
 		while(!button.isPressed()){
-			try {
-				Runtime.getRuntime().exec("clear");
-			} catch (IOException e) {}
+			System.out.println("\f");
 			System.out.println("Press when the light is ON!\n\tLight value: " + lightSensor.getValue());
 			msleep(50);
 		}
 		onValue = lightSensor.getValue();
 		msleep(200);
-		try {
-			Runtime.getRuntime().exec("clear");
-		} catch (IOException e) {}
+		System.out.println("\f");
 		button.setText("Light is OFF");
 		while(!button.isPressed()){
-			try {
-				Runtime.getRuntime().exec("clear");
-			} catch (IOException e) {}
+			System.out.println("\f");
 			System.out.println("Press when the light is OFF!\n\tLight value: " + lightSensor.getValue());
 			msleep(50);
 		}
-		try {
-			Runtime.getRuntime().exec("clear");
-		} catch (IOException e) {}
+		System.out.println("\f");
 		offValue = lightSensor.getValue();
 		System.out.println("Light on: " + onValue + "\nLightOff: " + offValue);
 		if(offValue - onValue > 60){
