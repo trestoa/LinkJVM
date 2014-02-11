@@ -6,6 +6,7 @@ PROJECT(LinkJVM Java C CXX)
 
 set(JAVA_SRC_DIR src/java)
 set(JAVA_SRC
+	${JAVA_SRC_DIR}/linkjvm/*.java
 	${JAVA_SRC_DIR}/linkjvm/ardrone/command/*.java
 	${JAVA_SRC_DIR}/linkjvm/ardrone/listeners/*.java
 	${JAVA_SRC_DIR}/linkjvm/ardrone/manager/*.java
