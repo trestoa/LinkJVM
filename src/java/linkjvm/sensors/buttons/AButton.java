@@ -22,6 +22,7 @@ package linkjvm.sensors.buttons;
 
 import linkjvm.low.buttons.IdButton;
 import linkjvm.low.buttons.linkjvm_buttons;
+import linkjvm.low.factory.JNIController;
 
 /**
  * This class reprsents the KIPR Link's a button
@@ -37,7 +38,7 @@ public class AButton extends AbstractButton implements TextButton{
 	 * Constructs a new a button.
 	 */
 	public AButton(){
-		jniButton = linkjvm_buttons.getA();
+		jniButton = JNIController.getInstance().getButtonFactory().getInstance(linkjvm.low.buttons.Id.A);
 	}
 
 	@Override
