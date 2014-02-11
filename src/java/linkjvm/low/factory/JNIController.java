@@ -95,8 +95,10 @@ public class JNIController implements Runnable{
 	 * 
 	 */
 	public void startCleanup(){
-		if(cleanupThread != null && !cleanupThread.isAlive()){
+		if(cleanupThread == null){
 			cleanupThread = new Thread(this);
+		}
+		if(!cleanupThread.isAlive()){
 			cleanupThread.start();
 		}
 	}
