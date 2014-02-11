@@ -73,7 +73,7 @@ public class JNIController implements Runnable{
 	@Override
 	public void run() {
 		stopCleanup = false;
-		while(stopCleanup){
+		while(!stopCleanup){
 			accelerationFactory.cleanup();
 			analog8Factory.cleanup();
 			analogFactory.cleanup();
