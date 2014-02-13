@@ -88,6 +88,8 @@ public class JNIController implements Runnable{
 			digitalFactory.cleanup();
 			motorFactory.cleanup();
 			servoFactory.cleanup();
+			cameraFactory.cleanup();
+			configFactory.cleanup();
 		}		
 	}
 	
