@@ -68,8 +68,20 @@ public abstract class AbstractMultiton<U, I>{
 		Reference<I> referenceToDeletedObject = (Reference<I>) referenceQueue.poll();
 		if(referenceToDeletedObject != null){
 			System.out.println("Deleting object!");
-			LinkedList<WeakReference<I>> list = (LinkedList<WeakReference<I>>) instances.values();
+			LinkedList<WeakReference<I>> list = new LinkedList<WeakReference<I>>(instances.values());
 			list.remove(referenceToDeletedObject.get());
 		}		
+	}
+	
+	public class A{
+		
+	}
+	
+	public class B extends A{
+		
+	}
+	
+	public class C extends A{
+		
 	}
 }
