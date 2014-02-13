@@ -248,14 +248,6 @@ static void SWIGUNUSED SWIG_JavaThrowException(JNIEnv *jenv, SWIG_JavaExceptionC
 
         typedef unsigned int size_t;
     
-
-	typedef enum DepthResolution_
-	{
-	  DEPTH_INVALID_RESOLUTION,
-	  DEPTH_RESOLUTION_320_240,
-	  DEPTH_RESOLUTION_640_480
-	} DepthResolution;
-
 SWIGINTERN std::vector< Camera::Channel * >::const_reference std_vector_Sl_Camera_Channel_Sm__Sg__get(std::vector< Camera::Channel * > *self,int i){
                 int size = int(self->size());
                 if (i>=0 && i<size)
