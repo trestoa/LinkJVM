@@ -23,6 +23,20 @@
     #include "include/kovan/sensor.hpp"
 %}
 
+%typemap(javabody) Sensor %{
+  private long swigCPtr;
+  protected boolean swigCMemOwn;
+
+  public $javaclassname(long cPtr, boolean cMemoryOwn) {
+    swigCMemOwn = cMemoryOwn;
+    swigCPtr = cPtr;
+  }
+
+  protected static long getCPtr($javaclassname obj) {
+    return (obj == null) ? 0 : obj.swigCPtr;
+  }
+%}
+
 template<typename T> class  Sensor{
 	public:
 		virtual ~Sensor() {}
@@ -30,9 +44,10 @@ template<typename T> class  Sensor{
 };
 
 /* Sensor instantaions */
-/*%template(IntSensor) Sensor<int>;
+%template(IntSensor) Sensor<int>;
 %template(UnsignedShortSensor) Sensor<unsigned short>;
 %template(ShortSensor) Sensor<short>;
 %template(BoolSensor) Sensor<bool>;
 %template(UnsignedCharSensor) Sensor<unsigned char>;
-%template(CharSensor) Sensor<char>;*/
+%template(CharSensor) Sensor<char>;
+
