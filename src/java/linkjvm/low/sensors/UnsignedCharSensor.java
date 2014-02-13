@@ -12,7 +12,7 @@ public class UnsignedCharSensor {
   private long swigCPtr;
   protected boolean swigCMemOwn;
 
-  protected UnsignedCharSensor(long cPtr, boolean cMemoryOwn) {
+  public UnsignedCharSensor(long cPtr, boolean cMemoryOwn) {
     swigCMemOwn = cMemoryOwn;
     swigCPtr = cPtr;
   }

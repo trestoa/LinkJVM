@@ -66,8 +66,20 @@ public abstract class AbstractMultiton<U, I>{
 		@SuppressWarnings("unchecked")
 		Reference<I> referenceToDeletedObject = (Reference<I>) referenceQueue.poll();
 		if(referenceToDeletedObject != null){
-			LinkedList<WeakReference<I>> list = (LinkedList<WeakReference<I>>) instances.values();
+			LinkedList<WeakReference<I>> list = new LinkedList<WeakReference<I>>(instances.values());
 			list.remove(referenceToDeletedObject.get());
 		}		
+	}
+	
+	public class A{
+		
+	}
+	
+	public class B extends A{
+		
+	}
+	
+	public class C extends A{
+		
 	}
 }

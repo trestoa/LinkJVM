@@ -25,6 +25,10 @@
     #include "include/kovan/color.hpp"
     #include "include/kovan/config.hpp"
 	#include "include/kovan/depth_exception.hpp"
+	#include "include/kovan/depth_driver.hpp"
+	#include "include/kovan/depth_image.hpp"
+	#include "include/kovan/xtion_depth_image.hpp"
+	#include "include/kovan/xtion_depth_driver.hpp"
     #include <cstring>
     #include <iostream>
     #include <time.h>
@@ -443,14 +447,6 @@ namespace Camera{
 }
 
 //depth camera
-%{
-	typedef enum DepthResolution_
-	{
-	  DEPTH_INVALID_RESOLUTION,
-	  DEPTH_RESOLUTION_320_240,
-	  DEPTH_RESOLUTION_640_480
-	} DepthResolution;
-%}
 typedef enum DepthResolution_
 {
   DEPTH_INVALID_RESOLUTION,
