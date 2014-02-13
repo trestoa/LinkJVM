@@ -33,6 +33,8 @@
 %}
 
 %include "stl.i"
+%import "sensors.i"
+%typemap("javaimports") Create "import linkjvm.low.sensors.*;";
 
 typedef unsigned int speed_t;
 

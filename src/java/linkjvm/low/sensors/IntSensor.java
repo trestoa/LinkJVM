@@ -12,7 +12,7 @@ public class IntSensor {
   private long swigCPtr;
   protected boolean swigCMemOwn;
 
-  protected IntSensor(long cPtr, boolean cMemoryOwn) {
+  public IntSensor(long cPtr, boolean cMemoryOwn) {
     swigCMemOwn = cMemoryOwn;
     swigCPtr = cPtr;
   }

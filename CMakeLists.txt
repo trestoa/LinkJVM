@@ -6,24 +6,25 @@ PROJECT(LinkJVM Java C CXX)
 
 set(JAVA_SRC_DIR src/java)
 set(JAVA_SRC
-	${JAVA_SRC_DIR}/linkjvm/high/ardrone/command/*.java
-	${JAVA_SRC_DIR}/linkjvm/high/ardrone/listeners/*.java
-	${JAVA_SRC_DIR}/linkjvm/high/ardrone/manager/*.java
-	${JAVA_SRC_DIR}/linkjvm/high/ardrone/navdata/javadrone/*.java
-	${JAVA_SRC_DIR}/linkjvm/high/ardrone/navdata/*.java
-	${JAVA_SRC_DIR}/linkjvm/high/ardrone/utils/*.java
-	${JAVA_SRC_DIR}/linkjvm/high/ardrone/video/*.java
-	${JAVA_SRC_DIR}/linkjvm/high/ardrone/*.java
-	${JAVA_SRC_DIR}/linkjvm/high/create/*.java
-	${JAVA_SRC_DIR}/linkjvm/high/debugger/*.java
-	${JAVA_SRC_DIR}/linkjvm/high/motors/*.java
-	${JAVA_SRC_DIR}/linkjvm/high/sensors/analog/acceleration/*.java
-	${JAVA_SRC_DIR}/linkjvm/high/sensors/analog/*.java
-	${JAVA_SRC_DIR}/linkjvm/high/sensors/buttons/*.java
-	${JAVA_SRC_DIR}/linkjvm/high/sensors/digital/*.java
-	${JAVA_SRC_DIR}/linkjvm/high/sensors/*.java
-	${JAVA_SRC_DIR}/linkjvm/high/vision/depth/*.java
-	${JAVA_SRC_DIR}/linkjvm/high/vision/*.java
+	${JAVA_SRC_DIR}/linkjvm/*.java
+	${JAVA_SRC_DIR}/linkjvm/ardrone/command/*.java
+	${JAVA_SRC_DIR}/linkjvm/ardrone/listeners/*.java
+	${JAVA_SRC_DIR}/linkjvm/ardrone/manager/*.java
+	${JAVA_SRC_DIR}/linkjvm/ardrone/navdata/javadrone/*.java
+	${JAVA_SRC_DIR}/linkjvm/ardrone/navdata/*.java
+	${JAVA_SRC_DIR}/linkjvm/ardrone/utils/*.java
+	${JAVA_SRC_DIR}/linkjvm/ardrone/video/*.java
+	${JAVA_SRC_DIR}/linkjvm/ardrone/*.java
+	${JAVA_SRC_DIR}/linkjvm/create/*.java
+	${JAVA_SRC_DIR}/linkjvm/debugger/*.java
+	${JAVA_SRC_DIR}/linkjvm/motors/*.java
+	${JAVA_SRC_DIR}/linkjvm/sensors/analog/acceleration/*.java
+	${JAVA_SRC_DIR}/linkjvm/sensors/analog/*.java
+	${JAVA_SRC_DIR}/linkjvm/sensors/buttons/*.java
+	${JAVA_SRC_DIR}/linkjvm/sensors/digital/*.java
+	${JAVA_SRC_DIR}/linkjvm/sensors/*.java
+	${JAVA_SRC_DIR}/linkjvm/vision/depth/*.java
+	${JAVA_SRC_DIR}/linkjvm/vision/*.java
 	${JAVA_SRC_DIR}/linkjvm/low/accel/*.java
 	${JAVA_SRC_DIR}/linkjvm/low/analog/*.java
 	${JAVA_SRC_DIR}/linkjvm/low/buttons/*.java
@@ -36,6 +37,7 @@ set(JAVA_SRC
 	${JAVA_SRC_DIR}/linkjvm/low/*.java
 )
 set(JNI_DIR src/jni)
+set(TOOLS_DIR tools)
 set(JAVAC_DIR java-environment/javac)
 set(JAR_DIR java-environment/jar)
 set(CMAKE_JAVA_COMPILE_FLAGS -source 6)
@@ -48,3 +50,4 @@ add_jar(linkjvmjava ${JAVA_SRC})
 add_subdirectory(${JNI_DIR})
 add_subdirectory(${JAVAC_DIR})
 add_subdirectory(${JAR_DIR})
+add_subdirectory(${TOOLS_DIR}/kar-gen)
