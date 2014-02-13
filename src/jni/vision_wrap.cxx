@@ -216,6 +216,10 @@ static void SWIGUNUSED SWIG_JavaThrowException(JNIEnv *jenv, SWIG_JavaExceptionC
     #include "include/kovan/color.hpp"
     #include "include/kovan/config.hpp"
 	#include "include/kovan/depth_exception.hpp"
+	#include "include/kovan/depth_driver.hpp"
+	#include "include/kovan/depth_image.hpp"
+	#include "include/kovan/xtion_depth_image.hpp"
+	#include "include/kovan/xtion_depth_driver.hpp"
     #include <cstring>
     #include <iostream>
     #include <time.h>
